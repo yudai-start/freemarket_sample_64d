@@ -20,21 +20,48 @@
 
 .block {
   background-color: #103763;
+  padding: 50px 190px 0 190px;
+
 }
 
 .block_top {
   display: flex;
+  position: relative;
+
+}
+.item_categoly {
+  font-size: 25px;
+}
+.more {
+  position: absolute;
+  font-size: 20px;
+  right: 10px;
 }
 .contents {
   display: flex;
-  flex-wrap:wrap;
-  margin: 0 200px 0 200px;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  // margin: 0 190px 0 190px;
+
 }
 
 .content {
-  height: 260px;
-  width: 200px;
+  height: 240px;
+  width: 180px;
+  margin: 7px 10px 7px 10px;
 
-  background-color: #095634;
+}
+.image {
+  height: 170px;
+  width: 100%;
+}
+img {
+  height: 100%;
+  width: 100%;
+  
+
+}
+.item_name {
+  background-color: #826812;
+  height: calc(100% - 170px);
+  width: 100%;
 }
