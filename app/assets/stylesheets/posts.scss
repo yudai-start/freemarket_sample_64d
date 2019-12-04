@@ -5,6 +5,8 @@
 .main {
   overflow: auto;
   height: 100%;
+
+
 }
 .slide {
   height: 380px;
@@ -13,10 +15,28 @@
 .category_tags {
   height: 180px;
   background-color: #098765;
+  text-align: center;
+
+
+  .category {
+    font-size: 25px;
+    padding-top: 50px;
+    font-style: italic;
+
+  }
     .tags {
       display: flex;
+      justify-content: center;
+      .tag {
+        font-size: 20px;
+        margin: 0 10px 0 10px;
+        border-radius: 15px;
+        background-color: #123456;
+
+      }
     }
 }
+
 
 .block {
   background-color: #103763;
