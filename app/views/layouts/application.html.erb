@@ -29,17 +29,32 @@
                 </g>
                 </g>
                 </svg>
+          </div>
           <nav class="navbar">
-          </nav>
             <ul>
               <li>
+                <form class="search-form" action="/tracks" accept-charset="UTF-8" method="get">
+                  <input name="utf8" type="hidden" value="✔︎">
+                  <input class="search-field" placeholder="何かお探しですか？" type="text" name="keyword" id="keyword">
+                  <label for="submit">
+                  <button class="symbol">
+                    <i class="fas fa-search" aria-hidden="true">
+                    ::before
+                    </i>
+                  <label>
+                </form>
               </li>
             </ul>
-          </div>
+          </nav>
         </div>
       <div class="header-inner">
+        <div class="header-inner-left">
+          
+        </div>
+        <div class="header-inner-right">
+        </div>
       </div>
-      </div>
+    </div>
     </header>
     <%= yield %>
   </body>
