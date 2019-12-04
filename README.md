@@ -33,11 +33,6 @@ Things you may want to cover:
 |nickname|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|post_code|string|null: false|
-|prefecture|integer|null: false|
-|city|string|null: false|
-|street_number|string|null: false|
-|building_name|string|null: false|
 |phone_number|string|null: false, unique: true|
 |birthday|string|null: false|
 |credit_card_number|string|null: false, unique: true|
@@ -45,12 +40,25 @@ Things you may want to cover:
 
 ### Association
 - has_many :items
-- has_many :images
 - has_many :follows
 - has_many :likes
 - has_many :item_status
 - has_many :comments
 - has_many :reviews
+- has_many :addresses
+
+
+## adressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|post_code|string|null: false|
+|prefecture|integer|null: false|
+|city|string|null: false|
+|street_number|string|null: false|
+|building_name|string|null: false|
+
+### Association
+- belongs_to :user
 
 
 ## itemsテーブル
@@ -106,11 +114,9 @@ Things you may want to cover:
 |------|----|-------|
 |image|string|null: false|
 |item_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
-- belongs_to :user
 
 
 ## followsテーブル
