@@ -1,3 +1,40 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main {
+  overflow: auto;
+  height: 100%;
+}
+.slide {
+  height: 380px;
+  background-color: #123456;
+}
+.category_tags {
+  height: 180px;
+  background-color: #098765;
+    .tags {
+      display: flex;
+    }
+}
+
+.block {
+  background-color: #103763;
+}
+
+.block_top {
+  display: flex;
+}
+.contents {
+  display: flex;
+  flex-wrap:wrap;
+  margin: 0 200px 0 200px;
+  justify-content: space-between;
+}
+
+.content {
+  height: 260px;
+  width: 200px;
+
+  background-color: #095634;
+}
