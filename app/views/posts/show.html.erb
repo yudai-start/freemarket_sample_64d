@@ -1,22 +1,24 @@
 <div class="items-show">
 
   <div class="items-show__name">
-    <%= @post.name %>
+    ”商品名”
   </div>
   <div class="items-show__comment">
-    <p>『<%= @post.name %>』は、<%= @post.user_id.length %>
-    回の取引実績を持つ<%= @post.user.name %>から出品されました。
-    ブランド名（カテゴリー）の商品で、<%= @post.user.prefecture %>から<%= @post.send_date %>
+    <p>『”商品名”』は、”取引回数”
+    回の取引実績を持つ”ユーザー名”から出品されました。
+    ブランド名（カテゴリー）の商品で、”都道府県”から”配送期間”
     で発送されます。</p>
   </div>
 
   <div class="items-show__description">
     <div class="items-show__description__left">
-      <div class="items-show__description__left__main" style="background-image: url(<%= @image.post %>);">
+      <div class="items-show__description__left__main" >
       <div class="items-show__description__left__many">
-        <% @images.each do |image| %>
-          <div class="items-show__description__left__many__images" style="background-image: url(<%= image %>);">
-        <% end %>
+        
+          <div class="items-show__description__left__many__images">
+            <%= image_tag "sample.jpg" %>
+          </div>
+        
       </div>
     </div>
 
@@ -30,9 +32,9 @@
 
   <div class="items-show__price">
     <div class="items-show__price__yen">
-      ¥<%= @post.price %>
+      ¥4,800
       <div class="items-show__price__yen__tax">
-        （税込）<span><%= @post.send_fee %></span>
+        （税込）<span>送料込</span>
       </div>
     </div>
   </div>
@@ -43,12 +45,13 @@
 
   <div class="items-show__comment">
     <div class="items-show__comment__top">
-      <%= simple_format @post.comment %>
+      
+      kjfaldjfkajdfjakfjakjfkjadkjfakljfkajdskfjakljfklajfklajdslkfjalkjdfklajkfa
     </div>
     <div class="items-show__comment__low">
-      <%= link_to "いいね! @post.linkes.count", "#", "items-show__comment__low__btn" %>
-      <%= link_to "不適切な商品の報告", "#", "items-show__comment__low__btn" %>
-      <%= link_to "あんしん・あんぜんへの取り組み", "#", "items-show__comment__low__btn" %>
+      <%= link_to "いいね", "#", class: :"items-show__comment__low__btn" %>
+      <%= link_to "不適切な商品の報告", "#", class: :"items-show__comment__low__btn" %>
+      <%= link_to "あんしん・あんぜんへの取り組み", "#", class: :"items-show__comment__low__btn" %>
     </div>
   </div>
 </div>
@@ -68,56 +71,55 @@
 <div class="items-show__other">
   <div class="items-show__other__desc">
     <h1 class="items-show__other__desc__title">
-      <%= @post.user.name %>さんのその他の出品
+      ”ユーザー名”さんのその他の出品
     </h1>
     <div class="items-show__other__desc__image-one">
-      <% @post.image[1..3].each do |image| %>
-       <h1 class="items-show__other__desc__image-one__name"><%= @post.name %></h1>
+      
+       <h1 class="items-show__other__desc__image-one__name">”商品名”/h1>
         <ul>
-          <li><%= @post.price %></li>
+          <li>”値段”</li>
           <li>いいね</li>
         </ul>
-      <% end %>
+
     </div>
     <div class="items-show__other__desc__image-two">
-      <% @post.image[4..6].each do |image| %>
-      　　<h1 class="items-show__other__desc__image-one__name"><%= @post.name %></h1>
+      
+        <h1 class="items-show__other__desc__image-one__name">”商品名”</h1>
         <ul>
-          <li><%= @post.price %></li>
+          <li>”値段”</li>
           <li>いいね</li>
         </ul>
-      <% end %>
+     
     </div>
   </div>
   <div class="items-show__other__desc">
     <h1 class="items-show__other__desc__title">
-      ブランドの<%= @post.name %>その他の商品
+      ブランドの”商品名”その他の商品
     </h1>
     <div class="items-show__other__desc__image-one">
-      <% @post.image[1..3].each do |image| %>
-       <h1 class="items-show__other__desc__image-one__name"><%= @post.name %></h1>
+      
+       <h1 class="items-show__other__desc__image-one__name">”商品名”</h1>
         <ul>
-          <li><%= @post.price %></li>
+          <li>”値段”</li>
           <li>いいね</li>
         </ul>
-      <% end %>
+      
     </div>
     <div class="items-show__other__desc__image-two">
-      <% @post.image[4..6].each do |image| %>
-      　　<h1 class="items-show__other__desc__image-one__name"><%= @post.name %></h1>
+     
+        <h1 class="items-show__other__desc__image-one__name">”商品名”</h1>
         <ul>
-          <li><%= @post.price %></li>
+          <li>”値段”</li>
           <li>いいね</li>
         </ul>
-      <% end %>
+     
     </div>
   </div>
+</div>
 
-　<div class="items-show__footer">
-   <ul>
-     <li><%= link_to "メリカリ", "#" %></li>
-     <li><%= link_to "ブランド", "#" %></li>
-   </ul>   
-  </div>
-
+<div class="items-show__footer">
+  <ul>
+    <li><%= link_to "メリカリ", "#" %></li>
+    <li><%= link_to "ブランド", "#" %></li>
+  </ul>   
 </div>
