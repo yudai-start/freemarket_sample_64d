@@ -1,28 +1,77 @@
-<div class="items-show">
+<section class="items-show">
 
   <div class="items-show__name">
     ”商品名”
   </div>
-  <div class="items-show__comment">
-    <p>『”商品名”』は、”取引回数”
+  <p class="items-show__comment">
+  『”商品名”』は、”取引回数”
     回の取引実績を持つ”ユーザー名”から出品されました。
     ブランド名（カテゴリー）の商品で、”都道府県”から”配送期間”
-    で発送されます。</p>
-  </div>
+    で発送されます。
+  </p>
 
   <div class="items-show__description">
     <div class="items-show__description__left">
       <div class="items-show__description__left__main" >
+        <%= image_tag "sample.jpg", class: :"items-show__description__left__main__image" %>
+      </div>
       <div class="items-show__description__left__many">
-        
-          <div class="items-show__description__left__many__images">
-            <%= image_tag "sample.jpg" %>
-          </div>
-        
+        <div class="items-show__description__left__many__top">
+          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__top__image" %>
+          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__top__image" %>
+          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__top__image" %>
+          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__top__image" %>
+          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__top__image" %>
+        </div>
+        <div class="items-show__description__left__many__low">
+          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image" %>
+          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image" %>
+          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image" %>
+          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image" %>
+          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image" %>
+        </div>
       </div>
     </div>
 
     <div class="items-show__description__right">
+      <table class="items-show__description__right__table" >
+        <tr>
+          <td>出品者</td>
+          <td>ユーザー名<br>評価マーク</td>
+        </tr>
+        <tr>
+          <td>カテゴリー</td>
+          <td>レディース<br>トップス<br>カットソー<br>袖なし</td>
+        </tr>
+        <tr>
+          <td>ブランド</td>
+          <td>ラフ</td>
+        </tr>
+        <tr>
+          <td>商品のサイズ</td>
+          <td>”サイズ”</td>
+        </tr>
+        <tr>
+          <td>商品の状態</td>
+          <td>”商品のステータス”</td>
+        </tr>
+        <tr>
+          <td>配送料の負担</td>
+          <td>送料込</td>
+        </tr>
+        <tr>
+          <td>配送の方法</td>
+          <td>”配送方法”</td>
+        </tr>
+        <tr>
+          <td>配送元地域</td>
+          <td>”プリフィクちゃー”</td>
+        </tr>
+        <tr>
+          <td>配送日の目安</td>
+          <td>”配送予定”</td>
+        </tr>
+      </table>
        <div class="items-show__description__right__culumn">
        </div>
        <div class="items-show__description__right__info">
@@ -31,12 +80,9 @@
   </div>
 
   <div class="items-show__price">
-    <div class="items-show__price__yen">
-      ¥4,800
-      <div class="items-show__price__yen__tax">
-        （税込）<span>送料込</span>
-      </div>
-    </div>
+    <span class="items-show__price__yen">¥4,800</span>
+    <span class="items-show__price__tax">（税込）</span>
+    <span class="items-show__price__fee">送料込み</span>
   </div>
 
   <div class="items-show__deal">
@@ -44,82 +90,65 @@
   </div>
 
   <div class="items-show__comment">
-    <div class="items-show__comment__top">
-      
-      kjfaldjfkajdfjakfjakjfkjadkjfakljfkajdskfjakljfklajfklajdslkfjalkjdfklajkfa
-    </div>
+    <p class="items-show__comment__top">
+      〇白いTシャツ<br>
+      ブランド ラフ<br>
+      サイズ フリー<br>
+      平置きで横幅約46センチ、着丈約54センチ<br>
+      〇赤いTシャツ<br>
+      ノーブランド<br>
+      サイズ S〜Mくらい（表示なし）<br>
+      平置きで横幅約40センチ、着丈約51センチ<br><br>
+
+      2枚セットです。1枚ずつ不可です。あまり着てないので状態は良いと思います。スーパーマン好きの方ぜひ。<br><br>
+
+      ※プロフィール必読でお願い致します。<br><br>
+
+      グローバルワーク<br>
+      ローリーズファーム<br>
+      レプシィム<br>
+      スタジオクリップ
+    </p>
     <div class="items-show__comment__low">
-      <%= link_to "いいね", "#", class: :"items-show__comment__low__btn" %>
-      <%= link_to "不適切な商品の報告", "#", class: :"items-show__comment__low__btn" %>
-      <%= link_to "あんしん・あんぜんへの取り組み", "#", class: :"items-show__comment__low__btn" %>
+      <div class="items-show__comment__low__left">
+        <%= link_to "いいね", "#", class: :"items-show__comment__low__left__btn" %>
+        <%= link_to "不適切な商品の報告", "#", class: :"items-show__comment__low__left__btn" %>
+      </div>
+      <div class="items-show__comment__low__right">
+        <%= link_to "あんしん・あんぜんへの取り組み", "#", class: :"items-show__comment__low__right__btn" %>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<ul class="items-show__page">
-  <li><%= link_to "@post.name", "#", class: :"items-show__page__link" %></li>
-  <li><%= link_to "@post.name", "#", class: :"items-show__page__link" %></li>
+<ul class="items-show-page">
+  <li><%= link_to "@post.name", "#", class: :"items-show-page__left" %></li>
+  <li><%= link_to "@post.name", "#", class: :"items-show-page__right" %></li>
 </ul>
 
-<div class="items-show__icon">
-  <%= link_to "#", "#", class: :"items-show__icon__btn" %>
-  <%= link_to "#", "#", class: :"items-show__icon__btn" %>
-  <%= link_to "#", "#", class: :"items-show__icon__btn" %>
-  <%= link_to "#", "#", class: :"items-show__icon__btn" %>
+<div class="items-show-icon">
+  <ul class="items-show-icon__box">
+    <li><%= link_to "#", "#", class: :"items-show-icon__box___btn" %></li>
+    <li><%= link_to "#", "#", class: :"items-show-icon__box___btn" %></li>
+    <li><%= link_to "#", "#", class: :"items-show-icon__box___btn" %></li>
+    <li><%= link_to "#", "#", class: :"items-show-icon__box___btn" %></li>
+  </ul>
 </div>
 
-<div class="items-show__other">
-  <div class="items-show__other__desc">
-    <h1 class="items-show__other__desc__title">
-      ”ユーザー名”さんのその他の出品
-    </h1>
-    <div class="items-show__other__desc__image-one">
-      
-       <h1 class="items-show__other__desc__image-one__name">”商品名”/h1>
-        <ul>
-          <li>”値段”</li>
-          <li>いいね</li>
-        </ul>
-
+<div class="items-show-goods">
+  <section class="items-show-goods__top">
+    <h1 class="items-show-goods__top__name">”ユーザー名”さんのその他の出品<h1>
+    <div class="items-show-goods__top__desc">
+      <section class="items-show-goods__top__desc__box">
+        
+      </section>
     </div>
-    <div class="items-show__other__desc__image-two">
-      
-        <h1 class="items-show__other__desc__image-one__name">”商品名”</h1>
-        <ul>
-          <li>”値段”</li>
-          <li>いいね</li>
-        </ul>
-     
-    </div>
-  </div>
-  <div class="items-show__other__desc">
-    <h1 class="items-show__other__desc__title">
-      ブランドの”商品名”その他の商品
-    </h1>
-    <div class="items-show__other__desc__image-one">
-      
-       <h1 class="items-show__other__desc__image-one__name">”商品名”</h1>
-        <ul>
-          <li>”値段”</li>
-          <li>いいね</li>
-        </ul>
-      
-    </div>
-    <div class="items-show__other__desc__image-two">
-     
-        <h1 class="items-show__other__desc__image-one__name">”商品名”</h1>
-        <ul>
-          <li>”値段”</li>
-          <li>いいね</li>
-        </ul>
-     
-    </div>
-  </div>
+  </section>
 </div>
 
-<div class="items-show__footer">
-  <ul>
-    <li><%= link_to "メリカリ", "#" %></li>
-    <li><%= link_to "ブランド", "#" %></li>
+<nav class="items-show-footer">
+  <ul class="items-show-footer__link">
+    <li><%= link_to "メリカリ", "#", class: :"items-show-footer__link__left" %></li>
+    <li><%= link_to "ブランド", "#", class: :"items-show-footer__link__right" %></li>
   </ul>   
-</div>
+</nav>
