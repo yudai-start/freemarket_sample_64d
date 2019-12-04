@@ -28,9 +28,9 @@ Things you may want to cover:
 |------|----|-------|
 |family_name|string|null: false|
 |first_name|string|null: false|
-|family_name_kana|string|null: false|
+|family_name_kana|string|null: fsalse|
 |first_name_kana|string|null: false|
-|nickname|string|null: false|
+|nickname|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |post_code|string|null: false|
@@ -38,10 +38,10 @@ Things you may want to cover:
 |city|string|null: false|
 |street_number|string|null: false|
 |building_name|string|null: false|
-|phone_number|string|null: false|
+|phone_number|string|null: false, unique: true|
 |birthday|string|null: false|
-|credit_card_number|string|null: false|
-|introduction|string|null: false|
+|credit_card_number|string|null: false, unique: true|
+|introduction|string|null: true|
 
 ### Association
 - has_many :items
@@ -56,7 +56,7 @@ Things you may want to cover:
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, index: true|
 |user_id|integer|null: false, foreign_key: true|
 |size|string|null: false|
 |item_status|integer|null: false|
@@ -91,7 +91,7 @@ Things you may want to cover:
 ## reviewsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|content|string|null: false|
+|content|string|null: true|
 |rating|integer|null: false|
 |item_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
@@ -116,7 +116,7 @@ Things you may want to cover:
 ## followsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|folloing_id|integer|null: false|
+|following_id|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -126,7 +126,6 @@ Things you may want to cover:
 ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|folloing_id|integer|null: false|
 |item_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
@@ -138,7 +137,6 @@ Things you may want to cover:
 ## item_statusテーブル
 |Column|Type|Options|
 |------|----|-------|
-|folloing_id|integer|null: false|
 |item_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 |status|integer|null: false|
