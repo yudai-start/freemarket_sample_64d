@@ -1,13 +1,11 @@
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
 .items-show {
   background-color: #fff;
   margin: 40px auto 0;
-  @media screen and (min-width: 768px) {
-    padding: 24px 40px 40px;
-  }
-  @media screen and (min-width: 768px) {
-    width: 700px;
-  }
-    width: 700px;
+  width: 700px;
+  padding: 24px 40px 40px;
   &__name {
     font-size: 22px;
     text-align: center;
@@ -24,16 +22,12 @@
     margin: 16px 0 0;
     display: flex;
     &__left {
-      position: relative;
-      min-width: 280px;
-      max-width: 360px;
-      min-height: 280px;
-      margin: 0 auto;
+      
       background: #fafafa;
       &__main {
         &__image {
-          width: 360px;
-          height: 360px;
+          width: 300px;
+          height: 300px;
         }
       }
       &__many {
@@ -55,9 +49,24 @@
         }
       }
     }
-    &__right {
-      &__table, td {
-        border: solid black 1px;
+    &__table {
+      height: 420px;
+      margin: 0 auto;
+      width: 300px;
+      border: solid #f5f5f5 1px;
+      color: #333;
+      font-size: 14px;
+      th {
+        width: 39%;
+        text-align: left;
+        font-weight: 400;
+        background: #fafafa;
+        border: solid 1px #f5f5f5;
+      }
+      td {
+        width: 61%;
+        background: #fff;
+        border: solid 1px #f5f5f5;
       }
     }
   }
@@ -92,14 +101,20 @@
     }
   }
   &__comment {
-    margin: 32px 0 0;
+    padding: 32px 0 0;
     line-height: 1.5;
     font-size: 18px;
     color: black;
+    &__top {
+      font-size: 18px;
+      color: #333;
+    }
     &__low {
       display: flex;
       justify-content: space-between;
+      margin: 16px 0 0;
       &__left {
+        display: flex;
         &__btn {
           font-size: 14px;
           padding: 8px 16px;
@@ -125,43 +140,71 @@
 .items-show-page {
   margin: 24px auto 0;
   display: flex;
+  padding: 0 40px;
   justify-content: space-between;
   width: 700px;
   list-style: none;
+  font-size: 14px;
   &__left {
-    width: 45%;
     text-decoration: none;
     color: #0099e8;
-    
   }
   &__right {
-    width: 45%;
     text-decoration: none;
     color: #0099e8;
-    
   }
 }
 
 .items-show-icon {
   margin: 24px auto;
-  padding: 32px 0 24px;
+  padding: 32px 40px 24px;
   width: 700px;
-  background: #fff;
+  background-color: white;
   &__box {
     display: flex;
     margin: 16px 0 0;
+    justify-content: center;
     text-align: center;
-    margin: 0 auto;
-    list-style: none!important;
-    &__btn {
-      text-decoration: none;
+    &__link {
+      &__facebook {
+        margin: 0 8px 8px 0;
+        color: #385185;
+        background-color: #fff;
+      }
+      &__twitter {
+        margin: 0 8px 8px 0;
+        color: #0099e8;
+        background-color: #fff;
+      }
+      &__line {
+        margin: 0 8px 8px 0;
+        color: #00c137;
+        background-color: #fff;
+      }
+      &__pinterest {
+        margin: 0 0 8px;
+        color: #aa262a;
+        background-color: #fff;
+      }
     }
   }
 }
 
-.items-show-offer {
+.itemshow {
   width: 700px;
-  margin: 0 auto;
+  background-color: #b3d4fc;
+  color: #fff;
+  &__title {
+    font-size: 22px;
+    margin: 24px 0 8px;
+  }
+  &__top {
+    &__box {
+      height: 330px;
+      width: 220px;
+    }
+    
+  }
 }
 
 .items-show-footer {
@@ -185,4 +228,8 @@
       margin-left: 15px;
     }
   }
+}
+
+body {
+  background-color: lightgrey;
 }
