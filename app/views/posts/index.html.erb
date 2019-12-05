@@ -1,20 +1,18 @@
 
-
 <div class='main'>
-  <div class='slide'><h1>スライド部bん</h1></div>
-
-  <div class='category_tags'>
-    <div>人気のカテゴリー</div>
-    <div class='tags'>
-      <div class='tag'>ナチュラる</div>
-      <div class='tag'>ハロー</div>
-      <div class='tag'>ワールド</div>
-      <div class='tag'>アタッっく</div>
-    </div>
+  <div class='slide' id='slider'>
+    <img src='https://cdn.pixabay.com/photo/2019/11/29/11/43/fountain-4661162_1280.jpg'>
   </div>
 
-
-
+  <div class='category_tags'>
+    <div class='category'>人気のカテゴリー</div>
+    <div class='tags'>
+      <div class='tags__tag'><%= link_to "タグ１", "#" ,class: 'tag_link' %></div>
+      <div class='tags__tag'><%= link_to "タグ２", "#" ,class: 'tag_link' %></div>
+      <div class='tags__tag'><%= link_to "タグ３", "#" ,class: 'tag_link' %></div>
+      <div class='tags__tag'><%= link_to "タグ４", "#" ,class: 'tag_link' %></div>
+    </div>
+  </div>
 
   <div class='block'>
     <div class='block_top'>
@@ -22,21 +20,24 @@
         新着アイテム
       </div>
       <div class='more'>
-        もっとみる　＞
+        <%= link_to "もっとみる  >", "#" ,id:'more' %>
       </div>
     </div>
     
-      <div class='contents'>
-      <% 50.times do%>
+    <div class='contents'>
+    <% 50.times do%>
+      <%= link_to("#", class: 'item_link') do %>
         <div class='content'>
-          <img src="">
-          <div class='item_name'></div>
-          <div class='price'></div>
+          <div class='image'>
+            <img src="https://cdn.pixabay.com/photo/2019/11/20/01/06/swimming-pool-4638912_1280.jpg">
+            <div class='price'><div id='price'>¥¥¥¥¥</div></div>
+          </div>     
+          <div class='item_name'>ハリケーン</div>
         </div>
-      <% end%>
-      </div>
-    
-      
+      <% end %>
+      </label>
+    <% end %>
+    </div>  
   </div>
 </div>
 
