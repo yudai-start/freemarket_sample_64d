@@ -1,5 +1,15 @@
 .header {
-  background-color:rgb(255, 255, 255);
+  margin: 0 auto;
+  padding:0;
+  width: 100%;
+  background-color:white;
   box-shadow: rgba(0,0,0,0.18)0px 2px 4px;
   position: relative;
+  display: block;
+    &-lists {
+      margin: 0 auto;
+      padding:0px 0px 0px;
+      box-sizing: border-box;
+      display: block;
+    }
 }

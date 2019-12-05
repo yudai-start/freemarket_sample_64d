@@ -10,10 +10,11 @@
   </head>
    <body>
       <header class="header">
-        <div class="header-top">
-          <div class="header-top-inner">
-             <div class="header-top-inner-left">
-                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 281.19 84.08" x="0px" y="0px" width="130px" height="134px">
+        <div class="header-lists">
+          <div class="header-lists-top">
+            <div class="header-lists-top-inner">
+               <div class="header-lists-top-inner-left">
+                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 281.19 84.08" x="0px" y="0px" width="130px" height="130px">
                      <defs>
                        <style>.cls-1{fill:#dc4912;stroke:#fff;stroke-miterlimit:10;}.cls-2{font-size:48px;fill:#231815;font-family:YuGo-Bold-83pv-RKSJ-H, YuGothic;}
                        </style>
@@ -31,7 +32,7 @@
                   </svg>
               </div>
               </div>
-               <nav class="header-top-inner-navbar">
+               <nav class="header-lists-top-inner-navbar">
                  <ul>
                    <li>
                      <form class="search-form" action="/tracks" accept-charset="UTF-8" method="get">
@@ -48,31 +49,48 @@
                 </ul>
               </nav>
             </div>
-            <div class="header-low-inner">
-               <div class="header-low-inner-nav">
-                 <ul class="header-low-inner-nav-left">
-                   <li>
-                     <a>カテゴリーから探す</a>
-                          <i class="fas fa-align-justify"></i>
-                          ::before
-                   </li>
-                   <li>
-                     <a>ブランドから探す</a>
-                        <i class="fas fa-tag"></i>
-                          ::before
-                    </li>
-                </ul>
-                  <ul class="header-low-inner-nav-right">
-                    <li>
-                    <a href="/users/sign up">新規会員登録</a>
-                   </li>
-                  <li>
-                   <a href="/users/log in">ログイン</a>
-                  </li>
+          <div class="header-lists-low">
+              <div class="header-lists-low-nav">
+                <div class="header-lists-low-nav-left">
+                  <div class="header-lists-low-nav-left-categorybox">
+                    <a href="/jp/category/" class="category">
+                      <svg aria-hidden="true" width="20" height="16" viewBox="0 0 20 16" class="header-lists-low-nav-right-category">
+                        <path fill="currentColor" fill-rule="nonzero" d="M18.799 15.25h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-
+                          11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-
+                          11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zM2 16a2 2 0 1
+                          0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 
+                          0 0-4 2 2 0 0 0 0 4z"></path>
+                      </svg>
+                        カテゴリーから探す
+                    </a>
+                    </div>
+                  <div class="header-lists-low-nav-left-brandbox">
+                  <a href="/jp/brand/" class="brandbox">
+                    <svg aria-hidden="true" width="23" height="16" viewBox="0 0 23 16" class="sc-csuQGl sc-caSCKo kspmux">
+                      <path fill="currentColor" fill-rule="nonzero" d="M6.315 0L4.473
+                        1.806 2.833.019.73 1.977l1.69 1.84L1.198 5.02c-1.594 1.594-1.594
+                        4.188-.01 5.772L6.3 16h13.272a3.08 3.08 0 0 0 3.077-3.077V3.076A3.08
+                        3.08 0 0 0 19.57 0H6.315zm13.46 12.925a.211.211 0 0 1-.205.205H7.504L3.227 8.771a1.226 1.226 0 0
+                        1-.01-1.71L4.38 5.92l1.28 1.371a2.68 2.68 0 1 0 2.13-1.93L6.433 3.907 7.49 2.87h12.082a.211.211 0 0 1 .206.205v9.848h-.002z">
+                      </path>
+                    </svg>
+                      ブランドから探す
+                   </a>
+                  </div>
+                  </div>
+                  <div class="header-lists-low-nav-right">
+                    <div class="header-lists-low-nav-right-newmenberbox">
+                      <a href="/users/sign up" class="newmwmberbox">新規会員登録</a>
+                    </div>
+                    <div class="header-lists-low-nav-right-loginbox">
+                     <a href="/users/log in" class="loginbox">ログイン</a>
+                    </div>
               </div>
+            </div>
            </div>
-        </div>
+          </div>
+       </div>
     </header>
     <%= yield %>
-  </body>
+ </body>
 </html>
