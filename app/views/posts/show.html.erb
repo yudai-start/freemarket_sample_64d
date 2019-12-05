@@ -37,7 +37,14 @@
     <table class="items-show__description__table" >
       <tr>
         <th>出品者</td>
-        <td>ユーザー名<br>評価マーク</td>
+        <td>
+          <%= link_to "ユーザー名", "#", class: :"items-show__description__table__link" %>
+          <div class="items-show__description__table__face">
+            <i class="fas fa-laugh items-show__description__table__face__smile"></i>
+            <i class="fas fa-meh items-show__description__table__face__normal"></i>
+            <i class="fas fa-tired items-show__description__table__face__bad"></i>
+          </div>
+        </td>
       </tr>
       <tr>
         <th>カテゴリー</td>
