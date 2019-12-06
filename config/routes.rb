@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   resources :posts
   resources :users, only: [:edit, :update]
-
+  get "/auth/:provider/callback" => "sessions#create"
+  get "/signout" => "sessions#destroy", :as => :signout
 end
