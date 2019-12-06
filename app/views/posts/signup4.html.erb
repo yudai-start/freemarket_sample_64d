@@ -1,1 +1,62 @@
-signup4
+<div class="signup4__contents">
+  <div class="signup4__contents__heading">
+    支払い方法
+  </div>
+  <div class="signup4__contents__main">
+    <%= form_with(model: @tweet, local: true) do |form| %>
+      <div class="signup4__contents__main__form1">
+        <div class="signup4__contents__main__form1__heading">
+          <p>カード番号</p>
+          <p class="essential_icon">必須</p>
+        </div>
+        <%= form.text_field :credit_card_number, placeholder: "半角数字のみ", class: "signup4__contents__main__form1__form" %>
+        <div class="signup4__contents__main__form1__icons">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-jcb"></i>
+          <i class="fab fa-cc-amex"></i>
+          <i class="fab fa-cc-diners-club"></i>
+          <i class="fab fa-cc-discover"></i>
+        </div>
+      </div>
+
+      <div class="signup4__contents__main__form2">
+        <div class="signup4__contents__main__form1__heading">
+          <p>有効期限</p>
+          <p class="essential_icon">必須</p>
+        </div>
+        <div class="signup4__contents__main__form2__form">
+          <label class="signup4__contents__main__form2__form__select">
+            <%= select_month(Date.today, use_two_digit_numbers: true) %>
+          </label>
+          <p>月</p>
+          <label class="signup4__contents__main__form2__form__select">
+            <%= select_year(20) %>
+          </label>
+          <p>日</p>
+        </div>
+      </div>
+
+      <div class="signup4__contents__main__form3">
+        <div class="signup4__contents__main__form1__heading">
+          <p>セキュリティコード</p>
+          <p class = "essential_icon">必須</p>
+        </div>
+        <%= form.text_field :security_cord, placeholder: "カード背面4桁もしくは3桁の番号", class: "signup4__contents__main__form3__form" %>
+        <div class="signup4__contents__main__form3__link">
+          <a href="#", class="signup4__contents__main__form3__link__text">
+            <i class="fas fa-question-circle"></i>
+            カード裏面の番号とは?
+          </a>
+        </div>
+      </div>
+
+      <div class="signup4__contents__main__submit">
+        <label>
+          <%= form.submit style: "display: none" %>
+          <p class="signup4__contents__main__submit__btn">次へ進む</p>
+        </label>
+      </div>
+    <% end %>
+  </div>
+</div>
