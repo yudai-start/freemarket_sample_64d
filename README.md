@@ -46,6 +46,8 @@ Things you may want to cover:
 - has_many :comments
 - has_many :reviews
 - has_many :addresses
+- has_many :sns_credentials
+
 
 
 ## adressesテーブル
@@ -150,4 +152,15 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :item
+- belongs_to :user
+
+
+## sns_credentialsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|uid|string|null: false|
+|provider|string|null: false|
+|user_id|integer|null: false, foreign_key: true|
+
+### Association
 - belongs_to :user
