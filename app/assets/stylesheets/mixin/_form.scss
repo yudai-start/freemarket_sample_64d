@@ -5,6 +5,7 @@
   border: 1px solid lightgray;
   margin-top: 5px;
   padding: 0 10px;
+  outline: none;
 }
 
 @mixin select{
@@ -47,6 +48,23 @@
   background-color: #ea352d;
   border-radius: 2px;
   color: white;
-  margin-left: 7px;
+  margin-left: 10px;
 }
 
+@mixin form_heading{
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  border-bottom: 1px solid rgb(247, 247, 247);
+  font-size: 18px;
+}
+
+@mixin submit_btn{
+  width: 325px;
+  height: 40px;
+  margin-top: 5px;
+  background-color: #ea352d;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+}
