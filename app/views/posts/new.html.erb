@@ -28,7 +28,7 @@
 
   <div class='main'>
     <div class='container'>
-      <div>
+      <div class='cont' id='top-cont'>
         text
       </div>
       <div id='img-cont' class='cont'>
@@ -60,7 +60,7 @@
 
         <div>
           
-          <%= form.text_field :name %>
+          <%= form.text_field :name, placeholder:"商品の名前を記入してください（４０文字まで）"%>
           <div class='indispensable-tmp'>
             <div class='sentence'>
               商品の説明
@@ -69,7 +69,7 @@
               必須
             </div>
           </div>
-          <%= form.text_area :description %>
+          <%= form.text_area :description, placeholder:"商品の説明を記入してください（１０００文字まで）" %>
           
         </div>
        
