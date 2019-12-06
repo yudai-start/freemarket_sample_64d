@@ -1,0 +1,52 @@
+@mixin form {
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin-top: 5px;
+  padding: 0 10px;
+}
+
+@mixin select{
+  padding: 10px;
+  width: 100px;
+  line-height: 15px;
+  border: 1px solid lightgray;
+  position: relative;
+  border-radius: 5px;
+  background: #fff;
+
+  select {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    font-size: 16px;
+    outline: none;
+    -webkit-appearance: none;
+      -moz-appearance: none;
+            appearance: none;
+  }
+
+  &:after{
+    content: '\f078';
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    color: #666;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+}
+
+@mixin essential_icon{
+  font-size: 12px;
+  line-height: 15px;
+  padding: 2px 3px 1px;
+  background-color: #ea352d;
+  border-radius: 2px;
+  color: white;
+  margin-left: 7px;
+}
+
