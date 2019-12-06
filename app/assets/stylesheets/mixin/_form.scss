@@ -51,6 +51,16 @@
   margin-left: 10px;
 }
 
+@mixin optionally_icon{
+  font-size: 12px;
+  line-height: 15px;
+  padding: 2px 3px 1px;
+  background-color: lightgray;
+  border-radius: 2px;
+  color: white;
+  margin-left: 10px;
+}
+
 @mixin form_heading{
   height: 80px;
   text-align: center;
