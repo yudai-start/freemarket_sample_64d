@@ -1,5 +1,6 @@
 <body>
   <header id='header'>
+  <%= form_with do |form| %>
     <%= link_to("root", class: 'header-link') do %>
       <div class='top_logo'>
       <div class='logo'>
@@ -58,7 +59,7 @@
         </div>
 
         <div>
-          <%= form_with do |form| %>
+          
           <%= form.text_field :name %>
           <div class='indispensable-tmp'>
             <div class='sentence'>
@@ -69,7 +70,7 @@
             </div>
           </div>
           <%= form.text_area :description %>
-          <% end %>
+          
         </div>
        
         <div>
@@ -77,8 +78,8 @@
       </div>
 
       <div id='item-cont2' class='cont'>
-        <div>商品の詳細</div>
-        <div>
+        <div class='blank'>商品の詳細</div>
+        <div class='rb'>
           <div class='indispensable-tmp'>
             <div class='sentence'>
               カテゴリー
@@ -87,7 +88,7 @@
               必須
             </div>
           </div>
-          <select>
+          <select class='pulldown'>
           <%= 10.times do %>
           <option>1</option>
           <%end %>
@@ -109,8 +110,8 @@
       </div>
 
       <div id='shipping-cont' class='cont'>
-        <div>発送について</div>
-        <div>
+        <div class='blank'>発送について</div>
+        <div class='rb'>
           <div class='indispensable-tmp'>
             <div class='sentence'>
               配送料の負担
@@ -158,9 +159,9 @@
       </div>
 
       <div id='price-cont' class='cont'>
-        <div>販売価格</div>
-        <div>
-          <div>
+        <div class='blank'>販売価格</div>
+        <div class='rb'>
+          <div class='p-box'>
             <div class='indispensable-tmp'>
               <div class='sentence'>
                 価格
@@ -170,23 +171,34 @@
               </div>
             </div>
           </div>
-          
-          <div>
-            <div>
-              販売手数料
+          <div class='p-box'>
+            <div class='divide' >
+              <div class='pbleft'>
+                販売手数料
+              </div>
+              <div class='pbright'>
+                ¥¥¥
+              </div>
             </div>
-            <div>
-              ¥¥¥
+          </div>  
+          <div class='p-box'>
+            <div class='divide' >
+              <div class='pbleft'>
+                販売利益
+              </div>
+              <div class='pbright'>
+                ¥¥¥
+              </div>
             </div>
-          </div>
-
-          <div>
-            
-          </div>
+          </div>  
         </div>
       </div>
       <div id='btn-cont' class='cont'>
-
+        <div>
+          規約文
+        </div>
+        <button type="submit" id='ship-btn'><p class='btn-fs'>出品する</p></button>
+        <button type="submit" id='ship-return'><p class='btn-fs'>戻る</p></button>
       </div>
     </div>
   </div>
@@ -199,7 +211,7 @@
         <%= link_to "特定商取引に関する表記", "#", id:'low' %>
       </div>
       <div>
-        
+    
           <div class='footer-logo'>
           <%= link_to("root", class: 'footer-link') do %>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 147.09 129.96"　x="0px" y="0px" width="80px" height="80px">
@@ -226,6 +238,6 @@
           ©︎コピーライト
         </div>
       </div>
-    </div>
+    </div><% end %>
   </footer>
 </body>
