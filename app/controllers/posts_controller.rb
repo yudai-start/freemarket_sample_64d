@@ -5,7 +5,21 @@ class PostsController < ApplicationController
   def show
   end
 
-  def new
+  def signup0
   end
 
+  def signup1
+  end
+
+  def signup2
+  end
+
+  def signup3
+  end
+
+  def signup4
+  end
+
+  def signup5
+  end
 end
