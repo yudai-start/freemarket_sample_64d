@@ -18,10 +18,6 @@
   }
 }
 
-.cls1{
-  fill: coral;
-}
-
 .sign-up-main{
   height: 386px;
   width: 100%;
@@ -126,6 +122,8 @@
       color: black;
       .rule{
         font-size: 12px;
+        text-decoration: none;
+        color: black;
       }
     }
     .foot-logo{
