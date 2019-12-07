@@ -3,24 +3,20 @@
   <div class="user-mypage__main">
 
     <section class="mypage-top">
-      <div class="mypage-top__box">
-        <%= link_to "#", class: :"mypage-info__box__link" do %>
-          <figure class="mypage-top-figure">
-            <img class="mypage-top-figure__icon" src="//static.mercdn.net/images/member_photo_noimage_thumb.png" width="60" height="60">
-          </figure>
-          <div class="mypage-top-name">
-            user.nickname
+      <%= link_to "#", class: :"mypage-top__link" do %>
+        <figure>
+          <img class="mypage-top-icon" src="//static.mercdn.net/images/member_photo_noimage_thumb.png" width="60" height="60">
+        </figure>
+        <h1 class="mypage-top-name">user.nickname</h1>
+        <div class="mypage-top-link">
+          <div class="mypage-top-link__estimate">
+          評価 <span> 0 </span>
           </div>
-          <div class="mypage-top-link">
-            <div class="mypage-top-link__estimate">
-            評価
-            </div>
-            <div class="mypage-top-link__count">
-            出品数
-            </div>
+          <div class="mypage-top-link__count">
+          出品数 <span> 0 </span>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </section>
 
 
