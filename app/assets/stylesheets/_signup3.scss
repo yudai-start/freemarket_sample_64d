@@ -63,7 +63,7 @@
     &__submit{
       margin-top: 40px;
       &__btn{
-        @include submit_btn;
+        @include redlink_btn;
       }
     }
   }

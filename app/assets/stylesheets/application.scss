@@ -1,13 +1,19 @@
+@import "reset";
 @import "mixin/form";
-@import "signup1";
+@import "signup.header.scss";
+@import "sign-in-sample.scss";
+@import "signup1.scss";
 @import "signup2";
 @import "signup3";
 @import "signup4";
-@import "reset";
+@import "signup5.scss";
+@import "_signout";
 @import "items.show.scss";
 @import "posts.scss";
-@import "sign-in-sample.scss";
 @import "users.scss";
+@import "user.profile.scss";
+@import "signup.header.scss";
+@import "footer-icon.scss";
 
 html{
   background-color: #f5f5f5;
