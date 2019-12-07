@@ -1,25 +1,24 @@
-<div class="user-profile">
+<div class="user-profile-view">
+  <div class="user-profile">
+    <section class="user-profile__box">
 
-  <div class="side-bar-tentative">
-  <!-- サイドバー仮置き -->
-  
-  <section class="user-profile__box">
-
-    <h1 class="user-profile__box__title">プロフィール</h1>
-    <%= form_with(model: @user, local: true, class: :"profile-form") do |form| %>
-      <div class="profile-form__icon">
-        <img src="//static.mercdn.net/images/member_photo_noimage_thumb.png" width="60" height="60">
-        <%= form.text_field :nickname, placeholder: "ユーザー名", class: "profile-form__icon__name" %>
-      </div>
-
-        <div class="profile-form__textarea">
-          <%= form.text_area :introduction, class: "profile-form__textarea__box",
-          placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。
-          服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪" %>
-          <%= form.submit "変更する" , class: "profile-form__btn" %>
+      <h1 class="user-profile__box__title">プロフィール</h1>
+      <%= form_with(model: @user, local: true, class: :"profile-form") do |form| %>
+        <div class="profile-form__icon">
+          <figure class="profile-form__icon__figure">
+            <img src="//static.mercdn.net/images/member_photo_noimage_thumb.png" width="60" height="60">
+          </figure>
+          <%= form.text_field :nickname, placeholder: "ユーザー名", class: "profile-form__icon__name" %>
         </div>
 
-    <% end %>
+          <div class="profile-form__textarea">
+            <%= form.text_area :introduction, class: "profile-form__textarea__box",
+            placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪" %>
+            <%= form.submit "変更する" , class: "profile-form__btn", id: "button" %>
+          </div>
 
-  </section>
+      <% end %>
+
+    </section>
+  </div>
 </div>
