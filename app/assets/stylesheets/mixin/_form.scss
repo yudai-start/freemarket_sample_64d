@@ -101,3 +101,13 @@
   text-align: center;
   line-height: 40px;
 }
+
+@mixin graylink_btn{
+  width: 325px;
+  height: 40px;
+  margin-top: 5px;
+  background-color: gray;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+}
