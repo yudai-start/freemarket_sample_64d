@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       get :signup5
       get :profile
       get :signout
+      get :mypage
     end
  end
 end
