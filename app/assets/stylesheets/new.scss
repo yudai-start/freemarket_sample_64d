@@ -1,6 +1,4 @@
-// body {
-//   background-color: #787878;
-// }
+
 $aruound-color: #eeeeee;
 #header {
   background-color: $aruound-color;
@@ -23,15 +21,78 @@ $aruound-color: #eeeeee;
     height: 250vh;
     background-color: white;
     padding: 0 40px 0 40px;
+    #top-cont {
+      text-align: center;
+      padding-top: 40px;
+    }
+    #img-cont {
+      height: 300px;
+      background-color: #fff;
+      .img-form {
+      height: 200px;
+      background-color: #123456;
+      }
+    }  
+    #item-cont {
+      height: 330px;
+      #name {
+        height: 50px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 15px;
+        padding-left: 10px;
+      }
+      #description {
+        height: 150px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 15px;
+        padding: 10px;
+      }
+    }
+    #item-cont2 {
+      display: flex;
+    }
+    #shipping-cont {
+      display: flex;
+    }
+    #price-cont {
+      display: flex;
+      .p-box {
+        height: 50px;
+        width: 100%;
+        position: relative;
+        .divide {
+          display: flex;
+          .pbright {
+            position: absolute;
+            right: 0;
+          }
+        }
+      }
+    }
+    #btn-cont {
+      text-align: center;
+      padding-top: 40px;
+      .btn-fs {
+      font-size: 15px;
+      }
+      #ship-btn {
+      width: 100%;
+      height: 50px;
+      background-color: #f54343;
+      color: white;
+      margin: 20px 0 20px 0;
+      }
+      #ship-return {
+        width: 40%;
+        height: 50px;
+        margin: 0 auto;
+        background-color: #948f8f;
+        color: white;
+      }
+    }
   }
-}
-.etc-cont {
-  height: 100px;
-  
-}
-#top-cont {
-  text-align: center;
-  padding-top: 40px;
 }
 
 .indispensable-tmp {
@@ -47,43 +108,12 @@ $aruound-color: #eeeeee;
     border-radius: 4px;
   }
 }
-#img-cont {
-  height: 300px;
-  background-color: #fff;
-  .img-form {
-  height: 200px;
-  background-color: #123456;
-  }
-}
-#item-cont {
-  height: 330px;
 
-}
-#name {
-  height: 50px;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 50%;
-}
-#name {
-  font-size: 15px;
-  padding-left: 10px;
-}
-#description {
-  height: 150px;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 15px;
-  padding: 10px;
-}
 .cont {
   padding-bottom: 40px;
   border-top: 1px solid #eeeeee ;
 }
-#item-cont2 {
-  display: flex;
 
-}
 .blank {
   width: 45%;
   margin-top: 40px;
@@ -94,54 +124,6 @@ select {
 }
 .rb {
   width: 100%;
-}
-#shipping-cont {
-  display: flex;
-}
-#price-cont {
-  display: flex;
-}
-
-.p-box {
-  height: 50px;
-  width: 100%;
-  position: relative;
-
-  .divide {
-    display: flex;
-
-    
-    
-  }
-}
-.pbleft {
-  background-color: #123456;
-}
-.pbright {
-  position: absolute;
-  right: 0;
-}
-#btn-cont {
-  text-align: center;
-  padding-top: 40px;
-
-}
-#ship-btn {
-  width: 100%;
-  height: 50px;
-  background-color: #f54343;
-  color: white;
-  margin: 20px 0 20px 0;
-}
-.btn-fs {
-  font-size: 15px;
-}
-#ship-return {
-  width: 40%;
-  height: 50px;
-  margin: 0 auto;
-  background-color: #948f8f;
-  color: white;
 }
 
 footer {
