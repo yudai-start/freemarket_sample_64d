@@ -39,7 +39,24 @@
 
     .mypage-info {
       background: #fff;
-      
+      &__tabs {
+        background: #eee;
+        display: flex;
+        &__link {
+          width: 50%;
+          text-align: center;
+          .mypage-info-link {
+            font-size: 16px;
+            line-height: 72px;
+            color: #333;
+            text-decoration: none;
+          }
+        }
+        .active {
+          border-top: 2px solid #ea352d;
+          background: #fff;
+        }
+      }
     }
 
 
@@ -59,19 +76,18 @@
         &__link {
           width: 50%;
           display: inline-block;
-          background: #fff;
+          background: #eee;
           text-align: center;
           .mypage-history-link {
             text-decoration: none;
-            background-color: #fff;
             font-size: 16px;
-            
             color: #333;
             line-height: 72px;
           }
-          .active {
-            border-top: 2px solid #ea352d;
-          }
+        }
+        .active {
+          border-top: 2px solid #ea352d;
+          background: #fff;
         }
       }
       &__item-icon {
