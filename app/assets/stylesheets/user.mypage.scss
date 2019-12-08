@@ -1,6 +1,7 @@
 * {
   margin: 0;
 }
+
 .user-mypage {
   width: 700px;
   margin: 24px auto 0;
@@ -8,6 +9,7 @@
     width: 700px;
     .mypage-top {
       height: 170px;
+      margin-top: 20px;
       padding: 20px;
       background: image-url("bgc.jpg");
       background-size: cover;
@@ -16,24 +18,30 @@
         text-decoration: none;
         color: #333;
         figure {
+          margin-top: 25px;
           .mypage-top-icon {
             border-radius: 50%;
           }
         }
         .mypage-top-name {
-          margin: 8px 0 0;
           font-size: 14px;
           font-weight: 500;
         }
         .mypage-top-link {
           margin: 8px 0 0;
           font-size: 14px;
-          
           &__estimate {
             display: inline-block;
+            span {
+              margin: 0 0 0 8px;
+            }
           }
           &__count {
             display: inline-block;
+            margin: 0 0 0 16px;
+            span {
+              margin: 0 0 0 8px;
+            }
           }
         }
       }
@@ -120,7 +128,7 @@
             }
           }
         }
-        .active {
+        .show {
           display: block;
         }
       }
@@ -161,7 +169,7 @@
         .icon {
           display: none;
         }
-        .active {
+        .show {
           display: block;
           text-align: center;
           .icon-size {
