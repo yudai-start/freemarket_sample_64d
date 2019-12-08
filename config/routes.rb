@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       get :profile
       get :signout
       get :confirm
+      get :personal_info
     end
  end
 end
