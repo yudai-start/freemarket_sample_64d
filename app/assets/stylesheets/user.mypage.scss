@@ -1,3 +1,6 @@
+* {
+  margin: 0;
+}
 .user-mypage {
   width: 700px;
   margin: 24px auto 0;
@@ -55,6 +58,70 @@
         .active {
           border-top: 2px solid #ea352d;
           background: #fff;
+        }
+      }
+      &__notify {
+        &__ul {
+          display: none;
+          &__list {
+            position: relative;
+            border-bottom: 1px solid #eee;
+            .mypage-info-news {
+              display: flex;
+              text-decoration: none;
+              color: #333333;
+              padding: 16px;
+              figure {
+                margin-left: 0;
+                background-color: #eee;
+                height: 48px;
+                width: 48px;
+                svg {
+                  height: 47px;
+                  width: 47px;
+                }
+              }
+              .info-detail {
+                margin: 0 40px 0 20px;
+                font-size: 14px;
+              }
+              .fa-chevron-right {
+                position: absolute;
+                top: 30px;
+                right: 16px;
+              }
+            }
+          }
+          &__index {
+            background-color: #fff;
+            text-align: center;
+            &__list {
+              padding: 16px;
+              line-height: 56px;
+              background-color: #eee;
+              .mypage-to-index {
+                text-decoration: none;
+                color: #333;
+              }
+            }
+          }
+          &__box {
+            text-align: center;
+            display: block;
+            .mypage-info-image {
+              width: 80px;
+              height: 78px;
+              margin-top: 40px;
+            }
+            .message {
+              padding: 20px 0 60px;
+              font-size: 16px;
+              color: #ccc;
+            }
+          }
+        }
+        .active {
+          display: block;
         }
       }
     }
