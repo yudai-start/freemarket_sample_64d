@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
-
+  
+  resources :users, only: [:show]
+  
   resources :posts do
     collection do
       get :signup0
@@ -16,6 +18,9 @@ Rails.application.routes.draw do
       get :signup4
       get :signup5
       get :logout
+      get :profile
+      get :signout
+      get :confirm
     end
  end
 end

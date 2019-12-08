@@ -1,1 +1,30 @@
-signup2
+<%= render  partial: "signup.header"%>
+<div class="signup2__contents">
+  <div class="signup2__contents__heading">
+    電話番号の確認
+  </div>
+  <div class="signup2__contents__main">
+    <%= form_with(model: @tweet, local: true) do |form| %>
+      <div class="signup2__contents__main__form1">
+        <p>携帯電話の番号</p>
+        <%= form.text_field :phone_number, placeholder: "携帯電話の番号を入力", class: "signup2__contents__main__form1__form" %>
+        <p class="signup2_notice">本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。</p>
+      </div>
+
+      <div class="signup2__contents__main__submit">
+        <label>
+          <%= form.submit style: "display: none" %>
+          <p class="signup2__contents__main__submit__btn">SMSを送信する</p>
+        </label>
+        <p class="signup2_notice">※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。</p>
+      </div>
+    <% end %>
+    <div class="signup2__contents__main__link">
+      <a href="#" class="signup2__contents__main__link__text">
+        電話番号の確認が必要な理由
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </div>
+  </div>
+</div>
+<%= render  partial: "signup.footer"%>
