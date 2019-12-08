@@ -13,7 +13,7 @@
 .personal-info-main {
   width: calc(100% - 600px);
   height: 150vh;
-  // background-color: #eeeeee;
+  background-color: white;
   padding: 60px;
   border-top: 2px solid #eeeeee;
 
@@ -29,6 +29,7 @@ input {
 select {
   height: 50px;
   width: 100%;
+  background-color: white;
 }
 
  #post {
