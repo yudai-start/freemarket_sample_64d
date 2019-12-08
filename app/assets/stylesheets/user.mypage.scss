@@ -35,5 +35,65 @@
         }
       }
     }
+
+
+    .mypage-info {
+      background: #fff;
+      
+    }
+
+
+    .mypage-history {
+      margin: 40px 0 0;
+      background-color: #fff;
+      &__title {
+        padding: 0 16px;
+        font-size: 16px;
+        background: #fafafa;
+        line-height: 72px;
+      }
+      &__tabs {
+        background: #eee;
+        list-style: none;
+        display: flex;
+        &__link {
+          width: 50%;
+          display: inline-block;
+          background: #fff;
+          text-align: center;
+          .mypage-history-link {
+            text-decoration: none;
+            background-color: #fff;
+            font-size: 16px;
+            
+            color: #333;
+            line-height: 72px;
+          }
+          .active {
+            border-top: 2px solid #ea352d;
+          }
+        }
+      }
+      &__item-icon {
+        .icon {
+          display: none;
+        }
+        .active {
+          display: block;
+          text-align: center;
+          .icon-size {
+            width: 80px;
+            height: 78px;
+            color: gray;
+            margin-top: 40px;
+          }
+          .message {
+            padding: 20px 0 60px;
+            font-size: 16px;
+            color: #ccc;
+          }
+        }
+      }
+    }
   }
 }
