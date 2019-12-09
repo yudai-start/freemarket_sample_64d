@@ -41,9 +41,19 @@
             color:rgba(255, 255, 255, 0.616);
           }
         }
-        &-twiiter-logo[target="_blank"]:after{
-          height: 16px;
-          width: 21px;
+      }
+      &-logos{
+        margin-top: 20px;
+        &-twitter{
+          font-size: 30px;
+          text-decoration: none;
+          color: white;
+          margin-right: 10px;
+        }
+        &-facebook{
+          font-size: 30px;
+          text-decoration: none;
+          color: white;
         }
       }
     }
@@ -78,7 +88,26 @@
         font-size: 16px;
         margin: 0;
         padding: 0;
-      }
+       }
+    }
+    
+  }
+  &-bottom-label{
+    display: flex;
+    width: 1080px;
+    height: 100px;
+    padding-top: 50px;
+    position: relative;
+    margin: 0 auto;
+    // &-logo{
+    //   margin-left: 30px;
+    // }
+    &-text{
+      font-size: 17px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
     }
   }
 }

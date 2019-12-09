@@ -1,5 +1,7 @@
 @import "reset";
 @import "mixin/form";
+@import "toppage-header";
+@import "toppage-footer";
 @import "signup.header.scss";
 @import "sign-in-sample.scss";
 @import "signup1.scss";
@@ -17,6 +19,7 @@
 @import "_confirm";
 @import "logout";
 @import "new";
+@import "logo_header";
 @import "toppage-footer";
 @import "toppage-header";
 
