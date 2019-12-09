@@ -1,0 +1,145 @@
+
+$around-color: #eeeeee;
+#header {
+  background-color: $around-color;
+  display: flex;
+  height: 170px;
+  align-items: center;
+  justify-content: center;
+  .top_logo {
+  margin: 0 auto;
+  height: 100%;
+  
+  }
+}
+
+.main {
+  height: 500px;
+  background-color: $around-color;
+  padding: 0 350px 0 350px;
+  .container {
+    height: 250vh;
+    background-color: white;
+    padding: 0 40px 0 40px;
+    #top-cont {
+      text-align: center;
+      padding-top: 40px;
+    }
+    #img-cont {
+      height: 300px;
+      background-color: #fff;
+      .img-form {
+      height: 200px;
+      border: 1px dashed gray;
+      background-color: $around-color;
+      }
+    }  
+    #item-cont {
+      height: 330px;
+      #name {
+        height: 50px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 15px;
+        padding-left: 10px;
+      }
+      #description {
+        height: 150px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 15px;
+        padding: 10px;
+      }
+    }
+    #item-cont2 {
+      display: flex;
+    }
+    #shipping-cont {
+      display: flex;
+    }
+    #price-cont {
+      display: flex;
+      .p-box {
+        height: 50px;
+        width: 100%;
+        position: relative;
+        .divide {
+          display: flex;
+          .pbright {
+            position: absolute;
+            right: 0;
+          }
+        }
+      }
+    }
+    #btn-cont {
+      text-align: center;
+      padding-top: 40px;
+      .btn-fs {
+      font-size: 15px;
+      }
+      #ship-btn {
+      width: 100%;
+      height: 50px;
+      background-color: #f54343;
+      color: white;
+      margin: 20px 0 20px 0;
+      }
+      #ship-return {
+        width: 40%;
+        height: 50px;
+        margin: 0 auto;
+        background-color: #948f8f;
+        color: white;
+      }
+    }
+  }
+}
+
+.indispensable-tmp {
+  display: flex;
+  margin-top: 40px;
+  .sentence {
+    margin-right: 10px;
+    
+  }
+  .indispensable {
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+  }
+}
+
+.cont {
+  padding-bottom: 40px;
+  border-top: 1px solid #eeeeee ;
+}
+
+.blank {
+  width: 45%;
+  margin-top: 40px;
+}
+select {
+  height: 50px;
+  width: 100%;
+}
+.rb {
+  width: 100%;
+}
+
+footer {
+  height: 230px;
+  background-color: $around-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .footer-logo {
+    display: flex;
+    justify-content: center;
+  }
+  .copyright {
+    display: flex;
+    justify-content: center;
+  }
+
+}

@@ -1,0 +1,243 @@
+<body>
+  <header id='header'>
+  <%= form_with do |form| %>
+    <%= link_to("root", class: 'header-link') do %>
+      <div class='top_logo'>
+      <div class='logo'>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 281.19 84.08" x="0px" y="0px" width="180px" height="54px">
+        <defs>
+          <style>.cls-1{fill:#dc4912;stroke:#fff;stroke-miterlimit:10;}.cls-2{font-size:48px;fill:#231815;font-family:YuGo-Bold-83pv-RKSJ-H, YuGothic;}</style>
+        </defs>
+        <title>アセット 3</title>
+        <g id="レイヤー_2" data-name="レイヤー 2">
+          <g id="レイヤー_1-2" data-name="レイヤー 1">
+            <polygon class="cls-1" points="36.41 83.5 0.5 62.77 0.5 21.31 36.41 0.58 72.32 21.31 72.32 62.77 36.41 83.5"/>
+            <polyline class="cls-1" points="0.5 21.31 36.41 42.04 72.32 21.31"/>
+            <polyline class="cls-1" points="36.41 83.5 36.41 49.36 36.41 42.04"/>
+            <line class="cls-1" x1="36.41" y1="52.41" x2="0.5" y2="31.67"/>
+            <line class="cls-1" x1="72.32" y1="33.2" x2="36.41" y2="50.88"/>
+            <text class="cls-2" transform="translate(86.41 62.77)">Fmarket</text>
+          </g>
+        </g>
+      </svg>
+        
+      </div>
+      </div> 
+    <% end %> 
+  </header>
+
+  <div class='main'>
+    <div class='container'>
+      <div class='cont' id='top-cont'>
+        text
+      </div>
+      <div id='img-cont' class='cont'>
+        <div class='indispensable-tmp'>
+          <div class='sentence'>
+            出品画像
+          </div>
+          <div class='indispensable'>
+            必須
+          </div>
+        </div>
+        <div>
+          最大１０枚までアップロードできます
+        </div>
+        <div class='img-form'>
+          <input type="file" name="image_file[]" multiple="multiple" accept="image/*">
+        </div>
+      </div>
+
+      <div id='item-cont' class='cont'>
+        <div class='indispensable-tmp'>
+          <div class='sentence'>
+            商品名
+          </div>
+          <div class='indispensable'>
+            必須
+          </div>
+        </div>
+
+        <div>
+          
+          <%= form.text_field :name, placeholder:"商品の名前を記入してください（４０文字まで）"%>
+          <div class='indispensable-tmp'>
+            <div class='sentence'>
+              商品の説明
+            </div>
+            <div class='indispensable'>
+              必須
+            </div>
+          </div>
+          <%= form.text_area :description, placeholder:"商品の説明を記入してください（１０００文字まで）" %>
+          
+        </div>
+       
+        <div>
+        </div>
+      </div>
+
+      <div id='item-cont2' class='cont'>
+        <div class='blank'>商品の詳細</div>
+        <div class='rb'>
+          <div class='indispensable-tmp'>
+            <div class='sentence'>
+              カテゴリー
+            </div>
+            <div class='indispensable'>
+              必須
+            </div>
+          </div>
+          <select class='pulldown'>
+          <%= 10.times do %>
+          <option>1</option>
+          <%end %>
+          </select>
+          <div class='indispensable-tmp'>
+            <div class='sentence'>
+              商品の状態
+            </div>
+            <div class='indispensable'>
+              必須
+            </div>
+          </div>
+          <select>
+          <%= 10.times do %>
+          <option>1</option>
+          <%end %>
+          </select>
+        </div>
+      </div>
+
+      <div id='shipping-cont' class='cont'>
+        <div class='blank'>発送について</div>
+        <div class='rb'>
+          <div class='indispensable-tmp'>
+            <div class='sentence'>
+              配送料の負担
+            </div>
+            <div class='indispensable'>
+              必須
+            </div>
+            </div>
+            <select>
+          <%= 10.times do %>
+          <option>1</option>
+          <%end %>
+          </select>
+          
+          <div class='indispensable-tmp'>
+            <div class='sentence'>
+              発送元の地域
+            </div>
+            <div class='indispensable'>
+              必須
+            </div>
+            </div>
+            <select>
+          <%= 10.times do %>
+          <option>1</option>
+          <%end %>
+          </select>
+         
+
+          <div class='indispensable-tmp'>
+            <div class='sentence'>
+              発送までの日数
+            </div>
+            <div class='indispensable'>
+              必須
+            </div>
+            </div>
+            <select>
+          <%= 10.times do %>
+          <option>1</option>
+          <%end %>
+          </select>
+          
+        </div>
+      </div>
+
+      <div id='price-cont' class='cont'>
+        <div class='blank'>販売価格</div>
+        <div class='rb'>
+          <div class='p-box'>
+            <div class='indispensable-tmp'>
+              <div class='sentence'>
+                価格
+              </div>
+              <div class='indispensable'>
+                必須
+              </div>
+            </div>
+          </div>
+          <div class='p-box'>
+            <div class='divide' >
+              <div class='pbleft'>
+                販売手数料
+              </div>
+              <div class='pbright'>
+                ¥¥¥
+              </div>
+            </div>
+          </div>  
+          <div class='p-box'>
+            <div class='divide' >
+              <div class='pbleft'>
+                販売利益
+              </div>
+              <div class='pbright'>
+                ¥¥¥
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+      <div id='btn-cont' class='cont'>
+        <div>
+          規約文
+        </div>
+        <button type="submit" id='ship-btn'><p class='btn-fs'>出品する</p></button>
+        <button type="submit" id='ship-return'><p class='btn-fs'>戻る</p></button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <div>
+        <%= link_to "プライバシーポリシー", "#", id:'policy' %>
+        <%= link_to "利用規約", "#", id:'rule' %>
+        <%= link_to "特定商取引に関する表記", "#", id:'low' %>
+      </div>
+      <div>
+    
+          <div class='footer-logo'>
+          <%= link_to("root", class: 'footer-link') do %>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 147.09 129.96"　x="0px" y="0px" width="80px" height="80px">
+            <defs>
+              <style>.cls-3,.cls-4{fill:#231815;stroke-miterlimit:10;opacity:0.19;}.cls-1{stroke:#fff;}.cls-4{font-size:36px;stroke:#231815;font-family:YuGo-Bold-83pv-RKSJ-H, YuGothic;}
+              </style>
+            </defs>
+            <title>アセット 13</title>
+            <g id="レイヤー_4" data-name="レイヤー 4">
+              <g id="レイヤー_3-4" data-name="レイヤー 3">
+                <polygon class="cls-3" points="71.54 83.5 35.63 62.77 35.63 21.31 71.54 0.58 107.45 21.31 107.45 62.77 71.54 83.5"/>
+                <polyline class="cls-3" points="35.63 21.31 71.54 42.04 107.45 21.31"/>
+                <polyline class="cls-3" points="71.54 83.5 71.54 49.36 71.54 42.04"/>
+                <line class="cls-3" x1="71.54" y1="52.41" x2="35.63" y2="31.67"/>
+                <line class="cls-3" x1="107.45" y1="33.2" x2="71.54" y2="50.88"/>
+                <text class="cls-4" transform="translate(0.5 117.04)">Fmarket</text>
+              </g>
+            </g>
+            </svg>
+            <% end %>
+          </div>
+        
+        <div class='copyright'>
+          ©︎コピーライト
+        </div>
+      </div>
+    </div><% end %>
+  </footer>
+</body>
