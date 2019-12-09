@@ -8,15 +8,16 @@ Rails.application.routes.draw do
   get "/signout" => "sessions#destroy", :as => :signout
   
   resources :users, only: [:show]
-
-  resources :signup do
+  
+  resources :posts do
     collection do
-      get 'signup0'
-      get 'signup1'
-      get 'signup2'
-      get 'signup3'
-      get 'signup4'
-      get 'signup5'
+      get :signup0
+      get :signup1
+      get :signup2
+      get :signup3
+      get :signup4
+      get :signup5
+      get :logout
       get :profile
       get :signout
       get :confirm

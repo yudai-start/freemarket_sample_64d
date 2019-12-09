@@ -22,4 +22,7 @@ class PostsController < ApplicationController
 
   def signup5
   end
+
+  def logout
+  end
 end
