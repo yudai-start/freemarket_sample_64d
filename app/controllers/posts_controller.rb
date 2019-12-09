@@ -25,4 +25,5 @@ class PostsController < ApplicationController
 
   def logout
   end
+
 end
