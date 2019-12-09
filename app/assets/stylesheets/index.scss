@@ -5,7 +5,7 @@
   height: $height;
   width: $width;
 }
-.main {
+.index-main {
   overflow: auto;
   height: 100%;
   .slide {
@@ -23,6 +23,7 @@
 
 
   .category_tags {
+    background-color: white;
     height: 170px;
     text-align: center;
     .category {
