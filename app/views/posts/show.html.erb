@@ -18,18 +18,14 @@
       </div>
       <div class="items-show__description__left__many">
         <div class="items-show__description__left__many__top">
-          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__top__image" %>
-          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__top__image" %>
-          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__top__image" %>
-          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__top__image" %>
-          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__top__image" %>
+          <% 5.times do %>
+            <%= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image" %>
+          <% end %>
         </div>
         <div class="items-show__description__left__many__low">
-          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image" %>
-          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image" %>
-          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image" %>
-          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image" %>
-          <%= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image" %>
+          <% 5.times do %>
+            <%= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image" %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -73,7 +69,7 @@
       </tr>
       <tr>
         <th>配送元地域</td>
-        <td>”プリフィクちゃー”</td>
+        <td><%= link_to "都道府県", "#", class: :"items-show__description__table__link" %></td>
       </tr>
       <tr>
         <th>配送日の目安</td>
@@ -156,37 +152,19 @@
   </ul>
 </div>
 
+<% 2.times do %>
 <div class="itemshow">
   <div class="itemshow__title">
     <%= link_to "ユーザー名さんのその他の出品", "#", class: :"itemshow__title__link" %>
   </div>
   <div class="itemshow__top">
     <%= render "show.image.top" %>
-    <%= render "show.image.top" %>
-    <%= render "show.image.top" %>
   </div>
   <div class="itemshow__top">
-    <%= render "show.image.top" %>
-    <%= render "show.image.top" %>
-    <%= render "show.image.top" %>
-  </div>
-<div>
-
-<div class="itemshow">
-  <div class="itemshow__title">
-    <%= link_to "ブランド名さんのその他の出品", "#", class: :"itemshow__title__link" %>
-  </div>
-  <div class="itemshow__top">
-    <%= render "show.image.lower" %>
-    <%= render "show.image.lower" %>
-    <%= render "show.image.lower" %>
-  </div>
-  <div class="itemshow__top">
-    <%= render "show.image.lower" %>
-    <%= render "show.image.lower" %>
     <%= render "show.image.lower" %>
   </div>
 <div>
+<% end %>
 
 <div class="items-show-footer">
   <ul class="items-show-footer__link">

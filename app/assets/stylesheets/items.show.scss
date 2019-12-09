@@ -1,5 +1,4 @@
 // @import 'font-awesome-sprockets';
-// @import 'font-awesome';
 
 .items-show {
   background-color: #fff;
@@ -31,8 +30,7 @@
         }
       }
       &__many {
-        margin-top: 0;
-        padding: 0;
+        display: inline;
         &__top {
           display: flex;
           &__image {
@@ -70,7 +68,7 @@
       }
       &__link {
         text-decoration: none;
-        color: #333;
+        color: #0099e8;
       }
       &__face {
         &__smile {
@@ -170,6 +168,7 @@
   &__right {
     text-decoration: none;
     color: #0099e8;
+    font-weight: 600;
   }
 }
 
@@ -229,6 +228,10 @@
       height: 350px;
       width: 240px;
       color: #333;
+      a {
+        text-decoration: none;
+        color: #333;
+      }
       &__image {
         height: 240px;
         width: 240px;
@@ -257,6 +260,7 @@
 }
 
 .items-show-footer {
+  width: 100%;
   margin: 40px auto 0;
   background: #f5f5f5;
   border: 1px solid #eee;
