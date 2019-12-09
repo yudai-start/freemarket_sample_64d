@@ -1,7 +1,7 @@
 
-$aruound-color: #eeeeee;
+$around-color: #eeeeee;
 #header {
-  background-color: $aruound-color;
+  background-color: $around-color;
   display: flex;
   height: 170px;
   align-items: center;
@@ -15,7 +15,7 @@ $aruound-color: #eeeeee;
 
 .main {
   height: 500px;
-  background-color: $aruound-color;
+  background-color: $around-color;
   padding: 0 350px 0 350px;
   .container {
     height: 250vh;
@@ -30,7 +30,8 @@ $aruound-color: #eeeeee;
       background-color: #fff;
       .img-form {
       height: 200px;
-      background-color: #123456;
+      border: 1px dashed gray;
+      background-color: $around-color;
       }
     }  
     #item-cont {
@@ -128,7 +129,7 @@ select {
 
 footer {
   height: 230px;
-  background-color: $aruound-color;
+  background-color: $around-color;
   display: flex;
   justify-content: center;
   align-items: center;
