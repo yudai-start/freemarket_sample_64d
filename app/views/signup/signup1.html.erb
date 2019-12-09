@@ -7,7 +7,7 @@
   </div>
   <div class= post-singnup1-main__bottom>
     <div class= post-singnup1-main__bottom__form>
-      <%= form_with url: "#" do |form| %>
+      <%= form_with(model: @user, url: signup2_signup_index_path, method: :get,  local: true ) do |form| %>
       <div class= post-singnup1-nickname>
         <div class= post-singnup1-nickname__title>
           <div class= post-singnup1-nickname__title__text>ニックネーム</div>
@@ -29,11 +29,11 @@
           <div class= post-singnup1-password__title__text>パスワード</div>
           <div class= post-singnup1-password__title__must>必須</div>
         </div>
-        <%= form.text_field :password, placeholder: "７文字以上の半角英数字", class: :"post-singnup1-password__form" %>
+        <%= form.password_field :password, autocomplete: "off", placeholder: "７文字以上の半角英数字", class: :"post-singnup1-password__form" %>
         <div class= post-singnup1-password__notice>
         ※英語と数字の両方を含めて設定してください
         </div>
-        <%= form.check_box :password,  class: :"post-singnup1-password__indication" %>
+        <%# <%= form.check_box :password,  class: :"post-singnup1-password__indication" %> %>
         <%= form.label :パスワードを表示する, class: :"post-singnup1-password__indication__label"%>
 
       <div class=post-singnup1-identification>
@@ -100,7 +100,11 @@
       同意したものとみなします
       </div>
       <div class= post-singnup1-next>
-      <%= link_to "次に進む", "#", class: "post-singnup1-next__link" %>
+      <%# <%= link_to "次に進む", "#", class: "post-singnup1-next__link" %>
+        <label>
+          <%= form.submit style: "display: none" %>
+          <p class="post-singnup1-next__link">次へ進む</p>
+        </label>
       </div>
       <div class= post-singnup1-about-registration>
       <%= link_to "本人情報の登録について>", "#", class: "post-singnup1-about-registration__link" %>  

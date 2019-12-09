@@ -9,14 +9,14 @@ Rails.application.routes.draw do
   
   resources :users, only: [:show]
 
-  resources :posts do
+  resources :signup do
     collection do
-      get :signup0
-      get :signup1
-      get :signup2
-      get :signup3
-      get :signup4
-      get :signup5
+      get 'signup0'
+      get 'signup1'
+      get 'signup2'
+      get 'signup3'
+      get 'signup4'
+      get 'signup5'
       get :profile
       get :signout
       get :confirm
