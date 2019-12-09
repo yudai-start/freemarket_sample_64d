@@ -1,17 +1,5 @@
 
 $around-color: #eeeeee;
-#ex-header {
-  background-color: $around-color;
-  display: flex;
-  height: 170px;
-  align-items: center;
-  justify-content: center;
-  .ex-top_logo {
-  margin: 0 auto;
-  height: 100%;
-  
-  }
-}
 
 .ex-main {
   // height: 250vh;
@@ -127,20 +115,4 @@ select {
   width: 100%;
 }
 
-.ex-footer {
-  height: 230px;
-  background-color: $around-color;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .ex-footer-logo {
-    display: flex;
-    justify-content: center;
-  }
-  .ex-copyright {
-    display: flex;
-    justify-content: center;
-  }
-
-}
 
