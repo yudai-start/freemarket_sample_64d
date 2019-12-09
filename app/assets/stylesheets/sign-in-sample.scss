@@ -1,0 +1,142 @@
+.html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.sign-up-header{
+  height: 128px;
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+  overflow: hidden;
+  .head-logo{
+    height: 50px;
+    width: 185px;
+    margin: 40px auto ;
+    background-color:rgb(247, 247, 247);
+  }
+}
+
+.sign-up-main{
+  height: 386px;
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+  .sign-up-area{
+    height: 400px;
+    width: 700px;
+    margin: 0 auto;
+    .sign-up-area-top{
+      height: 100px;
+      background-color: white;
+      text-align: center;
+      line-height: 100px;
+      font-size: 22px;
+    }
+    .sign-up-area-bottom{
+      height: 264px;
+      width: 700px;
+      margin: 0 auto;
+      border-top: solid 1px rgb(247, 247, 247);
+      padding: 20px 0 0 0;
+      background-color: white;
+      .sign-up-btn-mail{
+        background-color:#ea352d;
+        width: 340px;
+        height: 50px;
+        margin: 0 auto 15px;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: white;
+        &__icon{
+          font-size: 20px;
+          margin-left: 15px;
+        }
+        &__text{
+          margin-left: 50px;
+        }
+      }
+      .sign-up-btn-fb{
+        background-color: #385185;
+        width: 340px;
+        height: 50px;
+        margin: 0 auto 15px;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: white;
+        &__icon{
+          font-size: 30px;
+          margin-left: 15px;
+        }
+        &__text{
+          margin-left: 70px;
+        }
+      }
+      .sign-up-btn-google{
+        background-color: white;
+        border: black solid 1px;
+        color: black;
+        width: 340px;
+        height: 50px;
+        margin: 0 auto 20px;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        &__icon{
+          font-size: 20px;
+          margin-left: 15px;
+        }
+        &__text{
+          margin-left: 80px;
+        }
+      }
+    }
+  }
+}
+
+.sign-up-btn__text{
+  margin: 0 auto;
+}
+
+.sign-up-footer{
+  height: calc(100vh - 518px);
+  width: 100%;
+  background: rgb(247, 247, 247);
+  overflow: hidden;
+  .footer-contents{
+    margin: auto;
+    width: 400px;
+    margin: 40px auto;
+    text-align: center;
+
+    .rules{
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      width: 400px;
+      color: black;
+      .rule{
+        font-size: 12px;
+        text-decoration: none;
+        color: black;
+      }
+    }
+    .foot-logo{
+      height: 80px;
+      margin-top: 20px;
+    }
+    .copy-right{
+      height: 10px;
+      margin: 0 auto;
+      font-size: 12px;
+    }
+}
+}
+.p {
+  color: red;
+}

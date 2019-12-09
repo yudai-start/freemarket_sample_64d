@@ -1,0 +1,125 @@
+.confirm__contents{
+  background-color: white;
+  margin: 0 auto;
+  width: 660px;
+  height: 800px;
+  &__heading{
+    @include form_heading;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  &__item{
+      height: 110px;
+      margin: 0 auto;
+      border-bottom: 1px solid rgb(247, 247, 247);
+      font-size: 18px;
+      padding-top: 40px;
+      &__container{
+        display: flex;
+        width: 330px;
+        margin: 0 auto;
+        &__image{
+          width: 50px;
+          height: 60px;
+          margin-left: 5px;
+        }
+        &__text{
+          text-align: left;
+          margin-left: 20px;
+          font-size: 16px;
+          &__price{
+            margin-top: 5px;
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+      }
+  }
+  &__price{
+    height: 90px;
+    width: 330px;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-bottom: 1px solid rgb(247, 247, 247);
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    &__heading{
+      font-size: 18px;
+      margin-top: 6px;
+      vertical-align: baseline;
+    }
+    &__value{
+      vertical-align: baseline;
+      font-size: 24px;
+    }
+  }
+  &__payment{
+    height: 90px;
+    width: 330px;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-bottom: 1px solid rgb(247, 247, 247);
+    &__heading{
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    &__link{
+      text-decoration: none;
+      color: #1E90FF;
+      .fas{
+        margin-right: 3px;
+      }
+    }
+  }
+  &__address{
+    height: 150px;
+    width: 330px;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-bottom: 1px solid rgb(247, 247, 247);
+    font-size: 15px;
+    &__heading{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      &__title{
+        font-weight: bold;
+        font-size: 17px;
+      }
+      &__link{
+        text-decoration: none;
+        color: #1E90FF;
+      }
+    }
+    &__post{
+      display: inline;
+      font-size: 14px;
+    }
+    &__2{
+      display: flex;
+      &__list{
+        margin-right: 5px;
+      }
+    }
+    &__name{
+      display: flex;
+      &__list{
+        margin-right: 5px;
+      }
+    }
+  
+  }
+
+  &__submit{
+    margin: 0 auto;
+    @include graylink_btn;
+    margin-top: 40px;
+    &__link{
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+    }
+  }
+}
