@@ -2,7 +2,6 @@
 $around-color: #eeeeee;
 
 .ex-main {
-  // height: 250vh;
   background-color: $around-color;
   padding: 0 350px 0 350px;
   .ex-container {
@@ -56,6 +55,7 @@ $around-color: #eeeeee;
           .ex-pbright {
             position: absolute;
             right: 0;
+            
           }
         }
       }
@@ -89,7 +89,6 @@ $around-color: #eeeeee;
   margin-top: 40px;
   .ex-sentence {
     margin-right: 10px;
-    
   }
   .ex-indispensable {
     background-color: red;
