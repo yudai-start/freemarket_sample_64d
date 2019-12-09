@@ -7,17 +7,17 @@
 .footer{
   background-color: rgb(34, 34, 34);
   color: rgb(255, 255, 255);
-  font-size: 12px;
+  font-size: 14px;
   padding: 0px 20px 10px;
   display: block;
   box-sizing: border-box;
   bottom: 0;
+  height: 100%;
   &-lists{
-    width: 1020px;
+    width: 1700px;
     display: flex;
-    margin: 0 auto;
+    margin: 0px 80px 0px 80px;
     &-cell{
-      width: auto;
       padding: 0px 40px 0px 0px;
       padding-left: 0px;
       display: inline-block;
@@ -40,35 +40,42 @@
             text-decoration: none;
             color:rgba(255, 255, 255, 0.616);
           }
-       }
-        &-twiiter-logo[target="_blank"]:after{
-          height: 16px;
-          width: 21px;
+        }
+      }
+      &-logos{
+        margin-top: 20px;
+        &-twitter{
+          font-size: 30px;
+          text-decoration: none;
+          color: white;
+          margin-right: 10px;
+        }
+        &-facebook{
+          font-size: 30px;
+          text-decoration: none;
+          color: white;
         }
       }
     }
     &-full-width{
       margin-top: 18px;
       padding-right: 40px;
-      width: 43%;
-      display: block;
+      height: 166px;
+      width: 100%;
+      display: inline-block;
       &-head{
         font-size: 16px;
         margin: 0;
         padding: 0;
       }
+      &-boxes{
+        display: flex;
         &-inner{
-          display: inline-block;
           vertical-align: top;
           width: 50%;
           padding: 0px 10px 0px 0px;
         }
-        &-inner1{
-          display: inline-block;
-          vertical-align: top;
-          width: 50%;
-          padding: 0px 10px 0px 0px;
-        }
+      }
     }
     &-footer-lang{
       width: auto;
@@ -77,16 +84,30 @@
       width: 100%;
       padding-right: 40px;
       display: inline-block;
-       &-head{
+      &-head{
         font-size: 16px;
         margin: 0;
         padding: 0;
        }
-      }
-  .footer-header-bottom{
-    background-color: #fff;
-    width: 1020px;
-    margin: 30px auto 20px;
     }
-   }
+    
+  }
+  &-bottom-label{
+    display: flex;
+    width: 1080px;
+    height: 100px;
+    padding-top: 50px;
+    position: relative;
+    margin: 0 auto;
+    // &-logo{
+    //   margin-left: 30px;
+    // }
+    &-text{
+      font-size: 17px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
+  }
 }

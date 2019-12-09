@@ -25,4 +25,7 @@ class PostsController < ApplicationController
 
   def logout
   end
+
+  def add_payments
+  end
 end
