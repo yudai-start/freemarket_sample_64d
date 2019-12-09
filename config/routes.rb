@@ -23,11 +23,11 @@ Rails.application.routes.draw do
 
   resources :posts do
     collection do
-
       get :logout
       get :profile
       get :signout
       get :confirm
+      get :add_payments
     end
  end
 end
