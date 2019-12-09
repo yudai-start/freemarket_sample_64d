@@ -1,49 +1,49 @@
 
 $around-color: #eeeeee;
-#header {
+#ex-header {
   background-color: $around-color;
   display: flex;
   height: 170px;
   align-items: center;
   justify-content: center;
-  .top_logo {
+  .ex-top_logo {
   margin: 0 auto;
   height: 100%;
   
   }
 }
 
-.main {
-  height: 500px;
+.ex-main {
+  // height: 250vh;
   background-color: $around-color;
   padding: 0 350px 0 350px;
-  .container {
+  .ex-container {
     height: 250vh;
     background-color: white;
     padding: 0 40px 0 40px;
-    #top-cont {
+    #ex-top-cont {
       text-align: center;
       padding-top: 40px;
     }
-    #img-cont {
+    #ex-img-cont {
       height: 300px;
       background-color: #fff;
-      .img-form {
+      .ex-img-form {
       height: 200px;
       border: 1px dashed gray;
       background-color: $around-color;
       }
     }  
-    #item-cont {
+    #ex-item-cont {
       height: 330px;
-      #name {
+      #exname {
         height: 50px;
         width: 100%;
         box-sizing: border-box;
         font-size: 15px;
         padding-left: 10px;
       }
-      #description {
+      #exdescription {
         height: 150px;
         width: 100%;
         box-sizing: border-box;
@@ -51,41 +51,41 @@ $around-color: #eeeeee;
         padding: 10px;
       }
     }
-    #item-cont2 {
+    #ex-item-cont2 {
       display: flex;
     }
-    #shipping-cont {
+    #ex-shipping-cont {
       display: flex;
     }
-    #price-cont {
+    #ex-price-cont {
       display: flex;
-      .p-box {
+      .ex-p-box {
         height: 50px;
         width: 100%;
         position: relative;
-        .divide {
+        .ex-divide {
           display: flex;
-          .pbright {
+          .ex-pbright {
             position: absolute;
             right: 0;
           }
         }
       }
     }
-    #btn-cont {
+    #ex-btn-cont {
       text-align: center;
       padding-top: 40px;
-      .btn-fs {
+      .ex-btn-fs {
       font-size: 15px;
       }
-      #ship-btn {
+      #ex-ship-btn {
       width: 100%;
       height: 50px;
       background-color: #f54343;
       color: white;
       margin: 20px 0 20px 0;
       }
-      #ship-return {
+      #ex-ship-return {
         width: 40%;
         height: 50px;
         margin: 0 auto;
@@ -96,26 +96,26 @@ $around-color: #eeeeee;
   }
 }
 
-.indispensable-tmp {
+.ex-indispensable-tmp {
   display: flex;
   margin-top: 40px;
-  .sentence {
+  .ex-sentence {
     margin-right: 10px;
     
   }
-  .indispensable {
+  .ex-indispensable {
     background-color: red;
     color: white;
     border-radius: 4px;
   }
 }
 
-.cont {
+.ex-cont {
   padding-bottom: 40px;
   border-top: 1px solid #eeeeee ;
 }
 
-.blank {
+.ex-blank {
   width: 45%;
   margin-top: 40px;
 }
@@ -123,23 +123,24 @@ select {
   height: 50px;
   width: 100%;
 }
-.rb {
+.ex-rb {
   width: 100%;
 }
 
-footer {
+.ex-footer {
   height: 230px;
   background-color: $around-color;
   display: flex;
   justify-content: center;
   align-items: center;
-  .footer-logo {
+  .ex-footer-logo {
     display: flex;
     justify-content: center;
   }
-  .copyright {
+  .ex-copyright {
     display: flex;
     justify-content: center;
   }
 
 }
+
