@@ -4,15 +4,17 @@
 .pi-top {
   height: 50px;
   width: calc(100% - 600px);
-  padding: 0 50px;
+  padding: 0 60px;
+
   font-size: 25px;
   text-align: center;
   vertical-align: middle;
+  background-color: white;
 
 }
 .personal-info-main {
   width: calc(100% - 600px);
-  height: 150vh;
+  height: calc(150vh - 50px);
   background-color: white;
   padding: 60px;
   border-top: 2px solid #eeeeee;
@@ -24,7 +26,10 @@
 input {
   height: 50px;
   width: 100%;
+  border-radius: 5px;
+  box-sizing: border-box;
   // @include form;
+  
 }
 select {
   height: 50px;
@@ -38,6 +43,7 @@ select {
   background-color: #f54343;
   color: white;
   margin: 50px 0;
+  border-radius: 0%;
 }
 .pi-p {
   font-size: 15px;
