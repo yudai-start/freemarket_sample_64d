@@ -77,3 +77,5 @@ gem 'devise'
 gem 'pry-rails'
 gem "font-awesome-sass"
 gem 'haml-rails'
+gem 'jquery-rails'
+

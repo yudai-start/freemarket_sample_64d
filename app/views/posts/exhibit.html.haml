@@ -1,0 +1,108 @@
+%body
+  = render "layouts/exhibit-header"
+  = form_with do |form|
+    .ex-main
+      .ex-container
+        #ex-top-cont.ex-cont
+          text
+        #ex-img-cont.ex-cont
+          .ex-indispensable-tmp
+            .ex-sentence
+              出品画像
+            .ex-indispensable
+              必須
+          %div
+            最大１０枚までアップロードできます
+          .ex-img-form
+            %input{:accept => "image/*", :multiple => "multiple", :name => "image_file[]", :type => "file"}/
+        #ex-item-cont.ex-cont
+          .ex-indispensable-tmp
+            .ex-sentence
+              商品名
+            .ex-indispensable
+              必須
+          %div
+            = form.text_field :exname, placeholder:"商品の名前を記入してください（４０文字まで）"
+            .ex-indispensable-tmp
+              .ex-sentence
+                商品の説明
+              .ex-indispensable
+                必須
+            = form.text_area :exdescription, placeholder:"商品の説明を記入してください（１０００文字まで）"
+          %div
+        #ex-item-cont2.ex-cont
+          .ex-blank 商品の詳細
+          .ex-rb
+            .ex-indispensable-tmp
+              .ex-sentence
+                カテゴリー
+              .ex-indispensable
+                必須
+            %select.ex-pulldown
+              = 10.times do
+                %option 1
+            .ex-indispensable-tmp
+              .ex-sentence
+                商品の状態
+              .ex-indispensable
+                必須
+            %select
+              = 10.times do
+                %option 1
+        #ex-shipping-cont.ex-cont
+          .ex-blank 発送について
+          .ex-rb
+            .ex-indispensable-tmp
+              .ex-sentence
+                配送料の負担
+              .ex-indispensable
+                必須
+            %select
+              = 10.times do
+                %option 1
+            .ex-indispensable-tmp
+              .ex-sentence
+                発送元の地域
+              .ex-indispensable
+                必須
+            %select
+              = 10.times do
+                %option 1
+            .ex-indispensable-tmp
+              .ex-sentence
+                発送までの日数
+              .ex-indispensable
+                必須
+            %select
+              = 10.times do
+                %option 1
+        #ex-price-cont.ex-cont
+          .ex-blank 販売価格
+          .ex-rb
+            #ex-p-box.ex-p-box
+              .ex-indispensable-tmp
+                .ex-sentence
+                  価格
+                .ex-indispensable
+                  必須
+              = form.text_field :price_field, placeholder:"例）300"
+            .ex-p-box
+              .ex-divide
+                .ex-pbleft
+                  販売手数料
+                .ex-pbright
+                  ¥¥¥
+            .ex-p-box
+              .ex-divide
+                .ex-pbleft
+                  販売利益
+                .ex-pbright
+                  ¥¥¥
+        #ex-btn-cont.ex-cont
+          %div
+            規約文
+          %button#ex-ship-btn{:type => "submit"}
+            %p.ex-btn-fs 出品する
+          %button#ex-ship-return{:type => "submit"}
+            %p.ex-btn-fs 戻る
+    = render "layouts/exhibit-footer"

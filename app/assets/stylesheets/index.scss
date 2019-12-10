@@ -1,11 +1,8 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 @mixin box($height, $width){
   height: $height;
   width: $width;
 }
-.main {
+.index-main {
   overflow: auto;
   height: 100%;
   .slide {
@@ -23,6 +20,7 @@
 
 
   .category_tags {
+    background-color: white;
     height: 170px;
     text-align: center;
     .category {

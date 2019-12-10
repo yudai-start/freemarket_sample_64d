@@ -7,6 +7,12 @@ class PostsController < ApplicationController
   def show
   end
 
+  def new
+  end
+  def exhibit
+  end
+
+
   def signup0
   end
 
@@ -26,5 +32,12 @@ class PostsController < ApplicationController
   end
 
   def logout
+  end
+
+
+  def add_payments
+  end
+
+  def footer
   end
 end
