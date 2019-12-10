@@ -5,7 +5,7 @@ $around-color: #eeeeee;
   background-color: $around-color;
   padding: 0 350px 0 350px;
   .ex-container {
-    height: 250vh;
+    height: 260vh;
     background-color: white;
     padding: 0 40px 0 40px;
     #ex-top-cont {
@@ -50,13 +50,19 @@ $around-color: #eeeeee;
         height: 50px;
         width: 100%;
         position: relative;
+        margin-bottom: 30px;
+        #price_field {
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 50px;
+        }
         .ex-divide {
           display: flex;
           .ex-pbright {
             position: absolute;
-            right: 0;
-            
-          }
+            right: 0;         
+          }     
         }
       }
     }

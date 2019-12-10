@@ -124,6 +124,7 @@
             <div class='ex-indispensable'>
               必須
             </div>
+              
             </div>
             <select>
           <%= 10.times do %>
@@ -137,7 +138,7 @@
       <div id='ex-price-cont' class='ex-cont'>
         <div class='ex-blank'>販売価格</div>
         <div class='ex-rb'>
-          <div class='ex-p-box'>
+          <div class='ex-p-box' id='ex-p-box'>
             <div class='ex-indispensable-tmp'>
               <div class='ex-sentence'>
                 価格
@@ -146,8 +147,11 @@
                 必須
               </div>
             </div>
+
+              <%= form.text_field :price_field, placeholder:"例）300"%>
+
           </div>
-          <div class='ex-p-box'>
+          <div class='ex-p-box' id='ex-border-box'>
             <div class='ex-divide' >
               <div class='ex-pbleft'>
                 販売手数料
