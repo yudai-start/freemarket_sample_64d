@@ -1,6 +1,6 @@
-
+= render "layouts/toppage-header"
 .user-mypage
-
+  = render "sidebar"
   .user-mypage__main
     %section.mypage-top
       = link_to "#", class: :"mypage-top__link" do
@@ -98,4 +98,4 @@
           %li.message
             過去に取引した商品がありません
 = render "footer-icon"
-
+= render "layouts/toppage-footer"
