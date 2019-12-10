@@ -13,7 +13,7 @@
   box-sizing: border-box;
   bottom: 0;
   height: auto;
-  &-lists{
+  &-lists {
     width: 1020px;
     display: flex;
     &-cell{
@@ -22,7 +22,7 @@
       display: inline-block;
       margin-top: 18px;
       width: auto;
-      &-head{
+      &-head {
         font-size: 16px;
         font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
         margin: 0;
@@ -60,7 +60,11 @@
       margin-top: 18px;
       padding-right: 40px;
       width: auto;
-      &-head{
+      &-head {
+      height: 166px;
+      width: 100%;
+      display: inline-block;
+      &-head {
         font-size: 16px;
         margin: 0;
         padding: 0;
@@ -86,9 +90,8 @@
         padding: 0;
        }
     }
-    
-  }
-  &-bottom-label{
+   }
+  &-bottom-label {
     display: flex;
     width: 1080px;
     height: 100px;
@@ -103,4 +106,5 @@
       transform: translateY(-50%) translateX(-50%);
     }
   }
+ }
 }
