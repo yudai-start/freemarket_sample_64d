@@ -2,8 +2,16 @@ class PostsController < ApplicationController
   def index
   end
 
+  
+  
   def show
   end
+
+  def new
+  end
+  def exhibit
+  end
+
 
   def signup0
   end
@@ -25,6 +33,7 @@ class PostsController < ApplicationController
 
   def logout
   end
+
 
   def add_payments
   end

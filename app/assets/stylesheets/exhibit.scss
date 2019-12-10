@@ -1,0 +1,123 @@
+
+$around-color: #eeeeee;
+
+.ex-main {
+  background-color: $around-color;
+  padding: 0 350px 0 350px;
+  .ex-container {
+    height: 260vh;
+    background-color: white;
+    padding: 0 40px 0 40px;
+    #ex-top-cont {
+      text-align: center;
+      padding-top: 40px;
+    }
+    #ex-img-cont {
+      height: 300px;
+      background-color: #fff;
+      .ex-img-form {
+      height: 200px;
+      border: 1px dashed gray;
+      background-color: $around-color;
+      }
+    }  
+    #ex-item-cont {
+      height: 330px;
+      #exname {
+        height: 50px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 15px;
+        padding-left: 10px;
+      }
+      #exdescription {
+        height: 150px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 15px;
+        padding: 10px;
+      }
+    }
+    #ex-item-cont2 {
+      display: flex;
+    }
+    #ex-shipping-cont {
+      display: flex;
+    }
+    #ex-price-cont {
+      display: flex;
+      .ex-p-box {
+        height: 50px;
+        width: 100%;
+        position: relative;
+        margin-bottom: 30px;
+        #price_field {
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 50px;
+        }
+        .ex-divide {
+          display: flex;
+          .ex-pbright {
+            position: absolute;
+            right: 0;         
+          }     
+        }
+      }
+    }
+    #ex-btn-cont {
+      text-align: center;
+      padding-top: 40px;
+      .ex-btn-fs {
+      font-size: 15px;
+      }
+      #ex-ship-btn {
+      width: 100%;
+      height: 50px;
+      background-color: #f54343;
+      color: white;
+      margin: 20px 0 20px 0;
+      }
+      #ex-ship-return {
+        width: 40%;
+        height: 50px;
+        margin: 0 auto;
+        background-color: #948f8f;
+        color: white;
+      }
+    }
+  }
+}
+
+.ex-indispensable-tmp {
+  display: flex;
+  margin-top: 40px;
+  .ex-sentence {
+    margin-right: 10px;
+  }
+  .ex-indispensable {
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+  }
+}
+
+.ex-cont {
+  padding-bottom: 40px;
+  border-top: 1px solid #eeeeee ;
+}
+
+.ex-blank {
+  width: 45%;
+  margin-top: 40px;
+}
+select {
+  height: 50px;
+  width: 100%;
+}
+.ex-rb {
+  width: 100%;
+}
+
+

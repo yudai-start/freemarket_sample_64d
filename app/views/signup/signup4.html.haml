@@ -34,7 +34,7 @@
             %p.essential_icon 必須
           = payment_form.text_field :security_code, placeholder: "カード背面4桁もしくは3桁の番号", class: "signup4__contents__main__form3__form"
           .signup4__contents__main__form3__link
-            = link_to "#", class: :"signup4__contents__main__form3__link__text" do
+            = link_to "#", class: :"signup4__contents__main__form3__link__text "do
               %i.fas.fa-question-circle
               カード裏面の番号とは?
       .signup4__contents__main__submit
@@ -42,3 +42,4 @@
           = form.submit style: "display: none"
           %p.signup4__contents__main__submit__btn 次へ進む
 = render  partial: "signup.footer"
+

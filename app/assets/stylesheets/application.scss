@@ -3,7 +3,7 @@
 @import "toppage-header";
 @import "toppage-footer";
 @import "signup.header.scss";
-@import "sign-in-sample.scss";
+@import "signup0.scss";
 @import "signup1.scss";
 @import "signup2";
 @import "signup3";
@@ -19,16 +19,27 @@
 @import "confirm";
 @import "sidebar";
 @import "new";
+
+@import "personal_info.scss";
+
 @import "logo_header";
 @import "toppage-footer";
 @import "toppage-header";
+@import "exhibit";
+@import "exhibit-header";
+@import "exhibit-footer";
 @import "footer";
 @import "add_payments";
+@import "signup.footer";
+@import "_sign.up.header.only.logo";
+
 
 html{
   background-color: #f5f5f5;
 }
 
 body {
+  // width: 100vw;
+  // height: 100vh;
   background-color: #f5f5f5;
 }
