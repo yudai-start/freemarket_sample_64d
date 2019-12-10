@@ -1,4 +1,3 @@
-
 %body
   %header.header
     .header-lists
@@ -27,11 +26,11 @@
       .header-lists-low
         .header-lists-low-left
           .header-lists-low-left-categorybox
-            %a.category{href: "/jp/category/"}
+            = link_to "/jp/category/",class: :"category" do
               %i.fas.fa-list-ul
               カテゴリーから探す
           .header-lists-low-left-brandbox
-            %a.brand{href: "/jp/brand/"}
+            = link_to "/jp/brand/",class: :"brand" do
               %i.fas.fa-tag
               ブランドから探す
         .header-lists-low-right

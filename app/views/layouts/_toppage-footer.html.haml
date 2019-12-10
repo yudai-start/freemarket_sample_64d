@@ -5,15 +5,15 @@
       %h2.footer-lists-cell-head メルカリについて
       %ul.footer-lists-cell-texts
         %li.footer-lists-cell-texts-1
-          %a.t{href: "#"} 会社概要（運営会社)
+          = link_to "会社概要（運営会社)","#", class: :"t"
         %li.footer-lists-cell-texts-1
-          %a.t{href: "#"} 採用情報
+          = link_to "採用情報","#", class: :"t"
         %li.footer-lists-cell-texts-1
-          %a.t{href: "#"} プレスリリース
+          = link_to "プレスリリース","#", class: :"t"
         %li.footer-lists-cell-texts-1
-          %a.t{href: "#"} 公式ブログ
+          = link_to "公式ブログ","#", class: :"t"
         %li.footer-lists-cell-texts-1
-          %a.t{href: "#"} メルカリロゴ利用ガイドライン
+          = link_to "メルカリロゴ利用ガイドライン","#", class: :"t"
       .footer-lists-cell-logos
         %a.footer-lists-cell-logos-twitter{href: "https://twitter.com/mercari_jp", target: "_blank"}
           %i.fab.fa-twitter
@@ -23,19 +23,19 @@
       %h2.footer-lists-cell-head ヘルプ＆ガイド
       %ul.footer-lists-cell-texts
         %li.footer-lists-cell-texts-1
-          %a.t{href: "#"} らくらくメルカリ便
+          = link_to "らくらくメルカリ便","#", class: :"t"
         %li.footer-lists-cell-texts-1
-          %a.t{href: "#"} ゆうゆうメルカリ便
+          = link_to "ゆうゆうメルカリ便","#", class: :"t"
         %li.footer-lists-cell-texts-1
-          %a.t{href: "#"} 大型メルカリ便
+          = link_to "大型メルカリ便","#", class: :"t"
         %li.footer-lists-cell-texts-1
-          %a.t{href: "#"} 車体取引ガイド
+          = link_to "車体取引ガイド","#", class: :"t"
         %li.footer-lists-cell-texts-1
-          %a.t{href: "#"} メルカリあんしん・あんぜん宣言！
+          = link_to "メルカリあんしん・あんぜん宣言！","#", class: :"t"
         %li.footer-lists-cell-texts-1
-          %a.t{href: "#"} 偽ブランド品撲滅への取り組み
+          = link_to "偽ブランド品撲滅への取り組み","#", class: :"t"
         %li.footer-lists-cell-texts-1
-          %a.t{href: "#"} メルカリボックス
+          = link_to "偽メルカリボックス","#", class: :"t"
     .footer-lists-full-width
       %h2.footer-lists-full-width-head プライバシーと利用規約
       .footer-lists-full-width-boxes
@@ -63,12 +63,12 @@
       %h2.footer-lists-footer-lang-head 国
       %ul.footer-lists-cell-texts
         %li.footer-lists-cell-texts-1
-          %a.t{href: "#"} 日本
+          = link_to "日本","#", class: :"t"
         %li.footer-lists-cell-texts-1
-          %a.t{href: "#"} United States
+          = link_to "United States","#", class: :"t"
   .footer-bottom-label
     .footer-bottom-label-logo
-      %a{href: "https://www.mercari.com/jp/"}
+      = link_to "https://www.mercari.com/jp/" do
         %svg{height: "70px", viewbox: "0 0 72.82 84.08", width: "130px", xmlns: "http://www.w3.org/2000/svg"}
           %defs
             :css
@@ -83,4 +83,3 @@
               %line.cls-1{x1: "72.32", x2: "36.41", y1: "33.2", y2: "50.88"}
     %p.footer-bottom-label-text ©Fmarket,Inc
 = yield
-
