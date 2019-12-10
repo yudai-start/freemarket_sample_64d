@@ -35,7 +35,6 @@ Things you may want to cover:
 |password          |string|null: false|
 |phone_number      |string|null: false, unique: true|
 |birthday          |string|null: false|
-<!-- |credit_card_number|string|null: false, unique: true| -->
 |introduction      |string|null: true|
 
 ### Association
@@ -74,7 +73,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |card_number   |string |null: false|
-|expire_date   |string |null: false|
+|expire_month  |string |null: false|
+|expire_year   |string |null: false|
 |security_code |string |null: false|
 |user_id       |integer|null: false, foreign_key: true|
 
