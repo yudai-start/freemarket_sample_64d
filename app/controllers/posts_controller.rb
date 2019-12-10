@@ -33,4 +33,9 @@ class PostsController < ApplicationController
   end
 
 
+  def add_payments
+  end
+
+  def footer
+  end
 end
