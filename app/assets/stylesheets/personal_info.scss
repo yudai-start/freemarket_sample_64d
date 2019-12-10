@@ -43,7 +43,7 @@
   #post {
     width: 100%;
     height: 50px;
-    background-color: #f54343;
+    background-color: #ea352d;
     color: white;
     margin: 50px 0;
     border-radius: 0%;
@@ -55,9 +55,10 @@
     display: flex;
     margin-top: 40px;
     .ninni {
-    margin-left: 10px;
-    background-color: gray;
-    color: white;
+    // margin-left: 10px;
+    // background-color: gray;
+    // color: white;
+      @include optionally_icon;
     }
   }
   .pi-post {
