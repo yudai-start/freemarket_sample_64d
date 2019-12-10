@@ -1,10 +1,10 @@
 body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  // height: 100%;
+  // width: 100%;
+  // margin: 0;
+  // padding: 0;
   .logout-main {
-    height: 1490px;
+    // height: 1490px;
     background-color: #eee;
     .logout-header {
       height: 200px;
@@ -53,44 +53,7 @@ body {
             padding-left: 0.1em;
         }
       }
-      .logout-osirase {
-        border-bottom: 1px solid #eee;
-        height: 48px;
-        line-height: 48px;
-        .logout-osirase2 {
-          font-size: 15px;
-          padding: 16px;
-          height: 16px;
-          width: 248px;
-          line-height: 16px;
-            .logout-osirase-font {
-              padding-right: 10px;
-              width: 50%;	
-              margin-right: 50px;
-            }
-          }
-        .logout-osirase-y {
-          color: rgb(201, 198, 198);
-          font-size: 40px;
-          bottom: 542px;
-          position: absolute;
-          height: 40px;
-          width: 280px;
-          line-height: 40px;
-            .logout-osirase-y2 {
-              padding-left: 253px;
-              padding-bottom: 8px;
-          }
-        }
-      }
-      .logout-osirase:hover {
-        background-color: rgb(245, 245, 245);
-        .logout-osirase-y:hover {
-          color: black;
-          transition: .4s;
-          padding-left: 0.1em;
-        }
-      }  
+
       .logout-list {
         border-bottom: 1px solid #eee;
         height: 48px;

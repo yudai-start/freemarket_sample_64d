@@ -28,7 +28,7 @@
             %p.essential_icon 必須
           .signup3__contents__main__form2__form
             %label.signup3__contents__main__form2__form__select
-              = address_form.select :prefecture, [["北海道",1], ["青森県",2],["岩手県", 3]], {}, {id: "prefecture"}
+              = address_form.collection_select :prefecture_id, Prefecture.all, :id, :name
         .signup3__contents__main__form1
           .signup3__contents__main__form1__heading
             %p 市町区村
