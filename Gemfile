@@ -47,7 +47,6 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-  gem 'omniauth-facebook', '~> 5.0'
 end
 
 group :development do
@@ -79,3 +78,4 @@ gem "font-awesome-sass"
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'active_hash'
+gem 'omniauth-facebook', '~> 5.0'
