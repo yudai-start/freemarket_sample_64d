@@ -1,0 +1,10 @@
+.itemshow__top__box
+  = image_tag "sample.jpg", class: :"itemshow__top__box__image"
+  %h1.itemshow__top__box__desc
+    商品名
+    %h1
+      %ul.itemshow__top__box__desc__detail
+        %li.itemshow__top__box__desc__detail__price ¥1,700
+        %li
+          = link_to "#", class: :"itemshow__top__box__desc__detail__icon" do
+            %i.far.fa-heart.itemshow__top__box__desc__detail__icon__btn
