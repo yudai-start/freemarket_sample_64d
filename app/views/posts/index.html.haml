@@ -1,7 +1,7 @@
 = render  partial: "layouts/toppage-header"
 .index-main
   #slider.slide
-    %img{src: "https://cdn.pixabay.com/photo/2019/11/29/11/43/fountain-4661162_1280.jpg"}/
+    = image_tag "kabao.jpeg"
   .category_tags
     .category 人気のカテゴリー
     .tags
@@ -20,7 +20,7 @@
         = link_to("#", class: 'item_link') do
           .content
             .image
-              %img{src: "https://cdn.pixabay.com/photo/2019/11/20/01/06/swimming-pool-4638912_1280.jpg"}/
+              = image_tag "kabao.jpeg"
               .price
                 #price ¥¥¥¥¥
             .item_name ハリケーン
