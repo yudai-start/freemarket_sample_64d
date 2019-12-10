@@ -1,4 +1,6 @@
+
 = render "layouts/toppage-header"
+
 %section.items-show
   .items-show__name
     ”商品名”
@@ -13,11 +15,13 @@
         = image_tag "sample.jpg", class: :"items-show__description__left__main__image"
       .items-show__description__left__many
         .items-show__description__left__many__top
+
           - 5.times do
             = image_tag "sample.jpg", class: :"items-show__description__left__many__low__image"
         .items-show__description__left__many__low
           - 5.times do
             = image_tag "sample.jpg", class: :"items-show__description__left__many__low__image"
+
     %table.items-show__description__table
       %tr
         %th
@@ -62,7 +66,9 @@
       %tr
         %th
           配送元地域
+
         %td= link_to "都道府県", "#", class: :"items-show__description__table__link"
+
       %tr
         %th
           配送日の目安
@@ -73,8 +79,10 @@
     %span.items-show__price__fee 送料込み
   .items-show__deal
     = link_to "購入画面に進む", "#", class: :"items-show__deal__box"
+
   .items-show__tweet
     %p.items-show__tweet__top
+
       〇白いTシャツ
       %br/
       ブランド ラフ
@@ -105,6 +113,7 @@
       レプシィム
       %br/
       スタジオクリップ
+
     .items-show__tweet__low
       %ul.items-show__tweet__low__left
         %li
@@ -123,6 +132,7 @@
         相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
       = form.text_area :introduction
       = form.submit "コメントする", id: "comment-area"
+
 %ul.items-show-page
   %li
     = link_to "#", class: :"items-show-page__left" do
@@ -145,6 +155,7 @@
     %li
       = link_to "#", class: :"items-show-icon__box__link" do
         %span.fab.fa-pinterest.fa-3x.items-show-icon__box__link__pinterest
+
 - 2.times do
   .itemshow
     .itemshow__title

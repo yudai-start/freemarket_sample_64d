@@ -1,0 +1,20 @@
+= render  partial: "signup.header"
+.signup2__contents
+  .signup2__contents__heading
+    電話番号の確認
+  .signup2__contents__main
+    = form_with(model: @user, url: signup3_signup_index_path, method: :get,  local: true ) do |form|
+      .signup2__contents__main__form1
+        %p 携帯電話の番号
+        = form.text_field :phone_number, placeholder: "携帯電話の番号を入力", class: "signup2__contents__main__form1__form"
+        %p.signup2_notice 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+      .signup2__contents__main__submit
+        %label
+          = form.submit style: "display: none"
+          %p.signup2__contents__main__submit__btn 次に進む
+        %p.signup2_notice ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+    .signup2__contents__main__link
+      %a.signup2__contents__main__link__text{href: "#"}
+        電話番号の確認が必要な理由
+        %i.fas.fa-angle-right
+= render  partial: "signup.footer"

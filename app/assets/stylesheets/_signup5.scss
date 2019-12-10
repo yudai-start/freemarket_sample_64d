@@ -1,0 +1,51 @@
+.signup5-main {
+  width: 700px;
+  margin:0 auto;
+  .signup5-main-in {
+    background-color: white;
+    .signup5-main-top {
+      @include form_heading;
+      .signup5-registration {
+        text-align: center;
+        font-size: 20px;
+      }
+    }
+    .signup5-middle {
+      height: 200px;
+      .signup5-thankyou {
+        text-align: center;
+        padding-top: 35px;
+      }
+      .signup5-kaiin {
+        text-align: center;
+      }
+      .signup5-start-block {
+        margin:0 auto;
+        @include redlink_btn;
+        margin-top: 25px;
+        .signup5-start {
+          font-size: 13px;
+        }
+      }
+    }
+    .signup5-bottom {
+      height: 200px;
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -26,37 +26,57 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_kana|string|null: fsalse|
-|first_name_kana|string|null: false|
-|nickname|string|null: false, unique: true|
-|email|string|null: false, unique: true|
-|password|string|null: false|
-|phone_number|string|null: false, unique: true|
-|birthday|string|null: false|
-|credit_card_number|string|null: false, unique: true|
-|introduction|string|null: true|
+|family_name       |string|null: false|
+|first_name        |string|null: false|
+|family_name_kana  |string|null: false|
+|first_name_kana   |string|null: false|
+|nickname          |string|null: false, unique: true|
+|email             |string|null: false, unique: true|
+|password          |string|null: false|
+|phone_number      |string|null: false, unique: true|
+|birthday          |string|null: false|
+|introduction      |string|null: true|
 
 ### Association
+- has_many :addresses
+- has_many :payments
 - has_many :items
 - has_many :follows
 - has_many :likes
 - has_many :item_status
 - has_many :comments
 - has_many :reviews
-- has_many :addresses
+- has_many :sns_credentials
+
 
 
 ## adressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_code|string|null: false|
-|prefecture|integer|null: false|
-|city|string|null: false|
-|street_number|string|null: false|
-|building_name|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|family_name      |string |null: false|
+|first_name       |string |null: false|
+|family_name_kana |string |null: false|
+|first_name_kana  |string |null: false|
+|post_code        |string |null: false|
+|prefecture       |integer|null: false|
+|city             |string |null: false|
+|street_number    |string |null: false|
+|building_name    |string |null: true|
+|phone_number     |string |null: true|
+|user_id          |integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+
+
+## paymentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|card_number   |string |null: false|
+|expire_month  |string |null: false|
+|expire_year   |string |null: false|
+|security_code |string |null: false|
+|user_id       |integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -65,16 +85,16 @@ Things you may want to cover:
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, index: true|
-|user_id|integer|null: false, foreign_key: true|
-|size|string|null: false|
-|item_status|integer|null: false|
+|name                 |string |null: false, index: true|
+|user_id              |integer|null: false, foreign_key: true|
+|size                 |string |null: false|
+|item_status          |integer|null: false|
 |shipping_fee_defrayer|integer|null: false|
-|shipping_system|integer|null: false|
-|ship_from_prefecture|integer|null: false|
-|ship_date|integer|null: false|
-|price|integer|null: false|
-|description|string|null: true|
+|shipping_system      |integer|null: false|
+|ship_from_prefecture |integer|null: false|
+|ship_date            |integer|null: false|
+|price                |integer|null: false|
+|description          |string |null: true|
 
 ### Association
 - belongs_to :user
@@ -88,7 +108,7 @@ Things you may want to cover:
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|content|string|null: false|
+|content|string |null: false|
 |item_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
@@ -100,8 +120,8 @@ Things you may want to cover:
 ## reviewsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|content|string|null: true|
-|rating|integer|null: false|
+|content|string |null: true|
+|rating |integer|null: false|
 |item_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
@@ -124,7 +144,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |following_id|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|user_id     |integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -146,8 +166,19 @@ Things you may want to cover:
 |------|----|-------|
 |item_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
-|status|integer|null: false|
+|status |integer|null: false|
 
 ### Association
 - belongs_to :item
+- belongs_to :user
+
+
+## sns_credentialsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|uid|string|null: false|
+|provider|string |null: false|
+|user_id |integer|null: false, foreign_key: true|
+
+### Association
 - belongs_to :user

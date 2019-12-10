@@ -1,0 +1,12 @@
+#header {
+  // background-color: $aruound-color;
+  background-color: red;
+  display: flex;
+  height: 170px;
+  align-items: center;
+  justify-content: center;
+  .top_logo {
+    margin: 0 auto;
+    height: 100%;
+  }
+}

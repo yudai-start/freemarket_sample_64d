@@ -1,0 +1,52 @@
+<%# <%= render  partial: "logo_header" %>
+<div class="confirm__contents">
+  <div class="confirm__contents__heading">
+    購入内容の確認
+  </div>
+
+  <div class="confirm__contents__item">
+    <div class="confirm__contents__item__container">
+      <%= image_tag "sample.jpg", class: "confirm__contents__item__container__image" %>
+      <div class="confirm__contents__item__container__text">
+        <p class="confirm__contents__item__container__text__name">item.name</p>
+        <p class="confirm__contents__item__container__text__price">¥item.price (税込み) 送料込み</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="confirm__contents__price">
+    <p class="confirm__contents__price__heading">支払い金額</p>
+    <p class="confirm__contents__price__value">¥5,400</p>
+  </div>
+
+  <div class="confirm__contents__payment">
+    <p class="confirm__contents__payment__heading">支払い方法<p>
+
+      <a href ="#" class="confirm__contents__payment__link">
+        <i class="fas fa-plus-circle"></i>登録してください
+      </a>
+  </div>
+
+  <div class="confirm__contents__address">
+    <div class="confirm__contents__address__heading">
+      <p class="confirm__contents__address__heading__title">配送先</p>
+      <a href="#" class="confirm__contents__address__heading__link">変更する</a>
+    </div>
+    〒
+    <p class="confirm__contents__address__post"> 560-1111</p>
+    <div class="confirm__contents__address__2">
+      <p class="confirm__contents__address__2__list">都道府県</p>
+      <p class="confirm__contents__address__2__list">市町区村</p>
+      <p class="confirm__contents__address__2__list">番地</p>
+    </div>
+    <div class="confirm__contents__address__name">
+      <p class="confirm__contents__address__name__list">性</p>
+      <p class="confirm__contents__address__name__list">名</p>
+    </div>
+  </div>
+
+  <div class="confirm__contents__submit">
+    <a href="#" class="confirm__contents__submit__link">購入する</a>
+  </div>
+</div>
+<%# <%= render  partial: "logo_footer" %>
