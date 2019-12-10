@@ -1,0 +1,27 @@
+= render  partial: "layouts/toppage-header"
+.main
+  #slider.slide
+    %img{:src => "https://cdn.pixabay.com/photo/2019/11/29/11/43/fountain-4661162_1280.jpg"}/
+  .category_tags
+    .category 人気のカテゴリー
+    .tags
+      .tags__tag= link_to "タグ１", "#" ,class: 'tag_link'
+      .tags__tag= link_to "タグ２", "#" ,class: 'tag_link'
+      .tags__tag= link_to "タグ３", "#" ,class: 'tag_link'
+      .tags__tag= link_to "タグ４", "#" ,class: 'tag_link'
+  .block
+    .block_top
+      .item_categoly
+        新着アイテム
+      .more
+        = link_to "もっとみる  >", "#" ,id:'more'
+    .contents
+      - 50.times do
+        = link_to("#", class: 'item_link') do
+          .content
+            .image
+              %img{:src => "https://cdn.pixabay.com/photo/2019/11/20/01/06/swimming-pool-4638912_1280.jpg"}/
+              .price
+                #price ¥¥¥¥¥
+            .item_name ハリケーン
+= render  partial: "layouts/toppage-footer"
