@@ -1,23 +1,3 @@
-.html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.sign-up-header{
-  height: 128px;
-  width: 100%;
-  background-color: rgb(247, 247, 247);
-  overflow: hidden;
-  .head-logo{
-    height: 50px;
-    width: 185px;
-    margin: 40px auto ;
-    background-color:rgb(247, 247, 247);
-  }
-}
-
 .sign-up-main{
   height: 386px;
   width: 100%;
@@ -101,42 +81,4 @@
 
 .sign-up-btn__text{
   margin: 0 auto;
-}
-
-.sign-up-footer{
-  height: calc(100vh - 518px);
-  width: 100%;
-  background: rgb(247, 247, 247);
-  overflow: hidden;
-  .footer-contents{
-    margin: auto;
-    width: 400px;
-    margin: 40px auto;
-    text-align: center;
-
-    .rules{
-      display: flex;
-      justify-content: space-between;
-      margin: 0 auto;
-      width: 400px;
-      color: black;
-      .rule{
-        font-size: 12px;
-        text-decoration: none;
-        color: black;
-      }
-    }
-    .footer-logo{
-      height: 80px;
-      margin-top: 20px;
-    }
-    .copy-right{
-      height: 10px;
-      margin: 0 auto;
-      font-size: 12px;
-    }
-}
-}
-.p {
-  color: red;
 }
