@@ -11,7 +11,7 @@
 @import "signup5.scss";
 @import "_signout";
 @import "items.show.scss";
-@import "posts.scss";
+@import "index.scss";
 @import "users.scss";
 @import "user.profile.scss";
 @import "signup.header.scss";
@@ -28,7 +28,5 @@ html{
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
   background-color: #f5f5f5;
 }
