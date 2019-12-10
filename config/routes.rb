@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       get :profile
       get :signout
       get :confirm
+      get :exhibit
       get :add_payments
       get :footer
     end
