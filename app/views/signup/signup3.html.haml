@@ -1,0 +1,56 @@
+= render  partial: "signup.header"
+.signup3__contents
+  .signup3__contents__heading
+    発送元・お届け先住所入力
+  .signup3__contents__main
+    = form_with(model: @user, url: signup4_signup_index_path, method: :get, local: true) do |form|
+      = form.fields_for :addresses do |address_form|
+        .signup3__contents__main__form1
+          .signup3__contents__main__form1__heading
+            %p お名前
+            %p.essential_icon 必須
+          = address_form.text_field :family_name, placeholder: "性", class: "signup3__contents__main__form1__form"
+          = address_form.text_field :first_name, placeholder: "名", class: "signup3__contents__main__form1__form"
+        .signup3__contents__main__form1
+          .signup3__contents__main__form1__heading
+            %p お名前カナ
+            %p.essential_icon 必須
+          = address_form.text_field :family_name_kana, placeholder: "性", class: "signup3__contents__main__form1__form"
+          = address_form.text_field :first_name_kana, placeholder: "名", class: "signup3__contents__main__form1__form"
+        .signup3__contents__main__form1
+          .signup3__contents__main__form1__heading
+            %p 郵便番号
+            %p.essential_icon 必須
+          = address_form.text_field :post_code, placeholder: "例) 123-4567", class: "signup3__contents__main__form1__form"
+        .signup3__contents__main__form2
+          .signup3__contents__main__form1__heading
+            %p 都道府県
+            %p.essential_icon 必須
+          .signup3__contents__main__form2__form
+            %label.signup3__contents__main__form2__form__select
+              = address_form.select :prefecture, [["北海道",1], ["青森県",2],["岩手県", 3]], {}, {id: "prefecture"}
+        .signup3__contents__main__form1
+          .signup3__contents__main__form1__heading
+            %p 市町区村
+            %p.essential_icon 必須
+          = address_form.text_field :city, placeholder: "例) 横浜市緑区", class: "signup3__contents__main__form1__form"
+        .signup3__contents__main__form1
+          .signup3__contents__main__form1__heading
+            %p 番地
+            %p.essential_icon 必須
+          = address_form.text_field :street_number, placeholder: "例) 青山1-1-1", class: "signup3__contents__main__form1__form"
+        .signup3__contents__main__form1
+          .signup3__contents__main__form1__heading
+            %p 建物名
+            %p.optionally_icon 任意
+          = address_form.text_field :building_name, placeholder: "例) 柳ビル103", class: "signup3__contents__main__form1__form"
+        .signup3__contents__main__form1
+          .signup3__contents__main__form1__heading
+            %p 電話
+            %p.optionally_icon 任意
+          = address_form.text_field :phone_number, placeholder: "例) 09012345678", class: "signup3__contents__main__form1__form"
+      .signup3__contents__main__submit
+        %label
+          = form.submit style: "display: none"
+          %p.signup3__contents__main__submit__btn 次へ進む
+= render  partial: "signup.footer"

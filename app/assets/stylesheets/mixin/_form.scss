@@ -8,6 +8,14 @@
   outline: none;
 }
 
+@mixin form-short{
+  width: 135px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 0 10px;
+}
+
 @mixin select{
   padding: 10px;
   width: 100px;
@@ -16,7 +24,21 @@
   position: relative;
   border-radius: 5px;
   background: #fff;
+  @include select-inner
+}
 
+@mixin select-short{
+  padding: 10px;
+  width: 50px;
+  line-height: 15px;
+  border: 1px solid lightgray;
+  position: relative;
+  border-radius: 5px;
+  background: #fff;
+  @include select-inner
+}
+
+@mixin select-inner{
   select {
     width: 100%;
     border: 0;
@@ -39,6 +61,7 @@
     transform: translateY(-50%);
     pointer-events: none;
   }
+
 }
 
 @mixin essential_icon{
@@ -74,6 +97,16 @@
   height: 40px;
   margin-top: 5px;
   background-color: #ea352d;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+}
+
+@mixin graylink_btn{
+  width: 325px;
+  height: 40px;
+  margin-top: 5px;
+  background-color: gray;
   color: white;
   text-align: center;
   line-height: 40px;

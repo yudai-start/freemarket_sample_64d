@@ -1,0 +1,20 @@
+%body
+  = render  partial: "sign.up.header.only.logo"
+  .sign-up-main
+    .sign-up-area
+      .sign-up-area-top
+        新規会員登録
+      .sign-up-area-bottom
+        = link_to "/signup/signup1" , style: "text-decoration:none;" do
+          .sign-up-btn-mail
+            %i.far.fa-envelope.sign-up-btn-mail__icon
+            .sign-up-btn-mail__text メールアドレスで登録する
+        = link_to "#" , style: "text-decoration:none;" do
+          .sign-up-btn-fb
+            %i.fab.fa-facebook-square.sign-up-btn-fb__icon
+            .sign-up-btn-fb__text Facebookで登録する
+        = link_to "#" , style: "text-decoration:none;" do
+          .sign-up-btn-google
+            %i.fab.fa-google-plus-g.sign-up-btn-google__icon
+            .sign-up-btn-google__text Googleで登録する
+  = render  partial: "signup.footer"
