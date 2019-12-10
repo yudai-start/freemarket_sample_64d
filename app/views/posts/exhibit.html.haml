@@ -1,4 +1,5 @@
 %body
+
   = render "layouts/exhibit-header"
   = form_with do |form|
     .ex-main
@@ -105,4 +106,6 @@
             %p.ex-btn-fs 出品する
           %button#ex-ship-return{:type => "submit"}
             %p.ex-btn-fs 戻る
-    = render "layouts/exhibit-footer"
+
+    = render "footer"
+
