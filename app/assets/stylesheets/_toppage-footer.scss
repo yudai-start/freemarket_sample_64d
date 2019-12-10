@@ -1,10 +1,10 @@
-.banner {
+.banner{
   margin-top: auto;
   width: 100%;
   height: 70px;
   background-color: red;
 }
-.footer {
+.footer{
   background-color: rgb(34, 34, 34);
   color: rgb(255, 255, 255);
   font-size: 14px;
@@ -28,35 +28,35 @@
         margin: 0;
         padding: 0;
       }
-      &-texts {
+      &-texts{
         margin: 0;
         padding: 0;
-        &-1 {
+        &-1{
          line-height: 1.4em;
           margin: 16px 0px 0px; 
           list-style: none;
-          .t {
+          .t{
             text-decoration: none;
             color:rgba(255, 255, 255, 0.616);
           }
         }
       }
-      &-logos {
+      &-logos{
         margin-top: 20px;
-        &-twitter {
+        &-twitter{
           font-size: 30px;
           text-decoration: none;
           color: white;
           margin-right: 10px;
         }
-        &-facebook {
+        &-facebook{
           font-size: 30px;
           text-decoration: none;
           color: white;
         }
       }
     }
-    &-full-width {
+    &-full-width{
       margin-top: 18px;
       padding-right: 40px;
       width: auto;
@@ -69,22 +69,22 @@
         margin: 0;
         padding: 0;
       }
-      &-boxes {
+      &-boxes{
         display: flex;
-        &-inner {
+        &-inner{
           vertical-align: top;
           padding: 0px 10px 0px 0px;
         }
       }
     }
-    &-footer-lang {
+    &-footer-lang{
       width: auto;
       vertical-align: top;
       margin-top: 18px;
       width: auto;
       padding-right: 40px;
       display: inline-block;
-      &-head {
+      &-head{
         font-size: 16px;
         margin: 0;
         padding: 0;
@@ -98,7 +98,7 @@
     padding-top: 50px;
     position: relative;
     margin: 0 auto;
-    &-text {
+    &-text{
       font-size: 17px;
       position: absolute;
       left: 50%;
@@ -106,4 +106,5 @@
       transform: translateY(-50%) translateX(-50%);
     }
   }
+ }
 }
