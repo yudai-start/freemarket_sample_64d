@@ -1,0 +1,35 @@
+= render "layouts/exhibit-header"
+.confirm__contents
+  .confirm__contents__heading
+    購入内容の確認
+  .confirm__contents__item
+    .confirm__contents__item__container
+      = image_tag "sample.jpg", class: "confirm__contents__item__container__image"
+      .confirm__contents__item__container__text
+        %p.confirm__contents__item__container__text__name item.name
+        %p.confirm__contents__item__container__text__price ¥item.price (税込み) 送料込み
+  .confirm__contents__price
+    %p.confirm__contents__price__heading 支払い金額
+    %p.confirm__contents__price__value ¥5,400
+  .confirm__contents__payment
+    %p.confirm__contents__payment__heading 支払い方法
+    %p
+      %a.confirm__contents__payment__link{:href => "#"}
+        %i.fas.fa-plus-circle>
+        登録してください
+  .confirm__contents__address
+    .confirm__contents__address__heading
+      %p.confirm__contents__address__heading__title 配送先
+      %a.confirm__contents__address__heading__link{:href => "#"} 変更する
+    〒
+    %p.confirm__contents__address__post 560-1111
+    .confirm__contents__address__2
+      %p.confirm__contents__address__2__list 都道府県
+      %p.confirm__contents__address__2__list 市町区村
+      %p.confirm__contents__address__2__list 番地
+    .confirm__contents__address__name
+      %p.confirm__contents__address__name__list 性
+      %p.confirm__contents__address__name__list 名
+  .confirm__contents__submit
+    %a.confirm__contents__submit__link{:href => "#"} 購入する
+= render "signup/signup.footer"
