@@ -7,9 +7,8 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
   
-  resources :users, only: [:show]
+  # resources :users, only: [:show]
   
-
   resources :signup do
     collection do
       get :signup0
@@ -23,11 +22,11 @@ Rails.application.routes.draw do
 
   resources :posts do
     collection do
-
       get :logout
       get :profile
       get :signout
       get :confirm
+      get :add_payments
     end
  end
 end
