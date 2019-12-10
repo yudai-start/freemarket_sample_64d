@@ -1,0 +1,44 @@
+= render  partial: "signup.header"
+.signup4__contents
+  .signup4__contents__heading
+    \&#x652F;&#x6255;&#x3044;&#x65B9;&#x6CD5;
+  .signup4__contents__main
+    = form_with(model: @user, url: signup_index_path, method: :post, local: true ) do |form|
+      = form.fields_for :payments do |payment_form|
+        .signup4__contents__main__form1
+          .signup4__contents__main__form1__heading
+            %p &#x30AB;&#x30FC;&#x30C9;&#x756A;&#x53F7;
+            %p.essential_icon &#x5FC5;&#x9808;
+          = payment_form.text_field :card_number, placeholder: "半角数字のみ", class: "signup4__contents__main__form1__form"
+          .signup4__contents__main__form1__icons
+            %i.fab.fa-cc-visa
+            %i.fab.fa-cc-mastercard
+            %i.fab.fa-cc-jcb
+            %i.fab.fa-cc-amex
+            %i.fab.fa-cc-diners-club
+            %i.fab.fa-cc-discover
+        .signup4__contents__main__form2
+          .signup4__contents__main__form1__heading
+            %p &#x6709;&#x52B9;&#x671F;&#x9650;
+            %p.essential_icon &#x5FC5;&#x9808;
+          .signup4__contents__main__form2__form
+            %label.signup4__contents__main__form2__form__select
+              = payment_form.select :expire_month, ["01","02","03","04","05","06","07","08","09","10","11","12"]
+            %p.signup4__contents__main__form2__form__date &#x6708;
+            %label.signup4__contents__main__form2__form__select
+              = payment_form.select :expire_year, ["19","20","21","22","23","24"] ,{}
+            %p.signup4__contents__main__form2__form__date &#x5E74;
+        .signup4__contents__main__form3
+          .signup4__contents__main__form1__heading
+            %p &#x30BB;&#x30AD;&#x30E5;&#x30EA;&#x30C6;&#x30A3;&#x30B3;&#x30FC;&#x30C9;
+            %p.essential_icon &#x5FC5;&#x9808;
+          = payment_form.text_field :security_code, placeholder: "カード背面4桁もしくは3桁の番号", class: "signup4__contents__main__form3__form"
+          .signup4__contents__main__form3__link
+            %a{:href => "#"}>
+            , class="signup4__contents__main__form3__link__text"&gt;
+            %i.fas.fa-question-circle
+            \&#x30AB;&#x30FC;&#x30C9;&#x88CF;&#x9762;&#x306E;&#x756A;&#x53F7;&#x3068;&#x306F;?
+    .signup4__contents__main__submit
+      %label
+        = form.submit style: display: none
+        %p.signup4__contents__main__submit__btn &#x6B21;&#x3078;&#x9032;&#x3080;
