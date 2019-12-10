@@ -12,17 +12,39 @@
   display: block;
   box-sizing: border-box;
   bottom: 0;
+<<<<<<< Updated upstream
   height: auto;
   &-lists {
     width: 1020px;
+=======
+<<<<<<< Updated upstream
+  height: 100%;
+  &-lists{
+    width: 1700px;
+=======
+  height: auto;
+  &-lists {
+    width: 1020px;
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     display: flex;
     &-cell{
       padding: 0px 40px 0px 0px;
       padding-left: 0px;
       display: inline-block;
       margin-top: 18px;
+<<<<<<< Updated upstream
       width: auto;
       &-head {
+=======
+<<<<<<< Updated upstream
+      width: 50%;
+      &-head{
+=======
+      width: auto;
+      &-head {
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
         font-size: 16px;
         font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
         margin: 0;
@@ -40,6 +62,14 @@
             color:rgba(255, 255, 255, 0.616);
           }
         }
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+        &-twiiter-logo[target="_blank"]:after{
+          height: 16px;
+          width: 21px;
+=======
+>>>>>>> Stashed changes
       }
       &-logos {
         margin-top: 20px;
@@ -53,14 +83,30 @@
           font-size: 30px;
           text-decoration: none;
           color: white;
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
         }
       }
     }
     &-full-width {
       margin-top: 18px;
       padding-right: 40px;
+<<<<<<< Updated upstream
       width: auto;
       &-head {
+=======
+<<<<<<< Updated upstream
+      height: 166px;
+      width: 100%;
+      display: inline-block;
+      &-head{
+=======
+      width: auto;
+      &-head {
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
         font-size: 16px;
         margin: 0;
         padding: 0;
@@ -84,6 +130,12 @@
         font-size: 16px;
         margin: 0;
         padding: 0;
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+      }
+=======
+>>>>>>> Stashed changes
        }
     }
     
@@ -101,6 +153,10 @@
       left: 50%;
       top: 50%;
       transform: translateY(-50%) translateX(-50%);
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     }
   }
 }
