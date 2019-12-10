@@ -115,7 +115,7 @@
       color: #fff;
     }
   }
-  &__comment {
+  &__tweet {
     padding: 32px 0 0;
     line-height: 1.5;
     font-size: 18px;
@@ -152,6 +152,45 @@
     }
   }
 }
+
+
+.item-show-comments {
+  width: 700px;
+  background-color: #fff;
+  margin: 8px auto 0;
+  padding: 0 40px;
+  &__box{
+    padding: 16px 0;
+    .comments-withdraw {
+      padding: 0 8px;
+      font-size: 14px;
+      background: #fff6de;
+      color: #333;
+    }
+    #introduction {
+      margin: 8px 0 0;
+      display: block;
+      width: 97%;
+      min-height: 104px;
+      padding: 10px;
+      border: solid 1px #ccc;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    #comment-area {
+      display: block;
+      margin: 8px 0 0;
+      text-align: center;
+      color: #fff;
+      border: solid 1px #aaa;
+      background-color: #aaa;
+      line-height: 48px;
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+}
+
 
 .items-show-page {
   margin: 24px auto 0;
@@ -207,6 +246,8 @@
   }
 }
 
+
+
 .itemshow {
   width: 770px;
   margin: 0 auto;
@@ -258,6 +299,8 @@
     }
   }
 }
+
+
 
 .items-show-footer {
   width: 100%;
