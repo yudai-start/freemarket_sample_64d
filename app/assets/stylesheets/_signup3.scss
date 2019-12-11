@@ -11,7 +11,6 @@
   width: 560px;
   height: 1100px;
   margin-bottom: 100px;
-  // overflow: auto;
   margin: auto;
   font-size: 14px;
   &__heading{
@@ -45,9 +44,8 @@
         &__select{
           @include select;
           width: 300px;
-          height: 18px;
           select {
-            line-height: 18px;
+            height: 18px;
             font-size: 15px;
           }
         }
