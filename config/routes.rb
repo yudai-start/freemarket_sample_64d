@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'posts#index'
+  devise_for :users
 
   resources :users, only: [:edit, :update]
   get "/auth/:provider/callback" => "sessions#create"
@@ -26,8 +27,13 @@ Rails.application.routes.draw do
       get :profile
       get :signout
       get :confirm
+
+      get :personal_info
+
+      get :exhibit
       get :add_payments
       get :footer
+
     end
  end
 end

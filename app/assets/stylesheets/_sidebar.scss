@@ -1,0 +1,882 @@
+body {
+  // height: 100%;
+  // width: 100%;
+  // margin: 0;
+  // padding: 0;
+  .logout-main {
+    // height: 1490px;
+    background-color: #eee;
+    .logout-header {
+      height: 200px;
+    }
+    .logout-block {
+      background-color: white;
+      height: 685px;
+      width: 280px;
+      margin-left: 210px;
+      margin-top: -10px;
+      .logout-my {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-my2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-my-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-my-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          top: 190px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-my-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-my:hover {
+        background-color: rgb(245, 245, 245);
+          .logout-my-y:hover {
+            color: black;
+            transition: .4s;
+            padding-left: 0.1em;
+        }
+      }
+
+      .logout-list {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-list2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-list-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-list-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: 493px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-list-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-list:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-list-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+      .logout-ok {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-ok2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-ok-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-ok-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: 443px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-ok-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-ok:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-ok-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+      .logout-in {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-in2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-in-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-in-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: 395px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-in-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-in:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-in-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+      .logout-buyin {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-buyin2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-buyin-font {
+            padding-right: 10px;
+            width: 50%;	
+          }
+        }
+        .logout-buyin-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: 346px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-buyin-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-buyin:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-buyin-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+      .logout-torihiki {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-torihiki2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-torihiki-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-torihiki-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: 297px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-torihiki-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-torihiki:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-torihiki-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+      .logout-baikyaku {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-baikyaku2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-baikyaku-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-baikyaku-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: 248px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-baikyaku-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-baikyaku:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-baikyaku-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+      .logout-torihikiin {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-torihikiin2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-torihikiin-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-torihikiin-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: 199px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-torihikiin-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-torihikiin:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-torihikiin-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }  
+      }
+      .logout-buykako {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-buykako2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-buykako-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-buykako-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: 150px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-buykako-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-buykako:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-buykako-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }  
+      }
+      .logout-news {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-news2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-news-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-news-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: 101px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-news-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-news:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-news-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+      .logout-hyouka {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-hyouka2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-hyouka-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-hyouka-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: 52px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-hyouka-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-hyouka:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-hyouka-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+      .logout-guide {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-guide2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-guide-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-guide-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: 3px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-guide-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-guide:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-guide-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+      .logout-toiawase {
+        height: 48px;
+        line-height: 48px;
+        .logout-toiawase2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-toiawase-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-toiawase-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: -46px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-toiawase-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-toiawase:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-toiawase-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+    }
+    .logout-merupei {
+      font-weight: bold;
+      margin-left: 210px;
+      margin-top: 40px;
+    }
+    .logout-block-middle {
+      background-color: white;
+      height: 95px;
+      width: 280px;
+      margin-left: 210px;
+      margin-top: 5px;
+      .logout-nokori {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-nokori2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-nokori-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-norikori-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: -163px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-norikori-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-nokori:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-norikori-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+      .logout-point {
+        height: 48px;
+        line-height: 48px;
+        .logout-point2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-point-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-point-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: -212px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-point-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-point:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-point-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }  
+      }
+    }
+    .logout-settei {
+      font-weight: bold;
+      margin-left: 210px;
+      margin-top: 40px;
+    }
+    .logout-block-bottom {
+      background-color: white;
+      height: 342px;
+      width: 280px;
+      margin-left: 210px;
+      margin-top: 5px;
+      .logout-profile {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-profile2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-profile-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-profile-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: -327px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-profile-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-profile:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-profile-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+      .logout-address {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-address2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-address-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-address-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: -376px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-address-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-address:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-address-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+      .logout-pay {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-pay2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-pay-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-pay-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: -425px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-pay-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-pay:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-pay-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+      .logout-mail {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-mail2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-mail-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-mail-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: -474px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-mail-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-mail:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-mail-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+      .logout-information {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-information2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-information-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-information-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: -523px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-information-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-information:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-information-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }  
+      }
+      .logout-tel {
+        border-bottom: 1px solid #eee;
+        height: 48px;
+        line-height: 48px;
+        .logout-tel2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-tel-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+        .logout-tel-y {
+          color: rgb(201, 198, 198);
+          font-size: 40px;
+          bottom: -572px;
+          position: absolute;
+          height: 40px;
+          width: 280px;
+          line-height: 40px;
+          .logout-tel-y2 {
+            padding-left: 253px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .logout-tel:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-tel-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+      .logout {
+        height: 48px;
+        line-height: 48px;
+        .logout2 {
+          font-size: 15px;
+          padding: 16px;
+          height: 16px;
+          width: 248px;
+          line-height: 16px;
+          .logout-font {
+            padding-right: 10px;
+            width: 50%;	
+            margin-right: 50px;
+          }
+        }
+      }
+      .logout-y {
+        color: rgb(201, 198, 198);
+        font-size: 40px;
+        bottom: -621px;
+        position: absolute;
+        height: 40px;
+        width: 280px;
+        line-height: 40px;
+        .logout-y2 {
+          padding-left: 253px;
+          padding-bottom: 8px;
+        }
+      }
+      .logout:hover {
+        background-color: rgb(245, 245, 245);
+        .logout-y:hover {
+          color: black;
+          transition: .4s;
+          padding-left: 0.1em;
+        }
+      }
+    }
+    .logout-footer {
+      height: 649px;
+      background-color: #eee;
+      padding-top: 40px;
+    }
+  }
+}
