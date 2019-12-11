@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def create
-
     session[:user_id] = user.id
     redirect_to root_url, :notice => "Signed in!"
   end
