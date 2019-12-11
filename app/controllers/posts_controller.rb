@@ -31,13 +31,12 @@ class PostsController < ApplicationController
   def signup5
   end
 
-  def logout
-  end
-
-
   def add_payments
   end
 
   def footer
+  end
+
+  def signout
   end
 end
