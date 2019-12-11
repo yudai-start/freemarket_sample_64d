@@ -1,6 +1,8 @@
+
 = render "layouts/toppage-header"
 .user-profile-view
   = render "sidebar"
+
   .user-profile
     %section.user-profile__box
       %h1.user-profile__box__title プロフィール
@@ -14,4 +16,6 @@
             placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪" |
           = form.submit "変更する" , class: "profile-form__btn", id: "button"
 = render "footer-icon"
+
 = render "layouts/toppage-footer"
+

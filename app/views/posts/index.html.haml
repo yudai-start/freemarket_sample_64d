@@ -1,0 +1,31 @@
+
+= render  partial: "layouts/toppage-header"
+.index-main
+
+  #slider.slide
+    = image_tag "kabao.jpeg"
+  .category_tags
+    .category 人気のカテゴリー
+    .tags
+      .tags__tag= link_to "タグ１", "#" ,class: 'tag_link'
+      .tags__tag= link_to "タグ２", "#" ,class: 'tag_link'
+      .tags__tag= link_to "タグ３", "#" ,class: 'tag_link'
+      .tags__tag= link_to "タグ４", "#" ,class: 'tag_link'
+  .block
+    .block_top
+      .item_categoly
+        新着アイテム
+      .more
+        = link_to "もっとみる  >", "#" ,id:'more'
+    .contents
+      - 50.times do
+        = link_to("#", class: 'item_link') do
+          .content
+            .image
+              = image_tag "kabao.jpeg"
+              .price
+                #price ¥¥¥¥¥
+            .item_name ハリケーン
+
+= render  partial: "layouts/toppage-footer"
+
