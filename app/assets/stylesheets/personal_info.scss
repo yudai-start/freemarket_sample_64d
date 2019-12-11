@@ -1,9 +1,13 @@
 @import "mixin/_form";
 
-
+.personal_info_wrapper {
+  display: flex;
+  &__right {
+    padding: 100px 40px;
+  }
 .pi-top {
   height: 50px;
-  width: 45%;
+  // width: 45%;
   padding: 0 60px;
   font-size: 25px;
   text-align: center;
@@ -11,7 +15,7 @@
   background-color: white;
 }
 .personal-info-main {
-  width: 45%;
+  // width: 45%;
   height: 140vh;
   background-color: white;
   padding: 60px;
@@ -70,3 +74,4 @@
   }
 }
 
+}
