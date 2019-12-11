@@ -1,9 +1,9 @@
-.banner{
-  margin-top: auto;
-  width: 100%;
-  height: 70px;
-  background-color: red;
-}
+// .banner{
+//   margin-top: auto;
+//   width: 100%;
+//   height: 70px;
+//   background-color: red;
+// }
 
 .footer{
   background-color: rgb(34, 34, 34);
@@ -12,7 +12,7 @@
   padding: 0px 200px 0px 200px;
   display: block;
   box-sizing: border-box;
-  bottom: 0;
+
   height: 400px;
   &-lists {
     width: 1020px;
@@ -88,10 +88,11 @@
    }
   
  }
- &-bottom {
+ &-bottom-block {
   display: flex;
   position: relative;
   margin-top: 30px;
+  bottom: 0;
   
   
   &-text{
