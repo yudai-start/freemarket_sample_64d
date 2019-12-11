@@ -82,13 +82,16 @@
   &-bottom-block {
     display: flex;
     position: relative;
-    margin-top:30px;
+    margin-top:20px;
     bottom: 0;
-   
+    #index-footer-logo {
+
+    }
     .footer-bottom-text{
       font-size: 17px;
       position: absolute;
       left: calc(50% - 54px);
+      top: calc(50% - 17px);
     }
   }
  }
