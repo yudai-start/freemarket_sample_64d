@@ -1,5 +1,7 @@
 class SignupController < ApplicationController
 
+  require "payjp" #gemを読み込み。カード情報登録に必要
+
   def signup1
     @user = User.new
   end
@@ -21,14 +23,11 @@ class SignupController < ApplicationController
     @user = User.new
     @user.addresses.build
   end
-  
+
   def signup4
     @user = User.new
-    @user.payments.build
     session[:addresses_attributes] = user_params[:addresses_attributes]
   end
-  
-  # session[:credit_card_number] = user_params[:credit_card_number]
 
   def create
     @user = User.new(
@@ -44,9 +43,19 @@ class SignupController < ApplicationController
       birthday:         session[:birthday],
     )
     @user.addresses.build(session[:addresses_attributes].first[1])
-    @user.payments.build(user_params[:payments_attributes].to_hash.first[1])
+
     if @user.save!
       session[:id] = @user.id
+      # Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"] #APIキーを使ってPayjpクラスを初期化
+      Payjp.api_key = 'sk_test_8f7b3eac5d76594d259acfc9'
+      customer = Payjp::Customer.create(
+        card: params['payjp-token']
+      )
+      @card = Card.create!(
+        user_id: @user.id,
+        customer_id: customer.id,
+        card_id: customer.default_card
+      )
       redirect_to signup5_signup_index_path
     else
       render '/signup/signup1'
@@ -78,18 +87,11 @@ class SignupController < ApplicationController
         :family_name_kana,
         :first_name_kana,
         :post_code,
-        :prefecture,
+        :prefecture_id,
         :city,
         :street_number,
         :building_name,
         :phone_number
-      ],
-      payments_attributes: [
-        :id,
-        :card_number,
-        :expire_month,
-        :expire_year,
-        :security_code
       ]
     )
   end
@@ -101,4 +103,5 @@ class SignupController < ApplicationController
       :day
     )
   end
+
 end
