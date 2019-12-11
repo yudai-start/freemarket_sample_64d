@@ -28,6 +28,7 @@
 }
 
 @mixin select-short{
+  height: 20px;
   padding: 10px;
   width: 50px;
   line-height: 15px;
@@ -40,6 +41,7 @@
 
 @mixin select-inner{
   select {
+    height: 20px;
     width: 100%;
     border: 0;
     background: transparent;
