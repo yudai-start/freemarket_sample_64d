@@ -9,7 +9,7 @@ set :application, 'freemarket_sample_64d'
 set :repo_url,  'git@github.com:yudai-start/freemarket_sample_64d.git'
 
 # 使用するbranchを指定。 指定がなければmasterを使う。
-set :branch, 'master'
+set :branch, 'test-deploy-except-master-branch'
 
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
