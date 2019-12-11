@@ -39,7 +39,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :addresses
-- has_many :payments
+- has_many :cards
 - has_many :items
 - has_many :follows
 - has_many :likes
@@ -69,14 +69,12 @@ Things you may want to cover:
 - belongs_to :user
 
 
-## paymentsテーブル
+## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number   |string |null: false|
-|expire_month  |string |null: false|
-|expire_year   |string |null: false|
-|security_code |string |null: false|
 |user_id       |integer|null: false, foreign_key: true|
+|customer_id   |integer|null: false|
+|card_id       |integer|null: false|
 
 ### Association
 - belongs_to :user
