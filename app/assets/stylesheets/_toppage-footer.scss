@@ -13,7 +13,7 @@
   display: block;
   box-sizing: border-box;
   bottom: 0;
-  height: auto;
+  height: 400px;
   &-lists {
     width: 1020px;
     display: flex;
@@ -22,7 +22,7 @@
       padding-left: 0px;
       display: inline-block;
       margin-top: 18px;
-      width: auto;
+      // width: auto;
       &-head {
         font-size: 16px;
         font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
@@ -75,7 +75,7 @@
       }
     }
     &-footer-lang{
-      width: auto;
+      // width: auto;
       vertical-align: top;
       margin-top: 18px;
       padding-right: 40px;
@@ -86,24 +86,20 @@
         padding: 0;
        }
    }
-  &-bottom-label {
-    display: flex;
-    width: 1080px;
-    height: 100px;
-    padding-top: 50px;
-    position: relative;
-    margin: 0 auto;
-    &-logo {
-      height: 40px;
-      width: 130px;
-    }
-    &-text{
-      font-size: 17px;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translateY(-50%) translateX(-50%);
+  
+ }
+ &-bottom {
+  display: flex;
+  position: relative;
+  margin-top: 30px;
+  
+  
+  &-text{
+    font-size: 17px;
+    position: absolute;
+    left: calc(50% - 54px);    
+
+
     }
   }
- }
 }
