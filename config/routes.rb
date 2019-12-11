@@ -32,6 +32,7 @@ Rails.application.routes.draw do
       get :exhibit
       get :add_payments
       get :footer
+      get :creditCard
     end
  end
 end
