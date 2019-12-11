@@ -1,9 +1,4 @@
-.banner{
-  margin-top: auto;
-  width: 100%;
-  height: 70px;
-  background-color: red;
-}
+
 .footer{
   background-color: rgb(34, 34, 34);
   color: rgb(255, 255, 255);
@@ -11,8 +6,8 @@
   padding: 0px 200px 0px 200px;
   display: block;
   box-sizing: border-box;
-  bottom: 0;
-  height: auto;
+  
+  height: 400px;
   &-lists {
     width: 1020px;
     display: flex;
@@ -21,16 +16,16 @@
       padding-left: 0px;
       display: inline-block;
       margin-top: 18px;
-      width: auto;
+
       &-head {
         font-size: 16px;
         font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
-        margin: 0;
-        padding: 0;
+        // margin: 0;
+        // padding: 0;
       }
       &-texts{
-        margin: 0;
-        padding: 0;
+        // margin: 0;
+        // padding: 0;
         &-1{
          line-height: 1.4em;
           margin: 16px 0px 0px; 
@@ -59,15 +54,8 @@
     &-full-width{
       margin-top: 18px;
       padding-right: 40px;
-      width: auto;
-      &-head {
-      height: 166px;
-      width: 100%;
-      display: inline-block;
       &-head {
         font-size: 16px;
-        margin: 0;
-        padding: 0;
       }
       &-boxes{
         display: flex;
@@ -91,24 +79,16 @@
        }
     }
    }
-  &-bottom-label {
+  &-bottom-block {
     display: flex;
-    width: 1080px;
-    height: 100px;
-    padding-top: 50px;
     position: relative;
-    margin: 0 auto;
-    &-logo {
-      height: 40px;
-      width: 130px;
-    }
-    &-text{
-      font-size: 17px;
+    margin-top:30px;
+    bottom: 0;
+   
+    .footer-bottom-text{
+      font-size: 17px;
       position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translateY(-50%) translateX(-50%);
+      left: calc(50% - 54px);
     }
   }
  }
-}
