@@ -9,7 +9,7 @@
 @import "signup3";
 @import "signup4";
 @import "signup5";
-@import "signout";
+@import "_signout";
 @import "items.show.scss";
 @import "index.scss";
 @import "users.scss";
@@ -31,6 +31,7 @@
 @import "add_payments";
 @import "signup.footer";
 @import "_sign.up.header.only.logo";
+@import "sign-out";
 
 html{
   background-color: #f5f5f5;

@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     collection do
-      get :logout
+      get :signout
       get :profile
       get :signout
       get :mypage
