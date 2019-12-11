@@ -26,14 +26,12 @@ Rails.application.routes.draw do
       get :logout
       get :profile
       get :signout
+      get :mypage
       get :confirm
-
       get :personal_info
-
       get :exhibit
       get :add_payments
       get :footer
-
     end
  end
 end
