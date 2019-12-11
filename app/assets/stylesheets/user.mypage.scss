@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+}
+
+.user-mypage {
+  display: flex;
+  margin: 24px auto 0;
+  &__main {
+    width: 700px;
+    margin-left: 40px;
+    .mypage-top {
+      height: 170px;
+      margin-top: 20px;
+      padding: 20px;
+      background: image-url("bgc.jpg");
+      background-size: cover;
+      text-align: center;
+      &__link {
+        text-decoration: none;
+        color: #333;
+        figure {
+          margin-top: 25px;
+          .mypage-top-icon {
+            border-radius: 50%;
+          }
+        }
+        .mypage-top-name {
+          font-size: 14px;
+          font-weight: 500;
+        }
+        .mypage-top-link {
+          margin: 8px 0 0;
+          font-size: 14px;
+          &__estimate {
+            display: inline-block;
+            span {
+              margin: 0 0 0 8px;
+            }
+          }
+          &__count {
+            display: inline-block;
+            margin: 0 0 0 16px;
+            span {
+              margin: 0 0 0 8px;
+            }
+          }
+        }
+      }
+    }
+
+
+    .mypage-info {
+      background: #fff;
+      &__tabs {
+        background: #eee;
+        display: flex;
+        &__link {
+          width: 50%;
+          text-align: center;
+          .mypage-info-link {
+            display: block;
+            font-size: 16px;
+            line-height: 72px;
+            color: #333;
+            text-decoration: none;
+          }
+        }
+        .active {
+          border-top: 2px solid #ea352d;
+          background: #fff;
+        }
+      }
+      &__notify {
+        &__ul {
+          display: none;
+          &__list {
+            position: relative;
+            border-bottom: 1px solid #eee;
+            .mypage-info-news {
+              display: flex;
+              text-decoration: none;
+              color: #333333;
+              padding: 16px;
+              figure {
+                margin-left: 0;
+                background-color: #eee;
+                height: 48px;
+                width: 48px;
+                svg {
+                  height: 47px;
+                  width: 47px;
+                }
+              }
+              .info-detail {
+                margin: 0 40px 0 20px;
+                font-size: 14px;
+              }
+              .fa-chevron-right {
+                position: absolute;
+                top: 30px;
+                right: 16px;
+              }
+            }
+          }
+          &__index {
+            background-color: #fff;
+            text-align: center;
+            padding: 16px;
+            .mypage-to-index {
+              text-decoration: none;
+              display: block;
+              color: #333;
+              width: 668px;
+              height: 56px;
+              line-height: 56px;
+              background-color: #eee;
+              font-size: 14px;
+            }
+            
+          }
+          &__box {
+            text-align: center;
+            display: block;
+            .mypage-info-image {
+              width: 80px;
+              height: 78px;
+              margin-top: 40px;
+            }
+            .message {
+              padding: 20px 0 60px;
+              font-size: 16px;
+              color: #ccc;
+            }
+          }
+        }
+        .show {
+          display: block;
+        }
+      }
+    }
+
+
+    .mypage-history {
+      margin: 40px 0 0;
+      background-color: #fff;
+      &__title {
+        padding: 0 16px;
+        font-size: 16px;
+        background: #fafafa;
+        line-height: 72px;
+      }
+      &__tabs {
+        background: #eee;
+        list-style: none;
+        display: flex;
+        &__link {
+          width: 50%;
+          display: inline-block;
+          background: #eee;
+          text-align: center;
+          .mypage-history-link {
+            text-decoration: none;
+            font-size: 16px;
+            color: #333;
+            line-height: 72px;
+            display: block;
+          }
+        }
+        .is-active {
+          border-top: 2px solid #ea352d;
+          background: #fff;
+        }
+      }
+      &__item-icon {
+        .icon {
+          display: none;
+        }
+        .is-show {
+          display: block;
+          text-align: center;
+          .icon-size {
+            width: 80px;
+            height: 78px;
+            color: gray;
+            margin-top: 40px;
+          }
+          .message {
+            padding: 20px 0 60px;
+            font-size: 16px;
+            color: #ccc;
+          }
+        }
+      }
+    }
+  }
+}

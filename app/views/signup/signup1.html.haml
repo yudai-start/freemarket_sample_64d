@@ -24,6 +24,7 @@
             .post-singnup1-password__notice
               ※英語と数字の両方を含めて設定してください           
             = form.check_box ":パスワードを表示する", class: :"post-singnup1-password__indication"
+            -# %input{ type: "checkbox", class: "post-singnup1-password__indication", onclick: "myFunction()"}
             = form.label :パスワードを表示する, class: :"post-singnup1-password__indication__label"
           .post-singnup1-identification
             .post-singnup1-identification__h 本人確認
