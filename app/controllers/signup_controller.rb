@@ -3,17 +3,19 @@ class SignupController < ApplicationController
   require "payjp" #gemを読み込み。カード情報登録に必要
 
   def signup1
-    @user = User.new
+    def check_captcha
+      @user = User.new
+    end
   end
 
   def signup2
-    session[:nickname] = user_params[:nickname]
-    session[:email] = user_params[:email]
-    session[:password] = user_params[:password]
-    session[:family_name] = user_params[:family_name]
-    session[:first_name] = user_params[:first_name]
-    session[:family_name_kana] = user_params[:family_name_kana]
-    session[:first_name_kana] = user_params[:first_name_kana]
+    session[:nickname] = params[:nickname]
+    session[:email] = params[:email]
+    session[:password] = params[:password]
+    session[:family_name] = params[:family_name]
+    session[:first_name] = params[:first_name]
+    session[:family_name_kana] = params[:family_name_kana]
+    session[:first_name_kana] = params[:first_name_kana]
     session[:birthday] = date_params[:year]+date_params[:month]+date_params[:day]
     @user = User.new
   end
@@ -46,8 +48,8 @@ class SignupController < ApplicationController
 
     if @user.save!
       session[:id] = @user.id
-      # Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"] #APIキーを使ってPayjpクラスを初期化
-      Payjp.api_key = 'sk_test_8f7b3eac5d76594d259acfc9'
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"] #APIキーを使ってPayjpクラスを初期化
+      # Payjp.api_key = 'sk_test_8f7b3eac5d76594d259acfc9'
       customer = Payjp::Customer.create(
         card: params['payjp-token']
       )

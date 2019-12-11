@@ -66,7 +66,8 @@
               ※本人情報は正しく入力してください。会員登録後、
               %br/
               修正するにはお時間を頂く場合があります。
-          .post-singnup1-captcha ロボットではありません
+          -# .post-singnup1-captcha ロボットではありません
+          = recaptcha_tags
           .post-singnup1-agreement
             「次へ進む」のボタンを押すことにより、#{link_to "利用規約", "#", class: "post-singnup1-agreement__link"}に
             %br/
