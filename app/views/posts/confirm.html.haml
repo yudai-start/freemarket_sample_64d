@@ -14,13 +14,13 @@
   .confirm__contents__payment
     %p.confirm__contents__payment__heading 支払い方法
     %p
-      %a.confirm__contents__payment__link{:href => "#"}
+      =link_to "#", class: :"confirm__contents__payment__link" do
         %i.fas.fa-plus-circle>
-        登録してください
+          登録してください
   .confirm__contents__address
     .confirm__contents__address__heading
       %p.confirm__contents__address__heading__title 配送先
-      %a.confirm__contents__address__heading__link{:href => "#"} 変更する
+      =link_to "変更する","#",class: :confirm__contents__address__heading__link 
     〒
     %p.confirm__contents__address__post 560-1111
     .confirm__contents__address__2
@@ -31,5 +31,5 @@
       %p.confirm__contents__address__name__list 性
       %p.confirm__contents__address__name__list 名
   .confirm__contents__submit
-    %a.confirm__contents__submit__link{:href => "#"} 購入する
+    =link_to "購入する","#",class: :"confirm__contents__submit__link"
 = render "signup/signup.footer"
