@@ -75,11 +75,7 @@ describe User do
           expect(user.errors[:birthday]).to include("can't be blank")
         end
 
-        it "credit_card_numberがない場合、登録できない" do
-          user = build(:user, credit_card_number: nil)
-          user.valid?
-          expect(user.errors[:credit_card_number]).to include("can't be blank")
-        end
+        
       end
     end
   end
