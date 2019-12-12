@@ -1,6 +1,5 @@
 = render "layouts/toppage-header"
 
-
 %section.items-show
   .items-show__name
     ”商品名”
@@ -21,7 +20,6 @@
         .items-show__description__left__many__low
           - 5.times do
             = image_tag "sample.jpg", class: :"items-show__description__left__many__low__image"
-
 
     %table.items-show__description__table
       %tr
@@ -70,7 +68,6 @@
 
         %td= link_to "都道府県", "#", class: :"items-show__description__table__link"
 
-
       %tr
         %th
           配送日の目安
@@ -84,7 +81,6 @@
 
   .items-show__tweet
     %p.items-show__tweet__top
-
 
       〇白いTシャツ
       %br/
@@ -174,4 +170,3 @@
     - breadcrumb :items
     %span= breadcrumbs separator: " &rsaquo; ", class: :"gretel-area"
 = render "layouts/toppage-footer"
-

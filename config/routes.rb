@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   resources :signup do
     collection do
-      get :new
       get :signup1
       get :signup2
       get :signup3
