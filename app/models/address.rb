@@ -6,5 +6,4 @@ class Address < ApplicationRecord
 
   validates :family_name, :first_name, :family_name_kana, :first_name_kana, :post_code, :prefecture, :city, :street_number, presence: true
   validates :phone_number, presence: true, format: {with: /\A\d{10,11}\z/}
-
 end

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # get "/auth/:provider/callback" => "sessions#create"
   # get "/signout" => "sessions#destroy", :as => :signout
 
-  resources :users, only: [:show]
+  # resources :users, only: [:show]
 
   resources :signup do
     collection do
