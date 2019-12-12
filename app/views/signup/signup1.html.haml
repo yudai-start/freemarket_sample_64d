@@ -24,7 +24,6 @@
             .post-singnup1-password__notice
               ※英語と数字の両方を含めて設定してください           
             = form.check_box ":パスワードを表示する", class: :"post-singnup1-password__indication"
-            -# %input{ type: "checkbox", class: "post-singnup1-password__indication", onclick: "myFunction()"}
             = form.label :パスワードを表示する, class: :"post-singnup1-password__indication__label"
           .post-singnup1-identification
             .post-singnup1-identification__h 本人確認
@@ -66,7 +65,6 @@
               ※本人情報は正しく入力してください。会員登録後、
               %br/
               修正するにはお時間を頂く場合があります。
-          -# .post-singnup1-captcha ロボットではありません
           = recaptcha_tags
           .post-singnup1-agreement
             「次へ進む」のボタンを押すことにより、#{link_to "利用規約", "#", class: "post-singnup1-agreement__link"}に

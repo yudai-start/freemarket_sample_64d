@@ -1,18 +1,19 @@
 Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   root to: 'posts#index'
-  devise_for :users
 
-  resources :users, only: [:edit, :update]
-  get "/auth/:provider/callback" => "sessions#create"
-  get "/signout" => "sessions#destroy", :as => :signout
-  
-  # resources :users, only: [:show]
-  
+  # resources :users, only: [:edit, :update]
+
+  # get "/auth/:provider/callback" => "sessions#create"
+  # get "/signout" => "sessions#destroy", :as => :signout
+
+  resources :users, only: [:show]
+
   resources :signup do
     collection do
-      get :signup0
+      get :new
       get :signup1
       get :signup2
       get :signup3
