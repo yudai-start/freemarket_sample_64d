@@ -3,6 +3,26 @@ require 'rails_helper'
 describe User do
   describe '#create' do
     context 'can save' do
+
+      it "is valid with password" do
+        user = build(:user, password: "aaaaaaa")
+        expect(user).to be_valid
+      end
+
+      it "is valid with email" do
+        user = build(:user, email: "kkk@gmail.o")
+        expect(user).to be_valid
+      end
+
+      it "is valid with phone_number" do
+        user = build(:user, phone_number: "0000000000")
+        expect(user).to be_valid
+      end
+
+      it "is valid with phone_number" do
+        user = build(:user, phone_number: "00000000000")
+        expect(user).to be_valid
+      end
       # it "is valid with content" do
       #   message = build(:message, image: nil)
       #   expect(message).to be_valid
@@ -75,11 +95,31 @@ describe User do
           expect(user.errors[:birthday]).to include("can't be blank")
         end
 
-        it "credit_card_numberがない場合、登録できない" do
-          user = build(:user, credit_card_number: nil)
+        it "is invalid with a password" do
+          user = build(:user, password: "aaaaaa")
           user.valid?
-          expect(user.errors[:credit_card_number]).to include("can't be blank")
+          expect(user.errors[:password]).to include("can't be blank")
         end
+
+        it "is invalid with a phone_number" do
+          user = build(:user, phone_number:"000000000000")
+          user.valid?
+          expect(user.errors[:phone_number]).to include("can't be blank")
+        end
+
+        it "is invalid with a phone_number" do
+          user = build(:user, phone_number:"000000000")
+          user.valid?
+          expect(user.errors[:phone_number]).to include("can't be blank")
+        end
+        
+        it "is invalid with a email" do
+          user = build(:user, email: "kkkgmail.o")
+          user.valid?
+          expect(user.errors[:email]).to include("can't be blank")
+        end
+
+
       end
     end
   end
