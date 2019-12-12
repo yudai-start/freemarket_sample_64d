@@ -11,7 +11,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer    :ship_date,             null: false
       t.integer    :price,                 null: false
       t.string     :description,           null: false
-      t.string     :buyer_id,              null: false
+      t.integer    :buyer_id,              null: false
       t.integer    :status,                null: false
       t.timestamps
     end

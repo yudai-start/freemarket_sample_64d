@@ -93,7 +93,7 @@ Things you may want to cover:
 |ship_date            |integer|null: false|
 |price                |integer|null: false|
 |description          |string |null: false|
-|buyer_id             |string |null: false|
+|buyer_id             |imteger |null: false|
 |status               |integer|null: false|
 
 ### Association
