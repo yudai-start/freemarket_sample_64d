@@ -84,3 +84,4 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'payjp'
 gem 'recaptcha', require: "recaptcha/rails"
+gem 'gretel'

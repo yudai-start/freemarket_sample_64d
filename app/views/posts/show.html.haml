@@ -168,12 +168,10 @@
       = render "show.image.top"
     .itemshow__top
       = render "show.image.lower"
-    %div
+
 .items-show-footer
-  %ul.items-show-footer__link
-    %li
-      = link_to "メリカリ", "#", class: :"items-show-footer__link__left"
-      %span.fas.fa-chevron-right.items-show-footer__link__center
-    %li= link_to "ブランド", "#", class: :"items-show-footer__link__right"
+  .items-show-footer__gretel
+    - breadcrumb :items
+    %span= breadcrumbs separator: " &rsaquo; ", class: :"gretel-area"
 = render "layouts/toppage-footer"
 
