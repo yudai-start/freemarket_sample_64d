@@ -1,25 +1,40 @@
 = render "layouts/toppage-header"
 
+
 %section.items-show
   .items-show__name
     ”商品名”
   %p.items-show__comment
-    『”商品名”』は、”取引回数”
-    回の取引実績を持つ”ユーザー名”から出品されました。
+    『”{item.name}”』は、”取引回数”
+    回の取引実績を持つ”{user.name}”から出品されました。
     ブランド名（カテゴリー）の商品で、”都道府県”から”配送期間”
     で発送されます。
   .items-show__description
     .items-show__description__left
-      .items-show__description__left__main
-        = image_tag "sample.jpg", class: :"items-show__description__left__main__image"
+      %ul.items-show__description__left__main
+        %li= image_tag "sample.jpg", class: :"items-show__description__left__main__image active"
+        %li= image_tag "bgc.jpg", class: :"items-show__description__left__main__image"
+        %li= image_tag "kabao.jpg", class: :"items-show__description__left__main__image"
+        %li= image_tag "sample.jpg", class: :"items-show__description__left__main__image"
+        %li= image_tag "kabao.jpg", class: :"items-show__description__left__main__image"
+        %li= image_tag "bgc.jpg", class: :"items-show__description__left__main__image"
+        %li= image_tag "kabao.jpg", class: :"items-show__description__left__main__image"
+        %li= image_tag "sample.jpg", class: :"items-show__description__left__main__image"
+        %li= image_tag "kabao.jpg", class: :"items-show__description__left__main__image"
+        %li= image_tag "sample.jpg", class: :"items-show__description__left__main__image"
       .items-show__description__left__many
-        .items-show__description__left__many__top
-
-          - 5.times do
-            = image_tag "sample.jpg", class: :"items-show__description__left__many__low__image"
-        .items-show__description__left__many__low
-          - 5.times do
-            = image_tag "sample.jpg", class: :"items-show__description__left__many__low__image"
+        %ul.items-show__description__left__many__top
+          %li= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image"
+          %li= image_tag "bgc.jpg", class: :"items-show__description__left__many__low__image"
+          %li= image_tag "kabao.jpg", class: :"items-show__description__left__many__low__image"
+          %li= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image"
+          %li= image_tag "kabao.jpg", class: :"items-show__description__left__many__low__image"
+        %ul.items-show__description__left__many__low
+          %li= image_tag "bgc.jpg", class: :"items-show__description__left__many__low__image"
+          %li= image_tag "kabao.jpg", class: :"items-show__description__left__many__low__image"
+          %li= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image"
+          %li= image_tag "kabao.jpg", class: :"items-show__description__left__many__low__image"
+          %li= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image"
 
     %table.items-show__description__table
       %tr
@@ -68,6 +83,7 @@
 
         %td= link_to "都道府県", "#", class: :"items-show__description__table__link"
 
+
       %tr
         %th
           配送日の目安
@@ -81,6 +97,7 @@
 
   .items-show__tweet
     %p.items-show__tweet__top
+
 
       〇白いTシャツ
       %br/
@@ -164,7 +181,7 @@
       = render "show.image.top"
     .itemshow__top
       = render "show.image.lower"
-
+    %div
 .items-show-footer
   .items-show-footer__gretel
     - breadcrumb :items
