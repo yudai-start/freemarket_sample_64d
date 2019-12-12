@@ -23,7 +23,7 @@
         color: white;
         line-height: 42px; 
       }
-    }      
+    }
   }
   .facebook-google {
     width: 456px;
@@ -52,6 +52,10 @@
     .password {
       margin: 24px 20px 20px 0;
     }
+    .recaptcha-tag{
+      margin: 0 auto;
+      width: 200px;
+    }
     .login {
       height: 50px;
       width: 328px;
@@ -69,11 +73,8 @@
       font-size: 13px;
       margin-top: 10px;
       text-align: right;
+      text-decoration: none;
     }
-    .pass-word:hover {
-      text-decoration: underline;
-      color: #78abe9;
-    }    
   }
 }
 

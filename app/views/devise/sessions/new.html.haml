@@ -15,22 +15,20 @@
       .login__google
         %i.fab.fa-google-plus-g.login__google__icon
         .login__google__text Googleでログイン
-  .input_fields
-    %form#header_email_form.email_form{"accept-charset": "UTF-8", action: "/items/email", "data-remote": "true", method: "post"}
-      %input{name: "utf8", type: "hidden", value: "✓"}/
-      %input{name: "authenticity_token", type: "hidden", value: "Gb4Ol3trq6vFCosVD2eTACr7OWtGhfI/L54+pQ7j1D1OSid2cfAz9Dk5ZcX1wVlz0BwBhdRTB7ZZ8lBICRCjpg=="}/
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .input_fields
       .email
-        %input#header_email.email_input{"aria-label": "email", autocomplete: "off", maxlength: "250", name: "header_email", placeholder: "メールアドレス", type: "text"}/
-    %form#header_password_form.password_form{"accept-charset": "UTF-8", action: "/items/password", "data-remote": "true", method: "post"}
-      %input{name: "utf8", type: "hidden", value: "✓"}/
-      %input{name: "authenticity_token", type: "hidden", value: "Gb4Ol3trq6vFCosVD2eTACr7OWtGhfI/L54+pQ7j1D1OSid2cfAz9Dk5ZcX1wVlz0BwBhdRTB7ZZ8lBICRCjpg=="}/
+        = f.email_field :email, placeholder: "メールアドレス", autofocus: true
       .password
-        %input#header_password.password_input{"aria-label": "password", autocomplete: "off", maxlength: "250", name: "header_password", placeholder: "パスワード", type: "text"}/
-    = recaptcha_tags
-    .login
-      = link_to new_user_registration_path , class: "log-in" do
-        ログイン
+        = f.password_field :password, placeholder: "パスワード", autocomplete: "off"
+      .recaptcha_tag
+        = recaptcha_tags
+      .login
+        .log-in
+          %label
+            = f.submit "", class: 'btn', style: "display: none"
+            %p ログイン
+      = link_to '#', class: "pass-word" do
+        %p.pass-word パスワードをお忘れの方
 
-    .pass-word
-      パスワードをお忘れの方
 = render  partial: "/signup/signup.footer"

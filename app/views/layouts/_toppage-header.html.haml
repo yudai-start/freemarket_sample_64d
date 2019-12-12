@@ -1,30 +1,29 @@
-%body
-  %header.header
-    .header-lists
-      .header-lists-top
-        .header-lists-top-left
-          .header-lists-top-left-logo
-            =image_tag "fmarket_logo_red.svg"
-        %label
-          .header-lists-top-navbar
-            %form.header-lists-top-navbar-form{action: "/jp/search/"}
-              %input.header-lists-top-navbar-form-search{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
-              %button.header-lists-top-navbar-form-search-button
-                %i.fas.fa-search
-      .header-lists-low
-        .header-lists-low-left
-          .header-lists-low-left-categorybox
-            = link_to "/jp/category/",class: :"category" do
-              %i.fas.fa-list-ul
-              カテゴリーから探す
-          .header-lists-low-left-brandbox
-            = link_to "/jp/brand/",class: :"brand" do
-              %i.fas.fa-tag
-              ブランドから探す
-        .header-lists-low-right
-          .header-lists-low-right-newmenberbox
-            =link_to new_user_registration_path, class: "newmember" do
-              新規会員登録
-          .header-lists-low-right-loginbox
-            =link_to new_user_session_path, class: "login" do
-              ログイン
+%header.header
+  .header-lists
+    .header-lists-top
+      .header-lists-top-left
+        .header-lists-top-left-logo
+          =image_tag "fmarket_logo_red.svg"
+      %label
+        .header-lists-top-navbar
+          %form.header-lists-top-navbar-form{action: "/jp/search/"}
+            %input.header-lists-top-navbar-form-search{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
+            %button.header-lists-top-navbar-form-search-button
+              %i.fas.fa-search
+    .header-lists-low
+      .header-lists-low-left
+        .header-lists-low-left-categorybox
+          = link_to "/jp/category/",class: :"category" do
+            %i.fas.fa-list-ul
+            カテゴリーから探す
+        .header-lists-low-left-brandbox
+          = link_to "/jp/brand/",class: :"brand" do
+            %i.fas.fa-tag
+            ブランドから探す
+      .header-lists-low-right
+        .header-lists-low-right-newmenberbox
+          =link_to new_user_registration_path, class: "newmember" do
+            新規会員登録
+        .header-lists-low-right-loginbox
+          =link_to new_user_session_path, method: :get, class: "login" do
+            ログイン
