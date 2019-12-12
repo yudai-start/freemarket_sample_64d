@@ -93,10 +93,13 @@ Things you may want to cover:
 |ship_date            |integer|null: false|
 |price                |integer|null: false|
 |description          |string |null: false|
-|buyer_id             |imteger |null: false|
+|buyer_id             |integer|null: false|
 |status               |integer|null: false|
 
 ### Association
+- belongs_to :user
+- has_many :comments
+- has_one :review
 - has_many :likes
 - has_many :images
 
