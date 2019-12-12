@@ -6,21 +6,19 @@ class SignupController < ApplicationController
   end
 
   def signup1
-   #「私はロボットではありません」にチェックがあれば実行
     @user = User.new
-  
   end
 
   def signup2
-    session[:nickname] = params[:nickname]    #何故かuser_paramsで値取得できなかったので、paramsで取得
-    session[:email] = params[:email]          #sessionに一時データを格納することでpage遷移が可能
-    session[:password] = params[:password]
-    session[:family_name] = params[:family_name]
-    session[:first_name] = params[:first_name]
-    session[:family_name_kana] = params[:family_name_kana]
-    session[:first_name_kana] = params[:first_name_kana]
+    session[:nickname] = user_params[:nickname]    #何故かuser_paramsで値取得できなかったので、paramsで取得
+    session[:email] = user_params[:email]          #sessionに一時データを格納することでpage遷移が可能
+    session[:password] = user_params[:password]
+    session[:family_name] = user_params[:family_name]
+    session[:first_name] = user_params[:first_name]
+    session[:family_name_kana] = user_params[:family_name_kana]
+    session[:first_name_kana] = user_params[:first_name_kana]
     session[:birthday] = date_params[:year]+date_params[:month]+date_params[:day]   #年、月、日を結合
-    if verify_recaptcha
+    if verify_recaptcha   #「私はロボットではありません」にチェックがあれば実行
       @user = User.new
     else
       render '/signup/signup1'
@@ -30,7 +28,7 @@ class SignupController < ApplicationController
   def signup3
     session[:phone_number] = user_params[:phone_number]
     @user = User.new
-    @user.addresses.build       #この記述により、addressesテーブル用のfields_forフォームが、signup3に表示可能
+    @user.addresses.build    #この記述により、addressesテーブル用のfields_forフォームが、signup3に表示可能
   end
 
   def signup4
