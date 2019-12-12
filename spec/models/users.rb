@@ -3,6 +3,13 @@ require 'rails_helper'
 describe User do
   describe '#create' do
     context 'can save' do
+
+      it "is valid with password" do
+        user = build(:user, password: "aaaaaaa")
+        expect(user).to be_valid
+      end
+
+
       # it "is valid with content" do
       #   message = build(:message, image: nil)
       #   expect(message).to be_valid
@@ -75,6 +82,15 @@ describe User do
           expect(user.errors[:birthday]).to include("can't be blank")
         end
 
+        it "is invalid with a password" do
+          user = build(:user, password: "aaaaaa")
+          user.valid?
+          expect(user.errors[:password]).to include("can't be blank")
+        end
+
+        it "is invalid with a phone_number" do
+          user = build(:user, phone_number:"")
+        end
         
       end
     end
