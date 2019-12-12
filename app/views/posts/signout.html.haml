@@ -1,4 +1,6 @@
-.signout
-  .signout__main
-    .signout__main__btn
-      %a.signout__main__btn__link{:href => ""} ログアウト
+= render partial: "layouts/toppage-header"
+.signout-sidebar
+  = render partial: "posts/sidebar" 
+  .signout-signout
+    = render partial: "posts/signout" 
+= render partial: "layouts/toppage-footer" 
