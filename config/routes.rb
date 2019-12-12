@@ -23,17 +23,16 @@ Rails.application.routes.draw do
 
   resources :posts do
     collection do
-      get :logout
+      get :signout
       get :profile
       get :signout
+      get :mypage
       get :confirm
-
       get :personal_info
-
       get :exhibit
       get :add_payments
       get :footer
-
+      get :creditCard
     end
  end
 end
