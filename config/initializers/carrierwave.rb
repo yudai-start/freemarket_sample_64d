@@ -20,4 +20,6 @@ CarrierWave.configure do |config|
   # 本番環境以外では、アップロード先をローカルにする
   else
     config.storage :file
+  end
+
 end
