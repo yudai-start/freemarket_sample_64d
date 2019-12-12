@@ -92,7 +92,9 @@ Things you may want to cover:
 |ship_from_prefecture |integer|null: false|
 |ship_date            |integer|null: false|
 |price                |integer|null: false|
-|description          |string |null: true|
+|description          |string |null: false|
+|buyer_id             |string |null: false|
+|status               |integer|null: false|
 
 ### Association
 - belongs_to :user
