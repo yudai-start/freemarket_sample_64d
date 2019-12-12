@@ -67,8 +67,13 @@ $around-color: #eeeeee;
       }
     }
     #ex-btn-cont {
-      text-align: center;
+      font-size: 14px;
+      align-items: center;
       padding-top: 40px;
+      .ex-rule-link {
+        text-decoration: none;
+        color: #1e90ff;
+      }
       .ex-btn-fs {
       font-size: 15px;
       }
@@ -85,6 +90,7 @@ $around-color: #eeeeee;
         margin: 0 auto;
         background-color: #948f8f;
         color: white;
+        display: block;
       }
     }
   }

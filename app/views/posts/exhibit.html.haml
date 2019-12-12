@@ -101,7 +101,16 @@
                   ¥¥¥
         #ex-btn-cont.ex-cont
           %div
-            規約文
+            = link_to "禁止されている出品", class:"ex-rule-link"
+            、
+            = link_to "行為", class:"ex-rule-link"
+            を必ずご確認ください。<br>
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            = link_to "偽ブランドの販売", class:"ex-rule-link"
+            は犯罪であり処罰される可能性があります。<br>
+            また、出品をもちまして
+            = link_to "加盟店規約", class:"ex-rule-link"
+            に同意したことになります。
           %button#ex-ship-btn{:type => "submit"}
             %p.ex-btn-fs 出品する
           %button#ex-ship-return{:type => "submit"}
