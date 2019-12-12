@@ -4,7 +4,7 @@ FactoryBot.define do
     user_id      {"2"}
     size         {"M"}
     item_status  {"出品中"}
-    shipping_fee_defraver   {"送料込み"}
+    shipping_fee_defrayer   {"送料込み"}
     shipping_system {"クロネコヤマト"}
     ship_from_prefecture {"大阪"}
     ship_date {"7日ごろ"}
