@@ -1,5 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe Image, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Image do
+  describe "#create" do
+
+    context "can not save" do
+
+      
+    end
+
+  end
 end
+
+
