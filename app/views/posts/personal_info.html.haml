@@ -1,54 +1,60 @@
-%body
-  .pi-top 本人情報の登録
-  .personal-info-main
-    .pi-p
-      %div
-        お客さまの本人情報をご登録ください。
-        %br/
-        登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
-      = link_to "本人確認書類のアップロードについて","#",id:'pi-up'
-    .name-birth
-      %div
-        お名前  name
-      %div
-        田中太郎
-    .name-birth
-      %div
-        お名前カナ
-      %div
-        タナカタロウ
-    .name-birth
-      %div
-        生年月日
-      %div
-        2000/01/01
-    = form_with do |form|
-      %div
-        .flex
-          %div 郵便番号
-          .ninni 任意
-        = form.text_field :addressnum, placeholder: "例）1234567"
-      %div
-        .flex
-          %div 都道府県
-          .ninni 任意
-        = form.select :prefecture, "都道府県"
-      %div
-        .flex
-          %div 市区町村
-          .ninni 任意
-        = form.text_field :city, placeholder: "例）横丘市"
-      %div
-        .flex
-          %div 番地
-          .ninni 任意
-        = form.text_field :address, placeholder: "例）青い山１−１−１"
-      %div
-        .flex
-          %div 建物名
-          .ninni 任意
-        = form.text_field :building, placeholder: "例）紅いビル２０１"
-      = form.submit "登録する", id:'post'
-    .pi-post
-      = link_to "本人情報の登録について","#",id:'pi-post'
-      %div
+= render  partial: "layouts/toppage-header"
+
+.personal_info_wrapper 
+  =render "sideber"
+  .personal_info_wrapper__right
+    .pi-top 本人情報の登録
+    .personal-info-main
+      .pi-p
+        %div
+          お客さまの本人情報をご登録ください。
+          %br/
+          登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        = link_to "本人確認書類のアップロードについて","#",id:'pi-up'
+      .name-birth
+        %div
+          お名前  name
+        %div
+          田中太郎
+      .name-birth
+        %div
+          お名前カナ
+        %div
+          タナカタロウ
+      .name-birth
+        %div
+          生年月日
+        %div
+          2000/01/01
+      = form_with do |form|
+        %div
+          .flex
+            %div 郵便番号
+            .ninni 任意
+          = form.text_field :addressnum, placeholder: "例）1234567"
+        %div
+          .flex
+            %div 都道府県
+            .ninni 任意
+          = form.select :prefecture, "都道府県"
+        %div
+          .flex
+            %div 市区町村
+            .ninni 任意
+          = form.text_field :city, placeholder: "例）横丘市"
+        %div
+          .flex
+            %div 番地
+            .ninni 任意
+          = form.text_field :address, placeholder: "例）青い山１−１−１"
+        %div
+          .flex
+            %div 建物名
+            .ninni 任意
+          = form.text_field :building, placeholder: "例）紅いビル２０１"
+        = form.submit "登録する", id:'post'
+      .pi-post
+        = link_to "本人情報の登録について","#",id:'pi-post'
+        %div
+        
+= render  partial: "layouts/toppage-footer"
