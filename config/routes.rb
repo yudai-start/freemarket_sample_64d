@@ -4,13 +4,6 @@ Rails.application.routes.draw do
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   root to: 'posts#index'
 
-  # resources :users, only: [:edit, :update]
-
-  # get "/auth/:provider/callback" => "sessions#create"
-  # get "/signout" => "sessions#destroy", :as => :signout
-
-  # resources :users, only: [:show]
-
   resources :signup do
     collection do
       get :new

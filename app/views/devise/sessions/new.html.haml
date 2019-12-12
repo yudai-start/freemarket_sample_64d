@@ -28,8 +28,9 @@
         %input#header_password.password_input{"aria-label": "password", autocomplete: "off", maxlength: "250", name: "header_password", placeholder: "パスワード", type: "text"}/
     = recaptcha_tags
     .login
-      .log-in
+      = link_to new_user_registration_path , class: "log-in" do
         ログイン
+
     .pass-word
       パスワードをお忘れの方
 = render  partial: "/signup/signup.footer"
