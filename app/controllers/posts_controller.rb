@@ -2,8 +2,6 @@ class PostsController < ApplicationController
   def index
   end
 
-  
-  
   def show
   end
 
@@ -38,5 +36,6 @@ class PostsController < ApplicationController
   end
 
   def signout
+    session.clear
   end
 end

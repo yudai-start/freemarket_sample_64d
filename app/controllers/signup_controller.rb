@@ -6,6 +6,14 @@ class SignupController < ApplicationController
   end
 
   def signup1
+    # binding.pry
+    if session["devise.facebook_data"] 
+      @name = session["devise.facebook_data"]["info"]["name"]
+      @email = session["devise.facebook_data"]["info"]["email"]
+    else
+      @name = ""
+      @email = ""
+    end
     @user = User.new
   end
 
@@ -51,18 +59,24 @@ class SignupController < ApplicationController
     )
     @user.addresses.build(session[:addresses_attributes].first[1]) #addressesインスタンスを生成。usersインスタンスがsaveされると同時にsaveされる。
                                                                    #sessionのままだと何故かハッシュではなかったので、.first[1]でハッシュに変えています。興味あれば、コンソールで確認してみてください。
-
     if @user.save!
       session[:id] = @user.id
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"] #APIキーを使ってPayjpクラスを初期化
       customer = Payjp::Customer.create(  #pay.jsで生成された、カード情報を含んだトークンをPay.jp側に保存する。
         card: params['payjp-token']
       )
-      @card = Card.create!(   #トークンとuserとを結びつける、cardsインスタンスを保存する。
+      Card.create!(   #トークンとuserとを結びつける、cardsインスタンスを保存する。
         user_id: @user.id,    
         customer_id: customer.id,   #payjpの顧客id
         card_id: customer.default_card  #payjpのデフォルトカードid
       )
+      if session["devise.facebook_data"] 
+        SnsCredential.create!(
+          provider: session["devise.facebook_data"]["provider"],
+          uid: session["devise.facebook_data"]["uid"],
+          user_id: @user.id
+        )
+      end
       redirect_to signup5_signup_index_path   #インスタンスの保存ができれば、登録完了ページへ遷移
     else
       render '/signup/signup1'  #登録に失敗すれば、入力ページ1へ移動

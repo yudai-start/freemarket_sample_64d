@@ -3,7 +3,8 @@
     .header-lists-top
       .header-lists-top-left
         .header-lists-top-left-logo
-          =image_tag "fmarket_logo_red.svg"
+          = link_to root_path do
+            =image_tag "fmarket_logo_red.svg"
       %label
         .header-lists-top-navbar
           %form.header-lists-top-navbar-form{action: "/jp/search/"}
