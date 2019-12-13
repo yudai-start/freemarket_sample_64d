@@ -18,4 +18,5 @@ $(function(){
     $('.icon').eq(index).addClass("is-show");
     $(document).off('scroll');
   });
+
 });
