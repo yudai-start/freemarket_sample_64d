@@ -7,9 +7,9 @@ class SignupController < ApplicationController
 
   def signup1
     # binding.pry
-    if session["devise.facebook_data"] 
-      @name = session["devise.facebook_data"]["info"]["name"]
-      @email = session["devise.facebook_data"]["info"]["email"]
+    if session["devise_data"] 
+      @name = session["devise_data"]["info"]["name"]
+      @email = session["devise_data"]["info"]["email"]
     else
       @name = ""
       @email = ""
@@ -45,6 +45,7 @@ class SignupController < ApplicationController
   end
 
   def create
+    binding.pry
     @user = User.new(
       nickname:         session[:nickname],
       email:            session[:email],
@@ -70,10 +71,10 @@ class SignupController < ApplicationController
         customer_id: customer.id,   #payjpの顧客id
         card_id: customer.default_card  #payjpのデフォルトカードid
       )
-      if session["devise.facebook_data"] 
+      if session["devise_data"] 
         SnsCredential.create!(
-          provider: session["devise.facebook_data"]["provider"],
-          uid: session["devise.facebook_data"]["uid"],
+          provider: session["devise_data"]["provider"],
+          uid: session["devise_data"]["uid"],
           user_id: @user.id
         )
       end
