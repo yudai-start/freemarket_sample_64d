@@ -6,7 +6,6 @@ class SignupController < ApplicationController
   end
 
   def signup1
-    # binding.pry
     if session["devise_data"] 
       @name = session["devise_data"]["info"]["name"]
       @email = session["devise_data"]["info"]["email"]
