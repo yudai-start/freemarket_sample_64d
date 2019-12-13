@@ -141,6 +141,35 @@
       .items-show__tweet__low__right
         = link_to "#", class: :"items-show__tweet__low__right__btn" do
           %span.fas.fa-lock.items-show__tweet__low__right__btn__safe あんしん・あんぜんへの取り組み
+
+
+//後日if文を挿入
+%ul.item-change
+  %li.item-change__box
+    = link_to "商品の編集" ,"#", class: :"item-change__box__red-btn"
+  %h1.item-change__or or
+  %li.item-change__box
+    = link_to  "出品を一旦停止する", "#", class: :"item-change__box__gray-btn"
+  %li.item-change__box
+    = link_to "この商品を削除する", "#", class: :"item-change__box__gray-btn", id: :"destroy-click"
+
+.destroy-confirmation
+  .destroy-confirmation__box
+    %p.confirmation-message
+      %span 確認
+      %br/
+      削除すると二度と復活できません。
+      %br/
+      削除する代わりに停止することもできます。
+      %br/
+      %br/
+      本当に削除しますか?
+  .destroy-confirmation__choice
+    %li.destroy-confirmation__choice__cancel
+      キャンセル
+    %li.destroy-confirmation__choice__destroy
+      = link_to "削除する", "#", method: :destroy, class: :"destroy-confirmation__choice__destroy__btn"
+
 .item-show-comments
   .item-show-comments__box
     = form_with(model: @user, local: true) do |form|
