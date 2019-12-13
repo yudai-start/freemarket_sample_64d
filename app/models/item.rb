@@ -4,4 +4,7 @@ class Item < ApplicationRecord
   has_one :review
   has_many :likes
   has_many :images
+
+  
+
 end

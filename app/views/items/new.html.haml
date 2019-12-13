@@ -16,7 +16,7 @@
           %div
             最大１０枚までアップロードできます
           .ex-img-form
-            %input{:accept => "image/*", :multiple => "multiple", :name => "image_file[]", :type => "file"}/
+            %input{:accept => "image/*", :multiple => "multiple", :images => "image[]", :type => "file"}/
         #ex-item-cont.ex-cont
           .ex-indispensable-tmp
             .ex-sentence
@@ -46,7 +46,7 @@
                 商品の状態
               .ex-indispensable
                 必須
-            = form.select :item_status, ["aaa","bbb","ccc"], { include_blank: true, selected: 1 }
+            = form.select :item_status, ["ddd", "eee", "fff"], { include_blank: true, selected: 1 }
             -# f.select( プロパティ名, タグの情報, {オプション}, {HTMLオプション} )
 
               

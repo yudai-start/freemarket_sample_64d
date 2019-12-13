@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_112609) do
     t.string "size"
     t.integer "item_status", null: false
     t.integer "shipping_fee_defrayer", null: false
-    t.integer "shipping_system", null: false
+    t.integer "shipping_system"
     t.integer "ship_from_prefecture", null: false
     t.integer "ship_date", null: false
     t.integer "price", null: false
