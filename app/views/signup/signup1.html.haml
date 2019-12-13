@@ -10,12 +10,12 @@
             .post-singnup1-nickname__title
               .post-singnup1-nickname__title__text ニックネーム
               .post-singnup1-nickname__title__must 必須
-            = form.text_field :nickname, placeholder: "  例）メルカリ太郎", class: :"post-singnup1-nickname__form"
+            = form.text_field :nickname, placeholder: "  例）メルカリ太郎", value: @name, class: :"post-singnup1-nickname__form"
           .post-singnup1-email
             .post-singnup1-email__title
               .post-singnup1-email__title__text メールアドレス
               .post-singnup1-email__title__must 必須
-            = form.text_field :email, placeholder: "携帯どちらでも可", class: :"post-singnup1-email__form"
+            = form.text_field :email, placeholder: "携帯どちらでも可", value: @email, class: :"post-singnup1-email__form"
           .post-singnup1-password
             .post-singnup1-password__title
               .post-singnup1-password__title__text パスワード
