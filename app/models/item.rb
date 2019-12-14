@@ -8,7 +8,7 @@ class Item < ApplicationRecord
 
   has_many :comments
   has_one :review
-  has_many :likes
+  # has_many :likes
 
   has_many :images
 
