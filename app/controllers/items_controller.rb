@@ -1,4 +1,10 @@
 class ItemsController < ApplicationController
+
+
+  def index
+  #  binding.pry
+    @items = Item.all.includes(:images)
+
   def new
     @item = Item.new
     @item.images.build
@@ -55,6 +61,7 @@ class ItemsController < ApplicationController
                                  :buyer_id,
                                  :status,
                                  images_attributes:[:id, :image, :item_id]).merge(user_id: 1)        
+
   end
 end
 

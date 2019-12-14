@@ -13,19 +13,20 @@
       .tags__tag= link_to "タグ４", "#" ,class: 'tag_link'
   .block
     .block_top
-      .item_categoly
+      .item_category
         新着アイテム
       .more
         = link_to "もっとみる  >", "#" ,id:'more'
     .contents
-      - 50.times do
+      - @items.each do |item|
         = link_to("#", class: 'item_link') do
           .content
             .image
-              = image_tag "kabao.jpg"
+              -# = image_tag item.images.first["image"]
               .price
-                #price ¥¥¥¥¥
-            .item_name ハリケーン
+                #price
+                = item.price
+            .item_name 
+              = item.name
 
 = render  partial: "layouts/toppage-footer"
-
