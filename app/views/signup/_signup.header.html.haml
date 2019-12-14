@@ -1,6 +1,6 @@
 .header-temp
   .header-template
-    = link_to "#", class: :"header-template__link" do
+    = link_to root_path, class: :"header-template__link" do
       %span
         %svg{height: "50px", viewbox: "0 0 281.19 84.08", width: "180px", x: "0px", xmlns: "http://www.w3.org/2000/svg", y: "0px"}
           %defs
@@ -19,16 +19,16 @@
     %ol.header-template-nav__list.clearfix
       %li.header-template-nav__list__status.active
         会員情報
-        #circle.progress-status-active
-      %li.header-template-nav__list__status
+        #circle.progress-status-start
+      %li{class: "#{ (params[:action] != "signup1") ? "header-template-nav__list__status active" : "header-template-nav__list__status" }"}
         電話番号認証
-        #circle.progress-status
-      %li.header-template-nav__list__status
+        #circle{class: "#{ (params[:action] != "signup1") ? "progress-status-active" : "progress-status" }"}
+      %li{class: "#{ (params[:action] != "signup1" && params[:action] != "signup2") ? "header-template-nav__list__status active" : "header-template-nav__list__status"}"}
         お届け先住所入力
-        #circle.progress-status
-      %li.header-template-nav__list__status
+        #circle{class: "#{ (params[:action] != "signup1" && params[:action] != "signup2") ? "progress-status-active" : "progress-status" }"}
+      %li{class: "#{ (params[:action] == "signup4" || params[:action] == "signup5") ? "header-template-nav__list__status active" : "header-template-nav__list__status"}"}
         お支払い方法
-        #circle.progress-status
-      %li.header-template-nav__list__status
+        #circle{class: "#{ (params[:action] == "signup4" || params[:action] == "signup5") ? "progress-status-active" : "progress-status" }"}
+      %li{class: "#{ (params[:action] == "signup5") ? "header-template-nav__list__status active" : "header-template-nav__list__status" }"}
         完了
-        #circle.progress-status-last
+        #circle{class: "#{ (params[:action] == "signup5") ? "progress-status-active" : "progress-status" }"}

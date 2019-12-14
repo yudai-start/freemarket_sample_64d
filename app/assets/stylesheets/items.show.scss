@@ -1,6 +1,3 @@
-
-// @import 'font-awesome';
-
 .items-show {
   background-color: #fff;
   margin: 40px auto 0;
@@ -26,6 +23,10 @@
       background: #fafafa;
       &__main {
         &__image {
+          display: none;
+        }
+        .active {
+          display: block;
           width: 300px;
           height: 300px;
         }
@@ -149,6 +150,76 @@
           text-decoration: none;
           font-size: 14px;
         }
+      }
+    }
+  }
+}
+
+.item-change {
+  width: 700px;
+  background-color: #fff;
+  margin: 8px auto 0;
+  padding: 16px 40px;
+  text-align: center;
+  &__box {
+    line-height: 48px;
+    font-size: 14px;
+    &__red-btn {
+      display: block;
+      background-color: red;
+      text-decoration: none;
+      width: 100%;
+      color: #fff;
+    }
+    &__gray-btn {
+      display: block;
+      background-color: #aaa;
+      text-decoration: none;
+      width: 100%;
+      color: #fff;
+      margin-top: 10px;
+    }
+  }
+  &__or {
+    margin-top: 10px;
+  }
+}
+
+
+.destroy-confirmation {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 400px;
+  background-color: #fff;
+  width: 600px;
+  text-align: center;
+  border: solid #f5f5f5 1px;
+  &__box {
+    padding: 60px 0;
+    color: #333;
+    span {
+      font-weight: 700;
+    }
+  }
+  &__choice {
+    display: flex;
+    border-top: solid #f5f5f5 1px;
+    list-style: none;
+    line-height: 50px;
+    font-size: 14px;
+    &__cancel {
+      text-align: center;
+      color: #333;
+      border-right: solid #f5f5f5 1px;
+      width: 50%;
+    }
+    &__destroy {
+      width: 50%;
+      text-align: center;
+      &__btn {
+        color: #0099e8;
+        text-decoration: none;
       }
     }
   }
@@ -303,34 +374,25 @@
 
 
 
+
 .items-show-footer {
   width: 100%;
   margin: 40px auto 0;
   background: #f5f5f5;
   border: 1px solid #eee;
-  position: relative;
   padding: 16px 0;
-  &__link {
-    width: 700px;
-    text-align: left;
+  &__gretel {
+    margin-left: 100px;
     color: #333;
     font-size: 14px;
-    list-style: none;
-    display: flex;
-    &__left {
-      text-decoration: none;
-      margin-left: 5px;
-      color: #333;
-    }
-    &__center {
-      text-align: center;
-      margin-left: 10px;
-    }
-    &__right {
-      text-decoration: none;
-      font-weight: bold;
-      margin-left: 15px;
-      color: #333;
+    .gretel-area {
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      span {
+        font-weight: 700;
+      }
     }
   }
 }

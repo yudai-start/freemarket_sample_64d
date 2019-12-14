@@ -1,4 +1,5 @@
 .signout
   .signout__main
     .signout__main__btn
-      %a.signout__main__btn__link{:href => ""} ログアウト
+      =link_to destroy_user_session_path, method: :delete, class: "signout__main__btn__link" do
+        ログアウト
