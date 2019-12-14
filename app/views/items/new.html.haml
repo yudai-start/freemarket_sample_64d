@@ -5,6 +5,7 @@
 
     .ex-main
       .ex-container
+      
         #ex-top-cont.ex-cont
           text
         #ex-img-cont.ex-cont
@@ -16,7 +17,9 @@
           %div
             最大１０枚までアップロードできます
           .ex-img-form
-            %input{:accept => "image/*", :multiple => "multiple", :images => "image[]", :type => "file"}/
+            = form.fields_for :images do |f|
+              = f.file_field :image, class: "ex-img-form"
+              
         #ex-item-cont.ex-cont
           .ex-indispensable-tmp
             .ex-sentence
@@ -40,14 +43,14 @@
                 カテゴリー
               .ex-indispensable
                 必須
-            = form.select :category, ["aaa","bbb","ccc"], { include_blank: true, selected: 1 }
+            -# = form.select :category, ["aaa","bbb","ccc"], { include_blank: true, selected: 1 }
             .ex-indispensable-tmp
               .ex-sentence
                 商品の状態
               .ex-indispensable
                 必須
             = form.select :item_status, ["ddd", "eee", "fff"], { include_blank: true, selected: 1 }
-            -# f.select( プロパティ名, タグの情報, {オプション}, {HTMLオプション} )
+
 
               
         #ex-shipping-cont.ex-cont
