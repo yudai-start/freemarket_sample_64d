@@ -30,4 +30,5 @@ Rails.application.routes.draw do
       get :creditCard
     end
  end
+  resources :items
 end
