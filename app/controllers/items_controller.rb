@@ -23,8 +23,8 @@ class ItemsController < ApplicationController
     )
   
     @item[:status] = 1
-    binding.pry
-    @item.images.build(item_params[:images_attributes].to_hash.first[1])
+
+    # @item.images.build(item_params[:images_attributes].to_hash.first[1])
 
     # @item.images.build(item_params[:images_attributes].first[1])
 
