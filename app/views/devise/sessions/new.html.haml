@@ -12,7 +12,7 @@
       .login__facebook
         %i.fab.fa-facebook-square.login__facebook__icon
         .login__facebook__text Facebookでログイン
-    = link_to "#" , style: "text-decoration:none;" do
+    = link_to user_google_oauth2_omniauth_authorize_path, style: "text-decoration:none;" do
       .login__google
         %i.fab.fa-google-plus-g.login__google__icon
         .login__google__text Googleでログイン

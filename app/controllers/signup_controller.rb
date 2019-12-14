@@ -6,10 +6,9 @@ class SignupController < ApplicationController
   end
 
   def signup1
-    # binding.pry
-    if session["devise.facebook_data"] 
-      @name = session["devise.facebook_data"]["info"]["name"]
-      @email = session["devise.facebook_data"]["info"]["email"]
+    if session["devise_data"]             #SNS経由の新規登録の際、SNS上の名前とメールをビューに渡し、入力フォームの初期値とする。
+      @name = session["devise_data"]["info"]["name"]
+      @email = session["devise_data"]["info"]["email"]
     else
       @name = ""
       @email = ""
@@ -18,8 +17,8 @@ class SignupController < ApplicationController
   end
 
   def signup2
-    session[:nickname] = user_params[:nickname]    #何故かuser_paramsで値取得できなかったので、paramsで取得
-    session[:email] = user_params[:email]          #sessionに一時データを格納することでpage遷移が可能
+    session[:nickname] = user_params[:nickname]    #sessionに一時データを格納することでpage遷移が可能
+    session[:email] = user_params[:email]
     session[:password] = user_params[:password]
     session[:family_name] = user_params[:family_name]
     session[:first_name] = user_params[:first_name]
@@ -58,7 +57,7 @@ class SignupController < ApplicationController
       birthday:         session[:birthday],
     )
     @user.addresses.build(session[:addresses_attributes].first[1]) #addressesインスタンスを生成。usersインスタンスがsaveされると同時にsaveされる。
-                                                                   #sessionのままだと何故かハッシュではなかったので、.first[1]でハッシュに変えています。興味あれば、コンソールで確認してみてください。
+                                                                   #sessionのままだと何故かハッシュではなかったので、.first[1]でハッシュに変えています。
     if @user.save!
       session[:id] = @user.id
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"] #APIキーを使ってPayjpクラスを初期化
@@ -70,10 +69,10 @@ class SignupController < ApplicationController
         customer_id: customer.id,   #payjpの顧客id
         card_id: customer.default_card  #payjpのデフォルトカードid
       )
-      if session["devise.facebook_data"] 
+      if session["devise_data"] #SNS経由の新規登録の際、各パラメータをSNS_credentialsテーブルに保存
         SnsCredential.create!(
-          provider: session["devise.facebook_data"]["provider"],
-          uid: session["devise.facebook_data"]["uid"],
+          provider: session["devise_data"]["provider"],
+          uid: session["devise_data"]["uid"],
           user_id: @user.id
         )
       end
