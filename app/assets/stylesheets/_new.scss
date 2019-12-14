@@ -1,0 +1,89 @@
+.log-in__main {
+  background-color: white;
+  height: 750px;
+  width: 456px;
+  margin: 0 auto;
+  .acount {
+    height: 144px;
+    width: 456px;
+    border-bottom: 1px solid #f5f5f5;
+      &-top {
+      font-size: 14px;
+      text-align: center;
+      padding-top: 40px;
+    }
+    .sing-up__registration {
+      background: #0099e8;
+      height: 42px;
+      width: 328px;
+      margin: 0 auto;
+      text-align: center;
+      .sing-up__new {
+        text-decoration: none;
+        color: white;
+        line-height: 42px; 
+      }
+    }
+  }
+  .facebook-google {
+    width: 456px;
+    padding-top: 30px;
+    margin: 0 auto;
+
+    .login__facebook {
+      @include facebook-btn;
+    }
+    .login__google {
+      @include google-btn;
+    }
+  }
+  .input_fields{
+    margin: 0 auto;
+    width: 330px;
+    input {
+      @include form;
+      height: 48px;
+      width: 310px;
+    }
+    .email {
+      margin-top: 56px;
+      margin-right: 20px;
+    }
+    .password {
+      margin: 24px 20px 20px 0;
+    }
+    .recaptcha-tag{
+      margin: 0 auto;
+      width: 200px;
+    }
+    .login {
+      height: 50px;
+      width: 328px;
+      background-color: #ea352d;
+      margin-top: 25px;
+      line-height: 50px; 
+      .log-in {
+        font-size: 14px;
+        color: white;
+        text-align: center;
+      }
+    }
+    .pass-word {
+      color: #0099e8;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: right;
+      text-decoration: none;
+    }
+  }
+}
+
+.signin-privacy:hover {
+  color: rgb(88, 86, 86);
+}
+.signin-mercari:hover {
+  color: rgb(88, 86, 86);
+}
+.signin-tokutei:hover {
+  color: rgb(88, 86, 86);
+}

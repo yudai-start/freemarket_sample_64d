@@ -85,7 +85,7 @@ Things you may want to cover:
 |------|----|-------|
 |name                 |string |null: false, index: true|
 |user_id              |integer|null: false, foreign_key: true|
-|size                 |string |null: false|
+|size                 |string |
 |item_status          |integer|null: false|
 |shipping_fee_defrayer|integer|null: false|
 |shipping_system      |integer|null: false|

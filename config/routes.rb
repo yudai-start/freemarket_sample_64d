@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   root to: 'items#index'
 
@@ -11,9 +12,14 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  root to: 'posts#index'
+  get '/auth/:provider/callback' => 'sns_credentials#create'
+  resources :sns_credentials
+
+
   resources :signup do
     collection do
-      get :new
       get :signup1
       get :signup2
       get :signup3
@@ -36,4 +42,5 @@ Rails.application.routes.draw do
       get :creditCard
     end
  end
+  resources :items
 end

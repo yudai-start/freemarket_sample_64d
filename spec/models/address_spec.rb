@@ -55,12 +55,6 @@ describe '#create' do
       expect(address.errors[:street_number]).to include("can't be blank")
     end
 
-    it "is invalid without a building_name" do
-      address = build(:address, building_name: nil)
-      address.valid?
-      expect(address.errors[:building_name]).to include("can't be blank")
-    end
-
     it "is invalid without a phone_number" do
       address = build(:address, phone_number: nil)
       address.valid?

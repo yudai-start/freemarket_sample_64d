@@ -48,6 +48,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'omniauth-facebook'
+  gem 'omniauth-google-oauth2'
 end
 
 group :development do
@@ -84,3 +85,4 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'payjp'
 gem 'recaptcha', require: "recaptcha/rails"
+gem 'gretel'
