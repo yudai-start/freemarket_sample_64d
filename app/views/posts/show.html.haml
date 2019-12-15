@@ -1,8 +1,8 @@
 = render "layouts/toppage-header"
 
 
-%section.items-show
-  .items-show__name
+%section.items-show   
+  .items-show__name   
     ”商品名”
   %p.items-show__comment
     『”{item.name}”』は、”取引回数”
@@ -11,9 +11,9 @@
     で発送されます。
   .items-show__description
     .items-show__description__left
-      %ul.items-show__description__left__main
-        %li= image_tag "sample.jpg", class: :"items-show__description__left__main__image active"
-        %li= image_tag "bgc.jpg", class: :"items-show__description__left__main__image"
+      %ul.items-show__description__left__main   
+        %li= image_tag "sample.jpg", class: :"items-show__description__left__main__image active"     
+        %li= image_tag "bgc.jpg", class: :"items-show__description__left__main__image"  
         %li= image_tag "kabao.jpg", class: :"items-show__description__left__main__image"
         %li= image_tag "sample.jpg", class: :"items-show__description__left__main__image"
         %li= image_tag "kabao.jpg", class: :"items-show__description__left__main__image"
@@ -38,10 +38,10 @@
 
     %table.items-show__description__table
       %tr
-        %th
+        %th   
           出品者
         %td
-          = link_to "ユーザー名", "#", class: :"items-show__description__table__link"
+          = link_to "ユーザー名", "#", class: :"items-show__description__table__link"   
           .items-show__description__table__face
             %i.fas.fa-laugh.items-show__description__table__face__smile
             %i.fas.fa-meh.items-show__description__table__face__normal
