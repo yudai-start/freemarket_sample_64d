@@ -47,8 +47,6 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-  gem 'omniauth-facebook'
-  gem 'omniauth-google-oauth2'
 end
 
 group :development do
@@ -86,3 +84,5 @@ gem 'fog-aws'
 gem 'payjp'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'gretel'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
