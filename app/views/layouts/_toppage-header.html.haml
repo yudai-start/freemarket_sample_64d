@@ -23,8 +23,8 @@
             ブランドから探す
       .header-lists-low-right
         .header-lists-low-right-newmenberbox
-          =link_to new_user_registration_path, class: "newmember" do
+          =link_to "/users/sign_up", class: "newmember" do
             新規会員登録
         .header-lists-low-right-loginbox
-          =link_to new_user_session_path, method: :get, class: "login" do
+          =link_to "/users/sign_in", method: :get, class: "login" do
             ログイン
