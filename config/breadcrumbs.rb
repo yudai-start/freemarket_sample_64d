@@ -21,3 +21,19 @@ crumb :logout do
   link "ログアウト"
   parent :mypage
 end
+
+crumb :personal_info do
+  link "本人情報の登録", "/posts/personal_info"
+  parent :mypage
+end
+
+crumb :creditCard do
+  link "支払い方法", "/posts/creditCard"
+  parent :mypage
+end
+
+crumb :add_payments do
+  link "クレジットカード情報入力"
+  parent :creditCard
+end
+
