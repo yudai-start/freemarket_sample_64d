@@ -1,0 +1,35 @@
+- if request.path == "/posts/mypage"
+  .line-top
+  .gretel-header
+    - breadcrumb :mypage
+    = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
+
+- if request.path == "/posts/profile"
+  .line-top
+  .gretel-header
+    - breadcrumb :profile
+    = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
+
+- if request.path == "/posts/signout"
+  .line-top
+  .gretel-header
+    - breadcrumb :logout
+    = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
+
+- if request.path == "/posts/personal_info"
+  .line-top
+  .gretel-header
+    - breadcrumb :personal_info
+    = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
+
+- if request.path == "/posts/creditCard"
+  .line-top
+  .gretel-header
+    - breadcrumb :creditCard
+    = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
+
+- if request.path == "/posts/add_payments"
+  .line-top
+  .gretel-header
+    - breadcrumb :add_payments
+    = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
