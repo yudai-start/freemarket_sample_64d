@@ -48,9 +48,21 @@ class ItemsController < ApplicationController
   def buy_confirm
     @item = Item.find(params[:id])
     @user = User.find(1)
+
+
+    binding.pry
   end
 
   def after_buy_confirm
+
+    require 'payjp'
+    Payjp.api_key = 'sk_test_c62fade9d045b54cd76d7036'
+    charge = Payjp::Charge.create(
+      :amount => 3500,
+      :customer => 'cus_df53d1d954351c645c13b36c42f6',
+      :currency => 'jpy',
+    )
+    binding.pry
   end
 
   private
