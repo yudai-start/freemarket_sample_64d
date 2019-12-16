@@ -50,8 +50,6 @@ ActiveRecord::Schema.define(version: 2019_12_11_112609) do
     t.string "name", null: false
     t.bigint "user_id", null: false
     t.string "size"
-
-
     t.integer "item_status", null: false
     t.integer "shipping_fee_defrayer", null: false
     t.integer "shipping_system"
@@ -59,7 +57,6 @@ ActiveRecord::Schema.define(version: 2019_12_11_112609) do
     t.integer "ship_date", null: false
     t.integer "price", null: false
     t.string "description", null: false
-
     t.integer "buyer_id"
     t.integer "status", null: false
     t.datetime "created_at", null: false
