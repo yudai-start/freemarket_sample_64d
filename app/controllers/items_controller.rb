@@ -45,6 +45,14 @@ class ItemsController < ApplicationController
 
   end
 
+  def buy_confirm
+    @item = Item.find(params[:id])
+    @user = User.find(1)
+  end
+
+  def after_buy_confirm
+  end
+
   private
 
   def item_params

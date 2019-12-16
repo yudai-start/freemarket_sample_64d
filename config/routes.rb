@@ -42,5 +42,10 @@ Rails.application.routes.draw do
       get :creditCard
     end
  end
-  resources :items
+  resources :items do
+    member do
+      get :buy_confirm
+      put :after_buy_confirm
+    end
+  end
 end
