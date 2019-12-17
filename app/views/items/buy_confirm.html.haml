@@ -53,5 +53,5 @@
       %p.confirm__contents__address__name__list
         = @user.addresses.first.first_name
   .confirm__contents__submit
-    =link_to "購入する", "/items/#{@item.id}/after_buy_confirm", class: :"confirm__contents__submit__link"
+    =link_to "購入する", "/items/#{@item.id}/done_buy_confirm", method: :put,  class: :"confirm__contents__submit__link"
 = render "signup/signup.footer"

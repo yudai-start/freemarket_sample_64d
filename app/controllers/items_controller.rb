@@ -48,13 +48,30 @@ class ItemsController < ApplicationController
 
   def buy_confirm
     @item = Item.find(params[:id])
-    @user = User.find(7)
+    @user = User.find(7) #current_user取得出来次第、改修予定
 
-    card = Card.where(user_id: 7).first
+    card = Card.where(user_id: 7).first #current_user取得出来次第、改修予定
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       #保管した顧客IDでpayjpから情報取得
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
+  end
+
+  def done_buy_confirm
+    item = Item.find(params[:id])
+    @user = User.find(7) #current_user取得出来次第、改修予定
+    
+    card = Card.where(user_id: 7).first #current_user取得出来次第、改修予定
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      charge = Payjp::Charge.create(
+        amount: item.price,
+        customer: card.customer_id,
+        currency: 'jpy'
+      )
+
+    item.update(status: 2, buyer_id: @user.id) #statusを売却済に変更 buyer_idにcurrent_userのidを追加
+
+    redirect_to "/"
   end
 
   private
