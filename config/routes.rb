@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get :buy_confirm
-      put :after_buy_confirm
+      get :after_buy_confirm
     end
   end
 end

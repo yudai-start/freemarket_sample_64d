@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
 
+  require "payjp"
 
   def index
   #  binding.pry
@@ -47,22 +48,13 @@ class ItemsController < ApplicationController
 
   def buy_confirm
     @item = Item.find(params[:id])
-    @user = User.find(1)
+    @user = User.find(7)
 
-
-    binding.pry
-  end
-
-  def after_buy_confirm
-
-    require 'payjp'
-    Payjp.api_key = 'sk_test_c62fade9d045b54cd76d7036'
-    charge = Payjp::Charge.create(
-      :amount => 3500,
-      :customer => 'cus_df53d1d954351c645c13b36c42f6',
-      :currency => 'jpy',
-    )
-    binding.pry
+    card = Card.where(user_id: 7).first
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      #保管した顧客IDでpayjpから情報取得
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
   end
 
   private
