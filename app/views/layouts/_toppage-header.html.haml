@@ -21,12 +21,30 @@
           = link_to "/jp/brand/",class: :"brand" do
             %i.fas.fa-tag
             ブランドから探す
-      .header-lists-low-right
-        .header-lists-low-right-newmenberbox
-          =link_to "/users/sign_up", class: "newmember" do
-            新規会員登録
-        .header-lists-low-right-loginbox
+      -# .header-lists-low-right
+      -#   .header-lists-low-right-newmenberbox
+      -#     =link_to "/users/sign_up", class: "newmember" do
+      -#       新規会員登録
+      -#   .header-lists-low-right-loginbox
+      -#     =link_to "/users/sign_in", method: :get, class: "login" do
+      -#       ログイン
+      .header-lists-low-login-right
+        .header-lists-low-login-right-like_box
+          =link_to "#", class: "like_box" do
+            %i.far.fa-heart
+            いいね！
+        .header-lists-low-login-right-notice
+          =link_to "#", class: "notice" do
+          %i.far.fa-bell
+            お知らせ
+        .header-lists-low-login-right-todo_list
+          =link_to "#", class: "todo_list" do
+          %i.fas.fa-check
+            やることリスト
+        .header-lists-low-login-right-mypage
+          =link_to "#", class: "mypage" do
+          %i.far.fa-user-circle
+            マイページ
 
-          =link_to "/users/sign_in", method: :get, class: "login" do
-            ログイン
+
     = render  partial: "layouts/gretel"
