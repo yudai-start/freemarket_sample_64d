@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # get "/auth/:provider/callback" => "sessions#create"
   # get "/signout" => "sessions#destroy", :as => :signout
 
-  resources :users, only: [:show]
+  # resources :users, only: [:show]
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'items#index'
