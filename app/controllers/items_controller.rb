@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
   def index
   #  binding.pry
     @items = Item.all.includes(:images)
-  end
 
   def new
     @item = Item.new
