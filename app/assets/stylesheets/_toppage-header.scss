@@ -8,7 +8,7 @@
   width: 100vw;
   &-lists {
     width: 900px;
-    margin: 0 auto;
+    margin-left: 350px;
     padding: 10px 0px 0px;
     &-top {
       display: flex;
@@ -103,6 +103,39 @@
             border-radius: 4px;
             padding: 6px 10px;
             text-decoration: none;
+          }
+        }
+      }
+      &-login-right {
+        display: flex;
+        text-align: center;
+        font-size: 17px;
+        &-like_box{
+          padding-left: 0;
+        }
+          .like{
+            text-decoration: none;
+            color: black;
+          }
+        &-notice_box{
+          padding: 0 14px;
+        }
+          .notice{
+            text-decoration: none;            
+            color: black;
+          }
+        &-todo_box{
+          padding: 0 14px;
+          .todo{
+            text-decoration: none;
+            color: black;
+          }
+        }
+        &-mypage_box{
+          padding-right: 0;
+          .mypage{
+            text-decoration: none;
+            color: black;
           }
         }
       }
