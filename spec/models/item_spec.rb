@@ -77,6 +77,27 @@ describe Item do
         expect(item.errors[:status]).to include("can't be blank")
       end
 
+      # 1. @itemsというインスタンス変数が期待される値を持っているかどうか
+      it "itemsに期待される値を持つ" do
+        items = create(:items)
+        get :index, items_id: items
+        expect(assigns(:items)).to eq items
+      end
+
+      # 2. @itemsからpriceという値を数字で取れているか
+      it "itemsからpriceを数字で取れているか" do
+        items = create(:items)
+        price: "1000"
+        expect(price).to eq "1000"
+      # 3. @itemsからnameという値を文字列で取れているか
+      it "itemsからnameという値を文字列で取れているか" do
+        items = create(:items)
+        name: "ポーチ"
+        expect(name).to eq "ポーチ"
+      # 4. itemsテーブルとヒモ付いたimagesテーブルからurlで値を取れているか
+      it "itemsテーブルと紐づいたimagesテーブルからurlで値を取れているか" do
+        items = create(:items)
+        expect(image).to eq "kabao.jpg"
 
     end
   end

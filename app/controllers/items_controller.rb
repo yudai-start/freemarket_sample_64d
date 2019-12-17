@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   #  binding.pry
     @items = Item.all.includes(:images)
   end
+
   def new
     @item = Item.new
     @item.images.build
@@ -64,6 +65,3 @@ class ItemsController < ApplicationController
 
   end
 end
-
-
-     
