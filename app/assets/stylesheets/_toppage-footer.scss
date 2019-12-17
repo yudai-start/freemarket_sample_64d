@@ -1,4 +1,15 @@
-
+.banner{
+  &-image{
+    height: 200px;
+    width: 100%;
+  }
+  .banner-image img{
+    display: block;
+    position: absolute;
+    height: inherit;
+    width: inherit;
+  }
+}
 .footer{
   background-color: rgb(34, 34, 34);
   color: rgb(255, 255, 255);
