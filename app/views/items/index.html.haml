@@ -18,6 +18,15 @@
       .more
         = link_to "もっとみる  >", "#" ,id:'more'
     .contents
-
+      - @items.each do |item|
+        = link_to("#", class: 'item_link') do
+          .content
+            .image
+              = image_tag item.images.first.image.url
+              .price
+                #price
+                = item.price
+            .item_name 
+              = item.name
 
 = render  partial: "layouts/toppage-footer"
