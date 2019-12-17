@@ -11,7 +11,7 @@
         %p.confirm__contents__item__container__text__price
           ¥
           = @item.price
-          (税込み) 
+          (税込) 
 
           - array = ["送料込み", "着払い"]
           = array[@item.shipping_fee_defrayer]
@@ -21,7 +21,9 @@
       ¥
       = @item.price
   .confirm__contents__payment
-    .confirm__contents__payment__heading 支払い方法
+    .confirm__contents__payment__heading
+      .confirm__contents__payment__heading__title 支払い方法
+      =link_to "変更する","#",class: :confirm__contents__payment__heading__link
     .confirm__contents__payment__creditcard 
       クレジットカード
       .confirm__contents__payment__creditcard__number
