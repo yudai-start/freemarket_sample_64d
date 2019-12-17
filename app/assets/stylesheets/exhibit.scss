@@ -59,10 +59,14 @@ $around-color: #eeeeee;
         }
         .ex-divide {
           display: flex;
-          .ex-pbright {
+          .ex-pbright1 {
             position: absolute;
             right: 0;         
           }     
+          .ex-pbright2 {
+            position: absolute;
+            right: 0;  
+          }
         }
       }
     }
