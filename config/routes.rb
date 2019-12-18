@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   root to: 'items#index'
   get '/auth/:provider/callback' => 'sns_credentials#create'
   resources :sns_credentials
+  resources :items
 
 
   resources :signup do
@@ -32,15 +33,11 @@ Rails.application.routes.draw do
     collection do
       get :signout
       get :profile
-      get :signout
       get :mypage
       get :confirm
       get :personal_info
-      get :exhibit
-      get :add_payments
-      get :footer
       get :creditCard
+      get :add_payments
     end
  end
-  resources :items
 end

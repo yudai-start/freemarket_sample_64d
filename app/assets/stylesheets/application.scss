@@ -2,23 +2,24 @@
 @import "mixin/form";
 @import "toppage-header";
 @import "toppage-footer";
-@import "signup.header.scss";
-@import "signup0.scss";
-@import "signup1.scss";
+@import "signup0";
+@import "signup1";
 @import "signup2";
 @import "signup3";
 @import "signup4";
 @import "signup5";
-@import "_signout";
+@import "signout";
+@import "signout_btn";
+@import "signup_header";
+@import "signup_footer";
 @import "items.show.scss";
 @import "index.scss";
 @import "users.scss";
 @import "user.profile.scss";
-@import "signup.header.scss";
 @import "footer-icon.scss";
 @import "user.mypage.scss";
 @import "confirm";
-@import "_sidebar.scss";
+@import "sidebar";
 @import "new";
 @import "personal_info.scss";
 @import "logo_header";
@@ -29,10 +30,8 @@
 @import "exhibit-footer";
 @import "footer";
 @import "add_payments";
-@import "signup.footer";
 @import "_sign.up.header.only.logo";
-@import "sign-out";
-@import "creditCard.scss";
+@import "creditCard";
 @import "gretel.scss";
 
 html{
