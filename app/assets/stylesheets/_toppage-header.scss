@@ -69,6 +69,14 @@
           .category {
             color: rgb(34, 34, 34);
             text-decoration: none;
+            -webkit-transition: 0.2s;
+            -moz-transition: 0.2s;
+            -o-transition: 0.2s;
+            -ms-transition: 0.2s;
+            transition: 0.2s;
+          }
+          .category:hover{
+            color: rgb(0, 162, 255);
           }
         }
         &-brandbox {
@@ -77,6 +85,14 @@
           .brand{
             color: rgb(34, 34, 34);
             text-decoration: none;
+            -webkit-transition: 0.2s;
+            -moz-transition: 0.2s;
+            -o-transition: 0.2s;
+            -ms-transition: 0.2s;
+            transition: 0.2s;
+          }
+          .brand:hover{
+            color: rgb(0, 162, 255);
           }
         }
       }
@@ -116,6 +132,14 @@
           .like{
             text-decoration: none;
             color: black;
+            -webkit-transition: 0.2s;
+            -moz-transition: 0.2s;
+            -o-transition: 0.2s;
+            -ms-transition: 0.2s;
+            transition: 0.2s;
+          }
+          .like:hover{
+            color: rgb(0, 162, 255);
           }
         &-notice_box{
           padding: 0 14px;
@@ -123,12 +147,28 @@
           .notice{
             text-decoration: none;            
             color: black;
+            -webkit-transition: 0.2s;
+            -moz-transition: 0.2s;
+            -o-transition: 0.2s;
+            -ms-transition: 0.2s;
+            transition: 0.2s;
+          }
+          .notice:hover{
+            color: rgb(0, 162, 255);
           }
         &-todo_box{
           padding: 0 14px;
           .todo{
             text-decoration: none;
             color: black;
+            -webkit-transition: 0.2s;
+            -moz-transition: 0.2s;
+            -o-transition: 0.2s;
+            -ms-transition: 0.2s;
+            transition: 0.2s;
+          }
+          .todo:hover{
+            color: rgb(0, 162, 255);
           }
         }
         &-mypage_box{
@@ -136,6 +176,14 @@
           .mypage{
             text-decoration: none;
             color: black;
+            -webkit-transition: 0.2s;
+            -moz-transition: 0.2s;
+            -o-transition: 0.2s;
+            -ms-transition: 0.2s;
+            transition: 0.2s;
+          }
+          .mypage:hover{
+            color: rgb(0, 162, 255);
           }
         }
       }
