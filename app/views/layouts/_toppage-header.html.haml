@@ -21,13 +21,15 @@
           = link_to "/jp/brand/",class: :"brand" do
             %i.fas.fa-tag
             ブランドから探す
-      -# .header-lists-low-right
-      -#   .header-lists-low-right-newmenberbox
-      -#     =link_to "/users/sign_up", class: "newmember" do
-      -#       新規会員登録
-      -#   .header-lists-low-right-loginbox
-      -#     =link_to "/users/sign_in", method: :get, class: "login" do
-      -#       ログイン
+      .header-lists-low-right
+        .header-lists-low-right-newmenberbox
+          =link_to "/users/sign_up", class: "newmember" do
+            新規会員登録
+        .header-lists-low-right-loginbox
+          =link_to "/users/sign_in", method: :get, class: "login" do
+            ログイン
+
+    - if user_signed_in?&&current_user.id == user_id 
       .header-lists-low-login-right
         .header-lists-low-login-right-like_box
           =link_to "#", class: "like" do
@@ -45,6 +47,5 @@
           =link_to "posts/mypage", class: "mypage" do
             %i.far.fa-user-circle
             マイページ
-
 
     = render  partial: "layouts/gretel"
