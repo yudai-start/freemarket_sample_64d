@@ -36,8 +36,14 @@ class ItemsController < ApplicationController
 
 
     if @item.save!
+      redirect_to root_path 
 
-      redirect_to root_path
+      # respond_to do |format|
+      #   format.json
+      # end
+    else
+      render "items/new"
+
 
     end
     

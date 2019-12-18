@@ -17,25 +17,13 @@
           %div
             最大１０枚までアップロードできます
           
-          
           = form.fields_for :images do |f|
             = f.label :image, class:"label" do
-              .ex-img-form
+              #ex-img-form.ex-img-form      
+                %ul
                 %p ここをクリックして 
                 %br 画像を選択して下さい
                 = f.file_field :image, class: 'hidden'
-
-          -# .ex-img-form
-            
-          -#   =form.label :image, class: "ex-img-form__lebel" do
-          -#     = form.fields_for :images do |f|
-          -#       = f.file_field :image, class: "hidden"
-        -#   = form.label :image, class: "ex-img-form-label" do  
-        -# .ex-img-form  
-        
-        -#   = form.fields_for :images do |f|
-            
-        -#     = f.file_field :image, class: "hide"
               
         #ex-item-cont.ex-cont
           .ex-indispensable-tmp
@@ -44,13 +32,13 @@
             .ex-indispensable
               必須
           %div
-            = form.text_field :name, placeholder:"商品の名前を記入してください（４０文字まで）"
+            = form.text_field :name, placeholder:"商品の名前を記入してください（４０文字まで）", class:"js"
             .ex-indispensable-tmp
               .ex-sentence
                 商品の説明
               .ex-indispensable
                 必須
-            = form.text_area :description, placeholder:"商品の説明を記入してください（１０００文字まで）"
+            = form.text_area :description, placeholder:"商品の説明を記入してください（１０００文字まで）", class:"js"
           %div
         #ex-item-cont2.ex-cont
           .ex-blank 商品の詳細
@@ -66,7 +54,7 @@
                 商品の状態
               .ex-indispensable
                 必須
-            = form.select :item_status, ["新品、未使用品", "未使用に近い", "目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"], { include_blank: true, selected: 1 }
+            = form.select :item_status, ["新品、未使用品", "未使用に近い", "目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"], { include_blank: true, selected: 1 }, class:"js"
 
 
               
@@ -78,21 +66,21 @@
                 配送料の負担
               .ex-indispensable
                 必須
-            = form.select :shipping_fee_defrayer, ["送料込み（出品者負担）", "着払い（購入者負担）"], { include_blank: true, selected: 1 }
+            = form.select :shipping_fee_defrayer, ["送料込み（出品者負担）", "着払い（購入者負担）"], { include_blank: true, selected: 1 }, class:"js"
          
             .ex-indispensable-tmp
               .ex-sentence
                 発送元の地域
               .ex-indispensable
                 必須
-            = form.collection_select :ship_from_prefecture,Prefecture.all, :id, :name, { include_blank: true, selected: 1 }
+            = form.collection_select :ship_from_prefecture,Prefecture.all, :id, :name, { include_blank: true, selected: 1 }, class:"js"
            
             .ex-indispensable-tmp
               .ex-sentence
                 発送までの日数
               .ex-indispensable
                 必須
-            = form.select :ship_date, ["1-2日","2-3日","4-7日"], { include_blank: true, selected: 1 }
+            = form.select :ship_date, ["1-2日","2-3日","4-7日"], { include_blank: true, selected: 1 }, class:"js"
           
         #ex-price-cont.ex-cont
           .ex-blank 販売価格
@@ -100,7 +88,7 @@
             #ex-p-box.ex-p-box
               .ex-indispensable-tmp
                 .ex-sentence
-                  価格
+                  価格（半角）
                 .ex-indispensable
                   必須
               = form.text_field :price, placeholder:"例）300", class:"ex-p-box", id:"input"
