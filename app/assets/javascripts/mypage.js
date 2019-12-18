@@ -19,4 +19,9 @@ $(function(){
     $(document).off('scroll');
   });
 
+  $('#destroy-click').on('click', function() {
+    $('.destroy-confirmation').show();
+    
+  })
+
 });
