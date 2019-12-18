@@ -16,11 +16,20 @@
               必須
           %div
             最大１０枚までアップロードできます
-          .ex-img-form
+          
+          
+          = form.fields_for :images do |f|
+            = f.label :image, class:"label" do
+              .ex-img-form
+                %p ここをクリックして 
+                %br 画像を選択して下さい
+                = f.file_field :image, class: 'hidden'
+
+          -# .ex-img-form
             
-            =form.label :image, class: "ex-img-form__lebel" do
-              = form.fields_for :images do |f|
-                = f.file_field :image, class: "hidden"
+          -#   =form.label :image, class: "ex-img-form__lebel" do
+          -#     = form.fields_for :images do |f|
+          -#       = f.file_field :image, class: "hidden"
         -#   = form.label :image, class: "ex-img-form-label" do  
         -# .ex-img-form  
         
