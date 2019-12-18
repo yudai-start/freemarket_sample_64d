@@ -6,6 +6,10 @@ class ItemsController < ApplicationController
     @items = Item.all.includes(:images)
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
+
   def new
     @item = Item.new
     @item.images.build
