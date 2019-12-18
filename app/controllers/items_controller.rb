@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name,
                                 #  :user_id,
-                                 :size,
+                                #  :size,
                                  :item_status,
                                  :shipping_fee_defrayer,
                                  :shipping_system,
