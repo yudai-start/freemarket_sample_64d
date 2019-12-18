@@ -16,7 +16,7 @@ class Item < ApplicationRecord
   
   
 
-  # validates :name, :user_id,  :item_status, :shipping_fee_defrayer,  :ship_from_prefecture, :ship_date, :price, :description,  :status, presence: true 末本編集部分
+  #  validates :name, :user_id,  :item_status, :shipping_fee_defrayer,  :ship_from_prefecture, :ship_date, :price, :description,  :status, presence: true 
 
 
 #   validates :name, :user_id, :size, :item_status, :shipping_fee_defrayer, :shipping_system, :ship_from_prefecture, :ship_date, :price, :description, :buyer_id, :status, presence: true
