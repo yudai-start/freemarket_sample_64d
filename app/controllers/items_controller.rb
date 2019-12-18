@@ -61,7 +61,7 @@ class ItemsController < ApplicationController
                                  :description,
                                  :buyer_id,
                                  :status,
-                                 images_attributes:[:id, :image, :item_id]).merge(user_id: 1)        
+                                 images_attributes:[:id, :image, :item_id]).merge(user_id: 1, size:"")        
 
   end
 end
