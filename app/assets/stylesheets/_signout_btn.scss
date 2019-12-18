@@ -1,6 +1,4 @@
-.signout{
-  display: flex;
-  justify-content: center;
+.signout_btn{
   &__main{
     background-color: white;
     width: 700px;
@@ -8,8 +6,8 @@
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    margin-left: 350px;
-    
+    margin-left: 30px;
+
     &__btn{      
       @include redlink_btn;
       margin-top: 62px;

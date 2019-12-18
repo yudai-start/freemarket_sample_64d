@@ -23,8 +23,37 @@
             ブランドから探す
       .header-lists-low-right
         .header-lists-low-right-newmenberbox
-          =link_to new_user_registration_path, class: "newmember" do
+          =link_to "/users/sign_up", class: "newmember" do
             新規会員登録
         .header-lists-low-right-loginbox
-          =link_to new_user_session_path, method: :get, class: "login" do
+          =link_to "/users/sign_in", method: :get, class: "login" do
             ログイン
+
+    - if user_signed_in?&&current_user.id == user_id 
+      .header-lists-low-login-right
+        .header-lists-low-login-right-like_box
+          =link_to "#", class: "like" do
+            %i.far.fa-heart
+            いいね！
+        .header-lists-low-login-right-notice_box
+          =link_to "#", class: "notice" do
+            %i.far.fa-bell
+            お知らせ
+        .header-lists-low-login-right-todo_box
+          =link_to "#", class: "todo" do
+            %i.fas.fa-check
+            やることリスト
+        .header-lists-low-login-right-mypage_box
+          =link_to "posts/mypage", class: "mypage" do
+            %i.far.fa-user-circle
+            マイページ　
+            
+        -if user_signed_in?
+        -else
+          .header-lists-low-right-newmenberbox
+            =link_to "/users/sign_up", class: "newmember" do
+              新規会員登録
+          .header-lists-low-right-loginbox
+            =link_to "/users/sign_in", method: :get, class: "login" do
+              ログイン
+    = render  partial: "layouts/gretel"
