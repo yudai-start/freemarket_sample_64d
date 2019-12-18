@@ -17,8 +17,16 @@
           %div
             最大１０枚までアップロードできます
           .ex-img-form
-            = form.fields_for :images do |f|
-              = f.file_field :image, class: "ex-img-form"
+            
+            =form.label :image, class: "ex-img-form__lebel" do
+              = form.fields_for :images do |f|
+                = f.file_field :image, class: "hidden"
+        -#   = form.label :image, class: "ex-img-form-label" do  
+        -# .ex-img-form  
+        
+        -#   = form.fields_for :images do |f|
+            
+        -#     = f.file_field :image, class: "hide"
               
         #ex-item-cont.ex-cont
           .ex-indispensable-tmp
@@ -49,7 +57,7 @@
                 商品の状態
               .ex-indispensable
                 必須
-            = form.select :item_status, ["ddd", "eee", "fff"], { include_blank: true, selected: 1 }
+            = form.select :item_status, ["新品、未使用品", "未使用に近い", "目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"], { include_blank: true, selected: 1 }
 
 
               
@@ -101,7 +109,16 @@
                   
         #ex-btn-cont.ex-cont
           %div
-            規約文
+            = link_to "禁止されている出品", class:"ex-rule-link"
+            、
+            = link_to "行為", class:"ex-rule-link"
+            を必ずご確認ください。<br>
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            = link_to "偽ブランドの販売", class:"ex-rule-link"
+            は犯罪であり処罰される可能性があります。<br>
+            また、出品をもちまして
+            = link_to "加盟店規約", class:"ex-rule-link"
+            に同意したことになります。
           = form.submit "出品する", id:"ex-ship-btn"
           
           = form.submit "戻る", id:"ex-ship-return" 
