@@ -2,6 +2,8 @@
 
 .personal_info_wrapper {
   display: flex;
+  width: 80vw;
+  margin: 24px auto 0;
   &__right {
     padding: 20px 40px;
   }

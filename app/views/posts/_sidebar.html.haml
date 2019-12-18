@@ -1,7 +1,8 @@
 .sidebar  
   .white-box-top
     .sidebar-tab
-      %p.sidebar-list マイページ 
+      = link_to "/posts/mypage/",class: "sidebar-list" do
+        マイページ
     .sidebar-tab
       %p.sidebar-list お知らせ          
     .sidebar-tab
@@ -9,7 +10,8 @@
     .sidebar-tab
       %p.sidebar-list  いいね！一覧
     .sidebar-tab
-      %p.sidebar-list 出品する
+      = link_to "/items/new/",class: "sidebar-list" do
+        出品する
     .sidebar-tab
       %p.sidebar-list  出品した商品 - 出品中
     .sidebar-tab
@@ -39,16 +41,20 @@
     %p.sidebar-merupei  設定
     .white-box-bottom
       .sidebar-tab
-        %p.sidebar-list  プロフィール
+        = link_to "/posts/profile/",class: "sidebar-list" do
+          プロフィール
       .sidebar-tab
         %p.sidebar-list  発送元・お届け先住所変更
       .sidebar-tab
-        %p.sidebar-list  支払い方法
+        = link_to "/posts/creditCard/",class: "sidebar-list" do
+          支払い方法
       .sidebar-tab
         %p.sidebar-list  メール/パスワード
       .sidebar-tab
-        %p.sidebar-list  本人情報
+        = link_to "/posts/personal_info/",class: "sidebar-list" do
+          本人情報
       .sidebar-tab
         %p.sidebar-list  電話番号の確認
       .sidebar-tab
-        %p.sidebar-list  ログアウト
+        = link_to "/posts/signout/",class: "sidebar-list" do
+          ログアウト
