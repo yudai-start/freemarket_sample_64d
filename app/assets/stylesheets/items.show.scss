@@ -190,11 +190,13 @@
   display: none;
   position: fixed;
   top: 10px;
-  left: 400px;
+  left: 30%;
   background-color: #fff;
   width: 600px;
   text-align: center;
-  border: solid #f5f5f5 1px;
+  border: solid #eee 1px;
+  box-shadow: 3px 3px 3px 3px #333;
+  z-index: 10;
   &__box {
     padding: 60px 0;
     color: #333;
@@ -209,6 +211,7 @@
     line-height: 50px;
     font-size: 14px;
     &__cancel {
+      cursor: pointer;
       text-align: center;
       color: #333;
       border-right: solid #f5f5f5 1px;
