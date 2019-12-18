@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
   end
 
   def new
@@ -38,4 +39,5 @@ class PostsController < ApplicationController
   def signout
     session.clear
   end
+
 end
