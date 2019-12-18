@@ -40,20 +40,19 @@
       =link_to "変更する","#",class: :confirm__contents__address__heading__link 
     〒
     %p.confirm__contents__address__post
-      = @user.addresses.first.post_code 
+      = current_user.addresses.first.post_code 
     .confirm__contents__address__2
       %p.confirm__contents__address__2__list
-        = @user.addresses.first.prefecture.name
-        -# prefexture_idからどう県名に変換するか？
+        = current_user.addresses.first.prefecture.name
       %p.confirm__contents__address__2__list
-        = @user.addresses.first.city
+        = current_user.addresses.first.city
       %p.confirm__contents__address__2__list
-        = @user.addresses.first.street_number
+        = current_user.addresses.first.street_number
     .confirm__contents__address__name
       %p.confirm__contents__address__name__list
-        = @user.addresses.first.family_name
+        = current_user.addresses.first.family_name
       %p.confirm__contents__address__name__list
-        = @user.addresses.first.first_name
+        = current_user.addresses.first.first_name
   .confirm__contents__submit
     =link_to "購入する", "/items/#{@item.id}/done_buy_confirm", method: :put,  class: :"confirm__contents__submit__link"
 = render "signup/signup.footer"

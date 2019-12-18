@@ -48,9 +48,8 @@ class ItemsController < ApplicationController
 
   def buy_confirm
     @item = Item.find(params[:id])
-    @user = current_user #current_user取得出来次第、改修予定
-
-    card = Card.where(user_id: current_user.id).first #current_user取得出来次第、改修予定
+    
+    card = Card.where(user_id: current_user.id).first
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       #保管した顧客IDでpayjpから情報取得
       customer = Payjp::Customer.retrieve(card.customer_id)
@@ -59,17 +58,16 @@ class ItemsController < ApplicationController
 
   def done_buy_confirm
     item = Item.find(params[:id])
-    @user = current_user #current_user取得出来次第、改修予定
-    
-    card = Card.where(user_id: current_user.id).first #current_user取得出来次第、改修予定
+  
+    card = Card.where(user_id: current_user.id).first
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       charge = Payjp::Charge.create(
         amount: item.price,
         customer: card.customer_id,
         currency: 'jpy'
       )
-
-    item.update(status: 2, buyer_id: @user.id) #statusを売却済に変更 buyer_idにcurrent_userのidを追加
+    #statusを売却済に変更 buyer_idにcurrent_userのidを追加
+    item.update(status: 2, buyer_id: current_user.id)
 
     redirect_to "/"
   end
