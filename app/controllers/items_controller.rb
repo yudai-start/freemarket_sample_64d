@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
 
   def index
-  #  binding.pry
+    # binding.pry
     @items = Item.all.includes(:images)
   end
 
