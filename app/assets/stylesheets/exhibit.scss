@@ -20,8 +20,18 @@ $around-color: #eeeeee;
         width: 100%;
         border: 1px dashed gray;
         background-color: #f5f5f5;
+        display: flex;
         text-align: center;
+        align-items: center;
         justify-content: center; 
+
+        .icon-zone {
+          position: absolute;
+          
+        }
+        .fa-camera {
+          font-size: 77px;
+        }
         .hidden {
           display: none;
           height: 100%;
@@ -62,7 +72,7 @@ $around-color: #eeeeee;
       .ex-p-box {
         height: 50px;
         width: 100%;
-        // position: relative;
+        position: relative;
         margin-bottom: 30px;
         // #price_field {
         //   position: absolute;
