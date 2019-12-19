@@ -268,16 +268,14 @@ $(function() {
   }
   $("form.item_new_form").on('submit',function(){
       var error = 0;
-      var error_message = '<div><span class="error">必須項目です</span></div>';
+      var error_message = '<div><span class="error">必須項目です</span></div>';       //フォームが空のときに差し込まれるエラーメッセージ
       var error_num = '<span class="error">半角数字のみです</span>';
 
-  //↓このように書いても反映されません、むしろバグ？ります...
-  // error_message.remove();
-  // error_num.remove();
-    $(".error").remove() 
 
-      if($("#item_images_attributes_0_image").val()==""){
-        $('.label').after(error_message);  
+    $(".error").remove()    //エラーが出ている状態でボタンを押した時にエラーが何度も表示されないように一度削除
+
+      if($("#item_images_attributes_0_image").val()==""){     //フォームの値がからとときの条件式
+        $('.label').after(error_message);                     //指定したクラスの後に要素を差し込む
       }
       if($("#item_name").val()==""){
         $('#item_name').after(error_message);  
@@ -328,8 +326,16 @@ $(function() {
       }
       if($("#input").val()==""){
         $('#for-error-message').before(error_message);
-        
+      }else if(!$("#input").val().match(/^\d+$/)){
+        $('#for-error-message').before(error_num);
       }
+        
+      
+    //   if($(".vali_age").val()==""){
+    //     $('.vali_age').after(error_message);  
+    // }else if(!$(".vali_age").val().match(/^\d+$/)){
+    //     $('.vali_age').after(error_num);  
+    // }
 
 
     //   if($("#item_item_status").val()==""){
