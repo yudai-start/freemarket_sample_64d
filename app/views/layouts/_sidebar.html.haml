@@ -51,7 +51,7 @@
       .sidebar-tab
         %p.sidebar-list  メール/パスワード
       .sidebar-tab
-        = link_to "/users/edit_address/",class: "sidebar-list" do
+        = link_to edit_address_path(current_user.addresses.first[:id]),class: "sidebar-list" do
           本人情報
       .sidebar-tab
         %p.sidebar-list  電話番号の確認
