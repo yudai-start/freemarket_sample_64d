@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  # before_action :authenticate_user!, only: [:buy_confirm]
+  before_action :authenticate_user!, only: [:buy_confirm]
 
   require "payjp"
 
