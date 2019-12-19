@@ -7,9 +7,9 @@ class PostsController < ApplicationController
 
   def new
   end
+
   def exhibit
   end
-
 
   def signup0
   end
@@ -36,6 +36,6 @@ class PostsController < ApplicationController
   end
 
   def signout
-    session.clear
+    # session.clear
   end
 end
