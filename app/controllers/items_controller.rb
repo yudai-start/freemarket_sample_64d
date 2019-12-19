@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
       # buyer_id:              item_params[:buyer_id]
       # # status:                item_params[:status]
     )
-  
+
     @item[:status] = 1
     if @item.save
       redirect_to root_path 
@@ -45,11 +45,11 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name,
                                 #  :user_id,
                                  :size,
-                                 :item_status,
-                                 :shipping_fee_defrayer,
+                                 :item_status_id,
+                                 :shipping_fee_defrayer_id,
                                  :shipping_system,
                                  :ship_from_prefecture,
-                                 :ship_date, 
+                                 :ship_date_id, 
                                  :price,
                                  :description,
                                  :buyer_id,

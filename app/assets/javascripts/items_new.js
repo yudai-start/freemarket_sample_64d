@@ -43,17 +43,17 @@ $(function() {
           $('#item_description').after(error_message);  
       }
     
-      if($("#item_item_status").val()==""){
-          $('#item_item_status').after(error_message);
+      if($("#item_item_status_id").val()==""){
+          $('#item_item_status_id').after(error_message);
       }
-      if($("#item_shipping_fee_defrayer").val()==""){
-        $('#item_shipping_fee_defrayer').after(error_message);
+      if($("#item_shipping_fee_defrayer_id").val()==""){
+        $('#item_shipping_fee_defrayer_id').after(error_message);
       }
       if($("#item_ship_from_prefecture").val()==""){
         $('#item_ship_from_prefecture').after(error_message);
       }
-      if($("#item_ship_date").val()==""){
-        $('#item_ship_date').after(error_message);
+      if($("#item_ship_date_id").val()==""){
+        $('#item_ship_date_id').after(error_message);
       }
       if($("#input").val()==""){
         $('#for-error-message').before(error_message);    //inputのafterでいい位置に表示できなかったので、
