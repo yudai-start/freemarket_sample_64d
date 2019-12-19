@@ -62,14 +62,14 @@ $around-color: #eeeeee;
       .ex-p-box {
         height: 50px;
         width: 100%;
-        position: relative;
+        // position: relative;
         margin-bottom: 30px;
-        #price_field {
-          position: absolute;
-          right: 0;
-          top: 0;
-          height: 50px;
-        }
+        // #price_field {
+        //   position: absolute;
+        //   right: 0;
+        //   top: 0;
+        //   height: 50px;
+        // }
         .ex-divide {
           display: flex;
           .ex-pbright1 {

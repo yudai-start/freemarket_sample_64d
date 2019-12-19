@@ -327,7 +327,7 @@ $(function() {
         $('#item_ship_date').after(error_message);
       }
       if($("#input").val()==""){
-        $('#input').after(error_message);
+        $('#for-error-message').before(error_message);
         
       }
 
