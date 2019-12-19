@@ -130,64 +130,24 @@
           display: flex;
           text-align: center;
           font-size: 17px;
-          &-like_box{
-            padding-left: 0;
-          }
             .like{
-              text-decoration: none;
-              color: black;
-              -webkit-transition: 0.2s;
-              -moz-transition: 0.2s;
-              -o-transition: 0.2s;
-              -ms-transition: 0.2s;
-              transition: 0.2s;
-            }
-            .like:hover{
-              color: rgb(0, 162, 255);
+              @include hoverlink;
             }
           &-notice_box{
             padding: 0 14px;
           }
             .notice{
-              text-decoration: none;            
-              color: black;
-              -webkit-transition: 0.2s;
-              -moz-transition: 0.2s;
-              -o-transition: 0.2s;
-              -ms-transition: 0.2s;
-              transition: 0.2s;
-            }
-            .notice:hover{
-              color: rgb(0, 162, 255);
+              @include hoverlink;
             }
           &-todo_box{
             padding: 0 14px;
             .todo{
-              text-decoration: none;
-              color: black;
-              -webkit-transition: 0.2s;
-              -moz-transition: 0.2s;
-              -o-transition: 0.2s;
-              -ms-transition: 0.2s;
-              transition: 0.2s;
-            }
-            .todo:hover{
-              color: rgb(0, 162, 255);
+              @include hoverlink;
             }
           }
           &-mypage_box{
-            padding-right: 0;
             .mypage{
-              text-decoration: none;
-              color: black;
-              -webkit-transition: 0.2s;
-              -moz-transition: 0.2s;
-              -o-transition: 0.2s;
-              -ms-transition: 0.2s;
-              transition: 0.2s;
-            }
-            .mypage:hover{
-              color: rgb(0, 162, 255);
+              @include hoverlink;
             }
           }
         }
