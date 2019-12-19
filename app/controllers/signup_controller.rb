@@ -58,7 +58,7 @@ class SignupController < ApplicationController
     )
     @user.addresses.build(session[:addresses_attributes].first[1]) #addressesインスタンスを生成。usersインスタンスがsaveされると同時にsaveされる。
                                                                    #sessionのままだと何故かハッシュではなかったので、.first[1]でハッシュに変えています。
-    binding.pry
+
     if @user.save!
       session[:id] = @user.id
 
