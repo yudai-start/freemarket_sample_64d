@@ -14,7 +14,9 @@ $(function(){
     }
   })
 })
-
+$('form.item_new_form').ready( function(){
+  $(this.form).find("textarea, :text, select").val("").end().find(":checked").prop("checked", false);
+  });
 
 $(function() {
 
@@ -22,7 +24,7 @@ $(function() {
   //   $(selector).next('.error-message').text(string).removeClass('.error_message');
   // }
   
-  $("form.item_new_form").on('submit',function(){
+  $("form.item_new_form").on('submit',function(){                               //$("フォームのクラス名").on('イベント')
       var error = 0;
       var error_message = '<div><span class="error">必須項目です</span></div>';       //フォームが空のときに差し込まれるエラーメッセージ
       var error_num = '<span class="error">半角数字のみです</span>';
@@ -30,45 +32,47 @@ $(function() {
 
     $(".error").remove()    //エラーが出ている状態でボタンを押した時にエラーが何度も表示されないように一度削除
 
-      if($("#item_images_attributes_0_image").val()==""){     //フォームの値がからとときの条件式
-        $('.label').after(error_message);                     //指定したクラスの後に要素を差し込む
+      if($("#item_images_attributes_0_image").val()==""){     //画像フォームの値が空のときの条件式    
+        $('.label').after(error_message);                     //指定したクラスの後に要素を差し込む    $('要素名').after(差し込むメッセージ);
       }
-      if($("#item_name").val()==""){
+      if($("#item_name").val()==""){                          //商品名が空の時の条件式
         $('#item_name').after(error_message);  
         error++;      //この記述がないとすぐにrenderされてしまうので入れていますが、理由はわかりません
       }
       
-      
-      if($("#item_description").val()==""){
+      if($("#item_description").val()==""){                     //商品説明が空の時
           $('#item_description').after(error_message);  
+          error++;
       }
     
-      if($("#item_item_status_id").val()==""){
+      if($("#item_item_status_id").val()==""){                  //商品状態が空の時
           $('#item_item_status_id').after(error_message);
-      }
-      if($("#item_shipping_fee_defrayer_id").val()==""){
+          error++;
+      } 
+      if($("#item_shipping_fee_defrayer_id").val()==""){              //送料の負担が空の時
         $('#item_shipping_fee_defrayer_id').after(error_message);
+        error++;
       }
-      if($("#item_ship_from_prefecture").val()==""){
+      if($("#item_ship_from_prefecture").val()==""){                  //発送元の地域が空の時
         $('#item_ship_from_prefecture').after(error_message);
+        error++;
       }
-      if($("#item_ship_date_id").val()==""){
+      if($("#item_ship_date_id").val()==""){                            //発送までの日数が空の時
         $('#item_ship_date_id').after(error_message);
+        error++;
       }
-      if($("#input").val()==""){
-        $('#for-error-message').before(error_message);    //inputのafterでいい位置に表示できなかったので、
+      if($("#input").val()==""){                          //価格が空の時、
+        $('#for-error-message').before(error_message);   
+        error++; //inputのafterでいい位置に表示できなかったので、
       }else if(!$("#input").val().match(/^\d+$/)){        //一つ下の要素のbefore（前）に表示させてます
-        $('#for-error-message').before(error_num);
+        $('#for-error-message').before(error_num);     
+        error++;    //elsifで半角の数字以外を入力した時に、
       }
         
-      
-    
-    if (error) {
+    if (error) {                                            //エラーがあったときにアラートを表示
       alert("入力の正しく無い箇所があります");
-      return false;
-  }
-
+      return false;                                         //エラーがあったときにボタンをキャンセル
+    }
   });
-
-
 });
+

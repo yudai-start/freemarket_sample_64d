@@ -23,6 +23,7 @@
           .content
             .image
               -# = image_tag item.images.first["image"]
+              = image_tag item.images.first.image.url
               .price
                 #price
                 = item.price
