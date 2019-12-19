@@ -29,26 +29,14 @@ class ItemsController < ApplicationController
     )
   
     @item[:status] = 1
-
-    # @item.images.build(item_params[:images_attributes].to_hash.first[1])
-
-    # @item.images.build(item_params[:images_attributes].first[1])
-
-
-    if @item.save!
+    if @item.save
       redirect_to root_path 
-
-      # respond_to do |format|
-      #   format.json
-      # end
     else
-      render "items/new"
-
-
+      @item.images.build
+      render :new
+      
     end
     
-    
-
   end
 
   private
