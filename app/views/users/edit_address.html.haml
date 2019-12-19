@@ -1,7 +1,7 @@
-= render  partial: "layouts/toppage-header"
+= render  partial: "/layouts/toppage-header"
 
 .personal_info_wrapper 
-  =render "sidebar"
+  =render "/layouts/sidebar"
   .personal_info_wrapper__right
     .pi-top 本人情報の登録
     .personal-info-main
@@ -13,19 +13,21 @@
         = link_to "本人確認書類のアップロードについて","#",id:'pi-up'
       .name-birth
         %div
-          お名前  name
-        %div
-          田中太郎
+          お名前
+        .parameters
+          =current_user.family_name
+          =current_user.first_name
+
       .name-birth
         %div
           お名前カナ
-        %div
-          タナカタロウ
+        .parameters
+          =current_user.family_name_kana
+          =current_user.first_name_kana
       .name-birth
         %div
           生年月日
-        %div
-          2000/01/01
+        =current_user.birthday
       = form_with do |form|
         %div
           .flex
@@ -36,7 +38,9 @@
           .flex
             %div 都道府県
             .ninni 任意
-          = form.select :prefecture, "都道府県"
+          -# = form.select :prefecture, "都道府県"
+          %label.select
+          = form.collection_select :prefecture_id, Prefecture.all, :id, :name
         %div
           .flex
             %div 市区町村
@@ -55,6 +59,5 @@
         = form.submit "登録する", id:'post'
       .pi-post
         = link_to "本人情報の登録について","#",id:'pi-post'
-        %div
         
 = render  partial: "layouts/toppage-footer"
