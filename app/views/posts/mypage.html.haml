@@ -1,12 +1,13 @@
 = render "layouts/toppage-header"
 .user-mypage
-  = render "sidebar"
+  = render "/layouts/sidebar"
   .user-mypage__main
     %section.mypage-top
       = link_to "#", class: :"mypage-top__link" do
         %figure
           %img.mypage-top-icon{height: :"60", src: :"//static.mercdn.net/images/member_photo_noimage_thumb.png", width: :"60"}/
-        %h1.mypage-top-name user.nickname
+        %h1.mypage-top-name 
+          = current_user.nickname
         .mypage-top-link
           .mypage-top-link__estimate
             評価
