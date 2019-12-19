@@ -7,26 +7,30 @@
   z-index: 3;
   width: 100vw;
   &-lists {
-    width: 900px;
-    margin: auto;
-    padding: 10px 0px 0px;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 15px 0px 0px;
     &-top {
       display: flex;
+      justify-content: space-between;
       width: 100%;
-      padding-left: 40px;
+      // padding-left: 40px;
       &-left {
         display: flex;
         height: 40px;
-        margin-right: 45px;
         &-logo {
           height: 40px;
           width: 150px;
         }
       }
       &-navbar {
+        box-sizing: border-box;
+        margin-top: 5px;
+        line-height: 40px;
         border: 1px solid rgb(200,200,200);
-        height: 36px;
-        width: 600px;
+        height: 40px;
+        width: 750px;
+        right: 0;
         background-color: #f5f5f5;
         border-radius: 4px;
         position: relative;
@@ -43,8 +47,8 @@
             &-button {
               background-color: rgb(245, 245, 245);
               cursor: pointer;
-              height: 36px;
-              width: 36px;
+              height: 35px;
+              width: 35px;
               position: absolute;
               right: 2px;
               top: 0px;
@@ -55,7 +59,7 @@
       }
     }
     &-low { 
-      width: 900px;
+      width: 100%;
       display: flex;
       justify-content: space-between;
       margin-top: 10px;
@@ -64,126 +68,70 @@
         font-weight: bold;
         line-height: 36px;
         font-size: 14px;
-        margin-left: 45px;
         &-categorybox {
           .category {
-            color: rgb(34, 34, 34);
-            text-decoration: none;
-            -webkit-transition: 0.2s;
-            -moz-transition: 0.2s;
-            -o-transition: 0.2s;
-            -ms-transition: 0.2s;
-            transition: 0.2s;
-          }
-          .category:hover{
-            color: rgb(0, 162, 255);
+            @include hoverlink;
           }
         }
         &-brandbox {
           margin-left: 20px;
           padding-left: 0px 10px;
           .brand{
-            color: rgb(34, 34, 34);
-            text-decoration: none;
-            -webkit-transition: 0.2s;
-            -moz-transition: 0.2s;
-            -o-transition: 0.2s;
-            -ms-transition: 0.2s;
-            transition: 0.2s;
-          }
-          .brand:hover{
-            color: rgb(0, 162, 255);
+            @include hoverlink;
           }
         }
       }
-      &-right {
-        display: flex;
-        text-align: center;
-        font-size: 14px;
-        &-newmenberbox {
-          .newmember{
-            background-color: rgb(234, 53, 45);
-            color: rgb(255,255,255);
-            display: block;
-            border-radius: 4px;
-            padding: 7px 10px;
-            text-decoration: none;
+      &-right{
+        &__signedout {
+          display: flex;
+          text-align: center;
+          font-size: 14px;
+          &-newmenberbox {
+            .newmember{
+              background-color: rgb(234, 53, 45);
+              color: rgb(255,255,255);
+              display: block;
+              border-radius: 4px;
+              padding: 7px 10px;
+              text-decoration: none;
+            }
+          }
+          &-loginbox {
+            margin-left: 11px;
+            .login {
+              color: rgb(0, 149, 238);
+              display: block;
+              border: 1px solid rgb(0, 149, 238);
+              border-radius: 4px;
+              padding: 6px 10px;
+              text-decoration: none;
+            }
           }
         }
-        &-loginbox {
-          margin-left: 11px;
-          .login {
-            color: rgb(0, 149, 238);
-            display: block;
-            border: 1px solid rgb(0, 149, 238);
-            border-radius: 4px;
-            padding: 6px 10px;
-            text-decoration: none;
+        &__signedin {
+          display: flex;
+          text-align: center;
+          font-size: 17px;
+            .like{
+              @include hoverlink;
+            }
+          &-notice_box{
+            padding: 0 14px;
           }
-        }
-      }
-      &-login-right {
-        display: flex;
-        text-align: center;
-        font-size: 17px;
-        &-like_box{
-          padding-left: 0;
-        }
-          .like{
-            text-decoration: none;
-            color: black;
-            -webkit-transition: 0.2s;
-            -moz-transition: 0.2s;
-            -o-transition: 0.2s;
-            -ms-transition: 0.2s;
-            transition: 0.2s;
+            .notice{
+              @include hoverlink;
+            }
+          &-todo_box{
+            padding-left: 5px;
+            .todo{
+              @include hoverlink;
+            }
           }
-          .like:hover{
-            color: rgb(0, 162, 255);
-          }
-        &-notice_box{
-          padding: 0 14px;
-        }
-          .notice{
-            text-decoration: none;            
-            color: black;
-            -webkit-transition: 0.2s;
-            -moz-transition: 0.2s;
-            -o-transition: 0.2s;
-            -ms-transition: 0.2s;
-            transition: 0.2s;
-          }
-          .notice:hover{
-            color: rgb(0, 162, 255);
-          }
-        &-todo_box{
-          padding: 0 14px;
-          .todo{
-            text-decoration: none;
-            color: black;
-            -webkit-transition: 0.2s;
-            -moz-transition: 0.2s;
-            -o-transition: 0.2s;
-            -ms-transition: 0.2s;
-            transition: 0.2s;
-          }
-          .todo:hover{
-            color: rgb(0, 162, 255);
-          }
-        }
-        &-mypage_box{
-          padding-right: 0;
-          .mypage{
-            text-decoration: none;
-            color: black;
-            -webkit-transition: 0.2s;
-            -moz-transition: 0.2s;
-            -o-transition: 0.2s;
-            -ms-transition: 0.2s;
-            transition: 0.2s;
-          }
-          .mypage:hover{
-            color: rgb(0, 162, 255);
+          &-mypage_box{
+            padding-left: 14px;
+            .mypage{
+              @include hoverlink;
+            }
           }
         }
       }

@@ -22,7 +22,7 @@
           %p.essential_icon 必須
         .signup4__contents__main__form2__form
           %label.signup4__contents__main__form2__form__select
-            %select#exp_month{name: "exp_month", type: "text"}
+            %select#exp_month{name: "exp_month", class: "exp_month", type: "text"}
               %option{value: ""} --
               %option{value: "1"}01
               %option{value: "2"}02
@@ -39,7 +39,7 @@
 
           %p.signup4__contents__main__form2__form__date 月
           %label.signup4__contents__main__form2__form__select
-            %select#exp_year{name: "exp_year", type: "text"}
+            %select#exp_year{name: "exp_year", class: "exp_year", type: "text"}
               %option{value: ""} --
               %option{value: "2019"}19
               %option{value: "2020"}20
@@ -64,6 +64,6 @@
             カード裏面の番号とは?
       .signup4__contents__main__submit
         %label
-          = submit_tag "",style: "display: none", id: "token_submit"  #このidのsubmit_tagを押すと、pay.jsが発火し、入力された情報を持ってトークン生成。※pay.jsはapplication.htmlにてリンク記載。
-          %p.signup4__contents__main__submit__btn 次へ進む
+          %button{type: "submig", class: "signup4__contents__main__submit__btn", id: "token_submit"} 次へ進む
+          -# #このidのsubmit_btnを押すと、pay.jsが発火し、入力された情報を持ってトークン生成。※pay.jsはapplication.htmlにてリンク記載。
 = render  partial: "signup.footer"

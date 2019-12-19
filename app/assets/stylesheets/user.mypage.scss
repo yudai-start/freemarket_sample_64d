@@ -3,9 +3,10 @@
 }
 
 .user-mypage {
+  margin: 0 auto;
+  padding-top: 24px;
   display: flex;
-  margin: 24px auto 0;
-  width: 80vw;
+  width: 1000px;
   &__main {
     width: 700px;
     margin-left: 40px;
