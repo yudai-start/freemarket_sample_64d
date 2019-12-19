@@ -7,13 +7,13 @@
   z-index: 3;
   width: 100vw;
   &-lists {
-    width: 70vw;
+    width: 1000px;
     margin: 0 auto;
     padding: 15px 0px 0px;
     &-top {
       display: flex;
       justify-content: space-between;
-      width: 70vw;
+      width: 100%;
       // padding-left: 40px;
       &-left {
         display: flex;
@@ -29,7 +29,7 @@
         line-height: 40px;
         border: 1px solid rgb(200,200,200);
         height: 40px;
-        width: 50vw;
+        width: 750px;
         right: 0;
         background-color: #f5f5f5;
         border-radius: 4px;
@@ -70,32 +70,14 @@
         font-size: 14px;
         &-categorybox {
           .category {
-            color: rgb(34, 34, 34);
-            text-decoration: none;
-            -webkit-transition: 0.2s;
-            -moz-transition: 0.2s;
-            -o-transition: 0.2s;
-            -ms-transition: 0.2s;
-            transition: 0.2s;
-          }
-          .category:hover{
-            color: rgb(0, 162, 255);
+            @include hoverlink;
           }
         }
         &-brandbox {
           margin-left: 20px;
           padding-left: 0px 10px;
           .brand{
-            color: rgb(34, 34, 34);
-            text-decoration: none;
-            -webkit-transition: 0.2s;
-            -moz-transition: 0.2s;
-            -o-transition: 0.2s;
-            -ms-transition: 0.2s;
-            transition: 0.2s;
-          }
-          .brand:hover{
-            color: rgb(0, 162, 255);
+            @include hoverlink;
           }
         }
       }
@@ -140,12 +122,13 @@
               @include hoverlink;
             }
           &-todo_box{
-            padding: 0 14px;
+            padding-left: 5px;
             .todo{
               @include hoverlink;
             }
           }
           &-mypage_box{
+            padding-left: 14px;
             .mypage{
               @include hoverlink;
             }
