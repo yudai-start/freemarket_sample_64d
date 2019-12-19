@@ -28,9 +28,8 @@
 @import "exhibit-header";
 @import "exhibit-footer";
 @import "footer";
-@import "add_payments";
-@import "_sign.up.header.only.logo";
-@import "creditCard";
+@import "cards/new";
+@import "cards/registration";
 @import "gretel.scss";
 
 html{

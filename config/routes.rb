@@ -12,7 +12,11 @@ Rails.application.routes.draw do
   resources :items
   resources :users, only: [:edit, :update]
   resources :addresses, only: [:edit, :update]
-
+  resources :cards, only: [:new, :show, :create, :destroy] do
+    collection do
+      get :registration
+    end
+  end
 
   resources :signup do
     collection do
@@ -31,8 +35,6 @@ Rails.application.routes.draw do
       get :mypage
       get :confirm
       get :personal_info
-      get :creditCard
-      get :add_payments
     end
  end
 end
