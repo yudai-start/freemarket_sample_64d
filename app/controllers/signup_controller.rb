@@ -60,6 +60,7 @@ class SignupController < ApplicationController
                                                                    #sessionのままだと何故かハッシュではなかったので、.first[1]でハッシュに変えています。
     if @user.save!
       session[:id] = @user.id
+
       Payjp.api_key = Rails.application.credentials[:payjp_private_key] #APIキーを使ってPayjpクラスを初期化 (本番環境用)
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]#APIキーを使ってPayjpクラスを初期化 (ローカル環境用)
       customer = Payjp::Customer.create(  #pay.jsサイトで顧客IDを生成、取得。
