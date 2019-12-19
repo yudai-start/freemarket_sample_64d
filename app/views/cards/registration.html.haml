@@ -6,14 +6,13 @@
     %h1.credit-payment__title 支払い方法
     %section.credit-payment__box
       %h1.credit-payment__box__index クレジットカード一覧
-      = link_to add_payments_posts_path, class: :"credit-payment-link" do
+      = link_to new_card_path, class: :"credit-payment-link" do
         %span.fas.fa-credit-card.credit-payment-icon>
         クレジットカードを追加する
       .credit-payment-pay
         = link_to "#", class: :"credit-payment-next-page" do
           支払い方法について
           %span.fas.fa-chevron-right
-    %div
 
-=render "footer-icon"
+=render "/posts/footer-icon"
 =render "layouts/toppage-footer"

@@ -46,8 +46,14 @@
       .sidebar-tab
         %p.sidebar-list  発送元・お届け先住所変更
       .sidebar-tab
-        = link_to "/posts/creditCard/",class: "sidebar-list" do
-          支払い方法
+        = link_to (current_user.cards.first ? card_path(current_user.cards.first[:id]) : registration_cards_path), class: "sidebar-list" do
+          支払い方法  
+        -# -if current_user.cards.first
+        -#   = link_to card_path(current_user.cards.first[:id]), class: "sidebar-list" do
+        -#     支払い方法          
+        -# -else
+        -#   = link_to registration_cards_path, class: "sidebar-list" do
+        -#     支払い方法
       .sidebar-tab
         %p.sidebar-list  メール/パスワード
       .sidebar-tab
