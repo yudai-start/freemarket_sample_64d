@@ -2,9 +2,6 @@ class PostsController < ApplicationController
   def index
   end
 
-  def show
-  end
-
   def new
   end
 
@@ -20,4 +17,5 @@ class PostsController < ApplicationController
 
   def signout
   end
+
 end
