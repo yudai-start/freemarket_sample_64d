@@ -14,14 +14,13 @@
 @import "signup_footer";
 @import "items.show.scss";
 @import "index.scss";
-@import "users.scss";
 @import "user.profile.scss";
 @import "footer-icon.scss";
 @import "user.mypage.scss";
 @import "confirm";
 @import "sidebar";
 @import "new";
-@import "personal_info.scss";
+@import "edit_address";
 @import "logo_header";
 @import "toppage-footer";
 @import "toppage-header";
@@ -29,9 +28,8 @@
 @import "exhibit-header";
 @import "exhibit-footer";
 @import "footer";
-@import "add_payments";
-@import "_sign.up.header.only.logo";
-@import "creditCard";
+@import "cards/new";
+@import "cards/registration";
 @import "gretel.scss";
 
 html{
@@ -42,4 +40,8 @@ body {
   // width: 100vw;
   // height: 100vh;
   background-color: #f5f5f5;
+}
+
+.error{
+  color: red;
 }

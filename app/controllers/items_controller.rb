@@ -1,8 +1,6 @@
 class ItemsController < ApplicationController
-
-
   def index
-    # binding.pry
+
     @items = Item.all.includes(:images)
   end
 
@@ -16,57 +14,44 @@ class ItemsController < ApplicationController
     @item.images.build
   end
   
+  def edit
+    @item = Item.find(item_params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    item.update(item.params)
+  end
+
   def create
-    # item_params[:images_attributes] = item_params[:images_attributes].to_hash.first[1]["image"]
-
-    @item = Item.new(item_params
-      # name:                  item_params[:name],
-      # user_id:                item_params[:use_id],
-      # size:                   item_params[:size],
-      # item_status:            item_params[:item_status],
-      # shipping_fee_defrayer:  item_params[:shipping_fee_defrayer],
-      # shipping_system:        item_params[:shipping_system],
-      # # ship_from_prefecturer:  item_params[:ship_from_prefecture],
-      # ship_date:              item_params[:ship_date],
-      # price:                  item_params[:price],
-      # description:            item_params[:description],
-      # buyer_id:              item_params[:buyer_id]
-      # # status:                item_params[:status]
-    )
-  
+    @item = Item.new(item_params)
     @item[:status] = 1
-
-    # @item.images.build(item_params[:images_attributes].to_hash.first[1])
-
-    # @item.images.build(item_params[:images_attributes].first[1])
-
-
-    if @item.save!
-
-      redirect_to root_path
-
+    if @item.save
+      redirect_to root_path 
+    else
+      @item.images.build
+      render :new
+      
     end
     
-    
-
   end
 
   private
-
   def item_params
     params.require(:item).permit(:name,
-                                #  :user_id,
                                  :size,
+                                 :item_status_id,
+                                 :shipping_fee_defrayer_id,
+                                 :shipping_system,
                                  :item_status,
                                  :shipping_fee_defrayer,
-                                 :shipping_system,
                                  :ship_from_prefecture,
-                                 :ship_date, 
+                                 :ship_date_id, 
                                  :price,
                                  :description,
                                  :buyer_id,
                                  :status,
-                                 images_attributes:[:id, :image, :item_id]).merge(user_id: 1)        
+                                 images_attributes:[:id, :image, :item_id]).merge(user_id: current_user.id, size:"", shipping_system:"")        
 
   end
 end

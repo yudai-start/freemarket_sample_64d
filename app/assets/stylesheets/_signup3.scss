@@ -9,7 +9,7 @@
 .signup3__contents{
   background-color: white;
   width: 560px;
-  height: 1100px;
+  // height: 1100px;
   margin-bottom: 100px;
   margin: auto;
   font-size: 14px;
@@ -60,6 +60,7 @@
 
     &__submit{
       margin-top: 40px;
+      padding-bottom: 50px;
       &__btn{
         @include redlink_btn;
       }

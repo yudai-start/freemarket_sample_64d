@@ -1,72 +1,71 @@
-.white-box-top {
-  background-color: white;
-  height: 685px;
-  width: 280px;
-  margin-left: 210px;
-  margin-top: 20px;
-}
-.sidebar-list {
-  padding-left: 16px;
-  padding-top: 17px;  
-  text-decoration: none;
-}
-.sidebar-tab {
-  border-bottom: 1px solid #f5f5f5;
-  font-size: 15px;
-  height: 48px;
-  width: 280px;
-  line-height: 16px;
-}
-.sidebar-list {
-  box-sizing: border-box;
-  position: relative;
-  display: block;
-  min-height: 48px;
-  background: #fff;
-  font-size: 14px;
-  color: #333;
-  }
-.sidebar-list::after {
-  position: absolute;
-  top: 40%;
-  right: 20px;
-  content: '';
-  width: 8px;
-  height: 8px;
-  border-top: 2px solid #ccc;
-  border-right: 2px solid #ccc;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  transition: all .2s;
-}
-.sidebar-list:hover::after {
-  right: 15px;
-  border-color: black;
-}
-.sidebar-list:hover {
-  background-color: rgb(243, 243, 243);
-}
-.sidebar-box {
-  width: 280px;
-  margin-top: 40px;
-  margin-left: 210px; 
-  .white-box-middle {
+.sidebar{
+  .white-box-top {
     background-color: white;
-    height: 96px;
+    height: 685px;
     width: 280px;
+    margin-top: 20px;
   }
-}
-.sidebar-merupei {
-  font-weight: bold;
-}
-.sidebar-box2 {
-  width: 280px;
-  margin-top: 40px;
-  margin-left: 210px; 
-  margin-bottom: 40px;
-  .white-box-bottom {
-    background-color: white;
-    height: 342px;
+  .sidebar-list {
+    padding-left: 16px;
+    padding-top: 17px;  
+    text-decoration: none;
+  }
+  .sidebar-tab {
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 15px;
+    height: 48px;
     width: 280px;
+    line-height: 16px;
+  }
+  .sidebar-list {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    min-height: 48px;
+    background: #fff;
+    font-size: 14px;
+    color: #333;
+    }
+  .sidebar-list::after {
+    position: absolute;
+    top: 40%;
+    right: 20px;
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: all .2s;
+  }
+  .sidebar-list:hover::after {
+    right: 15px;
+    border-color: black;
+  }
+  .sidebar-list:hover {
+    background-color: rgb(243, 243, 243);
+  }
+  .sidebar-box {
+    width: 280px;
+    margin-top: 40px;
+    .white-box-middle {
+      background-color: white;
+      height: 96px;
+      width: 280px;
+    }
+  }
+  .sidebar-merupei {
+    font-weight: bold;
+  }
+  .sidebar-box2 {
+    width: 280px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    .white-box-bottom {
+      background-color: white;
+      height: 342px;
+      width: 280px;
+    }
   }
 }

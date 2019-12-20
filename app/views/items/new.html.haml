@@ -1,13 +1,13 @@
 %body
-
+  
   = render "layouts/exhibit-header"
-  = form_with(model: @item, local: true) do |form|
+  = form_with(model: @item, local: true, class: "item_new_form") do |form|
 
     .ex-main
       .ex-container
       
         #ex-top-cont.ex-cont
-          text
+          %span.page-description 商品の情報を入力
         #ex-img-cont.ex-cont
           .ex-indispensable-tmp
             .ex-sentence
@@ -16,9 +16,15 @@
               必須
           %div
             最大１０枚までアップロードできます
-          .ex-img-form
-            = form.fields_for :images do |f|
-              = f.file_field :image, class: "ex-img-form"
+          
+          = form.fields_for :images do |f|
+            = f.label :image, class:"label" do
+              #ex-img-form.ex-img-form      
+                .icon-zone
+                  %span ここをクリックして 
+                  %br 画像を選択して下さい
+                  %i.fas.fa-camera
+                = f.file_field :image, class: 'hidden'
               
         #ex-item-cont.ex-cont
           .ex-indispensable-tmp
@@ -28,12 +34,16 @@
               必須
           %div
             = form.text_field :name, placeholder:"商品の名前を記入してください（４０文字まで）"
+            .error_message
+              
+
             .ex-indispensable-tmp
               .ex-sentence
                 商品の説明
               .ex-indispensable
                 必須
             = form.text_area :description, placeholder:"商品の説明を記入してください（１０００文字まで）"
+
           %div
         #ex-item-cont2.ex-cont
           .ex-blank 商品の詳細
@@ -43,16 +53,14 @@
                 カテゴリー
               .ex-indispensable
                 必須
-            -# = form.select :category, ["aaa","bbb","ccc"], { include_blank: true, selected: 1 }
+
             .ex-indispensable-tmp
               .ex-sentence
                 商品の状態
               .ex-indispensable
                 必須
-            = form.select :item_status, ["ddd", "eee", "fff"], { include_blank: true, selected: 1 }
+            = form.collection_select :item_status_id,ItemStatus.all,:id, :name, { include_blank: true, selected: 7 }
 
-
-              
         #ex-shipping-cont.ex-cont
           .ex-blank 発送について
           .ex-rb
@@ -61,50 +69,61 @@
                 配送料の負担
               .ex-indispensable
                 必須
-            = form.select :shipping_fee_defrayer, ["送料込み（出品者負担）", "着払い（購入者負担）"], { include_blank: true, selected: 1 }
-         
+            = form.collection_select :shipping_fee_defrayer_id, ShippingFeeDefrayer.all, :id, :name, { include_blank: true, selected: 3 }
+
             .ex-indispensable-tmp
               .ex-sentence
                 発送元の地域
               .ex-indispensable
                 必須
-            = form.collection_select :ship_from_prefecture,Prefecture.all, :id, :name, { include_blank: true, selected: 1 }
-           
+            = form.collection_select :ship_from_prefecture,Prefecture.all, :id, :name, { include_blank: true, selected: 48 }
+
             .ex-indispensable-tmp
               .ex-sentence
                 発送までの日数
               .ex-indispensable
                 必須
-            = form.select :ship_date, ["1-2日","2-3日","4-7日"], { include_blank: true, selected: 1 }
-          
+            = form.collection_select :ship_date_id, ShipDate.all, :id, :name, { include_blank: true, selected: 4 }
+
         #ex-price-cont.ex-cont
           .ex-blank 販売価格
           .ex-rb
             #ex-p-box.ex-p-box
               .ex-indispensable-tmp
                 .ex-sentence
-                  価格
+                  価格（半角数字）
                 .ex-indispensable
                   必須
-              = form.text_field :price, placeholder:"例）300", class:"ex-p-box"
-            .ex-p-box
+              = form.text_field :price, placeholder:"例）300", class:"ex-p-box", id:"input"
+
+            .ex-p-box#for-error-message
               .ex-divide
                 .ex-pbleft
-                  販売手数料
-                .ex-pbright
-                  ¥¥¥
+                  販売手数料（１０％）
+                .ex-pbright1
+                  
             .ex-p-box
               .ex-divide
                 .ex-pbleft
                   販売利益
-                .ex-pbright
-                  ¥¥¥
+                .ex-pbright2
+                  
         #ex-btn-cont.ex-cont
           %div
-            規約文
+            = link_to "禁止されている出品","#", class:"ex-rule-link"
+            、
+            = link_to "行為","#", class:"ex-rule-link"
+            を必ずご確認ください。<br>
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            = link_to "偽ブランドの販売","#", class:"ex-rule-link"
+            は犯罪であり処罰される可能性があります。<br>
+            また、出品をもちまして
+            = link_to "加盟店規約","#", class:"ex-rule-link"
+            に同意したことになります。
           = form.submit "出品する", id:"ex-ship-btn"
           
           = form.submit "戻る", id:"ex-ship-return" 
 
-    = render "posts/footer"
+    = render "/signup/signup.footer"
+
 
