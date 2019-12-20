@@ -9,6 +9,9 @@ class ItemsController < ApplicationController
     @item.images.build
   end
   
+  def edit
+  end
+
   def create
     @item = Item.new(item_params
     @item[:status] = 1
