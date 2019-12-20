@@ -19,7 +19,7 @@
         = link_to "もっとみる  >", "#" ,id:'more'
     .contents
       - @items.each do |item|
-        = link_to("#", class: 'item_link') do
+        = link_to("items/#{item.id}", class: 'item_link') do
           .content
             .image
               = image_tag item.images.first.image.url

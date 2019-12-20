@@ -3,7 +3,7 @@
 
 %section.items-show
   .items-show__name
-    - @item.name
+    = @item.name
   %p.items-show__comment
     『”{item.name}”』は、”取引回数”
     回の取引実績を持つ”{user.name}”から出品されました。
@@ -65,53 +65,54 @@
         %th
           商品のサイズ
         %td 
-          - @item.size
+          = @item.size
       %tr
         %th
           商品の状態
         %td 
-          - @item.item_status
+          = @item.item_status
       %tr
         %th
           配送料の負担
         %td 
-          - @item.shipping_fee_defrayer
+          = @item.shipping_fee_defrayer
       %tr
         %th
           配送の方法
         %td 
-          - @item.shipping_system
+          = @item.shipping_system
       %tr
         %th
           配送元地域
-
         %td
-          = link_to "都道府県", "#", class: :"items-show__description__table__link"
+          = @item.ship_from_prefecture
+          
 
 
       %tr
         %th
           配送日の目安
         %td 
-          - @item.ship_date
+          = @item.ship_date
   .items-show__price
     %span.items-show__price__yen 
-      - @item.price
+      = @item.price
     %span.items-show__price__tax （税込）
     %span.items-show__price__fee 送料込み
+     
   .items-show__deal
-    = link_to "購入画面に進む", "#", class: :"items-show__deal__box"
+    = link_to "購入画面に進む", "/posts/confirm", class: :"items-show__deal__box"
 
   .items-show__tweet
     %p.items-show__tweet__top
-      - @item.description
+      = @item.description
 
     .items-show__tweet__low
       %ul.items-show__tweet__low__left
         %li
           = link_to "#", class: :"items-show__tweet__low__left__btn" do
-            %span.far.fa-heart.items-show__tweet__low__left__btn__like 
-              - @item.user_id
+            %span.far.fa-heart.items-show__tweet__low__left__btn__like いいね
+             
         %li
           = link_to "#", class: :"items-show__tweet__low__left__btn" do
             %span.far.fa-flag.items-show__tweet__low__left__btn__noti 不適切な商品の報告

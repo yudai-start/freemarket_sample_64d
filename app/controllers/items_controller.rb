@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @user = @item.user.includes(:user)
   end
 
   def new
