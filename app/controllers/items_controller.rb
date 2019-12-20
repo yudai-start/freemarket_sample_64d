@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
 
 
   def index
-    # binding.pry
     @items = Item.all.includes(:images)
   end
 
@@ -11,6 +10,9 @@ class ItemsController < ApplicationController
     @item.images.build
   end
   
+  def edit
+  end
+
   def create
     # item_params[:images_attributes] = item_params[:images_attributes].to_hash.first[1]["image"]
 
