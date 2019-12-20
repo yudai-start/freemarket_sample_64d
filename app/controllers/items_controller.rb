@@ -52,23 +52,21 @@ class ItemsController < ApplicationController
     
     card = Card.where(user_id: current_user.id).first
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      #保管した顧客IDでpayjpから情報取得
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve(card.customer_id) #payjpからログイン中のユーザーのカード情報取得
+      @card = customer.cards.retrieve(card.card_id) 
   end
 
   def done_buy_confirm
     item = Item.find(params[:id])
-  
-    card = Card.where(user_id: current_user.id).first
+    card = Card.where(user_id: current_user.id).first #payjpからログイン中のユーザーのカード情報取得し、支払いに利用
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       charge = Payjp::Charge.create(
         amount: item.price,
         customer: card.customer_id,
         currency: 'jpy'
       )
-    #statusを売却済に変更 buyer_idにcurrent_userのidを追加
-    item.update(status: 2, buyer_id: current_user.id)
+
+    item.update(status: 2, buyer_id: current_user.id) #itemのstatusを売却済に変更 購入者としてbuyer_idにcurrent_userのidを追加
 
     redirect_to "/"
   end
