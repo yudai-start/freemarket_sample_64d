@@ -189,3 +189,16 @@
   bottom: 5px;
   right: 50%;
 }
+
+@mixin hoverlink{
+  text-decoration: none;
+  color: black;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -ms-transition: 0.2s;
+  transition: 0.2s;
+  &:hover{
+    color: rgb(0, 162, 255);
+  }
+}

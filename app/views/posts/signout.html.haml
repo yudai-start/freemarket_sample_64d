@@ -1,5 +1,9 @@
 = render partial: "layouts/toppage-header"
 .signout
-  = render partial: "posts/sidebar" 
-  = render partial: "posts/signout_btn" 
+  = render partial: "/layouts/sidebar" 
+  .signout_btn
+    .signout_btn__main
+      .signout_btn__main__btn
+        =link_to destroy_user_session_path, method: :delete, class: "signout_btn__main__btn__link" do
+          ログアウト
 = render partial: "layouts/toppage-footer" 
