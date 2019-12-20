@@ -78,12 +78,6 @@ $around-color: #eeeeee;
         width: 100%;
         position: relative;
         margin-bottom: 30px;
-        // #price_field {
-        //   position: absolute;
-        //   right: 0;
-        //   top: 0;
-        //   height: 50px;
-        // }
         .ex-divide {
           display: flex;
           .ex-pbright1 {
@@ -158,23 +152,9 @@ select {
 
 .error {
   color: red;
-  // -webkit-animation: blink 1s ease infinite;
-  // animation: blink 1s ease infinite;
   animation:blink 3s ease-in-out infinite alternate;
 }
 @keyframes blink{
   0%{ color : red;   background:white }
 100%{ color : white; background:red   }
 }
-// .blink {
-// 	-webkit-animation: blink 1s ease infinite;
-// 	animation: blink 1s ease infinite;
-// }
-// @-webkit-keyframes error {
-// 	0% {opacity: 0;}
-// 	100% {opacity: 1;}
-// }
-// @keyframes error {
-// 	0% {opacity: 0;}
-// 	100% {opacity: 1;}
-// }
