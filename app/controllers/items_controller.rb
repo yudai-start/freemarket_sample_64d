@@ -1,12 +1,12 @@
 class ItemsController < ApplicationController
-  def index
 
+  def index
     @items = Item.all.includes(:images)
   end
 
   def show
     @item = Item.find(params[:id])
-    @user = @item.user.includes(:user)
+    # binding.pry
   end
 
   def new
@@ -25,15 +25,16 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item[:status] = 1
-    if @item.save
+    if @item.save!
       redirect_to root_path 
     else
-      @item.images.build
       render :new
-      
     end
-    
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
   end
 
   private
@@ -51,7 +52,7 @@ class ItemsController < ApplicationController
                                  :description,
                                  :buyer_id,
                                  :status,
-                                 images_attributes:[:id, :image, :item_id]).merge(user_id: current_user.id, size:"", shipping_system:"")        
+                                 images_attributes:[:id, :image, :item_id]).merge(user_id: current_user.id, size:"", shipping_system:"", status: 1)        
 
   end
 end
