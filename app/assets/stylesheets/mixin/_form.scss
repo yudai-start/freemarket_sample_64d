@@ -101,9 +101,13 @@
   color: white;
   text-align: center;
   line-height: 40px;
+  display: block;
+  cursor: pointer;  
 }
 
 @mixin graylink_btn{
+  display: block;
+  cursor: pointer;  
   width: 325px;
   height: 40px;
   margin-top: 5px;
@@ -149,6 +153,7 @@
   }
   &__text{
     margin-left: 70px;
+    display: block;
   }
 }
 
@@ -169,6 +174,7 @@
   }
   &__text{
     margin-left: 80px;
+    display: block;
   }
 }
 

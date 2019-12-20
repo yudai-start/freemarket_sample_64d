@@ -49,8 +49,5 @@ $(function(){
     if (error){
       return false;
     }
-
-    delete g-recaptcha-response
   });
-
 });
