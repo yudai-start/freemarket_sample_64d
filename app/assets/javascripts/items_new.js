@@ -19,10 +19,6 @@ $('form.item_new_form').ready( function(){
   });
 
 $(function() {
-
-  // function setErrorMessage(selector, string) {
-  //   $(selector).next('.error-message').text(string).removeClass('.error_message');
-  // }
   
   $("form.item_new_form").on('submit',function(){                               //$("フォームのクラス名").on('イベント')
       var error = 0;

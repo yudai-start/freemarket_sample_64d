@@ -1,5 +1,5 @@
 %body
-
+  
   = render "layouts/exhibit-header"
   = form_with(model: @item, local: true, class: "item_new_form") do |form|
 
@@ -7,7 +7,7 @@
       .ex-container
       
         #ex-top-cont.ex-cont
-          text
+          %span.page-description 商品の情報を入力
         #ex-img-cont.ex-cont
           .ex-indispensable-tmp
             .ex-sentence
