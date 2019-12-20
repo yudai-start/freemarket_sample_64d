@@ -13,9 +13,8 @@
           = @item.price
           (税込) 
 
-          -# - array = ["送料込み", "着払い"]
-          -# = array[@item.shipping_fee_defrayer]
-          -# = @item.shipping_fee_defrayer_id.shipping_fee_defrayer
+          - array = ["送料込み", "着払い"]
+          = array[@item.shipping_fee_defrayer_id]
   .confirm__contents__price
     %p.confirm__contents__price__heading 支払い金額
     %p.confirm__contents__price__value
