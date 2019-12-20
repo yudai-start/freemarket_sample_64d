@@ -85,3 +85,5 @@ gem 'fog-aws'
 gem 'payjp'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'gretel'
+gem 'factory_bot_rails'
+gem 'omniauth-facebook'
