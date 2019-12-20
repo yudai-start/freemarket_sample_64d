@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:buy_confirm]
+  before_action :set_item, only: [:update, :destroy, :done_buy_confirm]
+  before_action :set_item_of_instance_variable, only: [:show, :buy_confirm]
+  
 
   require "payjp"
 
@@ -8,8 +11,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
-    # binding.pry
   end
 
   def new
@@ -22,7 +23,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
     item.update(item.params)
   end
 
@@ -36,13 +36,10 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
     item.destroy
   end
 
   def buy_confirm
-    @item = Item.find(params[:id])
-    
     card = Card.where(user_id: current_user.id).first
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id) #payjpからログイン中のユーザーのカード情報取得
@@ -50,7 +47,6 @@ class ItemsController < ApplicationController
   end
 
   def done_buy_confirm
-    item = Item.find(params[:id])
     card = Card.where(user_id: current_user.id).first #payjpからログイン中のユーザーのカード情報取得し、支払いに利用
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       charge = Payjp::Charge.create(
@@ -82,4 +78,13 @@ class ItemsController < ApplicationController
                                  images_attributes:[:id, :image, :item_id]).merge(user_id: current_user.id, size:"", shipping_system:"", status: 1)        
 
   end
+
+  def set_item
+    item = Item.find(params[:id])
+  end
+
+  def set_item_of_instance_variable
+    @item = Item.find(params[:id])
+  end
+  
 end
