@@ -10,6 +10,12 @@ class ItemsController < ApplicationController
   end
   
   def edit
+    @item = Item.find(item_params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    item.update(item.params)
   end
 
   def create
