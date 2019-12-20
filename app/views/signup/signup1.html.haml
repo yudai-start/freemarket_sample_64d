@@ -20,7 +20,7 @@
           .post-singnup1-password__title
             .post-singnup1-password__title__text パスワード
             .post-singnup1-password__title__must 必須
-          = form.password_field :password, autocomplete: "off", placeholder: "７文字以上の半角英数字", id: "passoword", class: :"post-singnup1-password__form"
+          = form.password_field :password, autocomplete: "off", placeholder: "７文字以上の半角英数字", id: "password", class: :"post-singnup1-password__form"
           .post-singnup1-password__notice
             ※英語と数字の両方を含めて設定してください           
           = form.check_box ":パスワードを表示する", class: :"post-singnup1-password__indication"
@@ -65,7 +65,8 @@
             ※本人情報は正しく入力してください。会員登録後、
             %br/
             修正するにはお時間を頂く場合があります。
-        = recaptcha_tags
+        .recaptcha
+          = recaptcha_tags
         .post-singnup1-agreement
           「次へ進む」のボタンを押すことにより、#{link_to "利用規約", "#", class: "post-singnup1-agreement__link"}に
           %br/
