@@ -35,6 +35,7 @@ Rails.application.routes.draw do
       get :mypage
       get :confirm
       get :personal_info
+      get :exhibiting
     end
  end
 end

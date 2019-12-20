@@ -1,0 +1,19 @@
+= render "layouts/topppage-header"
+.user-exhibiting-wrapper
+   = render ".layouts.sidebar"
+
+  %section.exhibiting
+    %h1.exhibiting__title
+    %ul.exhibiting__tabs
+      %li.exhibiting__tabs__link.ing-active= link_to "出品中", "#", class: :"exhibiting-link"
+      %li.exhibiting__tabs__link= link_to "取引中", "#", class: :"exhibiting-link"
+      %li.exhibiting__tabs__link= link_to "売却済み", "#", class: :"exhibiting-link"
+
+    .exhibiting__tab-page
+      .tab
+        .exhibiting-content
+          .exhibiting-content__image
+          
+
+=render "footer-icon"
+=render "layouts/toppage-footer"
