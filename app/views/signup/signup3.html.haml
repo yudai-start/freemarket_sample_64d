@@ -3,25 +3,25 @@
   .signup3__contents__heading
     発送元・お届け先住所入力
   .signup3__contents__main
-    = form_with(model: @user, url: signup4_signup_index_path, method: :get, local: true) do |form|
+    = form_with(model: @user, url: signup4_signup_index_path, method: :get, id: "address", local: true) do |form|
       = form.fields_for :addresses do |address_form|  #form_with @userにネストしたform。userインスタンスがsaveされると同時にリレーションを保って、addressインスタンスを保存。
-        .signup3__contents__main__form1
+        .signup3__contents__main__form1.name
           .signup3__contents__main__form1__heading
             %p お名前
             %p.essential_icon 必須
-          = address_form.text_field :family_name, placeholder: "性", class: "signup3__contents__main__form1__form"
-          = address_form.text_field :first_name, placeholder: "名", class: "signup3__contents__main__form1__form"
-        .signup3__contents__main__form1
+          = address_form.text_field :family_name, placeholder: "性", id: "family_name", class: "signup3__contents__main__form1__form"
+          = address_form.text_field :first_name, placeholder: "名", id: "first_name", class: "signup3__contents__main__form1__form"
+        .signup3__contents__main__form1.name_kana
           .signup3__contents__main__form1__heading
             %p お名前カナ
             %p.essential_icon 必須
-          = address_form.text_field :family_name_kana, placeholder: "性", class: "signup3__contents__main__form1__form"
-          = address_form.text_field :first_name_kana, placeholder: "名", class: "signup3__contents__main__form1__form"
-        .signup3__contents__main__form1
+          = address_form.text_field :family_name_kana, placeholder: "性", id: "family_name_kana", class: "signup3__contents__main__form1__form"
+          = address_form.text_field :first_name_kana, placeholder: "名", id: "first_name_kana", class: "signup3__contents__main__form1__form"
+        .signup3__contents__main__form1.post_code
           .signup3__contents__main__form1__heading
             %p 郵便番号
             %p.essential_icon 必須
-          = address_form.text_field :post_code, placeholder: "例) 123-4567", class: "signup3__contents__main__form1__form"
+          = address_form.text_field :post_code, placeholder: "例) 123-4567", id: "post_code", class: "signup3__contents__main__form1__form"
         .signup3__contents__main__form2
           .signup3__contents__main__form1__heading
             %p 都道府県
@@ -29,16 +29,16 @@
           .signup3__contents__main__form2__form
             %label.signup3__contents__main__form2__form__select
               = address_form.collection_select :prefecture_id, Prefecture.all, :id, :name
-        .signup3__contents__main__form1
+        .signup3__contents__main__form1.city
           .signup3__contents__main__form1__heading
             %p 市町区村
             %p.essential_icon 必須
-          = address_form.text_field :city, placeholder: "例) 横浜市緑区", class: "signup3__contents__main__form1__form"
-        .signup3__contents__main__form1
+          = address_form.text_field :city, placeholder: "例) 横浜市緑区", id: "city", class: "signup3__contents__main__form1__form"
+        .signup3__contents__main__form1.street_number
           .signup3__contents__main__form1__heading
             %p 番地
             %p.essential_icon 必須
-          = address_form.text_field :street_number, placeholder: "例) 青山1-1-1", class: "signup3__contents__main__form1__form"
+          = address_form.text_field :street_number, placeholder: "例) 青山1-1-1", id: "street_number", class: "signup3__contents__main__form1__form"
         .signup3__contents__main__form1
           .signup3__contents__main__form1__heading
             %p 建物名
