@@ -1,4 +1,4 @@
-= render partial: "/signup/sign.up.header.only.logo"
+= render partial: "/layouts/exhibit-header"
 = flash[:success]
 .log-in__main
   .acount
@@ -8,27 +8,24 @@
       = link_to new_user_registration_path , class: "sing-up__new" do
         新規会員登録
   .facebook-google
-    = link_to user_facebook_omniauth_authorize_path, style: "text-decoration:none;" do
-      .login__facebook
-        %i.fab.fa-facebook-square.login__facebook__icon
-        .login__facebook__text Facebookでログイン
-    = link_to user_google_oauth2_omniauth_authorize_path, style: "text-decoration:none;" do
-      .login__google
-        %i.fab.fa-google-plus-g.login__google__icon
-        .login__google__text Googleでログイン
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    = link_to user_facebook_omniauth_authorize_path, class: "login__facebook", style: "text-decoration:none;" do
+      %i.fab.fa-facebook-square.login__facebook__icon
+      .login__facebook__text Facebookでログイン
+    = link_to user_google_oauth2_omniauth_authorize_path, class: "login__google", style: "text-decoration:none;" do
+      %i.fab.fa-google-plus-g.login__google__icon
+      .login__google__text Googleでログイン
+  = form_for(resource, as: resource_name, html: {id: "signin"}, url: session_path(resource_name)) do |f|
     .input_fields
       .email
         = f.email_field :email, placeholder: "メールアドレス", autofocus: true
       .password
         = f.password_field :password, placeholder: "パスワード", autocomplete: "off"
-      .recaptcha_tag
+      .recaptcha
         = recaptcha_tags
       .login
-        .log-in
-          %label
-            = f.submit "", class: 'btn', style: "display: none"
-            %p ログイン
+        %label
+          = f.submit "", class: 'btn', style: "display: none"
+          %p.log-in ログイン
       = link_to '#', class: "pass-word" do
         %p.pass-word パスワードをお忘れの方
 

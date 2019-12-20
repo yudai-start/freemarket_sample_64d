@@ -1,6 +1,6 @@
 .post-singnup1-main{
   width:700px;
-  height: 1225px;
+  // height: 1225px;
   background-color: white;
   margin:0 auto;
   &__top{
@@ -163,19 +163,12 @@
       }
     }
     .post-singnup1-next{
-      margin-top: 30px;
-      width: 320px;
-      height: 50px;
-      text-align: center;
-      line-height: 50px;
-      background-color: #ea352d;
       &__link{
-        color: #fff;
-        text-decoration:none;
-        font-size: 14px;
+        @include redlink_btn;
       }
     }
     .post-singnup1-about-registration{
+      padding-bottom: 30px;
       margin-top: 30px;
       float: right;
       font-size: 12px;

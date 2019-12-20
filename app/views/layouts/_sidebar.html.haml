@@ -1,0 +1,60 @@
+.sidebar  
+  .white-box-top
+    .sidebar-tab
+      = link_to "/posts/mypage/",class: "sidebar-list" do
+        マイページ
+    .sidebar-tab
+      %p.sidebar-list お知らせ          
+    .sidebar-tab
+      %p.sidebar-list  やることリスト
+    .sidebar-tab
+      %p.sidebar-list  いいね！一覧
+    .sidebar-tab
+      = link_to "/items/new/",class: "sidebar-list" do
+        出品する
+    .sidebar-tab
+      %p.sidebar-list  出品した商品 - 出品中
+    .sidebar-tab
+      %p.sidebar-list  出品した商品 - 取引中
+    .sidebar-tab
+      %p.sidebar-list  出品した商品 - 売却済み
+    .sidebar-tab
+      %p.sidebar-list  購入した商品 - 取引中
+    .sidebar-tab
+      %p.sidebar-list  購入した商品 - 過去の取引
+    .sidebar-tab
+      %p.sidebar-list  ニュース一覧
+    .sidebar-tab
+      %p.sidebar-list  評価一覧
+    .sidebar-tab
+      %p.sidebar-list  ガイド
+    .sidebar-tab
+      %p.sidebar-list  お問い合わせ
+  .sidebar-box
+    %p.sidebar-merupei  メルペイ
+    .white-box-middle
+      .sidebar-tab
+        %p.sidebar-list  残高・振込申請
+      .sidebar-tab
+        %p.sidebar-list  ポイント
+  .sidebar-box2
+    %p.sidebar-merupei  設定
+    .white-box-bottom
+      .sidebar-tab
+        = link_to edit_user_path(current_user.id), class: "sidebar-list" do
+          プロフィール
+      .sidebar-tab
+        %p.sidebar-list  発送元・お届け先住所変更
+      .sidebar-tab
+        = link_to (current_user.cards.first ? card_path(current_user.cards.first[:id]) : registration_cards_path), class: "sidebar-list" do
+          支払い方法  
+      .sidebar-tab
+        %p.sidebar-list  メール/パスワード
+      .sidebar-tab
+        = link_to edit_address_path(current_user.addresses.first[:id]),class: "sidebar-list" do
+          本人情報
+      .sidebar-tab
+        %p.sidebar-list  電話番号の確認
+      .sidebar-tab
+        = link_to "/posts/signout/",class: "sidebar-list" do
+          ログアウト

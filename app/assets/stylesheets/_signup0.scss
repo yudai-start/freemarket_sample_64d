@@ -1,25 +1,17 @@
 .sign-up-main{
-  height: 386px;
-  width: 100%;
-  background-color: rgb(247, 247, 247);
   .sign-up-area{
-    height: 400px;
     width: 700px;
     margin: 0 auto;
+    background-color: white;
     .sign-up-area-top{
-      height: 100px;
-      background-color: white;
-      text-align: center;
-      line-height: 100px;
-      font-size: 22px;
+      @include form_heading;
     }
     .sign-up-area-bottom{
-      height: 264px;
-      width: 700px;
+      height: 220px;
+      width: 100%;
       margin: 0 auto;
-      border-top: solid 1px rgb(247, 247, 247);
-      padding: 20px 0 0 0;
-      background-color: white;
+      border-top: solid 1px #f5f5f5;
+      padding-top: 20px;
       .sign-up-btn-mail{
         background-color:#ea352d;
         width: 340px;

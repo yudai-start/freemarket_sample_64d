@@ -3,10 +3,10 @@
   .signup2__contents__heading
     電話番号の確認
   .signup2__contents__main
-    = form_with(model: @user, url: signup3_signup_index_path, method: :get,  local: true ) do |form|
+    = form_with(model: @user, url: signup3_signup_index_path, method: :get, id: "phone", local: true ) do |form|
       .signup2__contents__main__form1
         %p 携帯電話の番号
-        = form.text_field :phone_number, placeholder: "携帯電話の番号を入力", class: "signup2__contents__main__form1__form"
+        = form.text_field :phone_number, placeholder: "携帯電話の番号を入力", id: "phone_number", class: "signup2__contents__main__form1__form"
         %p.signup2_notice 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
       .signup2__contents__main__submit
         %label

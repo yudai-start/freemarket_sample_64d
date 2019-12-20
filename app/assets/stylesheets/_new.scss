@@ -22,6 +22,7 @@
         text-decoration: none;
         color: white;
         line-height: 42px; 
+        display: block;
       }
     }
   }
@@ -57,21 +58,16 @@
       width: 200px;
     }
     .login {
-      height: 50px;
-      width: 328px;
-      background-color: #ea352d;
-      margin-top: 25px;
-      line-height: 50px; 
-      .log-in {
-        font-size: 14px;
-        color: white;
-        text-align: center;
+      margin-top: 40px;
+      width: 332px;
+      .log-in{
+        @include redlink_btn;
       }
     }
     .pass-word {
       color: #0099e8;
       font-size: 13px;
-      margin-top: 10px;
+      margin-top: 20px;
       text-align: right;
       text-decoration: none;
     }
