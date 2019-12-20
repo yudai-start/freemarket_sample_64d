@@ -15,7 +15,7 @@
 
           -# - array = ["送料込み", "着払い"]
           -# = array[@item.shipping_fee_defrayer]
-          = @item.shipping_fee_defrayer_id.shipping_fee_defrayer
+          -# = @item.shipping_fee_defrayer_id.shipping_fee_defrayer
   .confirm__contents__price
     %p.confirm__contents__price__heading 支払い金額
     %p.confirm__contents__price__value
@@ -28,10 +28,10 @@
     .confirm__contents__payment__creditcard 
       クレジットカード
       .confirm__contents__payment__creditcard__number
-        = "**** **** **** " + @default_card_information.last4
+        = "**** **** **** " + @card.last4
       .confirm__contents__payment__creditcard__limit
-        - exp_month = @default_card_information.exp_month.to_s
-        - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+        - exp_month = @card.exp_month.to_s
+        - exp_year = @card.exp_year.to_s.slice(2,3)
         有効期限
         = exp_month + " / " + exp_year
 
