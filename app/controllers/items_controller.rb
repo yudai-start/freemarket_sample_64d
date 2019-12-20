@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   def index
+
     @items = Item.all.includes(:images)
   end
 
@@ -28,16 +29,15 @@ class ItemsController < ApplicationController
                                  :item_status_id,
                                  :shipping_fee_defrayer_id,
                                  :shipping_system,
+                                 :item_status,
+                                 :shipping_fee_defrayer,
                                  :ship_from_prefecture,
                                  :ship_date_id, 
                                  :price,
                                  :description,
                                  :buyer_id,
                                  :status,
-                                 images_attributes:[:id, :image, :item_id]).merge(user_id: current_user.id)        
+                                 images_attributes:[:id, :image, :item_id]).merge(user_id: current_user.id, size:"", shipping_system:"")        
 
   end
 end
-
-
-     

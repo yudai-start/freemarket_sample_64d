@@ -3,7 +3,7 @@
 .index-main
 
   #slider.slide
-    = image_tag "kabao.jpg"
+    = image_tag "d6827-156-569778-1.jpg"
   .category_tags
     .category 人気のカテゴリー
     .tags
@@ -19,7 +19,7 @@
         = link_to "もっとみる  >", "#" ,id:'more'
     .contents
       - @items.each do |item|
-        = link_to("#", class: 'item_link') do
+        = link_to("items/show", class: 'item_link') do
           .content
             .image
               = image_tag item.images.first.image.url
