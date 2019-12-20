@@ -10,10 +10,16 @@ class ItemsController < ApplicationController
   end
   
   def edit
+    @item = Item.find(item_params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    item.update(item.params)
   end
 
   def create
-    @item = Item.new(item_params
+    @item = Item.new(item_params)
     @item[:status] = 1
     if @item.save
       redirect_to root_path 
