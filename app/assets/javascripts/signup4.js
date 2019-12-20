@@ -7,7 +7,7 @@ $(function(){
       exp_year = form.find("#exp_year");
   $("#charge-form").submit(function() {                   //signup4.html.hamlでsubmitボタンが押されたら発火
     form.find("#token-submit").prop("disabled", true);
-
+    
     var card = {                                    //各フォームの値から、カード情報を取得。
         number: number.val(),
         cvc: cvc.val(),
@@ -18,6 +18,7 @@ $(function(){
       if (response.error) {
         form.find('.payment-errors').text(response.error.message);
         form.find('#token-submit').prop('disabled', false);
+        alert("入力の正しくない箇所があります");
       }
       else {
         $(".signup4__contents__main__form1__form").removeAttr("name");  //トークンが生成されたら、フォームから値を削除。※カード情報をサーバーサイドへ送ってはならない！

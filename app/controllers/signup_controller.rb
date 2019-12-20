@@ -17,6 +17,7 @@ class SignupController < ApplicationController
   end
 
   def signup2
+    @user = User.new
     session[:nickname] = user_params[:nickname]    #sessionに一時データを格納することでpage遷移が可能
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
@@ -25,11 +26,6 @@ class SignupController < ApplicationController
     session[:family_name_kana] = user_params[:family_name_kana]
     session[:first_name_kana] = user_params[:first_name_kana]
     session[:birthday] = date_params[:year]+date_params[:month]+date_params[:day]   #年、月、日を結合
-    if verify_recaptcha   #「私はロボットではありません」にチェックがあれば実行
-      @user = User.new
-    else
-      render '/signup/signup1'
-    end
   end
 
   def signup3
