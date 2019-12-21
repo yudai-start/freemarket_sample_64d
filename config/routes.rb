@@ -44,6 +44,9 @@ Rails.application.routes.draw do
       get :buy_confirm
       put :done_buy_confirm
     end
+    collection do
+      get :search
+    end
   end
 
 end
