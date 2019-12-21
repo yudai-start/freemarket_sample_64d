@@ -60,10 +60,6 @@ class ItemsController < ApplicationController
     redirect_to "/"
   end
 
-  def search
-    @items = Items.search(params[:keyword])
-  end
-
   private
   def item_params
     params.require(:item).permit(:name,
