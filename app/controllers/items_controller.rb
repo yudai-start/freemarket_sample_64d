@@ -41,14 +41,14 @@ class ItemsController < ApplicationController
 
   def buy_confirm
     card = Card.find_by(user_id: current_user.id)
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials[:payjp_private_key]
       customer = Payjp::Customer.retrieve(card.customer_id) #payjpからログイン中のユーザーのカード情報取得
       @card = customer.cards.retrieve(card.card_id) 
   end
 
   def done_buy_confirm
     card = Card.find_by(user_id: current_user.id) #payjpからログイン中のユーザーのカード情報取得し、支払いに利用
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials[:payjp_private_key]
       charge = Payjp::Charge.create(
         amount: @item.price,
         customer: card.customer_id,
