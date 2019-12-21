@@ -50,7 +50,7 @@
 
   -if (@item.user_id != current_user.id)
     .items-show__deal
-      = link_to "購入画面に進む", "/posts/confirm", class: :"items-show__deal__box"
+      = link_to "購入画面に進む", "/items/#{@item.id}/buy_confirm", class: :"items-show__deal__box"
 
     .items-show__tweet
       %p.items-show__tweet__top
