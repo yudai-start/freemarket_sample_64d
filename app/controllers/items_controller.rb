@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:buy_confirm]
-  before_action :set_item, only: [:update, :destroy, :done_buy_confirm]
-  before_action :set_item_of_instance_variable, only: [:show, :buy_confirm]
+  before_action :set_item, only: [:show, :update, :destroy, :buy_confirm, :done_buy_confirm]
   
 
   require "payjp"
@@ -80,11 +79,7 @@ class ItemsController < ApplicationController
   end
 
   def set_item
-    item = Item.find(params[:id])
-  end
-
-  def set_item_of_instance_variable
     @item = Item.find(params[:id])
   end
-  
+
 end
