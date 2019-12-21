@@ -1,5 +1,4 @@
 = render "layouts/toppage-header"
-
 %section.items-show
   .items-show__name
     = @item.name
@@ -9,14 +8,6 @@
   .items-show__description
     .items-show__description__left
       = image_tag @item.images.first.image.url
-      -# %ul.items-show__description__left__main
-      -#   %li.items-show__description__left__main__image
-
-      -# .items-show__description__left__many
-      -#   %ul.items-show__description__left__many__top
-      -#     %li= image_tag "sample.jpg", class: :"items-show__description__left__many__low__image"
-      -#   %ul.items-show__description__left__many__low
-      -#     %li= image_tag "bgc.jpg", class: :"items-show__description__left__many__low__image"
 
     %table.items-show__description__table
       %tr
@@ -28,11 +19,7 @@
             %i.fas.fa-laugh.items-show__description__table__face__smile
             %i.fas.fa-meh.items-show__description__table__face__normal
             %i.fas.fa-tired.items-show__description__table__face__bad
-      -# %tr
-      -#   %th
-      -#     商品のサイズ
-      -#   %td 
-      -#     = @item.size
+
       %tr
         %th
           商品の状態
@@ -43,11 +30,7 @@
           配送料の負担
         %td 
           = ShippingFeeDefrayer.find(@item.shipping_fee_defrayer_id).name
-      -# %tr
-        -# %th
-        -#   配送の方法
-        -# %td 
-        -#   = @item.shipping_system_id
+
       %tr
         %th
           配送元地域
@@ -91,8 +74,6 @@
     %li.item-change__box
       = link_to "商品の編集" , edit_item_path(params[:id]), class: :"item-change__box__red-btn"
     %h1.item-change__or or
-    -# %li.item-change__box
-    -#   = link_to  "出品を一旦停止する", "#", class: :"item-change__box__gray-btn"
     %li.item-change__box
       = link_to "この商品を削除する", "#", class: :"item-change__box__gray-btn", id: :"destroy-click"
 
@@ -113,49 +94,40 @@
     %li.destroy-confirmation__choice__destroy
       = link_to "削除する", item_path(params[:id]), method: :delete, class: :"destroy-confirmation__choice__destroy__btn"
 
--# .item-show-comments
--#   .item-show-comments__box
--#     = form_with(model: @user, local: true) do |form|
--#       %h1.comments-withdraw
--#         相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
--#       = form.text_area :introduction
--#       = form.submit "コメントする", id: "comment-area"
+.item-show-comments
+  .item-show-comments__box
+    = form_with(model: @user, local: true) do |form|
+      %h1.comments-withdraw
+        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      = form.text_area :introduction
+      = form.submit "コメントする", id: "comment-area"
 
 
--# %ul.items-show-page
--#   %li
--#     = link_to "#", class: :"items-show-page__left" do
--#       %span.fas.fa-chevron-left 前の商品
--#   %li
--#     = link_to "#", class: :"items-show-page__right" do
--#       次の商品
--#       %span.fas.fa-chevron-right
--# .items-show-icon
--#   %ul.items-show-icon__box
--#     %li
--#       = link_to "#", class: :"items-show-icon__box__link" do
--#         %span.fab.fa-facebook-square.fa-3x.items-show-icon__box__link__facebook
--#     %li
--#       = link_to "#", class: :"items-show-icon__box__link" do
--#         %span.fab.fa-twitter-square.fa-3x.items-show-icon__box__link__twitter
--#     %li
--#       = link_to "#", class: :"items-show-icon__box__link" do
--#         %span.fab.fa-line.fa-3x.items-show-icon__box__link__line
--#     %li
--#       = link_to "#", class: :"items-show-icon__box__link" do
--#         %span.fab.fa-pinterest.fa-3x.items-show-icon__box__link__pinterest
+%ul.items-show-page
+  %li
+    = link_to "#", class: :"items-show-page__left" do
+      %span.fas.fa-chevron-left 前の商品
+  %li
+    = link_to "#", class: :"items-show-page__right" do
+      次の商品
+      %span.fas.fa-chevron-right
+.items-show-icon
+  %ul.items-show-icon__box
+    %li
+      = link_to "#", class: :"items-show-icon__box__link" do
+        %span.fab.fa-facebook-square.fa-3x.items-show-icon__box__link__facebook
+    %li
+      = link_to "#", class: :"items-show-icon__box__link" do
+        %span.fab.fa-twitter-square.fa-3x.items-show-icon__box__link__twitter
+    %li
+      = link_to "#", class: :"items-show-icon__box__link" do
+        %span.fab.fa-line.fa-3x.items-show-icon__box__link__line
+    %li
+      = link_to "#", class: :"items-show-icon__box__link" do
+        %span.fab.fa-pinterest.fa-3x.items-show-icon__box__link__pinterest
 
--#   .itemshow
--#     .itemshow__title
--#       = link_to "ユーザー名さんのその他の出品", "#", class: :"itemshow__title__link"
--#     -# .itemshow__top
--#     -#   = render "posts/show.image.top"
--#     -# .itemshow__top
--#     -#   = render "posts/show.image.lower"
--#     %div
--# .items-show-footer
--#   .items-show-footer__gretel
--#     - breadcrumb :items
--#     %span= breadcrumbs separator: " &rsaquo; ", class: :"gretel-area"
+  .itemshow
+    .itemshow__title
+      = link_to "ユーザー名さんのその他の出品", "#", class: :"itemshow__title__link"
 
 = render "layouts/toppage-footer"
