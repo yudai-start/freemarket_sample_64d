@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    # binding.pry
   end
 
   def new
@@ -52,7 +51,6 @@ class ItemsController < ApplicationController
                                  :description,
                                  :buyer_id,
                                  :status,
-                                 images_attributes:[:id, :image, :item_id]).merge(user_id: current_user.id, size:"", shipping_system:"", status: 1)        
-
+                                 images_attributes:[:id, :image, :item_id]).merge(user_id: current_user.id, size:"", shipping_system:"", status: 1)
   end
 end
