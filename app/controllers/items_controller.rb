@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item.update(item.params)
+    @item.update(item.params)
   end
 
   def create
@@ -35,26 +35,26 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item.destroy
+    @item.destroy
   end
 
   def buy_confirm
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id) #payjpからログイン中のユーザーのカード情報取得
       @card = customer.cards.retrieve(card.card_id) 
   end
 
   def done_buy_confirm
-    card = Card.where(user_id: current_user.id).first #payjpからログイン中のユーザーのカード情報取得し、支払いに利用
+    card = Card.find_by(user_id: current_user.id) #payjpからログイン中のユーザーのカード情報取得し、支払いに利用
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       charge = Payjp::Charge.create(
-        amount: item.price,
+        amount: @item.price,
         customer: card.customer_id,
         currency: 'jpy'
       )
 
-    item.update(status: 2, buyer_id: current_user.id) #itemのstatusを売却済に変更 購入者としてbuyer_idにcurrent_userのidを追加
+    @item.update(status: 2, buyer_id: current_user.id) #itemのstatusを売却済に変更 購入者としてbuyer_idにcurrent_userのidを追加
 
     redirect_to "/"
   end
