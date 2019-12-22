@@ -1,0 +1,11 @@
+.contents
+  - @items.each do |item|
+    = link_to("items/#{item.id}", class: 'item_link') do
+      .content
+        .image
+          = image_tag item.images.first.image.url
+          .price
+            #price
+            = item.price
+        .item_name 
+          = item.name

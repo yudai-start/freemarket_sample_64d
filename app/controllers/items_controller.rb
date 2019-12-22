@@ -61,8 +61,8 @@ class ItemsController < ApplicationController
   end
 
   def search
-    binding.pry
     @items = Item.search(params[:keyword])
+    @keyword = params[:keyword]
   end
 
   private

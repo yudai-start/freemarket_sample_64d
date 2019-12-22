@@ -208,3 +208,8 @@
     color: rgb(0, 162, 255);
   }
 }
+
+@mixin box($height, $width){
+  height: $height;
+  width: $width;
+}
