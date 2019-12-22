@@ -16,15 +16,25 @@
               必須
           %div
             最大１０枚までアップロードできます
-          
-          = form.fields_for :images do |f|
-            = f.label :image, class:"label" do
-              #ex-img-form.ex-img-form      
-                .icon-zone
-                  %span ここをクリックして 
-                  %br 画像を選択して下さい
-                  %i.fas.fa-camera
-                = f.file_field :image, class: 'hidden'
+
+          .formboxes
+            .formboxes-side 
+              %ul
+                %li.sell-upload-item
+                  %figure.sell-upload-item-image
+                    = image_tag @item.images.first.image.url
+                  .sell-upload-buttons
+                    = link_to "編集", "#" ,class: 'editbutton'
+                    = link_to "削除", "#" ,class: 'deletebutton'
+                    
+            = form.fields_for :images do |f|
+              = f.label :image, class:"label" do
+                #ex-img-form.ex-img-form      
+                  .icon-zone
+                    %span ここをクリックして 
+                    %br 画像を選択して下さい
+                    %i.fas.fa-camera
+                  = f.file_field :image, class: 'hidden'
               
         #ex-item-cont.ex-cont
           .ex-indispensable-tmp
@@ -125,5 +135,3 @@
           = form.submit "戻る", id:"ex-ship-return" 
 
     = render "/signup/signup.footer"
-
-
