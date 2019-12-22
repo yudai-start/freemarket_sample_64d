@@ -1,0 +1,31 @@
+= render "layouts/toppage-header"
+.user-exhibiting-wrapper
+  = render "/layouts/sidebar"
+  .exhibiting
+    %h1.exhibiting__title 出品した商品
+    %ul.exhibiting__tabs
+      %li.exhibiting__tabs__link.ing-active= link_to "出品中", "#", class: :"exhibiting-link"
+      %li.exhibiting__tabs__link= link_to "取引中", "#", class: :"exhibiting-link"
+      %li.exhibiting__tabs__link= link_to "売却済み", "#", class: :"exhibiting-link"
+
+    .exhibiting__tab-page
+      .tab.exhibiting-show
+        = link_to("#", class: "user_exhibting") do
+          .exhibiting-content
+            .exhibiting-content__image
+              
+              - @items.each do |item|
+              = image_tag item.images.first.image.url
+            .exhibiting-content__name-status
+              .exhibiting__name-status__name item
+              .exhibiting__name-status__status 
+                %i.far.fa-heart
+                %i.far.fa-comment-alt
+                出品中
+            %p.arrow >
+      .tab
+      .tab
+
+
+=render "posts/footer-icon"
+=render "layouts/toppage-footer"
