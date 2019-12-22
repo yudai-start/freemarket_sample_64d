@@ -63,6 +63,12 @@ class ItemsController < ApplicationController
   def search
     @items = Item.search(params[:keyword])
     @keyword = params[:keyword]
+    
+    @q=Item.search(params[:q]) #gem ransakを用いての詳細検索
+    @search_result_=@q.result
+      # # ajaxで送られた場合にはjsonを変えす
+      # unless params[:q].blank?
+      #   render json: @users.select("id").map { |e| e.id  }.to_json
   end
 
   private
