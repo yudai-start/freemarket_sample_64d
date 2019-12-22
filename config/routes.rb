@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sns_credentials#create'
   resources :sns_credentials
 
-  resources :items
+  # resources :items
   resources :users, only: [:edit, :update]
   resources :addresses, only: [:edit, :update]
   resources :cards, only: [:new, :show, :create, :destroy] do
