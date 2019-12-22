@@ -3,7 +3,17 @@
   .search-main__contensts
     .search-main__contensts__left    
       .search-main__contensts__left__said-bar
-        あ
+        =search_form_for(@q, url: {controller: 'items', action: 'search' }) do |f|
+          .search-main__contensts__left__said-bar__word
+          あいまい
+          =f.text_field :name_cont, value: @keyword
+          .search-main__contensts__left__said-bar__min-price
+          下限価格
+          =f.number_field :price_gteq
+          .search-main__contensts__left__said-bar__max-price
+          上限最高
+          =f.number_field :price_lteq
+          =f.submit
       
 
     .search-main__contensts__right
