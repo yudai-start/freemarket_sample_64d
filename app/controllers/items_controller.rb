@@ -19,7 +19,6 @@ class ItemsController < ApplicationController
   end
   
   def edit
-    @item = Item.find(params[:id])
   end
 
 
@@ -27,7 +26,7 @@ class ItemsController < ApplicationController
     item = Item.find(params[:id])
     item.update(item_params)
     redirect_to action: 'show' 
-
+  end
 
   def create
     @item = Item.new(item_params)
