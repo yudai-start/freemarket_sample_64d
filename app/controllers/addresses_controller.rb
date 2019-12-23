@@ -1,12 +1,13 @@
 class AddressesController < ApplicationController
+  before_action :authenticate_user!
 
   def edit
     @address = current_user.addresses.first
+    redirect_to root_path unless user_signed_in?
   end
 
   def update
     address = current_user.addresses.first
-    # binding.pry¥
     if address.update!(address_params)
       redirect_to root_path
     else
