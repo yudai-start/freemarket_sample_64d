@@ -20,19 +20,19 @@
     %p.confirm__contents__price__value
       ¥
       = @item.price
-  .confirm__contents__payment
-    .confirm__contents__payment__heading
-      .confirm__contents__payment__heading__title 支払い方法
-      =link_to "変更する","#",class: :confirm__contents__payment__heading__link
-    .confirm__contents__payment__creditcard 
+  .confirm__contents__payments
+    .confirm__contents__payments__heading
+      .confirm__contents__payments__heading__title 支払い方法
+      =link_to "変更する","#",class: :confirm__contents__payments__heading__link
+    .confirm__contents__payments__creditcard 
       クレジットカード
-      .confirm__contents__payment__creditcard__number
-        = "**** **** **** " + @card.last4
-      .confirm__contents__payment__creditcard__limit
-        - exp_month = @card.exp_month.to_s
-        - exp_year = @card.exp_year.to_s.slice(2,3)
-        有効期限
-        = exp_month + " / " + exp_year
+    .confirm__contents__payments__creditcard__number
+      = "**** **** **** " + @card.last4
+    .confirm__contents__payments__creditcard__limit
+      - exp_month = @card.exp_month.to_s
+      - exp_year = @card.exp_year.to_s.slice(2,3)
+      有効期限
+      = exp_month + " / " + exp_year
 
   .confirm__contents__address
     .confirm__contents__address__heading
