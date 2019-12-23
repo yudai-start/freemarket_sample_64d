@@ -1,137 +1,137 @@
-%body
+-# %body
   
-  = render "layouts/exhibit-header"
-  = form_with(model: @item, local: true, class: "item_new_form") do |form|
+-#   = render "layouts/exhibit-header"
+-#   = form_with(model: @item, local: true, class: "item_new_form") do |form|
 
-    .edit-main
-      .edit-container
+-#     .edit-main
+-#       .edit-container
       
-        #edit-top-cont.edit-cont
-          %span.page-description 商品の情報を入力
-        #edit-img-cont.edit-cont
-          .edit-indispensable-tmp
-            .edit-sentence
-              出品画像
-            .edit-indispensable
-              必須
-          %div
-            最大１０枚までアップロードできます
+-#         #edit-top-cont.edit-cont
+-#           %span.page-description 商品の情報を入力
+-#         #edit-img-cont.edit-cont
+-#           .edit-indispensable-tmp
+-#             .edit-sentence
+-#               出品画像
+-#             .edit-indispensable
+-#               必須
+-#           %div
+-#             最大１０枚までアップロードできます
 
-          .formboxes
-            .formboxes-side 
-              %ul
-                %li.sell-upload-item
-                  %figure.sell-upload-item-image
-                    = image_tag @item.images.first.image.url, class:"sell-upload-item-image-img"
-                  .sell-upload-item-buttons
-                    = link_to "編集", "#" , class: 'button'
-                    -#  "/@item/#{@item.id}/edit", method: :get
-                    = link_to "削除", "/item/#{@item.images.ids}", method: :delete, class: 'button'
-                    -# ,"/items/#{@item.id}", method: :delete,
+-#           .formboxes
+-#             .formboxes-side 
+-#               %ul
+-#                 %li.sell-upload-item
+-#                   %figure.sell-upload-item-image
+-#                     = image_tag @item.images.first.image.url, class:"sell-upload-item-image-img"
+-#                   .sell-upload-item-buttons
+-#                     = link_to "編集", "#" , class: 'button'
+-#                     -#  "/@item/#{@item.id}/edit", method: :get
+-#                     = link_to "削除", "/item/#{@item.images.ids}", method: :delete, class: 'button'
+-#                     -# ,"/items/#{@item.id}", method: :delete,
 
-            = form.fields_for :images do |f|
-              = f.label :image, class:"label" do
-                #edit-img-form.edit-img-form      
-                  %span.font クリックしてファイルをアップロード
-                  = f.file_field :image, class: 'hidden'
+-#             = form.fields_for :images do |f|
+-#               = f.label :image, class:"label" do
+-#                 #edit-img-form.edit-img-form      
+-#                   %span.font クリックしてファイルをアップロード
+-#                   = f.file_field :image, class: 'hidden'
               
-        #edit-item-cont.edit-cont
-          .edit-indispensable-tmp
-            .edit-sentence
-              商品名
-              = @item.name
-            .edit-indispensable
-              必須
-          %div
-            = form.text_field :name, placeholder:"商品の名前を記入してください（４０文字まで）"
-            .error_message
+-#         #edit-item-cont.edit-cont
+-#           .edit-indispensable-tmp
+-#             .edit-sentence
+-#               商品名
+-#               = @item.name
+-#             .edit-indispensable
+-#               必須
+-#           %div
+-#             = form.text_field :name, placeholder:"商品の名前を記入してください（４０文字まで）"
+-#             .error_message
               
 
-            .edit-indispensable-tmp
-              .edit-sentence
-                商品の説明
-              .edit-indispensable
-                必須
-            = form.text_area :description, placeholder:"商品の説明を記入してください（１０００文字まで）"
+-#             .edit-indispensable-tmp
+-#               .edit-sentence
+-#                 商品の説明
+-#               .edit-indispensable
+-#                 必須
+-#             = form.text_area :description, placeholder:"商品の説明を記入してください（１０００文字まで）"
 
-          %div
-        #edit-item-cont2.edit-cont
-          .edit-blank 商品の詳細
-          .edit-rb
-            .edit-indispensable-tmp
-              .edit-sentence
-                カテゴリー
-              .edit-indispensable
-                必須
+-#           %div
+-#         #edit-item-cont2.edit-cont
+-#           .edit-blank 商品の詳細
+-#           .edit-rb
+-#             .edit-indispensable-tmp
+-#               .edit-sentence
+-#                 カテゴリー
+-#               .edit-indispensable
+-#                 必須
 
-            .edit-indispensable-tmp
-              .edit-sentence
-                商品の状態
-              .edit-indispensable
-                必須
-            = form.collection_select :item_status_id,ItemStatus.all,:id, :name, { include_blank: true, selected: @item.item_status_id}
+-#             .edit-indispensable-tmp
+-#               .edit-sentence
+-#                 商品の状態
+-#               .edit-indispensable
+-#                 必須
+-#             = form.collection_select :item_status_id,ItemStatus.all,:id, :name, { include_blank: true, selected: @item.item_status_id}
 
-        #edit-shipping-cont.edit-cont
-          .edit-blank 発送について
-          .edit-rb
-            .edit-indispensable-tmp
-              .edit-sentence
-                配送料の負担
-              .edit-indispensable
-                必須
-            = form.collection_select :shipping_fee_defrayer_id, ShippingFeeDefrayer.all, :id, :name, { include_blank: true, selected: @item.shipping_fee_defrayer_id}
+-#         #edit-shipping-cont.edit-cont
+-#           .edit-blank 発送について
+-#           .edit-rb
+-#             .edit-indispensable-tmp
+-#               .edit-sentence
+-#                 配送料の負担
+-#               .edit-indispensable
+-#                 必須
+-#             = form.collection_select :shipping_fee_defrayer_id, ShippingFeeDefrayer.all, :id, :name, { include_blank: true, selected: @item.shipping_fee_defrayer_id}
 
-            .edit-indispensable-tmp
-              .edit-sentence
-                発送元の地域
-              .edit-indispensable
-                必須
-            = form.collection_select :ship_from_prefecture,Prefecture.all, :id, :name, { include_blank: true, selected: @item.ship_from_prefecture }
+-#             .edit-indispensable-tmp
+-#               .edit-sentence
+-#                 発送元の地域
+-#               .edit-indispensable
+-#                 必須
+-#             = form.collection_select :ship_from_prefecture,Prefecture.all, :id, :name, { include_blank: true, selected: @item.ship_from_prefecture }
 
-            .edit-indispensable-tmp
-              .edit-sentence
-                発送までの日数
-              .edit-indispensable
-                必須
-            = form.collection_select :ship_date_id, ShipDate.all, :id, :name, { include_blank: true, selected: @item.ship_date_id }
+-#             .edit-indispensable-tmp
+-#               .edit-sentence
+-#                 発送までの日数
+-#               .edit-indispensable
+-#                 必須
+-#             = form.collection_select :ship_date_id, ShipDate.all, :id, :name, { include_blank: true, selected: @item.ship_date_id }
 
-        #edit-price-cont.edit-cont
-          .edit-blank 販売価格
-          .edit-rb
-            #edit-p-box.edit-p-box
-              .edit-indispensable-tmp
-                .edit-sentence
-                  価格（半角数字）
-                .edit-indispensable
-                  必須
-              = form.text_field :price, placeholder:"例）300", class:"edit-p-box", id:"input"
+-#         #edit-price-cont.edit-cont
+-#           .edit-blank 販売価格
+-#           .edit-rb
+-#             #edit-p-box.edit-p-box
+-#               .edit-indispensable-tmp
+-#                 .edit-sentence
+-#                   価格（半角数字）
+-#                 .edit-indispensable
+-#                   必須
+-#               = form.text_field :price, placeholder:"例）300", class:"edit-p-box", id:"input"
 
-            .edit-p-box#for-error-message
-              .edit-divide
-                .edit-pbleft
-                  販売手数料（１０％）
-                .edit-pbright1
+-#             .edit-p-box#for-error-message
+-#               .edit-divide
+-#                 .edit-pbleft
+-#                   販売手数料（１０％）
+-#                 .edit-pbright1
                   
-            .edit-p-box
-              .edit-divide
-                .edit-pbleft
-                  販売利益
-                .edit-pbright2
+-#             .edit-p-box
+-#               .edit-divide
+-#                 .edit-pbleft
+-#                   販売利益
+-#                 .edit-pbright2
                   
-        #edit-btn-cont.edit-cont
-          %div
-            = link_to "禁止されている出品","#", class:"edit-rule-link"
-            、
-            = link_to "行為","#", class:"edit-rule-link"
-            を必ずご確認ください。<br>
-            またブランド品でシリアルナンバー等がある場合はご記載ください。
-            = link_to "偽ブランドの販売","#", class:"edit-rule-link"
-            は犯罪であり処罰される可能性があります。<br>
-            また、出品をもちまして
-            = link_to "加盟店規約","#", class:"edit-rule-link"
-            に同意したことになります。
-          = form.submit "変更する", id:"edit-ship-btn"
+-#         #edit-btn-cont.edit-cont
+-#           %div
+-#             = link_to "禁止されている出品","#", class:"edit-rule-link"
+-#             、
+-#             = link_to "行為","#", class:"edit-rule-link"
+-#             を必ずご確認ください。<br>
+-#             またブランド品でシリアルナンバー等がある場合はご記載ください。
+-#             = link_to "偽ブランドの販売","#", class:"edit-rule-link"
+-#             は犯罪であり処罰される可能性があります。<br>
+-#             また、出品をもちまして
+-#             = link_to "加盟店規約","#", class:"edit-rule-link"
+-#             に同意したことになります。
+-#           = form.submit "変更する", id:"edit-ship-btn"
           
-          = form.submit "戻る", id:"edit-ship-return" 
+-#           = form.submit "戻る", id:"edit-ship-return" 
 
-    = render "/signup/signup.footer"
+-#     = render "/signup/signup.footer"
