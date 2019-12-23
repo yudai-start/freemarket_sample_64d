@@ -21,13 +21,17 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item[:status] = 1
-    if @item.save
+    
+  
+    if item_params[:images_attributes]
+      @item.save!
       redirect_to root_path 
+      
     else
       @item.images.build
       render :new
-      
     end
+  end
     
 
     
