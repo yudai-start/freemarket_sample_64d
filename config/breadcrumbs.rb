@@ -8,7 +8,7 @@ crumb :item do |item|
 end
 
 crumb :mypage do
-  link "マイページ", "/posts/mypage"
+  link "マイページ", "/users/#{current_user.id}/edit"
   parent :root
 end
 
@@ -23,12 +23,12 @@ crumb :logout do
 end
 
 crumb :personal_info do
-  link "本人情報の登録", "/posts/personal_info"
+  link "本人情報の登録", "/addresses/#{current_user.id}/edit"
   parent :mypage
 end
 
 crumb :creditCard do
-  link "支払い方法", "/posts/creditCard"
+  link "支払い方法", "cards/show"
   parent :mypage
 end
 
