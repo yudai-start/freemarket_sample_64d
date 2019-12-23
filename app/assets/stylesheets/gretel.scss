@@ -21,3 +21,27 @@
     }
   }
 }
+
+
+.gretel-line {
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
+.gretel-item-show {
+  width: 1020px;
+  padding: 10px 0;
+  margin: 0 auto;
+  .breadcrumbs {
+    text-align: left;
+    a {
+      text-decoration: none;
+      font-size: 12px;
+      color: #333;
+    }
+    span {
+      color: #333;
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+}
