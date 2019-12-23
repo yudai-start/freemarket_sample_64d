@@ -22,7 +22,7 @@
               %ul
                 %li.sell-upload-item
                   %figure.sell-upload-item-image
-                    -# = image_tag @item.images.first.image.url
+                    = image_tag @item.images.first.image.url, class:"sell-upload-item-image-img"
                   .sell-upload-item-buttons
                     = link_to "編集", "#" ,class: 'button'
                     = link_to "削除", "#" ,class: 'button'
@@ -37,6 +37,7 @@
           .edit-indispensable-tmp
             .edit-sentence
               商品名
+              = @item.name
             .edit-indispensable
               必須
           %div
@@ -66,7 +67,7 @@
                 商品の状態
               .edit-indispensable
                 必須
-            = form.collection_select :item_status_id,ItemStatus.all,:id, :name, { include_blank: true, selected: 7 }
+            = form.collection_select :item_status_id,ItemStatus.all,:id, :name, { include_blank: true, selected: @item.item_status_id}
 
         #edit-shipping-cont.edit-cont
           .edit-blank 発送について
@@ -76,21 +77,21 @@
                 配送料の負担
               .edit-indispensable
                 必須
-            = form.collection_select :shipping_fee_defrayer_id, ShippingFeeDefrayer.all, :id, :name, { include_blank: true, selected: 3 }
+            = form.collection_select :shipping_fee_defrayer_id, ShippingFeeDefrayer.all, :id, :name, { include_blank: true, selected: @item.shipping_fee_defrayer_id}
 
             .edit-indispensable-tmp
               .edit-sentence
                 発送元の地域
               .edit-indispensable
                 必須
-            = form.collection_select :ship_from_prefecture,Prefecture.all, :id, :name, { include_blank: true, selected: 48 }
+            = form.collection_select :ship_from_prefecture,Prefecture.all, :id, :name, { include_blank: true, selected: @item.ship_from_prefecture }
 
             .edit-indispensable-tmp
               .edit-sentence
                 発送までの日数
               .edit-indispensable
                 必須
-            = form.collection_select :ship_date_id, ShipDate.all, :id, :name, { include_blank: true, selected: 4 }
+            = form.collection_select :ship_date_id, ShipDate.all, :id, :name, { include_blank: true, selected: @item.ship_date_id }
 
         #edit-price-cont.edit-cont
           .edit-blank 販売価格

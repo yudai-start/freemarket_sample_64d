@@ -85,8 +85,7 @@
           outline-offset: -2px;
             .image {
               @include box(170px, 100%);
-           
-            position: relative;
+              position: relative;
               img {
                 height: 100%;
                 width: 100%;
