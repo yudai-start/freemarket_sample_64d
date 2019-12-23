@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'items#index'
   get '/auth/:provider/callback' => 'sns_credentials#create'
-
-  resources :items
+  
+  resources :sns_credentials
+  resources :items, only:[:index, :new, :create, :delete, :edit, :update, :show]
   resources :users, only: [:edit, :update] do
     collection do
       get :signout
