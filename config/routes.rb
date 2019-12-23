@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root to: 'items#index'
   get '/auth/:provider/callback' => 'sns_credentials#create'
   resources :sns_credentials
+
   resources :items
   resources :users, only: [:edit, :update]
   resources :addresses, only: [:edit, :update]
@@ -37,4 +38,12 @@ Rails.application.routes.draw do
       get :personal_info
     end
  end
+
+  resources :items do
+    member do
+      get :buy_confirm
+      put :done_buy_confirm
+    end
+  end
+
 end

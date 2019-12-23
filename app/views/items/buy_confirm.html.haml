@@ -1,0 +1,58 @@
+= render "layouts/exhibit-header"
+.confirm__contents
+  .confirm__contents__heading
+    購入内容の確認
+  .confirm__contents__item
+    .confirm__contents__item__container
+      = image_tag @item.images.first.image.url, class: "confirm__contents__item__container__image"
+      .confirm__contents__item__container__text
+        %p.confirm__contents__item__container__text__name
+          = @item.name
+        %p.confirm__contents__item__container__text__price
+          ¥
+          = @item.price
+          (税込) 
+
+          - array = ["送料込み", "着払い"]
+          = array[@item.shipping_fee_defrayer_id]
+  .confirm__contents__price
+    %p.confirm__contents__price__heading 支払い金額
+    %p.confirm__contents__price__value
+      ¥
+      = @item.price
+  .confirm__contents__payments
+    .confirm__contents__payments__heading
+      .confirm__contents__payments__heading__title 支払い方法
+      =link_to "変更する","#",class: :confirm__contents__payments__heading__link
+    .confirm__contents__payments__creditcard 
+      クレジットカード
+    .confirm__contents__payments__creditcard__number
+      = "**** **** **** " + @card.last4
+    .confirm__contents__payments__creditcard__limit
+      - exp_month = @card.exp_month.to_s
+      - exp_year = @card.exp_year.to_s.slice(2,3)
+      有効期限
+      = exp_month + " / " + exp_year
+
+  .confirm__contents__address
+    .confirm__contents__address__heading
+      %p.confirm__contents__address__heading__title 配送先
+      =link_to "変更する","#",class: :confirm__contents__address__heading__link 
+    〒
+    %p.confirm__contents__address__post
+      = current_user.addresses.first.post_code 
+    .confirm__contents__address__2
+      %p.confirm__contents__address__2__list
+        = current_user.addresses.first.prefecture.name
+      %p.confirm__contents__address__2__list
+        = current_user.addresses.first.city
+      %p.confirm__contents__address__2__list
+        = current_user.addresses.first.street_number
+    .confirm__contents__address__name
+      %p.confirm__contents__address__name__list
+        = current_user.addresses.first.family_name
+      %p.confirm__contents__address__name__list
+        = current_user.addresses.first.first_name
+  .confirm__contents__submit
+    =link_to "購入する", "/items/#{@item.id}/done_buy_confirm", method: :put,  class: :"confirm__contents__submit__link"
+= render "signup/signup.footer"

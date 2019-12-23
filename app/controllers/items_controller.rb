@@ -1,11 +1,15 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, only: [:buy_confirm]
+  before_action :set_item, only: [:show, :update, :destroy, :buy_confirm, :done_buy_confirm]
+  
+
+  require "payjp"
 
   def index
-    @items = Item.all.includes(:images)
+    @items = Item.where.not(status:"2").includes(:images)
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def new
@@ -18,8 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
-    item.update(item.params)
+    @item.update(item.params)
   end
 
   def create
@@ -32,9 +35,29 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
-    item.destroy
+    @item.destroy
     redirect_to root_path
+  end
+
+  def buy_confirm
+    card = Card.find_by(user_id: current_user.id)
+      Payjp.api_key = Rails.application.credentials[:payjp_private_key]
+      customer = Payjp::Customer.retrieve(card.customer_id) #payjpからログイン中のユーザーのカード情報取得
+      @card = customer.cards.retrieve(card.card_id) 
+  end
+
+  def done_buy_confirm
+    card = Card.find_by(user_id: current_user.id) #payjpからログイン中のユーザーのカード情報取得し、支払いに利用
+      Payjp.api_key = Rails.application.credentials[:payjp_private_key]
+      charge = Payjp::Charge.create(
+        amount: @item.price,
+        customer: card.customer_id,
+        currency: 'jpy'
+      )
+
+    @item.update(status: 2, buyer_id: current_user.id) #itemのstatusを売却済に変更 購入者としてbuyer_idにcurrent_userのidを追加
+
+    redirect_to "/"
   end
 
   private
@@ -54,4 +77,9 @@ class ItemsController < ApplicationController
                                  :status,
                                  images_attributes:[:id, :image, :item_id]).merge(user_id: current_user.id, size:"", shipping_system:"", status: 1)
   end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
 end
