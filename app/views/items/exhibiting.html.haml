@@ -1,0 +1,60 @@
+= render "layouts/toppage-header"
+.user-exhibiting-wrapper
+  = render "/layouts/sidebar"
+  .exhibiting
+    %h1.exhibiting__title 出品した商品
+    %ul.exhibiting__tabs
+      %li.exhibiting__tabs__link.ing-active= link_to "出品中", "#", class: :"exhibiting-link"
+      %li.exhibiting__tabs__link= link_to "取引中", "#", class: :"exhibiting-link"
+      %li.exhibiting__tabs__link= link_to "売却済み", "#", class: :"exhibiting-link"
+
+    .exhibiting__tab-page
+      .tab.exhibiting-show
+        - @exhibitingitems.each do |i|
+          = link_to items_path(i), class: "user_exhibting" do
+            .exhibiting-content
+            
+              .exhibiting-content__image
+                = image_tag i.images.first.image.url, class:"exhibiting-thumbnail"
+              .exhibiting-content__name-status
+                .exhibiting__name-status__name 
+                  = i.name
+                .exhibiting__name-status__status 
+                  %i.far.fa-heart
+                  %i.far.fa-comment-alt
+                  出品中
+              %p.arrow >
+      .tab
+        - @tradingitems.each do |i|
+          = link_to items_path(i.id), class: "user_exhibting" do
+            .exhibiting-content
+            
+              .exhibiting-content__image
+                = image_tag i.images.first.image.url, class:"exhibiting-thumbnail"
+              .exhibiting-content__name-status
+                .exhibiting__name-status__name 
+                  = i.name
+                .exhibiting__name-status__status 
+                  %i.far.fa-heart
+                  %i.far.fa-comment-alt
+                  取引中
+              %p.arrow >
+      .tab
+        - @solditems.each do |i|
+          = link_to items_path(i), class: "user_exhibting" do
+            .exhibiting-content
+            
+              .exhibiting-content__image
+                = image_tag i.images.first.image.url, class:"exhibiting-thumbnail"
+              .exhibiting-content__name-status
+                .exhibiting-name-status__name 
+                  = i.name
+                .exhibiting-name-status__status 
+                  %i.far.fa-heart
+                  %i.far.fa-comment-alt
+                  売却済み
+              %p.arrow >
+
+
+=render "posts/footer-icon"
+=render "layouts/toppage-footer"

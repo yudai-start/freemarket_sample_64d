@@ -29,8 +29,19 @@ class ItemsController < ApplicationController
       
     end
     
+
+    
   end
 
+  def exhibiting 
+    items = Item.all.includes(:images)
+    @items = items.where(user_id: current_user.id)
+    @exhibitingitems = @items.where(status: 1)
+    @tradingitems = @items.where(status: 2) 
+    @solditems = @items.where(status: 3)
+
+    
+  end
   private
   def item_params
     params.require(:item).permit(:name,

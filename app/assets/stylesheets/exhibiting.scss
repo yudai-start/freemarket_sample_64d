@@ -1,8 +1,10 @@
 
 .user-exhibiting-wrapper {
   display: flex;
+  padding: 20px 15% ;
   .exhibiting {
     width: 700px;
+    margin: 20px 0 0 40px;
     &__title {
       padding: 0 16px;
       font-size: 16px;
@@ -35,7 +37,7 @@
 
       .tab {
         display: none;
-        height: 200px;
+
         background-color: white;
         .user-exhibiting {
           color: black;
@@ -44,23 +46,41 @@
       }
       .exhibiting-show {
         display: block;
+        background-color: white;
         // text-align: center;
       }
       .exhibiting-content {
         display: flex;
         padding: 10px;
-        height: 72px;
+        height: 60px;
         border-bottom: 1px solid #eeeeee;
+        text-decoration: none;
         
-      &__image { 
-        background-color: #123456;
-        padding: 10px 0 ;
-      }
-      &__name-status {
-        position: relative;
-        width: 100%;
-        padding: 10px;
-      }
+        &__image { 
+
+          // padding: 10px 0 ;
+          // height: 80px;
+          // width: 80px;
+          .exhibiting-thumbnail {
+            height: 60px;
+            width: 60px;
+          }
+        }
+        .exhibiting-content__name-status {
+          position: relative;
+          width: 100%;
+          padding: 10px;
+          text-decoration: none;
+          &__name { 
+            text-decoration: none;
+          }
+          &__status {
+            text-decoration: none;
+          }
+          .exhibiting-mark {
+            background-color: skyblue;
+          }
+        }
       
     }
     }
