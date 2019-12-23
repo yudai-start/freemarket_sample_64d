@@ -1,7 +1,7 @@
 .sidebar  
   .white-box-top
     .sidebar-tab
-      = link_to "/posts/mypage/",class: "sidebar-list" do
+      = link_to "/users/mypage/",class: "sidebar-list" do
         マイページ
     .sidebar-tab
       %p.sidebar-list お知らせ          
@@ -48,12 +48,6 @@
       .sidebar-tab
         = link_to (current_user.cards.first ? card_path(current_user.cards.first[:id]) : registration_cards_path), class: "sidebar-list" do
           支払い方法  
-        -# -if current_user.cards.first
-        -#   = link_to card_path(current_user.cards.first[:id]), class: "sidebar-list" do
-        -#     支払い方法          
-        -# -else
-        -#   = link_to registration_cards_path, class: "sidebar-list" do
-        -#     支払い方法
       .sidebar-tab
         %p.sidebar-list  メール/パスワード
       .sidebar-tab
@@ -62,5 +56,5 @@
       .sidebar-tab
         %p.sidebar-list  電話番号の確認
       .sidebar-tab
-        = link_to "/posts/signout/",class: "sidebar-list" do
+        = link_to "/users/signout/",class: "sidebar-list" do
           ログアウト

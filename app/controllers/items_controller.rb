@@ -1,7 +1,16 @@
 class ItemsController < ApplicationController
-  def index
+  before_action :authenticate_user!, except: [:index, :show]  
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :buy_confirm, :done_buy_confirm]
+  before_action :move_to_show, only: [:buy_confirm, :done_buy_confirm]
+  before_action :owner_check, only: [:edit, :update, :destroy]
 
-    @items = Item.all.includes(:images)
+  require "payjp"
+
+  def index
+    @items = Item.where.not(status:"2").includes(:images)
+  end
+
+  def show
   end
 
   def new
@@ -13,29 +22,46 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def delete
-    item = Item.find(params[:id])
-    if item.user_id == current_user.id
-    item.delete
-    end
-  end
 
   def update
     item = Item.find(params[:id])
     item.update(item_params)
     redirect_to action: 'show' 
-  end
+
 
   def create
     @item = Item.new(item_params)
-    @item[:status] = 1
-    if @item.save
+    if @item.save!
       redirect_to root_path 
     else
-      @item.images.build
       render :new
-      
     end
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to root_path
+  end
+
+  def buy_confirm
+    card = Card.find_by(user_id: current_user.id)
+      Payjp.api_key = Rails.application.credentials[:payjp_private_key]
+      customer = Payjp::Customer.retrieve(card.customer_id) #payjpからログイン中のユーザーのカード情報取得
+      @card = customer.cards.retrieve(card.card_id) 
+  end
+
+  def done_buy_confirm
+    card = Card.find_by(user_id: current_user.id) #payjpからログイン中のユーザーのカード情報取得し、支払いに利用
+      Payjp.api_key = Rails.application.credentials[:payjp_private_key]
+      charge = Payjp::Charge.create(
+        amount: @item.price,
+        customer: card.customer_id,
+        currency: 'jpy'
+      )
+
+    @item.update(status: 2, buyer_id: current_user.id) #itemのstatusを売却済に変更 購入者としてbuyer_idにcurrent_userのidを追加
+
+    redirect_to "/"
   end
 
   private
@@ -53,6 +79,18 @@ class ItemsController < ApplicationController
                                  :description,
                                  :buyer_id,
                                  :status,
-                                 images_attributes:[:id, :image, :item_id]).merge(user_id: current_user.id, size:"", shipping_system:"")
+                                 images_attributes:[:id, :image, :item_id]).merge(user_id: current_user.id, size:"", shipping_system:"", status: 1)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+  def move_to_show
+    redirect_to action: :show if (@item.user_id == current_user.id) || (@item.status != 1)
+  end
+
+  def owner_check
+    redirect_to action: :index if (@item.user_id != current_user.id)
   end
 end

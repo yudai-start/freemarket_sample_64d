@@ -1,34 +1,34 @@
-- if request.path == "/posts/mypage"
+- if request.path == "/users/mypage"
   .line-top
   .gretel-header
     - breadcrumb :mypage
     = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
 
-- if request.path == "/posts/profile"
+- if request.path == "/users/:id/edit"
   .line-top
   .gretel-header
     - breadcrumb :profile
     = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
 
-- if request.path == "/posts/signout"
+- if request.path == "/users/signout"
   .line-top
   .gretel-header
     - breadcrumb :logout
     = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
 
-- if request.path == "/posts/personal_info"
+- if request.path == "/addresses/:id/edit"
   .line-top
   .gretel-header
     - breadcrumb :personal_info
     = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
 
-- if request.path == "/posts/creditCard"
+- if request.path == "/cards/registration"
   .line-top
   .gretel-header
     - breadcrumb :creditCard
     = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
 
-- if request.path == "/posts/add_payments"
+- if request.path == "/cards/new"
   .line-top
   .gretel-header
     - breadcrumb :add_payments

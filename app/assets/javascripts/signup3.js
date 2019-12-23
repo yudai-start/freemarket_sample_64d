@@ -9,22 +9,19 @@ $(function(){
       $(".name").after(error_message);
       error++;
     }
-    
     if($("#family_name_kana").val()=="" || $("#first_name_kana").val()==""){
       $(".name_kana").after(error_message);
       error++;
     }
-    
     if($("#post_code").val()==""){
       $(".post_code").after(error_message);
       error++;
     }
-    
     if($("#city").val()==""){
       $(".city").after(error_message);
       error++;
     }
-    
+
     if($("#street_number").val()==""){
       $(".street_number").after(error_message);
       error++;
