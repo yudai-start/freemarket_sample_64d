@@ -4,7 +4,7 @@
     - breadcrumb :mypage
     = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
 
-- if request.path == "/users/#{current_user.id}/edit"
+- if request.path == edit_user_path
   .line-top
   .gretel-header
     - breadcrumb :profile
@@ -16,13 +16,13 @@
     - breadcrumb :logout
     = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
 
-- if request.path == "/addresses/#{current_user.id}/edit"
+- if request.path == edit_address_path
   .line-top
   .gretel-header
     - breadcrumb :personal_info
     = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
 
-- if request.path == "/cards/show"
+- if request.path == "/cards/registration"
   .line-top
   .gretel-header
     - breadcrumb :creditCard
