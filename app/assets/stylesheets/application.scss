@@ -11,6 +11,7 @@
 @import "layouts/toppage-header";
 @import "layouts/footer";
 @import "layouts/gretel";
+@import "layouts/exhibit-header";
 @import "devise/sessions/new";
 @import "devise/registrations/new";
 @import "signup/signup1";
@@ -21,14 +22,11 @@
 @import "items/show";
 @import "items/index";
 @import "items/new";
-@import "signout";
-@import "signout_btn";
-@import "user.profile";
-@import "user.mypage";
-@import "confirm";
-@import "edit_address";
-@import "exhibit-header";
-@import "exhibit-footer";
+@import "items/buy_confirm";
+@import "users/signout";
+@import "users/edit";
+@import "users/mypage";
+@import "addresses/edit";
 @import "cards/new";
 @import "cards/registration";
 @import "layouts/gretel.scss";

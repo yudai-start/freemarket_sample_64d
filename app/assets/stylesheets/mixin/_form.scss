@@ -103,9 +103,11 @@
   line-height: 40px;
   display: block;
   cursor: pointer;  
+  text-decoration: none;
 }
 
 @mixin graylink_btn{
+  text-decoration: none;
   display: block;
   cursor: pointer;  
   width: 325px;
