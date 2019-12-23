@@ -48,7 +48,7 @@
     %span.items-show__price__tax （税込）
     %span.items-show__price__fee 送料込み
 
-  -if (@item.user_id != current_user.id)
+  -if (user_signed_in? == false || @item.user_id != current_user.id)
     .items-show__deal
       = link_to "購入画面に進む", "/items/#{@item.id}/buy_confirm", class: :"items-show__deal__box"
 
@@ -69,7 +69,7 @@
           = link_to "#", class: :"items-show__tweet__low__right__btn" do
             %span.fas.fa-lock.items-show__tweet__low__right__btn__safe あんしん・あんぜんへの取り組み
 
--if (@item.user_id == current_user.id)
+-if (user_signed_in? && @item.user_id == current_user.id)
   %ul.item-change
     %li.item-change__box
       = link_to "商品の編集" , edit_item_path(params[:id]), class: :"item-change__box__red-btn"
@@ -129,5 +129,10 @@
   .itemshow
     .itemshow__title
       = link_to "ユーザー名さんのその他の出品", "#", class: :"itemshow__title__link"
+
+.gretel-line
+.gretel-item-show
+  - breadcrumb :item, @item
+  = breadcrumbs separator: " &rsaquo; "
 
 = render "layouts/toppage-footer"
