@@ -8,7 +8,7 @@ crumb :item do |item|
 end
 
 crumb :mypage do
-  link "マイページ", mypage_posts_path
+  link "マイページ", mypage_users_path
   parent :root
 end
 
@@ -18,7 +18,7 @@ crumb :profile do |user|
 end
 
 crumb :logout do
-  link "ログアウト"
+  link "ログアウト", signout_users_path
   parent :mypage
 end
 

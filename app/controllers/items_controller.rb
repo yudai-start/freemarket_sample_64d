@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:buy_confirm]
-  before_action :set_item, only: [:show, :update, :destroy, :buy_confirm, :done_buy_confirm]
-  
+  before_action :authenticate_user!, except: [:index, :show]  
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :buy_confirm, :done_buy_confirm]
+  before_action :move_to_show, only: [:buy_confirm, :done_buy_confirm]
+  before_action :owner_check, only: [:edit, :update, :destroy]
 
   require "payjp"
 
@@ -18,7 +19,6 @@ class ItemsController < ApplicationController
   end
   
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
@@ -82,4 +82,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def move_to_show
+    redirect_to action: :show if (@item.user_id == current_user.id) || (@item.status != 1)
+  end
+
+  def owner_check
+    redirect_to action: :index if (@item.user_id != current_user.id)
+  end
 end
