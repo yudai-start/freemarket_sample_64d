@@ -13,9 +13,17 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def delete
+    item = Item.find(params[:id])
+    if item.user_id == current_user.id
+    item.delete
+    end
+  end
+
   def update
     item = Item.find(params[:id])
     item.update(item_params)
+    redirect_to action: 'show' 
   end
 
   def create
@@ -28,7 +36,6 @@ class ItemsController < ApplicationController
       render :new
       
     end
-    
   end
 
   private
@@ -46,7 +53,6 @@ class ItemsController < ApplicationController
                                  :description,
                                  :buyer_id,
                                  :status,
-                                 images_attributes:[:id, :image, :item_id]).merge(user_id: current_user.id, size:"", shipping_system:"")        
-
+                                 images_attributes:[:id, :image, :item_id]).merge(user_id: current_user.id, size:"", shipping_system:"")
   end
 end

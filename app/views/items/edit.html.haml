@@ -24,9 +24,11 @@
                   %figure.sell-upload-item-image
                     = image_tag @item.images.first.image.url, class:"sell-upload-item-image-img"
                   .sell-upload-item-buttons
-                    = link_to "編集", "#" ,class: 'button'
-                    = link_to "削除", "#" ,class: 'button'
-                    
+                    = link_to "編集", "#" , class: 'button'
+                    -#  "/@item/#{@item.id}/edit", method: :get
+                    = link_to "削除", "/item/#{@item.images.ids}", method: :delete, class: 'button'
+                    -# ,"/items/#{@item.id}", method: :delete,
+
             = form.fields_for :images do |f|
               = f.label :image, class:"label" do
                 #edit-img-form.edit-img-form      
