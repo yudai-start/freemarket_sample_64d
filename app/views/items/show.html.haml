@@ -48,7 +48,7 @@
     %span.items-show__price__tax （税込）
     %span.items-show__price__fee 送料込み
 
-  -if (current_user != @item.user_id)
+  -if (user_signed_in? == false || @item.user_id != current_user.id)
     .items-show__deal
       = link_to "購入画面に進む", "/items/#{@item.id}/buy_confirm", class: :"items-show__deal__box"
 
