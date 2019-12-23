@@ -6,8 +6,7 @@
     『#{@item.name}』は、#{@item.user.nickname}さんから出品されました。
     #{Prefecture.find(@item.ship_from_prefecture).name}から#{ShipDate.find(@item.ship_date_id).name}で発送されます。
   .items-show__description
-    .items-show__description__left
-      = image_tag @item.images.first.image.url
+    = image_tag @item.images.first.image.url, class: "items-show__description__left"
 
     %table.items-show__description__table
       %tr
@@ -47,6 +46,7 @@
       = @item.price
     %span.items-show__price__tax （税込）
     %span.items-show__price__fee 送料込み
+
 
   -if (@item.user_id != current_user.id)
     .items-show__deal
@@ -94,40 +94,40 @@
     %li.destroy-confirmation__choice__destroy
       = link_to "削除する", item_path(params[:id]), method: :delete, class: :"destroy-confirmation__choice__destroy__btn"
 
-.item-show-comments
-  .item-show-comments__box
-    = form_with(model: @user, local: true) do |form|
-      %h1.comments-withdraw
-        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      = form.text_area :introduction
-      = form.submit "コメントする", id: "comment-area"
+-# .item-show-comments
+-#   .item-show-comments__box
+-#     = form_with(model: @user, local: true) do |form|
+-#       %h1.comments-withdraw
+-#         相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+-#       = form.text_area :introduction
+-#       = form.submit "コメントする", id: "comment-area"
 
 
-%ul.items-show-page
-  %li
-    = link_to "#", class: :"items-show-page__left" do
-      %span.fas.fa-chevron-left 前の商品
-  %li
-    = link_to "#", class: :"items-show-page__right" do
-      次の商品
-      %span.fas.fa-chevron-right
-.items-show-icon
-  %ul.items-show-icon__box
-    %li
-      = link_to "#", class: :"items-show-icon__box__link" do
-        %span.fab.fa-facebook-square.fa-3x.items-show-icon__box__link__facebook
-    %li
-      = link_to "#", class: :"items-show-icon__box__link" do
-        %span.fab.fa-twitter-square.fa-3x.items-show-icon__box__link__twitter
-    %li
-      = link_to "#", class: :"items-show-icon__box__link" do
-        %span.fab.fa-line.fa-3x.items-show-icon__box__link__line
-    %li
-      = link_to "#", class: :"items-show-icon__box__link" do
-        %span.fab.fa-pinterest.fa-3x.items-show-icon__box__link__pinterest
+-# %ul.items-show-page
+-#   %li
+-#     = link_to "#", class: :"items-show-page__left" do
+-#       %span.fas.fa-chevron-left 前の商品
+-#   %li
+-#     = link_to "#", class: :"items-show-page__right" do
+-#       次の商品
+-#       %span.fas.fa-chevron-right
+-# .items-show-icon
+-#   %ul.items-show-icon__box
+-#     %li
+-#       = link_to "#", class: :"items-show-icon__box__link" do
+-#         %span.fab.fa-facebook-square.fa-3x.items-show-icon__box__link__facebook
+-#     %li
+-#       = link_to "#", class: :"items-show-icon__box__link" do
+-#         %span.fab.fa-twitter-square.fa-3x.items-show-icon__box__link__twitter
+-#     %li
+-#       = link_to "#", class: :"items-show-icon__box__link" do
+-#         %span.fab.fa-line.fa-3x.items-show-icon__box__link__line
+-#     %li
+-#       = link_to "#", class: :"items-show-icon__box__link" do
+-#         %span.fab.fa-pinterest.fa-3x.items-show-icon__box__link__pinterest
 
-  .itemshow
-    .itemshow__title
-      = link_to "ユーザー名さんのその他の出品", "#", class: :"itemshow__title__link"
+-#   .itemshow
+-#     .itemshow__title
+-#       = link_to "ユーザー名さんのその他の出品", "#", class: :"itemshow__title__link"
 
 = render "layouts/toppage-footer"

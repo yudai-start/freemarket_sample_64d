@@ -11,7 +11,7 @@
       }
     }
     .signup5-middle {
-      height: 200px;
+      height: 160px;
       .signup5-thankyou {
         text-align: center;
         padding-top: 35px;
@@ -31,8 +31,11 @@
       }
     }
     .signup5-bottom {
-      height: 200px;
+      height: 300px;
       width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

@@ -3,7 +3,7 @@ $(function(){
     var error = 0;
     var error_format = '<span class="error">フォーマットが不適切です</span>';
 
-    let regex_phone    = new RegExp(/^[0-9]{10,12}$/);
+    let regex_phone    = new RegExp(/^[0-9]{10,11}$/);
     var phone = $("#phone_number").val();
 
     $(".error").remove()

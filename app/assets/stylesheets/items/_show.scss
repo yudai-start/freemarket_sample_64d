@@ -18,45 +18,20 @@
   &__description {
     margin: 16px 0 0;
     display: flex;
+    justify-content: space-between;
     &__left {
-      
-      background: #fafafa;
-      &__main {
-        &__image {
-          display: none;
-        }
-        .active {
-          display: block;
-          width: 300px;
-          height: 300px;
-        }
-      }
-      &__many {
-        display: inline;
-        &__top {
-          display: flex;
-          &__image {
-            height: 60px;
-            width: 60px;
-          }
-        }
-        &__low {
-          display: flex;
-          &__image {
-            height: 60px;
-            width: 60px;
-          }
-        }
-      }
+      width: 330px;
+      height: auto;
+
     }
     &__table {
       height: 420px;
-      margin: 0 auto;
-      width: 300px;
+      width: 330px;
       border: solid #f5f5f5 1px;
       color: #333;
       font-size: 14px;
       th {
+        padding-left: 10px;
         width: 39%;
         text-align: left;
         font-weight: 400;
@@ -64,6 +39,7 @@
         border: solid 1px #f5f5f5;
       }
       td {
+        padding-left: 10px;
         width: 61%;
         background: #fff;
         border: solid 1px #f5f5f5;
