@@ -67,7 +67,8 @@ class ItemsController < ApplicationController
     @item.update(status: 2, buyer_id: current_user.id) #itemのstatusを売却済に変更 購入者としてbuyer_idにcurrent_userのidを追加
 
     redirect_to "/"
-    
+  end
+
   def exhibiting 
     items = Item.all.includes(:images)
     @items = items.where(user_id: current_user.id)

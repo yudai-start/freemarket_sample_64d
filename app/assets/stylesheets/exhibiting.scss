@@ -46,8 +46,7 @@
       }
       .exhibiting-show {
         display: block;
-        background-color: white;
-        // text-align: center;
+        background-color: #ffffff;
       }
       .exhibiting-content {
         display: flex;
@@ -55,12 +54,7 @@
         height: 60px;
         border-bottom: 1px solid #eeeeee;
         text-decoration: none;
-        
         &__image { 
-
-          // padding: 10px 0 ;
-          // height: 80px;
-          // width: 80px;
           .exhibiting-thumbnail {
             height: 60px;
             width: 60px;
