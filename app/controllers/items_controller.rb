@@ -54,17 +54,17 @@ class ItemsController < ApplicationController
   end
 
   def done_buy_confirm
-      card = Card.find_by(user_id: current_user.id) #payjpからログイン中のユーザーのカード情報取得し、支払いに利用
-        Payjp.api_key = Rails.application.credentials[:payjp_private_key]
-        charge = Payjp::Charge.create(
-          amount: @item.price,
-          customer: card.customer_id,
-          currency: 'jpy'
-        )
+    card = Card.find_by(user_id: current_user.id) #payjpからログイン中のユーザーのカード情報取得し、支払いに利用
+      Payjp.api_key = Rails.application.credentials[:payjp_private_key]
+      charge = Payjp::Charge.create(
+        amount: @item.price,
+        customer: card.customer_id,
+        currency: 'jpy'
+      )
 
-      @item.update(status: 2, buyer_id: current_user.id) #itemのstatusを売却済に変更 購入者としてbuyer_idにcurrent_userのidを追加
+    @item.update(status: 2, buyer_id: current_user.id) #itemのstatusを売却済に変更 購入者としてbuyer_idにcurrent_userのidを追加
 
-      redirect_to "/"
+    redirect_to "/"
   end
 
   private
