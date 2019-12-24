@@ -80,8 +80,6 @@ class ItemsController < ApplicationController
       #   render json: @users.select("id").map { |e| e.id  }.to_json
   end
     
-  end
-
   private
   def item_params
     params.require(:item).permit(:name,
