@@ -4,22 +4,31 @@
     .search-main__contensts__left    
       .search-main__contensts__left__said-bar
         =search_form_for(@q, url: {controller: 'items', action: 'search' }) do |f|
+          .search-main__contensts__left__said-bar__title
+          詳細検索
           .search-main__contensts__left__said-bar__word
-          あいまい
-          =f.text_field :name_cont, value: @keyword
-          .search-main__contensts__left__said-bar__min-price
-          下限価格
-          =f.number_field :price_gteq
-          .search-main__contensts__left__said-bar__max-price
-          上限最高
-          =f.number_field :price_lteq
+            .search-main__contensts__left__said-bar__word__top
+            キーワード
+            .search-main__contensts__left__said-bar__word__search
+            =f.text_field :name_cont, value: @keyword
+          .search-main__contensts__left__said-bar__price
+            .search-main__contensts__left__said-bar__price__top
+            価格
+            .search-main__contensts__left__said-bar__price__search
+              .search-main__contensts__left__said-bar__price__search__min
+              =f.number_field :price_gteq
+              .search-main__contensts__left__said-bar__price__search__space
+              〜
+              .search-main__contensts__left__said-bar__price__search__max
+              =f.number_field :price_lteq
+          .search-main__contensts__left__said-bar__submit
           =f.submit
       
 
     .search-main__contensts__right
       .search-main__contensts__right__index
         .search-main__contensts__right__index__title
-          = @keyword + "の検索結果"
+          -# = @keyword + "の検索結果"
         = render partial: "items/item_index"
 
 = render partial: "layouts/toppage-footer"
