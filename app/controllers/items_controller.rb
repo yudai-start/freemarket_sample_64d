@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   require "payjp"
 
   def index
-    @items = Item.where.not(status:"2").includes(:images)
+    @items = Item.where.not(status:"2").includes(:images).order("created_at DESC")
   end
 
   def show
@@ -21,7 +21,6 @@ class ItemsController < ApplicationController
   def edit
   end
 
-
   def update
     item = Item.find(params[:id])
     item.update(item_params)
@@ -30,7 +29,10 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save!
+    @item[:status] = 1
+    
+    if item_params[:images_attributes]
+      @item.save!
       redirect_to root_path 
     else
       render :new
@@ -65,8 +67,15 @@ class ItemsController < ApplicationController
     @item.update(status: 2, buyer_id: current_user.id) #itemのstatusを売却済に変更 購入者としてbuyer_idにcurrent_userのidを追加
 
     redirect_to "/"
+    
+  def exhibiting 
+    items = Item.all.includes(:images)
+    @items = items.where(user_id: current_user.id)
+    @exhibitingitems = @items.where(buyer_id: nil)
+    # @tradingitems = @items.where(status: 2) 
+    @solditems = @items.where.not(buyer_id: nil)
+    
   end
-
   private
   def item_params
     params.require(:item).permit(:name,
