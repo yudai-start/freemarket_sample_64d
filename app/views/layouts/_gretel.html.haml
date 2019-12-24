@@ -1,35 +1,47 @@
-- if request.path == "/users/mypage"
-  .line-top
-  .gretel-header
-    - breadcrumb :mypage
-    = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
+- if user_signed_in?
+  - if request.path == "/users/mypage"
+    .line-top
+    .gretel-header
+      - breadcrumb :mypage
+      = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
 
-- if request.path == "/users/:id/edit"
-  .line-top
-  .gretel-header
-    - breadcrumb :profile
-    = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
+  - if request.path == "/users/signout"
+    .line-top
+    .gretel-header
+      - breadcrumb :logout
+      = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
 
-- if request.path == "/users/signout"
-  .line-top
-  .gretel-header
-    - breadcrumb :logout
-    = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
+  - if request.path == "/cards/registration"
+    .line-top
+    .gretel-header
+      - breadcrumb :registration
+      = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
 
-- if request.path == "/addresses/:id/edit"
-  .line-top
-  .gretel-header
-    - breadcrumb :personal_info
-    = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
+  - if request.path == "/cards/new"
+    .line-top
+    .gretel-header
+      - breadcrumb :new
+      = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
 
-- if request.path == "/cards/registration"
-  .line-top
-  .gretel-header
-    - breadcrumb :creditCard
-    = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
+- if user_signed_in? && request.path.include?("/addresses/")
+  - if request.path == "/addresses/#{@address.id}/edit"
+    .line-top
+    .gretel-header
+      - breadcrumb :address
+      = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
 
-- if request.path == "/cards/new"
-  .line-top
-  .gretel-header
-    - breadcrumb :add_payments
-    = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
+
+- if user_signed_in? && request.path.include?("users") && request.path.include?("edit")
+  - if request.path == "/users/#{@user.id}/edit"
+    .line-top
+    .gretel-header
+      - breadcrumb :profile
+      = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
+
+
+- if user_signed_in? && request.path.include?("cards/") && request.path.include?("registration") == false && request.path.include?("new") == false
+  - if request.path == card_path
+    .line-top
+    .gretel-header
+      - breadcrumb :registration
+      = breadcrumbs separator: " &rsaquo; ", class: :"gretel-header__gre"
