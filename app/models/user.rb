@@ -6,7 +6,9 @@ class User < ApplicationRecord
 
   has_many :sns_crendentials
   has_many :cards
-
+  has_many :items
+  # has_many :images
+  # has_many :images, through: :items
   has_many :addresses
   accepts_nested_attributes_for :addresses
   

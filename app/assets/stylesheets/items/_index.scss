@@ -95,6 +95,28 @@
                 height: 100%;
                 width: 100%;
               }
+              .sold-label {
+                @include box(50%,50%);
+                position: absolute;
+                top: 0;
+                left: 0;
+                box-sizing: border-box;
+                border-top: 45px solid rgba(252, 15, 15, 0.9);
+                border-left: 45px solid rgba(252, 15, 15, 0.9);
+                border-right: 45px solid transparent;
+                border-bottom: 45px solid transparent;
+              }
+              .sold {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  color: white;
+                  margin: 10% 5% 5% 5% ;
+                  transform: rotate(-45deg);
+                  -moz-transform: rotate(-45deg);
+                  -webkit-transform: rotate(-45deg);
+                  font-weight: bold;
+                }
               .price {
                 position: absolute;
                 bottom: 20px;

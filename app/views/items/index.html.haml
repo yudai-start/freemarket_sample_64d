@@ -23,6 +23,9 @@
           .content
             .image
               = image_tag item.images.first.image.url
+              - if item.buyer_id.present?
+                .sold-label
+                %span.sold SOLD
               .price
                 #price
                 = item.price
