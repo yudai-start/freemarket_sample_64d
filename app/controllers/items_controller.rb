@@ -69,14 +69,6 @@ class ItemsController < ApplicationController
     redirect_to "/"
   end
 
-  def exhibiting 
-    items = Item.all.includes(:images)
-    @items = items.where(user_id: current_user.id)
-    @exhibitingitems = @items.where(buyer_id: nil)
-    # @tradingitems = @items.where(status: 2) 
-    @solditems = @items.where.not(buyer_id: nil)
-    
-  end
   private
   def item_params
     params.require(:item).permit(:name,
