@@ -1,11 +1,11 @@
 class CardsController < ApplicationController
+    before_action :authenticate_user!
 
   def new
   end
 
   def create
     Payjp.api_key = Rails.application.credentials[:payjp_private_key] #APIキーを使ってPayjpクラスを初期化 (本番環境用)
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]#APIキーを使ってPayjpクラスを初期化 (ローカル環境用)
     customer = Payjp::Customer.create()#pay.jsサイトで顧客IDを生成、取得。
     card = customer.cards.create( #カードトークンをpay.jsサイトに登録し、カードidをpay.jsサイトから取得。
       card: params[:payjpToken]
@@ -15,7 +15,7 @@ class CardsController < ApplicationController
       customer_id: customer.id,   #payjpの顧客id
       card_id: card.id  #payjpのカードid 
     )
-    redirect_to "/posts/mypage"
+    redirect_to "/users/mypage"
   end
 
   def registration
@@ -24,7 +24,7 @@ class CardsController < ApplicationController
   def show
     card = Card.where(user_id: current_user.id).first
     if card
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials[:payjp_private_key]
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
@@ -33,6 +33,7 @@ class CardsController < ApplicationController
   def destroy
     card = Card.where(user_id: current_user.id).first
     card.destroy
+    redirect_to registration_cards_path
   end
 
 end
