@@ -2,9 +2,6 @@ class SignupController < ApplicationController
 
   require "payjp" #gemを読み込む。カード情報登録に必要
 
-  def new
-  end
-
   def signup1
     if session["devise_data"]             #SNS経由の新規登録の際、SNS上の名前とメールをビューに渡し、入力フォームの初期値とする。
       @name  = session["devise_data"]["info"]["name"]
