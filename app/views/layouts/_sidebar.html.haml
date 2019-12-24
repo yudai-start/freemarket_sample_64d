@@ -13,8 +13,8 @@
       = link_to "/items/new/",class: "sidebar-list" do
         出品する
     .sidebar-tab
-      = link_to "/items/#{current_user.id}/exhibiting", class: "sidebar-exhibiting" do
-        %p.sidebar-list  出品した商品 - 出品中
+      = link_to exhibiting_users_path, class: "sidebar-list" do
+        出品した商品 - 出品中
     .sidebar-tab
       %p.sidebar-list  出品した商品 - 取引中
     .sidebar-tab

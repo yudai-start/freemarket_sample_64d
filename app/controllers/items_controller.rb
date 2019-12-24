@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   require "payjp"
 
   def index
-    @items = Item.where.not(status:"2").includes(:images).order("created_at DESC")
+    @items = Item.all.includes(:images).order("created_at DESC")
   end
 
   def show
@@ -79,13 +79,6 @@ class ItemsController < ApplicationController
       # unless params[:q].blank?
       #   render json: @users.select("id").map { |e| e.id  }.to_json
   end
-
-  def exhibiting 
-    items = Item.all.includes(:images)
-    @items = items.where(user_id: current_user.id)
-    @exhibitingitems = @items.where(buyer_id: nil)
-    # @tradingitems = @items.where(status: 2) 
-    @solditems = @items.where.not(buyer_id: nil)
     
   end
 

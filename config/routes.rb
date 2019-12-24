@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     collection do
       get :signout
       get :mypage
+      get :exhibiting
     end
   end
 
@@ -36,7 +37,6 @@ Rails.application.routes.draw do
     member do
       get :buy_confirm
       put :done_buy_confirm
-      get :exhibiting
     end
     collection do
       get :search
