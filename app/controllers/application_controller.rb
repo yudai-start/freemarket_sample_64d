@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   
   def set_search
     @q=Item.ransack(params[:q]) #gem ransakを用いての詳細検索
-    @items=@q.result
+    @result_items=@q.result
   end
 
   private

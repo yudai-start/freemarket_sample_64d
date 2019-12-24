@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]  
+  before_action :authenticate_user!, except: [:index, :show, :search]  
   before_action :set_item, only: [:show, :edit, :update, :destroy, :buy_confirm, :done_buy_confirm]
   before_action :move_to_show, only: [:buy_confirm, :done_buy_confirm]
   before_action :owner_check, only: [:edit, :update, :destroy]
@@ -73,11 +73,13 @@ class ItemsController < ApplicationController
     @item_status = ItemStatus.all
     @item_shipping_fee_defrayer = ShippingFeeDefrayer.all
     @status = Status.all
+    # @q=Item.ransack(params[:q]) #gem ransakを用いての詳細検索
+    # @result_items=@q.result
     # binding.pry
-    
-      # # ajaxで送られた場合にはjsonを変えす
-      # unless params[:q].blank?
-      #   render json: @users.select("id").map { |e| e.id  }.to_json
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
     
   private
