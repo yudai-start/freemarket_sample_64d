@@ -92,18 +92,23 @@
                 width: 100%;
               }
               .sold-label {
-                @include box(50%,50%) ;
-                background-color: rgba(214, 49, 49, 0.8);
+                @include box(50%,50%);
                 position: absolute;
                 top: 0;
                 left: 0;
-                color: white;
-                // border-top: 45px solid red;
-                // border-left: 45px solid red;
-                // border-right: 45px solid transparent;
-                // border-bottom: 45px solid transparent;
-                
+                box-sizing: border-box;
+                border-top: 45px solid rgba(214, 49, 49, 0.9);
+                border-left: 45px solid rgba(214, 49, 49, 0.9);
+                border-right: 45px solid transparent;
+                border-bottom: 45px solid transparent;
               }
+              .sold {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  color: white;
+                  margin: 5%;
+                }
               .price {
                 position: absolute;
                 bottom: 20px;

@@ -19,18 +19,17 @@
         = link_to "もっとみる  >", "#" ,id:'more'
     .contents
       - @items.each do |item|
-        = link_to("items/show", class: 'item_link') do
+        = link_to("items/#{item.id}", class: 'item_link') do
           .content
             .image
               = image_tag item.images.first.image.url
-              = if item.status
+              - if item.buyer_id.present?
                 .sold-label
-                  soldout
+                %span.sold SOLD
               .price
                 #price
                 = item.price
             .item_name 
               = item.name
-              
 
 = render  partial: "layouts/toppage-footer"
