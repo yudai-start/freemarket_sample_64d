@@ -23,6 +23,9 @@
           .content
             .image
               = image_tag item.images.first.image.url
+              = if item.status
+                .sold-label
+                  soldout
               .price
                 #price
                 = item.price

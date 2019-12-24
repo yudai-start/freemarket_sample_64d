@@ -22,7 +22,6 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item[:status] = 1
     
-  
     if item_params[:images_attributes]
       @item.save!
       redirect_to root_path 
@@ -33,17 +32,12 @@ class ItemsController < ApplicationController
     end
   end
     
-
-    
-  end
-
   def exhibiting 
     items = Item.all.includes(:images)
     @items = items.where(user_id: current_user.id)
-    @exhibitingitems = @items.where(status: 1)
-    @tradingitems = @items.where(status: 2) 
-    @solditems = @items.where(status: 3)
-
+    @exhibitingitems = @items.where(status: "")
+    # @tradingitems = @items.where(status: 2) 
+    @solditems = @items.where(status: 1)
     
   end
   private

@@ -91,6 +91,15 @@
                 height: 100%;
                 width: 100%;
               }
+              .sold-label {
+                @include box(50%,50%) ;
+                background-color: rgba(214, 49, 49, 0.8);
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: white;
+                
+              }
               .price {
                 position: absolute;
                 bottom: 20px;
