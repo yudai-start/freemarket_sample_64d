@@ -7,10 +7,13 @@
             =image_tag "fmarket_logo_red.svg"
       %label
         .header-lists-top-navbar
-          %form.header-lists-top-navbar-form{action: search_items_path}
-            %input.header-lists-top-navbar-form-search{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
-            %button.header-lists-top-navbar-form-search-button
-              %i.fas.fa-search
+          =search_form_for(@q, url: {controller: 'items', action: 'search' }) do |f|
+            =f.text_field :name_cont, placeholder: "何かお探しですか？", class:"header-lists-top-navbar-form-search"
+            =f.submit "", class: "header-lists-top-navbar-form-search-button"
+            %i.fas.fa-search
+            -# %input.header-lists-top-navbar-form-search{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
+            -# %button.header-lists-top-navbar-form-search-button
+             
     .header-lists-low
       .header-lists-low-left
         .header-lists-low-left-categorybox

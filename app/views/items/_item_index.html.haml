@@ -1,6 +1,6 @@
 .contents
   - @items.each do |item|
-    = link_to("items/#{item.id}", class: 'item_link') do
+    = link_to("#{item.id}", class: 'item_link') do
       .content
         .image
           = image_tag item.images.first.image.url
