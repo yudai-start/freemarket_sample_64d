@@ -9,7 +9,7 @@
           .search-main__contensts__left__said-bar__word
             .search-main__contensts__left__said-bar__word__top
             キーワード
-            =f.text_field :name_cont, value: @keyword, placeholder:"例）値下げ", class: "search-main__contensts__left__said-bar__word__search"
+            =f.text_field :name_cont, placeholder:"例）値下げ", class: "search-main__contensts__left__said-bar__word__search"
           .search-main__contensts__left__said-bar__price
             .search-main__contensts__left__said-bar__price__top
             価格
@@ -32,7 +32,6 @@
             販売状況
             .search-main__contensts__left__said-bar__staus__checkboxes
             =f.collection_check_boxes :item_status_id_in, @status, :id, :name
-          -# .search-main__contensts__left__said-bar__submit
           =f.submit '検索',class: "search-main__contensts__left__said-bar__submit"
       
 
