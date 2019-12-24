@@ -23,15 +23,15 @@
             .search-main__contensts__left__said-bar__item-status__checkboxes
             =f.collection_check_boxes :item_status_id_in, @item_status, :id, :name
           .search-main__contensts__left__said-bar__shipping-fee-defrayer
-            .search-main__contensts__left__said-bar__shhping-fee-defrayer__top
+            .search-main__contensts__left__said-bar__shipping-fee-defrayer__top
             配送料の負担
-            .search-main__contensts__left__said-bar__shhping-fee-defrayer__checkboxes
-            =f.collection_check_boxes :item_status_id_in, @item_shipping_fee_defrayer, :id, :name
+            .search-main__contensts__left__said-bar__shipping-fee-defrayer__checkboxes
+            =f.collection_check_boxes :shipping_fee_defrayer_id_in, @item_shipping_fee_defrayer, :id, :name
           .search-main__contensts__left__said-bar__staus
             .search-main__contensts__left__said-bar__staus__top
             販売状況
             .search-main__contensts__left__said-bar__staus__checkboxes
-            =f.collection_check_boxes :item_status_id_in, @status, :id, :name
+            =f.collection_check_boxes :status_in, @status, :id, :name
           =f.submit '検索',class: "search-main__contensts__left__said-bar__submit"
       
 

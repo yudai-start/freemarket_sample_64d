@@ -70,14 +70,11 @@ class ItemsController < ApplicationController
   end
 
   def search
-    # @items = Item.search(params[:keyword])
-    # @keyword = params[:keyword]
     @item_status = ItemStatus.all
     @item_shipping_fee_defrayer = ShippingFeeDefrayer.all
     @status = Status.all
+    # binding.pry
     
-    @q=Item.ransack(params[:q]) #gem ransakを用いての詳細検索
-    @items=@q.result
       # # ajaxで送られた場合にはjsonを変えす
       # unless params[:q].blank?
       #   render json: @users.select("id").map { |e| e.id  }.to_json
@@ -91,6 +88,7 @@ class ItemsController < ApplicationController
     @solditems = @items.where.not(buyer_id: nil)
     
   end
+
   private
   def item_params
     params.require(:item).permit(:name,
