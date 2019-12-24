@@ -30,3 +30,6 @@ public/uploads/*
 public/
 config/secrets.yml
 
+app/assets/.DS_Store
+app/assets/stylesheets/.DS_Store
+app/assets/images/.DS_Store

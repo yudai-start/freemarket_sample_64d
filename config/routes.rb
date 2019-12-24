@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sns_credentials#create'
   
   resources :sns_credentials
-  # resources :items, only:[:index, :new, :create, :delete, :edit, :update, :show]
+
   resources :users, only: [:edit, :update] do
     collection do
       get :signout
@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     member do
       get :buy_confirm
       put :done_buy_confirm
+      get :exhibiting
     end
     collection do
       get :search
