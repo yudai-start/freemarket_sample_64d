@@ -43,24 +43,33 @@ class ItemsController < ApplicationController
   end
 
   def buy_confirm
+    if current_user.card ?
     card = Card.find_by(user_id: current_user.id)
       Payjp.api_key = Rails.application.credentials[:payjp_private_key]
       customer = Payjp::Customer.retrieve(card.customer_id) #payjpからログイン中のユーザーのカード情報取得
       @card = customer.cards.retrieve(card.card_id) 
+
+    else
+      redirect_to 
   end
 
   def done_buy_confirm
-    card = Card.find_by(user_id: current_user.id) #payjpからログイン中のユーザーのカード情報取得し、支払いに利用
-      Payjp.api_key = Rails.application.credentials[:payjp_private_key]
-      charge = Payjp::Charge.create(
-        amount: @item.price,
-        customer: card.customer_id,
-        currency: 'jpy'
-      )
+    if @item.status != 2
+      card = Card.find_by(user_id: current_user.id) #payjpからログイン中のユーザーのカード情報取得し、支払いに利用
+        Payjp.api_key = Rails.application.credentials[:payjp_private_key]
+        charge = Payjp::Charge.create(
+          amount: @item.price,
+          customer: card.customer_id,
+          currency: 'jpy'
+        )
 
-    @item.update(status: 2, buyer_id: current_user.id) #itemのstatusを売却済に変更 購入者としてbuyer_idにcurrent_userのidを追加
+      @item.update(status: 2, buyer_id: current_user.id) #itemのstatusを売却済に変更 購入者としてbuyer_idにcurrent_userのidを追加
 
-    redirect_to "/"
+      redirect_to "/"
+
+    else
+      redirect_to "/items/#{@item.id}/buy_confirm"
+    end
   end
 
   private
