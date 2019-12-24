@@ -9,18 +9,14 @@
           .search-main__contensts__left__said-bar__word
             .search-main__contensts__left__said-bar__word__top
             キーワード
-            .search-main__contensts__left__said-bar__word__search
-            =f.text_field :name_cont, value: @keyword
+            =f.text_field :name_cont, value: @keyword, placeholder:"例）値下げ", class: "search-main__contensts__left__said-bar__word__search"
           .search-main__contensts__left__said-bar__price
             .search-main__contensts__left__said-bar__price__top
             価格
             .search-main__contensts__left__said-bar__price__search
-              .search-main__contensts__left__said-bar__price__search__min
-              =f.number_field :price_gteq
-              .search-main__contensts__left__said-bar__price__search__space
-              〜
-              .search-main__contensts__left__said-bar__price__search__max
-              =f.number_field :price_lteq
+              =f.number_field :price_gteq, placeholder: "¥Min", class: "search-main__contensts__left__said-bar__price__search__min"
+              .search-main__contensts__left__said-bar__price__search__space ~
+              =f.number_field :price_lteq, placeholder: "¥Max", class: "search-main__contensts__left__said-bar__price__search__max"
           .search-main__contensts__left__said-bar__item-status
             .search-main__contensts__left__said-bar__item-status__top
             商品の状態
@@ -36,8 +32,8 @@
             販売状況
             .search-main__contensts__left__said-bar__staus__checkboxes
             =f.collection_check_boxes :item_status_id_in, @status, :id, :name
-          .search-main__contensts__left__said-bar__submit
-          =f.submit
+          -# .search-main__contensts__left__said-bar__submit
+          =f.submit '検索',class: "search-main__contensts__left__said-bar__submit"
       
 
     .search-main__contensts__right
