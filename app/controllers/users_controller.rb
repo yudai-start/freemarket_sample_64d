@@ -14,6 +14,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def exhibiting 
+    @items = current_user.items.includes(:images)
+    @exhibitingitems = @items.where(buyer_id: nil)
+    @solditems = @items.where.not(buyer_id: nil)
+  end
+
   def mypage
   end
 
