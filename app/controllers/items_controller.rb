@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   require "payjp"
 
   def index
-    @items = Item.where.not(status:"2").includes(:images).order("created_at DESC")
+    @items = Item.all.includes(:images)
   end
 
   def show
