@@ -15,11 +15,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :users, only: [:edit, :update, :show] do
-    collection do
-      get :exhibiting
-    end
-  end
+  resources :users, only: [:edit, :update, :show] 
   resources :addresses, only: [:edit, :update]
   resources :cards, only: [:new, :show, :create, :destroy] do
     collection do
@@ -44,8 +40,7 @@ Rails.application.routes.draw do
       get :mypage
       get :confirm
       get :personal_info
-
-    end
-    
- end
+    end  
+  end
+  
 end
