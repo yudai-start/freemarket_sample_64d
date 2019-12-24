@@ -18,12 +18,10 @@
           有効期限
           = exp_month + " / " + exp_year
       .confirm__contents__payment__creditcard__right
-        =link_to "削除する", card_path(current_user.cards.first[:id]), method: :delete, class: :"right-link"
+        =link_to "削除する", "#", method: :delete, class: :"right-link"
     .pay-info
       = link_to "#", class: :"credit-payment-next-page" do
         支払い方法について
         %span.fas.fa-chevron-right
 
-
-=render "/posts/footer-icon"
 =render "layouts/toppage-footer"

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
 
   def edit_address
   end
@@ -10,12 +12,17 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(current_user.id)
-    # binding.pry¥
     if user.update!(update_params)
       redirect_to root_path
     else
       render :edit
     end
+  end
+
+  def mypage
+  end
+
+  def signout
   end
 
   private

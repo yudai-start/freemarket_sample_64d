@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:buy_confirm]
-  before_action :set_item, only: [:show, :update, :destroy, :buy_confirm, :done_buy_confirm]
-  
+  before_action :authenticate_user!, except: [:index, :show]  
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :buy_confirm, :done_buy_confirm]
+  before_action :move_to_show, only: [:buy_confirm, :done_buy_confirm]
+  before_action :owner_check, only: [:edit, :update, :destroy]
 
   require "payjp"
 
@@ -18,11 +19,13 @@ class ItemsController < ApplicationController
   end
   
   def edit
-    @item = Item.find(params[:id])
   end
 
+
   def update
-    @item.update(item.params)
+    item = Item.find(params[:id])
+    item.update(item_params)
+    redirect_to action: 'show' 
   end
 
   def create
@@ -40,10 +43,14 @@ class ItemsController < ApplicationController
   end
 
   def buy_confirm
-    card = Card.find_by(user_id: current_user.id)
+    if Card.find_by(user_id: current_user.id) #カードの登録がある場合のみ閲覧可
+      card = Card.find_by(user_id: current_user.id)
       Payjp.api_key = Rails.application.credentials[:payjp_private_key]
       customer = Payjp::Customer.retrieve(card.customer_id) #payjpからログイン中のユーザーのカード情報取得
       @card = customer.cards.retrieve(card.card_id) 
+    else
+      redirect_to new_card_path #カード登録がない場合、カード登録画面へリダイレクト
+    end
   end
 
   def done_buy_confirm
@@ -82,4 +89,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def move_to_show
+    redirect_to action: :show if (@item.user_id == current_user.id) || (@item.status != 1)
+  end
+
+  def owner_check
+    redirect_to action: :index if (@item.user_id != current_user.id)
+  end
 end
