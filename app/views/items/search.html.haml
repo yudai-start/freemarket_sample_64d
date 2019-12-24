@@ -21,6 +21,21 @@
               〜
               .search-main__contensts__left__said-bar__price__search__max
               =f.number_field :price_lteq
+          .search-main__contensts__left__said-bar__item-status
+            .search-main__contensts__left__said-bar__item-status__top
+            商品の状態
+            .search-main__contensts__left__said-bar__item-status__checkboxes
+            =f.collection_check_boxes :item_status_id_in, @item_status, :id, :name
+          .search-main__contensts__left__said-bar__shipping-fee-defrayer
+            .search-main__contensts__left__said-bar__shhping-fee-defrayer__top
+            配送料の負担
+            .search-main__contensts__left__said-bar__shhping-fee-defrayer__checkboxes
+            =f.collection_check_boxes :item_status_id_in, @item_shipping_fee_defrayer, :id, :name
+          .search-main__contensts__left__said-bar__staus
+            .search-main__contensts__left__said-bar__staus__top
+            販売状況
+            .search-main__contensts__left__said-bar__staus__checkboxes
+            =f.collection_check_boxes :item_status_id_in, @status, :id, :name
           .search-main__contensts__left__said-bar__submit
           =f.submit
       

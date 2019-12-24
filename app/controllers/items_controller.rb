@@ -68,8 +68,11 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:keyword])
-    @keyword = params[:keyword]
+    # @items = Item.search(params[:keyword])
+    # @keyword = params[:keyword]
+    @item_status = ItemStatus.all
+    @item_shipping_fee_defrayer = ShippingFeeDefrayer.all
+    @status = Status.all
     
     @q=Item.ransack(params[:q]) #gem ransakを用いての詳細検索
     @items=@q.result
