@@ -22,18 +22,18 @@ crumb :logout do
   parent :mypage
 end
 
-crumb :personal_info do
+crumb :address do
   link "本人情報の登録", edit_address_path
   parent :mypage
 end
 
-crumb :creditCard do
+crumb :registration do
   link "支払い方法", "cards/registration"
   parent :mypage
 end
 
-crumb :add_payments do
+crumb :new do
   link "クレジットカード情報入力"
-  parent :creditCard
+  parent :registration
 end
 
