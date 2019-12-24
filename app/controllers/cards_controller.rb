@@ -15,7 +15,7 @@ class CardsController < ApplicationController
       customer_id: customer.id,   #payjpの顧客id
       card_id: card.id  #payjpのカードid 
     )
-    redirect_to "/posts/mypage"
+    redirect_to "/users/mypage"
   end
 
   def registration
@@ -33,6 +33,7 @@ class CardsController < ApplicationController
   def destroy
     card = Card.where(user_id: current_user.id).first
     card.destroy
+    redirect_to registration_cards_path
   end
 
 end
