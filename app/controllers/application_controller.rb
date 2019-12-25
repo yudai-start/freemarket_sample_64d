@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   
   def set_search
     @q = Item.ransack(params[:q]) #gem ransakを用いての詳細検索
-    @result_items = @q.result
+    @result_q = @q.result
+    @result_items = @result_q.order("created_at DESC") # 新着順に並び替え
   end
 
   private
