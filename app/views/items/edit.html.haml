@@ -16,15 +16,17 @@
               必須
           %div
             最大１０枚までアップロードできます
-
-          = form.fields_for :images do |f|
-            = f.label :image, class:"label" do
-              #edit-img-form.edit-img-form      
-                .icon-zone
-                  %span ここをクリックして 
-                  %br 画像を選択して下さい
-                  %i.fas.fa-camera
-                = f.file_field :image, class: 'hidden'
+            
+          #image-box-1
+            .item-num-0#image-box__container
+              = form.fields_for :images do |image|
+                = image.label :image, class:"label" do
+                  #edit-img-form.edit-img-form      
+                    .icon-zone
+                      %span ここをクリックして 
+                      %br 画像を選択して下さい
+                      %i.fas.fa-camera
+                    = image.file_field :image, class: 'hidden'
 
 
         #edit-item-cont.edit-cont
