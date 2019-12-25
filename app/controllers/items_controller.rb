@@ -73,12 +73,6 @@ class ItemsController < ApplicationController
     @item_status = ItemStatus.all
     @item_shipping_fee_defrayer = ShippingFeeDefrayer.all
     @status = Status.all
-    # @q=Item.ransack(params[:q]) #gem ransakを用いての詳細検索
-    # @result_items=@q.result
-    # respond_to do |format|
-    #   format.html
-    #   format.json
-    # end
   end
     
   private
