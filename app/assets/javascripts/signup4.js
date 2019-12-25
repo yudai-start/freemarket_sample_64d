@@ -5,7 +5,8 @@ $(function(){
       cvc = form.find("#cvc"),
       exp_month = form.find("#exp_month"),
       exp_year = form.find("#exp_year");
-  $("#charge-form").submit(function() {                   //signup4.html.hamlでsubmitボタンが押されたら発火
+  $("#charge-form").submit(function(e) {                   //signup4.html.hamlでsubmitボタンが押されたら発火
+    e.preventDefault();
     form.find("#token-submit").prop("disabled", true);
     
     var card = {                                    //各フォームの値から、カード情報を取得。
