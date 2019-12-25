@@ -11,10 +11,12 @@ class SignupController < ApplicationController
       @email = ""
     end
     @user = User.new
+    @maillist = User.pluck(:email)
   end
 
   def signup2
     @user = User.new
+    @phonelist = User.pluck(:phone_number)
     session[:nickname]         = user_params[:nickname]    #sessionに一時データを格納することでpage遷移が可能
     session[:email]            = user_params[:email]
     session[:password]         = user_params[:password]
