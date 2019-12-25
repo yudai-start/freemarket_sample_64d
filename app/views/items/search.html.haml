@@ -3,7 +3,7 @@
   .search-main__contensts
     .search-main__contensts__left    
       .search-main__contensts__left__said-bar
-        =search_form_for(@q, url: {controller: 'items', action: 'search' }) do |f|
+        =search_form_for(@q, url: {controller: 'items', action: 'search'},remote: true) do |f|
           .search-main__contensts__left__said-bar__title
           詳細検索
           .search-main__contensts__left__said-bar__word
