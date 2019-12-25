@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]  
+  before_action :authenticate_user!, except: [:index, :show, :search]  
   before_action :set_item, only: [:show, :edit, :update, :destroy, :buy_confirm, :done_buy_confirm]
   before_action :move_to_show, only: [:buy_confirm, :done_buy_confirm]
   before_action :owner_check, only: [:edit, :update, :destroy]
@@ -57,11 +57,11 @@ class ItemsController < ApplicationController
 
   def done_buy_confirm
     card = Card.find_by(user_id: current_user.id) #payjpからログイン中のユーザーのカード情報取得し、支払いに利用
-      Payjp.api_key = Rails.application.credentials[:payjp_private_key]
-      charge = Payjp::Charge.create(
-        amount: @item.price,
-        customer: card.customer_id,
-        currency: 'jpy'
+    Payjp.api_key = Rails.application.credentials[:payjp_private_key]
+    charge = Payjp::Charge.create(
+      amount: @item.price,
+      customer: card.customer_id,
+      currency: 'jpy'
       )
 
     @item.update(status: 2, buyer_id: current_user.id) #itemのstatusを売却済に変更 購入者としてbuyer_idにcurrent_userのidを追加
@@ -69,6 +69,12 @@ class ItemsController < ApplicationController
     redirect_to "/"
   end
 
+  def search
+    @item_status = ItemStatus.all
+    @item_shipping_fee_defrayer = ShippingFeeDefrayer.all
+    @status = Status.all
+  end
+    
   private
   def item_params
     params.require(:item).permit(:name,

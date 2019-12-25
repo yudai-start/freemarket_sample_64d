@@ -1,0 +1,47 @@
+= render partial: "layouts/toppage-header"
+.search-main
+  .search-main__contensts
+    .search-main__contensts__left    
+      .search-main__contensts__left__said-bar
+        = search_form_for(@q, url: {controller: 'items', action: 'search'},remote: true) do |f|
+          .search-main__contensts__left__said-bar__title
+          詳細検索
+          .search-main__contensts__left__said-bar__word
+            .search-main__contensts__left__said-bar__word__top
+            キーワード
+            = f.text_field :name_cont, placeholder:"例）値下げ", class: "search-main__contensts__left__said-bar__word__search"
+          .search-main__contensts__left__said-bar__price
+            .search-main__contensts__left__said-bar__price__top
+            価格
+            .search-main__contensts__left__said-bar__price__search
+              = f.number_field :price_gteq, placeholder: "¥Min", class: "search-main__contensts__left__said-bar__price__search__min"
+              .search-main__contensts__left__said-bar__price__search__space ~
+              = f.number_field :price_lteq, placeholder: "¥Max", class: "search-main__contensts__left__said-bar__price__search__max"
+          .search-main__contensts__left__said-bar__item-status
+            .search-main__contensts__left__said-bar__item-status__top
+            商品の状態
+            .search-main__contensts__left__said-bar__item-status__checkboxes
+            = f.collection_check_boxes :item_status_id_in, @item_status, :id, :name do |b|
+              = b.label class:"label-checkbox" do
+                = b.check_box + b.text
+          .search-main__contensts__left__said-bar__shipping-fee-defrayer
+            .search-main__contensts__left__said-bar__shipping-fee-defrayer__top
+            配送料の負担
+            .search-main__contensts__left__said-bar__shipping-fee-defrayer__checkboxes
+            = f.collection_check_boxes :shipping_fee_defrayer_id_in, @item_shipping_fee_defrayer, :id, :name do |b|
+              = b.label class:"label-checkbox" do
+                = b.check_box + b.text
+          .search-main__contensts__left__said-bar__staus
+            .search-main__contensts__left__said-bar__staus__top
+            販売状況
+            .search-main__contensts__left__said-bar__staus__checkboxes
+            = f.collection_check_boxes :status_in, @status, :id, :name
+          = f.submit '検索',class: "search-main__contensts__left__said-bar__submit"
+      
+
+    .search-main__contensts__right
+      .search-main__contensts__right__index
+        .search-main__contensts__right__index__title
+        = render partial: "items/item_index"
+
+= render partial: "layouts/toppage-footer"
