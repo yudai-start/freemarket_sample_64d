@@ -10,9 +10,6 @@
           =search_form_for(@q, url: {controller: 'items', action: 'search'}, class:"header-lists-top-navbar-form") do |f|
             =f.text_field :name_cont, placeholder: "何かお探しですか？", class:"header-lists-top-navbar-form-search"
             =f.submit "Search", class: "header-lists-top-navbar-form-search-button"
-            -# %i.fas.fa-search
-            -# %input.header-lists-top-navbar-form-search{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
-            -# %button.header-lists-top-navbar-form-search-button
              
     .header-lists-low
       .header-lists-low-left
