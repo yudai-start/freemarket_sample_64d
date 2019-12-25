@@ -19,6 +19,14 @@ $around-color: #eeeeee;
     #ex-img-cont {
       height: 300px;
       background-color: #fff;
+      
+      .item-image-label{
+        display: flex;
+        .item-image-preview{
+          width: 140px;
+          height: 200px;
+        }
+      
       .ex-img-form {
         height: 200px;
         width: 100%;
@@ -28,7 +36,7 @@ $around-color: #eeeeee;
         text-align: center;
         align-items: center;
         justify-content: center; 
-
+        
         .icon-zone {
           position: absolute;
           
@@ -42,7 +50,7 @@ $around-color: #eeeeee;
           width: 100%;
         }
       }
-      
+      }
     }  
     #ex-item-cont {
       height: 330px;
