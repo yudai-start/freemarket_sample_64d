@@ -25,11 +25,11 @@
                     = image_tag @item.images.first.image.url, class:"sell-upload-item-image-img"
                   .sell-upload-item-buttons
                     = link_to "編集", "#" , class: 'button'
-                    = link_to "削除", "＃", class: 'button'
+                    = link_to "削除", "#", class: 'button', id:"destoroy-btn"
             = form.fields_for :images do |f|
               = f.label :image, class:"label" do
                 #edit-img-form.edit-img-form      
-                  %span.font クリックしてファイルをアップロード
+                  %span.font 　　　　　クリックしてファイルをアップロード　　　　　
                   = f.file_field :image, class: 'hidden'
               
         #edit-item-cont.edit-cont

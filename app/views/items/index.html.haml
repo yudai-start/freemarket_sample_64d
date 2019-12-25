@@ -31,6 +31,6 @@
                 ¥
                 =item.price
             .item_name 
-              = item.name
+              = item.name.truncate(23, omission: '...')
 
 = render  partial: "layouts/toppage-footer"
