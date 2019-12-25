@@ -22,36 +22,21 @@
                 %i.far.fa-comment-alt
                 出品中
             %p.arrow >
-      -# .tab
-      -#   - @tradingitems.each do |i|
-      -#     = link_to items_path(i.id), class: "user_exhibting" do
-      -#       .exhibiting-content
-            
-      -#         .exhibiting-content__image
-      -#           = image_tag i.images.first.image.url, class:"exhibiting-thumbnail"
-      -#         .exhibiting-content__name-status
-      -#           .exhibiting__name-status__name 
-      -#             = i.name
-      -#           .exhibiting__name-status__status 
-      -#             %i.far.fa-heart
-      -#             %i.far.fa-comment-alt
-      -#             取引中
-      -#         %p.arrow >
+
       .tab
         - @solditems.each do |i|
-          = link_to("/items/#{i.id}", class: "user_exhibting") do
-            .exhibiting-content
-            
-              .exhibiting-content__image
-                = image_tag i.images.first.image.url, class:"exhibiting-thumbnail"
-              .exhibiting-content__name-status
-                .exhibiting-name-status__name 
-                  = i.name
-                .exhibiting-name-status__status 
-                  %i.far.fa-heart
-                  %i.far.fa-comment-alt
+          .exhibiting-content
+            .exhibiting-content__image
+              = image_tag i.images.first.image.url, class:"exhibiting-thumbnail"
+            .exhibiting-content__name-status
+              .exhibiting-content__name-status__link
+                = link_to "/items/#{i.id}", class: "exhibiting-content__name-status__link__text" do
+                  =i.name
+              .exhibiting__name-status__status 
+                %i.far.fa-heart
+                %i.far.fa-comment-alt
                   売却済み
-              %p.arrow >
+            %p.arrow >
 
 
 =render "layouts/footer-icon"
