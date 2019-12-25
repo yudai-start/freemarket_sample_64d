@@ -17,9 +17,6 @@ $(function(){
                   <figure class="sell-upload-item-image">
                   <img class="sell-upload-item-image-img" src="${src}">
                   </figure>
-                  <div class="sell-upload-item-buttons">
-                  <a class="button" href="#">編集</a>
-                  <a class="button" id="destoroy-btn" href="#">削除</a>
                   </div>
                   </li>
                   </ul>

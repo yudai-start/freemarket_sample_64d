@@ -51,10 +51,11 @@
     .items-show__deal
       = link_to "購入画面に進む", buy_confirm_item_path, class: :"items-show__deal__box"
 
-    .items-show__tweet
-      %p.items-show__tweet__top
-        = @item.description
+  .items-show__tweet
+    %p.items-show__tweet__top
+      = @item.description
 
+    -if (user_signed_in? == false || @item.user_id != current_user.id) && @item.status == 1
       .items-show__tweet__low
         %ul.items-show__tweet__low__left
           %li

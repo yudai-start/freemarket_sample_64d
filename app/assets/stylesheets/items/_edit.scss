@@ -17,7 +17,7 @@ $around-color: #eeeeee;
       }
     }
     #edit-img-cont {
-      height: 300px;
+      height: 230px;
       background-color: #fff;
       width: 100%;
       .formboxes{
@@ -39,27 +39,10 @@ $around-color: #eeeeee;
                 width: 100%;
               }
             }
-            &-buttons{
-              height: 27%;
-              width: 100%;
-              background-color:#f5f5f5;
-              display: flex;
-              .button{
-                text-decoration: none;
-                text-align: center;
-                color: #0099e8;;
-                line-height: 44px;
-                font-size: 20px;
-                width: 100%;
-              }
-              .button:hover{
-                text-decoration: underline;
-              }
-            }
           }
         }
       .edit-img-form {
-        height: 200px;
+        height: 140px;
         width: 100%;
         padding: 20 0 20 20;
         margin-left: 20px;
