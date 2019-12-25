@@ -41,13 +41,7 @@ Things you may want to cover:
 - has_many :addresses
 - has_many :cards
 - has_many :items
-- has_many :follows
-- has_many :likes
-- has_many :item_status
-- has_many :comments
-- has_many :reviews
 - has_many :sns_credentials
-
 
 
 ## adressesテーブル
@@ -58,7 +52,7 @@ Things you may want to cover:
 |family_name_kana |string |null: false|
 |first_name_kana  |string |null: false|
 |post_code        |string |null: false|
-|prefecture       |integer|null: false|
+|prefecture_id    |integer|null: false|
 |city             |string |null: false|
 |street_number    |string |null: false|
 |building_name    |string |null: true|
@@ -83,50 +77,21 @@ Things you may want to cover:
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name                 |string |null: false, index: true|
-|user_id              |integer|null: false, foreign_key: true|
-|size                 |string |
-|item_status          |integer|null: false|
-|shipping_fee_defrayer|integer|null: false|
-|shipping_system      |integer|null: false|
-|ship_from_prefecture |integer|null: false|
-|ship_date            |integer|null: false|
-|price                |integer|null: false|
-|description          |string |null: false|
-|buyer_id             |integer|
-|status               |integer|null: false|
+|name                     |string |null: false, index: true|
+|user_id                  |integer|null: false, foreign_key: true|
+|size                     |string |
+|item_status_id           |integer|null: false|
+|shipping_fee_defrayer_id |integer|null: false|
+|ship_from_prefecture     |integer|null: false|
+|ship_date_id             |integer|null: false|
+|price                    |integer|null: false|
+|description              |string |null: false|
+|buyer_id                 |integer|
+|status                   |integer|null: false|
 
 ### Association
 - belongs_to :user
-- has_many :comments
-- has_one :review
-- has_many :likes
 - has_many :images
-
-
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|content|string |null: false|
-|item_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :item
-- belongs_to :user
-
-
-## reviewsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|content|string |null: true|
-|rating |integer|null: false|
-|item_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :item
-- belongs_to :user
 
 
 ## imagesテーブル
@@ -137,39 +102,6 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :item
-
-
-## followsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|following_id|integer|null: false|
-|user_id     |integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-
-
-## likesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :item
-- belongs_to :user
-
-
-## item_statusテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-|status |integer|null: false|
-
-### Association
-- belongs_to :item
-- belongs_to :user
 
 
 ## sns_credentialsテーブル
