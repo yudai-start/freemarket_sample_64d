@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   
   def set_search
-    @q=Item.ransack(params[:q]) #gem ransakを用いての詳細検索
-    @result_items=@q.result
+    @q = Item.ransack(params[:q]) #gem ransakを用いての詳細検索
+    @result_items = @q.result
   end
 
   private
