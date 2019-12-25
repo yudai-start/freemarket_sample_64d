@@ -33,7 +33,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items, only:[:index, :new, :create, :delete, :edit, :update, :show] do
+  resources :items do
     member do
       get :buy_confirm
       put :done_buy_confirm
