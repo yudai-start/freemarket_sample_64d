@@ -26,6 +26,7 @@ $(function(){
                   </div>
                   `
         //image_box__container要素の前にhtmlを差し込む
+        $(".formboxes-side").remove() 
         $('.formboxes').prepend(html);
       }
       fileReader.readAsDataURL(file);
