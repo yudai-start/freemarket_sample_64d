@@ -38,42 +38,40 @@ class SignupController < ApplicationController
 
   def create
     @user = User.new(
-      nickname:              session[:nickname],
-      email:                 session[:email],
-      password:              session[:password],
-      family_name:           session[:family_name],
-      first_name:            session[:first_name],
-      family_name_kana:      session[:family_name_kana],
-      first_name_kana:       session[:first_name_kana],
-      phone_number:          session[:phone_number],
-      birthday:              session[:birthday],
+      nickname:         session[:nickname],
+      email:            session[:email],
+      password:         session[:password],
+      family_name:      session[:family_name],
+      first_name:       session[:first_name],
+      family_name_kana: session[:family_name_kana],
+      first_name_kana:  session[:first_name_kana],
+      phone_number:     session[:phone_number],
+      birthday:         session[:birthday],
     )
     @user.addresses.build(session[:addresses_attributes].first[1]) #addressesインスタンスを生成。usersインスタンスがsaveされると同時にsaveされる。
                                                                    #sessionのままだと何故かハッシュではなかったので、.first[1]でハッシュに変えています。
-    if params[:payjpToken]  #signup4.jsの最後のsubmitのみに反応させる
-      if @user.save!
-        session[:id] = @user.id
-        Payjp.api_key = Rails.application.credentials[:payjp_private_key]#APIキーを使ってPayjpクラスを初期化 (本番環境用)
-        customer = Payjp::Customer.create()#pay.jsサイトで顧客IDを生成、取得。
-        card = customer.cards.create( #カードトークンをpay.jsサイトに登録し、カードidをpay.jsサイトから取得。
-          card: params[:payjpToken]
+    if @user.save!
+      session[:id] = @user.id
+      Payjp.api_key = Rails.application.credentials[:payjp_private_key]#APIキーを使ってPayjpクラスを初期化 (本番環境用)
+      customer = Payjp::Customer.create()#pay.jsサイトで顧客IDを生成、取得。
+      card = customer.cards.create( #カードトークンをpay.jsサイトに登録し、カードidをpay.jsサイトから取得。
+        card: params[:payjpToken]
+      )
+      Card.create!(   #顧客id, カードidと、userとを結びつける、cardsインスタンスを保存する。
+        user_id:     @user.id,    
+        customer_id: customer.id,   #payjpの顧客id
+        card_id:     card.id #payjpのカードid 
+      )
+      if session["devise_data"] #SNS経由の新規登録の際、各パラメータをSNS_credentialsテーブルに保存
+        SnsCredential.create!(
+          provider: session["devise_data"]["provider"],
+          uid:      session["devise_data"]["uid"],
+          user_id:  @user.id
         )
-        Card.create!(   #顧客id, カードidと、userとを結びつける、cardsインスタンスを保存する。
-          user_id:     @user.id,    
-          customer_id: customer.id,   #payjpの顧客id
-          card_id:     card.id #payjpのカードid 
-        )
-        if session["devise_data"] #SNS経由の新規登録の際、各パラメータをSNS_credentialsテーブルに保存
-          SnsCredential.create!(
-            provider: session["devise_data"]["provider"],
-            uid:      session["devise_data"]["uid"],
-            user_id:  @user.id
-          )
-        end
-        redirect_to signup5_signup_index_path   #インスタンスの保存ができれば、登録完了ページへ遷移
-      else
-        render '/signup/signup1'  #登録に失敗すれば、入力ページ1へ移動
       end
+      redirect_to signup5_signup_index_path   #インスタンスの保存ができれば、登録完了ページへ遷移
+    else
+      render '/signup/signup1'  #登録に失敗すれば、入力ページ1へ移動
     end
   end
 

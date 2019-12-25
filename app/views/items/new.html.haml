@@ -121,8 +121,9 @@
             = link_to "加盟店規約","#", class:"ex-rule-link"
             に同意したことになります。
           = form.submit "出品する", id:"ex-ship-btn"
-          
-          = form.submit "戻る", id:"ex-ship-return" 
+          =link_to(root_path, id:"ex-ship-return") do
+            #ex-ship-return
+              %span.ex-ship-return 戻る
 
     = render "/signup/signup.footer"
 
