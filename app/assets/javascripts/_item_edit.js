@@ -11,30 +11,14 @@ $(function(){
       fileReader.onloadend = function() {
         var src = fileReader.result
         var html= `
-                  <div class="formboxes-side">
-                  <ul>
-                  <li class="sell-upload-item">
-                  <figure class="sell-upload-item-image">
-                  <img class="sell-upload-item-image-img" src="${src}">
-                  </figure>
-                  </div>
-                  </li>
-                  </ul>
-                  </div>
+                  <img class="edit-image-preview" src="${src}"> 
                   `
         //image_box__container要素の前にhtmlを差し込む
-        $(".formboxes-side").remove() 
-        $('.formboxes').prepend(html);
+        $(".edit-image-preview").remove() 
+        $('.label').prepend(html);
       }
       fileReader.readAsDataURL(file);
     });
 });
 
-$(function() {
-  
-  $("#destoroy-btn").on('click',function(){                               //$("フォームのクラス名").on('イベント')
-     
 
-    $(".formboxes-side").remove()   
-  });
-});

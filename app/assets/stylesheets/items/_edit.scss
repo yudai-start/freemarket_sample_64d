@@ -1,11 +1,188 @@
 
+// $around-color: #eeeeee;
+
+// .edit-main {
+//   background-color: #f5f5f5;
+//   padding: 0 25% 0 25%;
+  
+//   .edit-container {
+//     background-color: white;
+//     padding: 0 40px 0 40px;
+//     #edit-top-cont {
+//       text-align: center;
+//       padding-top: 40px;
+//       .page-description {
+//         font-family: Impact;
+//         font-size: 30px;
+//       }
+//     }
+//     #edit-img-cont {
+//       height: 230px;
+//       background-color: #fff;
+//       width: 100%;
+//       .formboxes{
+//         display: flex;
+//         width:100%;
+//         margin: 16px auto 0;
+//         padding: auto;
+//         &-side{
+//           width: auto;
+//           .sell-upload-item{
+//             margin: 0 0 10px 10px;
+//             width: 140px;
+//             height: 203px;
+//             &-image{
+//               width: 100%;
+//               height: 73%;
+//               &-img{
+//                 height: 100%;
+//                 width: 100%;
+//               }
+//             }
+//           }
+//         }
+//       .edit-img-form {
+//         height: 140px;
+//         width: 100%;
+//         padding: 20 0 20 20;
+//         margin-left: 20px;
+//         border: 1px dashed gray;
+//         background-color: #f5f5f5;
+//         text-align: center;
+//         align-items: center;
+//         justify-content: center;
+        
+//         .hidden {
+//           display: none;
+//           height: 100%;
+//           width: 100%;
+//         }
+//       }
+//     }
+//     }  
+//     #edit-item-cont {
+//       height: 330px;
+//       #item_name {
+//         height: 50px;
+//         width: 100%;
+//         box-sizing: border-box;
+//         font-size: 15px;
+//         padding-left: 10px;
+//       }
+//       .hide {
+//         display: none;
+//       }
+//       #item_description {
+//         height: 150px;
+//         width: 100%;
+//         box-sizing: border-box;
+//         font-size: 15px;
+//         padding: 10px;
+//       }
+//     }
+//     #edit-item-cont2 {
+//       display: flex;
+//     }
+//     #edit-shipping-cont {
+//       display: flex;
+//     }
+//     #edit-price-cont {
+//       display: flex;
+     
+//       .edit-p-box {
+//         height: 50px;
+//         width: 100%;
+//         position: relative;
+//         margin-bottom: 30px;
+//         .edit-divide {
+//           display: flex;
+//           .edit-pbright1 {
+//             position: absolute;
+//             right: 0;         
+//           }     
+//           .edit-pbright2 {
+//             position: absolute;
+//             right: 0;  
+//           }
+//         }
+//       }
+//     }
+//     #edit-btn-cont {
+//       font-size: 14px;
+//       align-items: center;
+//       padding-top: 40px;
+//       .edit-rule-link {
+//         text-decoration: none;
+//         color: #1e90ff;
+//       }
+//       .edit-btn-fs {
+//       font-size: 15px;
+//       }
+//       #edit-ship-btn {
+//       width: 100%;
+//       height: 50px;
+//       background-color: #ea352d;
+//       color: white;
+//       margin: 20px 0 20px 0;
+//       }
+//       #edit-ship-return {
+//         width: 40%;
+//         height: 50px;
+//         margin: 0 auto;
+//         background-color: #948f8f;
+//         color: white;
+//         display: block;
+//       }
+//     }
+//   }
+// }
+
+// .edit-indispensable-tmp {
+//   display: flex;
+//   margin-top: 40px;
+//   .edit-sentence {
+//     margin-right: 10px;
+//   }
+//   .edit-indispensable {
+
+//     @include essential_icon
+//   }
+// }
+
+// .edit-cont {
+//   padding-bottom: 40px;
+//   border-top: 1px solid #eeeeee ;
+// }
+
+// .edit-blank {
+//   width: 45%;
+//   margin-top: 40px;
+// }
+// select {
+//   height: 50px;
+//   width: 100%;
+// }
+// .edit-rb {
+//   width: 100%;
+// }
+
+// .error {
+//   color: red;
+//   animation:blink 3s ease-in-out infinite alternate;
+// }
+// @keyframes blink{
+//   0%{ color : red;   background:white }
+// 100%{ color : white; background:red   }
+// }
+
+
 $around-color: #eeeeee;
 
 .edit-main {
   background-color: #f5f5f5;
-  padding: 0 25% 0 25%;
-  
+  padding: 0 25% 0 25% ;
   .edit-container {
+
     background-color: white;
     padding: 0 40px 0 40px;
     #edit-top-cont {
@@ -17,48 +194,40 @@ $around-color: #eeeeee;
       }
     }
     #edit-img-cont {
-      height: 230px;
+      height: 300px;
       background-color: #fff;
-      width: 100%;
-      .formboxes{
+      
+      .label{
         display: flex;
-        width:100%;
-        margin: 16px auto 0;
-        padding: auto;
-        &-side{
-          width: auto;
-          .sell-upload-item{
-            margin: 0 0 10px 10px;
-            width: 140px;
-            height: 203px;
-            &-image{
-              width: 100%;
-              height: 73%;
-              &-img{
-                height: 100%;
-                width: 100%;
-              }
-            }
-          }
+        .edit-image-preview{
+          width: 140px;
+          height: 200px;
         }
+      
       .edit-img-form {
-        height: 140px;
+        height: 200px;
         width: 100%;
-        padding: 20 0 20 20;
-        margin-left: 20px;
         border: 1px dashed gray;
         background-color: #f5f5f5;
+        display: flex;
         text-align: center;
         align-items: center;
-        justify-content: center;
+        justify-content: center; 
         
+        .icon-zone {
+          position: absolute;
+          
+        }
+        .fa-camera {
+          font-size: 77px;
+        }
         .hidden {
           display: none;
           height: 100%;
           width: 100%;
         }
       }
-    }
+      }
     }  
     #edit-item-cont {
       height: 330px;
@@ -132,6 +301,18 @@ $around-color: #eeeeee;
         background-color: #948f8f;
         color: white;
         display: block;
+        text-decoration: none;
+        // text-align: center;
+        position: relative;
+        .edit-ship-return{
+          text-decoration: none;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform : translate(-50%,-50%);
+          transform : translate(-50%,-50%);
+                  
+        }
       }
     }
   }
