@@ -1,7 +1,4 @@
 $(function(){
-
- 
-
   $('.exhibiting-link').on("click", function() {
     $('.ing-active').removeClass("ing-active");
     $('.exhibiting-show').removeClass("exhibiting-show");
@@ -11,5 +8,4 @@ $(function(){
     $('.tab').eq(index).addClass("exhibiting-show");
     $(document).off('scroll');
   });
-
 });
