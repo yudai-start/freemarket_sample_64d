@@ -1,11 +1,15 @@
 .contents
   - @result_items.each do |item|
     = link_to("#{item.id}", class: 'item_link') do
-      .content
+      .search-content
         .image
           = image_tag item.images.first.image.url
+          - if item.buyer_id.present?
+            .sold-label
+            %span.sold SOLD
           .price
             #price
-            = item.price
+            ¥
+            =item.price
         .item_name 
           = item.name
