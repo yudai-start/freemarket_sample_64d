@@ -11,5 +11,9 @@ class Item < ApplicationRecord
   belongs_to_active_hash :item_status
   validates :name, :user_id,  :item_status_id, :shipping_fee_defrayer_id,  :ship_from_prefecture, :ship_date_id, :price, :description, presence: true 
 
+  def self.search(search)
+    return Item.all unless search
+    Item.where('name LIKE(?)', "%#{search}%")
+  end
 end
 
