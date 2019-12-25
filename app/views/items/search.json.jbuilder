@@ -14,4 +14,5 @@ json.array! @result_items do |item|
   json.status item.status
   json.created_at item.created_at
   json.updated_at item.updated_at
+  json.image item.images.first.image.url
 end

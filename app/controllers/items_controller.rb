@@ -75,7 +75,6 @@ class ItemsController < ApplicationController
     @status = Status.all
     # @q=Item.ransack(params[:q]) #gem ransakを用いての詳細検索
     # @result_items=@q.result
-    # binding.pry
     respond_to do |format|
       format.html
       format.json
