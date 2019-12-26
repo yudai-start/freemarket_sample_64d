@@ -14,10 +14,12 @@
               出品画像
             .ex-indispensable
               必須
+
           -# %div
           -#   最大１０枚までアップロードできます
           
           .ex-img-zone
+
           
             = form.fields_for :images do |f|
               = f.label :image, class:"item-image-label" do

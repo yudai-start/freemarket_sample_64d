@@ -102,6 +102,6 @@ class ItemsController < ApplicationController
   end
 
   def owner_check
-    redirect_to action: :index if (@item.user_id != current_user.id)
+    redirect_to action: :index if (@item.user_id != current_user.id) || (@item.status != 1)
   end
 end

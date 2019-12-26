@@ -16,11 +16,13 @@
               出品画像
             .edit-indispensable
               必須
+
           -# %div
           -#   最大１０枚までアップロードできます
           
           .edit-img-zone
           
+
             = form.fields_for :images do |f|
               = f.label :image, class:"label" do
                 = image_tag @item.images.first.image.url, class:"edit-image-preview"
