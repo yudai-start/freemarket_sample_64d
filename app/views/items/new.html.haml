@@ -14,17 +14,21 @@
               出品画像
             .ex-indispensable
               必須
-          %div
-            商品画像をアップロードしてください
+
+          -# %div
+          -#   最大１０枚までアップロードできます
           
-          = form.fields_for :images do |f|
-            = f.label :image, class:"label" do
-              #ex-img-form.ex-img-form      
-                .icon-zone
-                  %span ここをクリックして 
-                  %br 画像を選択して下さい
-                  %i.fas.fa-camera
-                = f.file_field :image, class: 'hidden'
+          .ex-img-zone
+
+          
+            = form.fields_for :images do |f|
+              = f.label :image, class:"item-image-label" do
+                #ex-img-form.ex-img-form      
+                  .icon-zone
+                    %span ここをクリックして 
+                    %br 画像を選択して下さい
+                    %i.fas.fa-camera
+                  = f.file_field :image, class: 'hidden'
               
         #ex-item-cont.ex-cont
           .ex-indispensable-tmp
@@ -48,11 +52,11 @@
         #ex-item-cont2.ex-cont
           .ex-blank 商品の詳細
           .ex-rb
-            .ex-indispensable-tmp
-              .ex-sentence
-                カテゴリー
-              .ex-indispensable
-                必須
+            -# .ex-indispensable-tmp
+            -#   .ex-sentence
+            -#     カテゴリー
+            -#   .ex-indispensable
+            -#     必須
 
             .ex-indispensable-tmp
               .ex-sentence

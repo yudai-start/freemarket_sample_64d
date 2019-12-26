@@ -1,3 +1,5 @@
+
+
 %body
   
   = render "layouts/exhibit-header"
@@ -14,22 +16,22 @@
               出品画像
             .edit-indispensable
               必須
-          %div
-            商品画像をアップロードしてください
 
-          .formboxes
-            .formboxes-side 
-              %ul
-                %li.sell-upload-item
-                  %figure.sell-upload-item-image
-                    = image_tag @item.images.first.image.url, class:"sell-upload-item-image-img"
-                  -# .sell-upload-item-buttons
-                  -#   = link_to "編集", "#" , class: 'button'
-                  -#   = link_to "削除", "#", class: 'button', id:"destoroy-btn"
+          -# %div
+          -#   最大１０枚までアップロードできます
+          
+          .edit-img-zone
+          
+
             = form.fields_for :images do |f|
               = f.label :image, class:"label" do
+                = image_tag @item.images.first.image.url, class:"edit-image-preview"
+  
                 #edit-img-form.edit-img-form      
-                  %span.font 　　　　　クリックしてファイルをアップロード　　　　　
+                  .icon-zone
+                    %span ここをクリックして 
+                    %br 画像を選択して下さい
+                    %i.fas.fa-camera
                   = f.file_field :image, class: 'hidden'
               
         #edit-item-cont.edit-cont
@@ -65,7 +67,7 @@
                 商品の状態
               .edit-indispensable
                 必須
-            = form.collection_select :item_status_id,ItemStatus.all,:id, :name, { include_blank: true, selected: @item.item_status_id}
+            = form.collection_select :item_status_id,ItemStatus.all,:id, :name, { include_blank: true, selected: @item.item_status_id }
 
         #edit-shipping-cont.edit-cont
           .edit-blank 発送について
@@ -75,7 +77,7 @@
                 配送料の負担
               .edit-indispensable
                 必須
-            = form.collection_select :shipping_fee_defrayer_id, ShippingFeeDefrayer.all, :id, :name, { include_blank: true, selected: @item.shipping_fee_defrayer_id}
+            = form.collection_select :shipping_fee_defrayer_id, ShippingFeeDefrayer.all, :id, :name, { include_blank: true, selected: @item.shipping_fee_defrayer_id }
 
             .edit-indispensable-tmp
               .edit-sentence
@@ -127,7 +129,10 @@
             = link_to "加盟店規約","#", class:"edit-rule-link"
             に同意したことになります。
           = form.submit "変更する", id:"edit-ship-btn"
-          
-          = form.submit "戻る", id:"edit-ship-return" 
+          =link_to(root_path, id:"edit-ship-return") do
+            #edit-ship-return
+              %span.edit-ship-return 戻る
 
     = render "/signup/signup.footer"
+
+
