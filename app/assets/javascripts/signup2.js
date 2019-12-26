@@ -10,7 +10,7 @@ $(function(){
     $(".error").remove()
 
     if(phone.match(regex_phone)){
-      if(phonelist.indexOf(phone)){
+      if(phonelist.indexOf(phone) >= 0){
         $(".signup2__contents__main__form1").after(error_registered);
         error++;
       }
