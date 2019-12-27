@@ -27,11 +27,14 @@ $(function() {
 
 
     $(".error").remove()    //エラーが出ている状態でボタンを押した時にエラーが何度も表示されないように一度削除
-
-      if($("#item_images_attributes_0_image").val()==""){     //画像フォームの値が空のときの条件式    
-        $('.label').after(error_message);             
-        error++;      //指定したクラスの後に要素を差し込む    $('要素名').after(差し込むメッセージ);
+    　if(document.URL.match("new")) {
+      　    //指定する文字列がURLに含まれる場合に実行する内容
+        if($("#item_images_attributes_0_image").val()==""){     //画像フォームの値が空のときの条件式    
+          $('.item-image-label').after(error_message);             
+          error++;      //指定したクラスの後に要素を差し込む    $('要素名').after(差し込むメッセージ);
+        }
       }
+      
       if($("#item_name").val()==""){                          //商品名が空の時の条件式
         $('#item_name').after(error_message);  
         error++;      //この記述がないとすぐにrenderされてしまうので入れていますが、理由はわかりません
