@@ -35,6 +35,7 @@ class ItemsController < ApplicationController
       @item.save!
       redirect_to root_path 
     else
+      @item.images.build
       render :new
     end
   end
